@@ -1,8 +1,8 @@
 /* TheDestruc7i0n 2017 */
 
 const textures = {
-    '1.12': require('./textures/112').items,
-    '1.13': require('./textures/113').items
+    '1.12': require('./textures/112').default,
+    '1.13': require('./textures/113').default
 }
 
 const byVersion = (version) => {
