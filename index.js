@@ -1,8 +1,8 @@
 /* TheDestruc7i0n 2017 */
 
 const textures = {
-    '1.12': require('./textures/112').default,
-    '1.13': require('./textures/113').default
+    '1.12': require('./textures/112'),
+    '1.13': require('./textures/113')
 }
 
 const byVersion = (version) => {
@@ -14,6 +14,7 @@ const byVersion = (version) => {
         {}
 }
 
-// export the version keyd
-export const versions = Object.keys(textures)
-export default byVersion
+module.exports = {
+    versions: Object.keys(textures),
+    default: byVersion
+}

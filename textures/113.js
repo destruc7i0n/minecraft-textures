@@ -1,4 +1,4 @@
-import { orderBy } from 'lodash'
+const orderBy = require('lodash.orderby')
 
 const Textures = {
   'comment': 'This file is maintained by me. Feel free to use this file, with credit given.',
@@ -3538,4 +3538,4 @@ const Textures = {
 
 // order the textures
 Textures.items = orderBy(Textures.items, [({readable}) => readable], ['asc'])
-export default Textures
+module.exports = Textures
