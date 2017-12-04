@@ -7,11 +7,11 @@ const textures = {
 
 const byVersion = (version) => {
     // cast to string if needed
-    const version = String(version)
+    version = String(version)
     // check if the texture exists and return accordingly
     return textures.hasOwnProperty(version) ?
         textures[version] :
-        null
+        {}
 }
 
 // export the version keyd
