@@ -14,7 +14,7 @@ const byVersion = (version) => {
         {}
 }
 
-module.exports = {
-    versions: Object.keys(textures),
-    default: byVersion
-}
+exports.versions = versions
+exports.default = byVersion
+
+module.exports = exports['default']

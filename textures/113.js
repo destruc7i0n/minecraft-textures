@@ -3538,4 +3538,5 @@ const Textures = {
 
 // order the textures
 Textures.items = orderBy(Textures.items, [({readable}) => readable], ['asc'])
-module.exports = Textures
+exports.default = Textures
+module.exports = exports['default']
