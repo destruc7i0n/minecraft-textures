@@ -1,10 +1,22 @@
 {
   "name": "minecraft-textures",
-  "version": "1.13.3",
+  "version": "1.13.4",
   "description": "base64 encoded Minecraft assets",
-  "main": "index.js",
+  "main": "./dist/minecraft-textures.js",
   "repository": "https://github.com/destruc7i0n/minecraft-textures",
   "author": "TheDestruc7i0n",
   "license": "MIT",
-  "private": false
+  "private": false,
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "webpack"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-preset-env": "^1.6.1",
+    "webpack": "^3.10.0"
+  }
 }

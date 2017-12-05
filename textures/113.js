@@ -3536,5 +3536,4 @@ const Textures = {
   ]
 }
 
-exports.default = Textures
-module.exports = exports['default']
+export default Textures
