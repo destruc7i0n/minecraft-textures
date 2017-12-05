@@ -1,4 +1,4 @@
-const orderBy = require('lodash.orderby')
+// 1.12 textures (won't be updated unless older items were forgotten)
 
 const Textures = {
   'comment': 'This file is maintained by me. Feel free to use this file, with credit given.',
