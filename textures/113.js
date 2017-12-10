@@ -2505,7 +2505,7 @@ const Textures = {
     },
     {
       'readable': 'Sugar Canes',
-      'id': 'minecraft:reeds',
+      'id': 'minecraft:sugar_cane',
       'texture': 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgBAMAAACBVGfHAAAAGFBMVEUAAAArOB1Tazhph0eCqFmWwWaq23TH/4dHGv48AAAAAXRSTlMAQObYZgAAAGdJREFUKM+t0EENwFAIA1As1AIWaqEWsFAL3/4uy7bA/k7j1hcggYg/y8IXFFpDh1V0MuQ90CnoHhsQLuUzD1ilpIHYgcWUkeQ71LmRPGcGoAQt4do5IASZz+MHoL9rQETPE3qe8FUHWaco6cW895QAAAAASUVORK5CYII='
     },
     {
