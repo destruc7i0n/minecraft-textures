@@ -6,4 +6,6 @@ This is a library containing all the textures I use for my generators. You're fr
 The Minecraft item icons are owned by Mojang AB.
 This is not endorsed by Mojang AB.
 
+`npm install minecraft-textures`
+
 ### Created by TheDestruc7i0n
