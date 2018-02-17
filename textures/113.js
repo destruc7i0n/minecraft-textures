@@ -3630,7 +3630,7 @@ const Textures = {
     },
     {
       'readable': 'Kelp',
-      'id': 'minecraft:kelp',
+      'id': 'minecraft:kelp_top',
       'texture': 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAB0klEQVRYhdWWu07DQBBFz/oRxwkUCAQNSodETUvFH9DQIVpa/oFvoecPqCjp0/EKiEAQQoATE2JTbGalbEzeUcxtLK9nx3vuzHqtmLMOjisDnzvzXsAwqVknPDzd6blP4jYA7Zf3NOvd/9cBm1SUljSoipRNDEBca/S8e+EOeMMCxiVVkTa1s530xLvVbNb8OnB0sgVAJ9BdrGJ/JFJbQm7iavoSt3Te/Dkg5MmqC4D72EoB2rvuwER/1dh2qFH/AKBULgA5cMB8B+Sb7S+FAHidpEtezpxoEw/rhaezWwCKlZICaN1FQA4c6OuB9mczBXA217oj2ft5VGKRTX5x/gbkwAEltXcc3Q5JkqYAgXFAy3nV3TusJx6urgEorAcK4Ps57okTcpN3isXPRKYHhDwMA33fHRfyZHUZALeqx6UHbPJwpawAms9fQD+xrfw4YEvObbsXRP6lJry/0XGG/G00clF+HRDZPSAS8qDoT0Ru8o8VPQd5ci4HRR+AZlPvW9kNInHClswfl9zknWjWDOV1fvR+lnN6bWM5M1CckbiwVNC1j76nWsDiHYi+NEEh8BRAo/7R/ffLrrnECfmktRct3AHzR7S3vzLWxGnJRQt34BcmQrrDn2Yf4AAAAABJRU5ErkJggg=='
     },
     {
@@ -3660,7 +3660,7 @@ const Textures = {
     },
     {
       'readable': 'Turtle Shell',
-      'id': 'minecraft:turtle_shell',
+      'id': 'minecraft:turtle_helmet',
       'texture': 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAABOElEQVRYhe2WQWrCQBSGv7S1BCsVVw1kKxa6U+gBuuyiJ+gxeo7coFtP4MKlBxB0l4V0K1WyCE3VBoqki/QhiU6iWOiA823C5L28zP/PDG/AYDh1rLIE97l91A+m3XFh/Oyo6n/AhSogymtOBYDF7Ds5pPBldW0BVNsOAKvxbGeefg6olDcfGwDYrl1YMJ7GAAw9PwFotK4z+yzvhH4OCHnlH6P1byRVmHdClEve/csdsHECxYnT1wFBlNpuOp73lpmxIMpvnq4OmoD+DgiyxsE8Sp+vUSYe+u8A1Dvp2pedFkF/B2TNRbkoVTH0fABaD7d7TUB/B+qdcwAmXrFy1XcMivP0daDmVCyAt36Y74Jld4gENntBekE4iXYm/7sDSjXSFb+Cz8z7OFgA211N+r4Kbe8DBoPhB09mYaQ5mzbMAAAAAElFTkSuQmCC'
     },
     {
