@@ -1,6 +1,6 @@
 {
   "name": "minecraft-textures",
-  "version": "1.13.16",
+  "version": "1.13.17",
   "description": "base64 encoded Minecraft assets",
   "main": "./dist/minecraft-textures.js",
   "repository": "https://github.com/destruc7i0n/minecraft-textures",
