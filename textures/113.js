@@ -1460,7 +1460,7 @@ const Textures = {
     },
     {
       'readable': 'Acacia Button',
-      'id': 'minecfaft:acacia_button',
+      'id': 'minecraft:acacia_button',
       'texture': 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAABCUlEQVRYhe3UvUoDQRSG4Tf75+IiMQpiiCAWio0Qtk1n6wWkEMHSK/BebARbwdJCewsRxFIMKP5UK2sim81mF5OxEFLYnQ0Wwnmqab4zZ84wA0oppf67y4OWmSZfKRs8aTdNvRZw+xQDsFz12T+9E9dzpIGzvdAAvHSHfKQF4doiSZox57nsbC6Z8/tI1ISogcPtDdOJBgCEK1UAkjTj6PoVDLi2fKDiCTz2Mnynwnoxy/HNG577UyLwbPHmAFaZkD/jcfEQ/6pkUYzGf9tA1BtM1vO+Mzk9QNwfkuRf4gbEl9beqhvHtmgsBHTe+3ymOflozNVzt/SLKmW32TCt1dpUf4BSSikF8A2BHkiSt14vnAAAAABJRU5ErkJggg=='
     },
     {
