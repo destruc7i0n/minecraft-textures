@@ -2,7 +2,8 @@
 
 const textures = {
     '1.12': require('./textures/112').default,
-    '1.13': require('./textures/113').default
+    '1.13': require('./textures/113').default,
+    '1.14': require('./textures/114').default
 }
 
 const byVersion = (version) => {
