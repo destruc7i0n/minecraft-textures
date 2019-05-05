@@ -756,7 +756,7 @@ const Textures = {
     {
       'readable': 'Red Sandstone Slab',
       'id': 'minecraft:red_sandstone_slab',
-      'texture': ''
+      'texture': 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAB2lBMVEUAAAA+Hwk/IAk/IApAIAlAIQpBIQlBIQpCIQpCIgtDIgpDIgtDIwtEIwtEIwxFJAtHJA1HJQ1IJQ1JJQ1JJQ5JJg5KJg1KJg5LJg1LJg5MJg5MJw9NJw9NKA9OKA9OKBBPKA9PKBBQKA9bLg1cLg1cLw1cLw5eLw1eMA5eMA9fMA1fMA5gMA5gMQ5gMQ9gMhBhMhBiMg9iMhFjMxBkMxFoNRJoNRNoNRRpNRRqNRNqNRRqNhJqNhRqNxNrNxNrNxRsNxRsNxVtNxNtNxRtOBRtOBVuOBRvOBVvORVvORZwORZxORZxOhZyOhZzOxZzOxdzOxh0OxZ2PBaaTxqbTxucUBudUBudUByeUBueUByeUB2eURyfURygURygUhyhUhyhUh2hUxyiUhyiUh2iUxyiUx2iVByjUh2jUxyjUx2jVBykUh6kUxykUx2kUx+kVB2kVB6lUx6lVB2lVB6lVR2mVB2mVB6mVR2mVR6nVB6nVR2nVR6nVR+nVh2nVh6nVh+oVR6oVh6oVh+pVh6qVh6qVh+qVx6qVx+rVh+rVx6rVx+rWCCsVx6sVx+sWB+tWB+tWCCuWB+uWCCuWR+uWSCuWiCuWiGvWSCvWiCwWiCxWiCxWiGyWyG0XCJjZd21AAAAAXRSTlMAQObYZgAAAe1JREFUOMtjYBgFZIFZs/BKNzeXd0xqxindW1jc3V1dPbE6Aqt0ampmcl5NTXNzfnxiSQkWwxPy8+Obe4tzm/MbWlvyMzNRpKun1zVmpgXnh1VXV3dVlkWnNlVllHbBpZu6pldXh4fH5bf19TU0xMTE14bExNTVZde3QuT9W/oaq6ubm0ObcqqqWltnz57QVZqaWlbWkduvCFZgauNeXJc/t33qtIkNk4uKWmK7Osoio7J7i+U4xMEKNFxc7PSqq/unNJblVmQWNxdl5cREpqdL8ouzskAU6OlZavv5VFc3NBZPntzYmJJf1NwsIiTAwsEBURAYqGdq7G1vY12W29rYOGPGxM58OVlJUWFuDkWIG3y8Aw2Mra1dHdyCkqb0zSzoEeaQEZEWEpaTkIa4wcvbxU9Fx9rT2szDV2/OHCEpcXYhIWlWVhFpcSGwAhN9U7NAPx1ra1tHF01/RXFxDl4hDiF5GQFpMSaICX7uNhaWfhoaGo66ug6CHBwcTBxyrIKCkoxsStCgNDHwdnTQCPDWddNVZ+VQklSSE2XlEudVQIoMA001L3NTIy9/fyUlSV4hYWZpYRa06HR3NnRW9/R0lZUR4JARlxLDkiAs1fWVna2kZaR4OFlxJClvPydVPk5eMTyJUitQWo7EZA4A1MiCHDJYHcIAAAAASUVORK5CYII='
     },
     {
       'readable': 'Nether Brick Slab',
@@ -1349,8 +1349,8 @@ const Textures = {
       'texture': 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgAgMAAAAOFJJnAAAADFBMVEUAAAD+/v6z1tvA9f58ouF7AAAAAXRSTlMAQObYZgAAAFZJREFUeF5FzCEOAzEQBMEiJib+2hLj+59JvrbYKIoU3TQq1HbtX09QLEzB0CAocIONYc2gUFrgPwyqNQIPECgUAgxGoGhqBguGQEMLFLCCe44zz+fFF/omJ3WDaF+XAAAAAElFTkSuQmCC'
     },
     {
-      'readable': 'Melon Block',
-      'id': 'minecraft:melon_block',
+      'readable': 'Melon',
+      'id': 'minecraft:melon',
       'texture': 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAABRFBMVEUAAACDgh2WlCGxryempieNiB56fiR0dxyZmyO+uCl8hiGhnCNDTBNmaRhgZx5MVxaeniRhZRtvcx5aZxq8uS1CTBNnax6TmSBdYxprcB5ccCaBhhyFiB9JURRMVRZUWhtaXRuGhh5ych9ubRx9fCBXYBlrcSlLVhZTXBdeaSZ1dRuAiCGCgBySnCVkZBtXYBt6gS+LiSFMVRhcYxh4dxuIhR2Jhx6YliGXnCOfnSZ3eiSIiylpcRyVkiBGTxVKUhdgZBtmbBtpbBtubxhnbiFqcRxnch5udBltch9xdBtwdxtzdxx3dht3dxx3ex94eiB9eh1/fRx9fxx2fSZ3fiR5gSCBfxt4gCR9hB1/gh6BhB6Fgx1+gySGgx2Ahx+Hhx+IhyCJiySOiyGNjCGRjyCIkCmTkR+JkimUkiCQlimZliGblyHApVzmAAAAAXRSTlMAQObYZgAAAfZJREFUeF6V0VWP20AUgFEPgpkpjMvMZWZmZu7/f+91Jk2TdrfSfn6y5szVtWwcMxXH9D/A9H2losg86tjkvi+lNE1FDgFx7JtR7EuTK6UI+Zv4oyJTKbgvJa+avi1lVMUjKcuyNEea83gMKI3j6hZMlhFsEMFDIEmkJjWH0uqVE16qsuTEJ74kMUz4dnoMHEYhohSsERHC4Sym9GO4Pgbtdp3dpRSW930TptMrnNIsC8NQAydx6mwxzynVgHLKiwJjAD80gAnoUn61VoNzWIBS633xDMOEvZ9jYNfR5XNbCAUBhYRlda6dwngh3LM0sAEsNbdQLQiWlzORCvxwUIE5PAEOgCZCZ4MhAJHix4MBxmsT0ALQawA4AyOyNHXxigbrGvRa9nnWszV4LeY8F/fnve4MGLIl214F8HJHpJ6H+57XtdbmTv4GrfoYJGhHeABWAFkLUwCxpYaN0GaCWAUsAFNfsdiyNWCbyZAJ13OtlXnvAIcz4ELD3mDNKdDFYfjpnQZOC9UdAKiZnJgA8T0Mdw8mv5vda7RXR6Dvuq51Zz79/PVm+CUzdA6DEW3nlQaeuy9E+vbB813jT+xG3n70NAnQCFgfivQFNmbL81sXAwAd1xV4vyiMf7uOguD+7Y4rhPXGOLxge3ujIwQ2ju5JLRPG8foFoVo7cDQkEOMAAAAASUVORK5CYII='
     },
     {
@@ -2759,13 +2759,13 @@ const Textures = {
       'texture': 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgBAMAAACBVGfHAAAAJ1BMVEUAAAAAAAAcHCI6OkRKQEpWVmRjY3NkWmZxZ3N4STh5ZXGRaF+9jIF+4Af4AAAAAXRSTlMAQObYZgAAAFdJREFUKFNjYBh0YPeZ3QQEZu5WEsQrIKjkgk9AUFCwvMMYt4CgYGhoxyoXJWNcAoJpaatWrVIyVlLCKWBs3BFqjOBjCgANBatHdgWaANhhqD7FEKAxAAD0JR7RBUYX3gAAAABJRU5ErkJggg=='
     },
     {
-      'readable': 'Rose Red',
-      'id': 'minecraft:rose_red',
+      'readable': 'Red Dye',
+      'id': 'minecraft:red_dye',
       'texture': 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgBAMAAACBVGfHAAAAElBMVEUAAAB6BwenIiK+MDDSQ0PcTEzDye5EAAAAAXRSTlMAQObYZgAAAFtJREFUKFO10LERAjEUQ8HfwrbgFtSCW1D/rZAxB4eJQOHOKHkzvxvfAMo4gUYb6giLVrt8hqGbOILuHd1ZOUOj+3p5gzRkqQMMWlnPBDcYsuTS6AaD16g3+PcetiEgR3K2NVoAAAAASUVORK5CYII='
     },
     {
-      'readable': 'Cactus Green',
-      'id': 'minecraft:cactus_green',
+      'readable': 'Green Dye',
+      'id': 'minecraft:green_dye',
       'texture': 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgBAMAAACBVGfHAAAAElBMVEUAAAAiNQU2UQ1KaxhXeiJjhi6EqBLlAAAAAXRSTlMAQObYZgAAAGhJREFUKFO10EENxDAMBdFQGAqm8CmYwvCnsqd0m6Q9do5PX7LkMf4xtnZAVloBEJpXQJTOKyCGrIM7IAGpN0AaU0EeATuYpq7BDgErOM+egOlQpp4BTUmsOdhhAJTmeuABE8e9Az7uB21EJVM1XE/rAAAAAElFTkSuQmCC'
     },
     {
@@ -2809,8 +2809,8 @@ const Textures = {
       'texture': 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgBAMAAACBVGfHAAAAElBMVEUAAAA9bQBamghlrAl2xhCD1BySGUAKAAAAAXRSTlMAQObYZgAAAFRJREFUKFPNz7ENgDAQQ9FbwSvcCl7BK/z9V6EKIgnQIeHOT3Lhql9Fkt5AIvGFVhAE3B6ygkggOeUO5s0OhoS2+wFKNtg9+g4l2T1/WWC7fwMf5wCfFx4nKJgmfAAAAABJRU5ErkJggg=='
     },
     {
-      'readable': 'Dandelion Yellow',
-      'id': 'minecraft:dandelion_yellow',
+      'readable': 'Yellow Dye',
+      'id': 'minecraft:yellow_dye',
       'texture': 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgBAMAAACBVGfHAAAAG1BMVEUAAACOaxO1kBq8mxzPsyDVwyPd1Sfn5yrn52ldxCaNAAAAAXRSTlMAQObYZgAAAHBJREFUKFOlz1ENxDAMA9BQMIVQMIVSMIVSMIXAvq+rtqzbdDr/5SmWkohfgjdANTkDgBpPANj5BHApnfcAUJS4Oh3gOVii10ID1GR60oO4AbFy0quzAydNfW+/QEC083hohwCUQzg82yECOI0b+CsfBg4wnZLnuWwAAAAASUVORK5CYII='
     },
     {
