@@ -1,4 +1,4 @@
-/* TheDestruc7i0n 2017 */
+/* TheDestruc7i0n 2020 */
 
 const textures = {
     '1.12': require('./textures/112').default,
