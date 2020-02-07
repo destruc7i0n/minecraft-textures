@@ -5,6 +5,7 @@ const textures = {
     '1.13': require('./textures/113').default,
     '1.14': require('./textures/114').default,
     '1.15': require('./textures/115').default,
+    '1.16': require('./textures/116').default,
 }
 
 const byVersion = (version) => {
@@ -17,5 +18,6 @@ const byVersion = (version) => {
 }
 
 export const versions = Object.keys(textures)
+export const latestVersion = versions[versions.length - 1]
 export { textures }
 export default byVersion

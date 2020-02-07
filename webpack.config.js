@@ -8,6 +8,7 @@ module.exports = {
     '1.13': './textures/113',
     '1.14': './textures/114',
     '1.15': './textures/115',
+    '1.16': './textures/116',
   },
   mode: 'production',
   output: {
