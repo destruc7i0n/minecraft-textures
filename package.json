@@ -1,6 +1,6 @@
 {
   "name": "minecraft-textures",
-  "version": "1.16.0-beta.1",
+  "version": "1.16.0-beta.2",
   "description": "base64 encoded Minecraft assets",
   "main": "./dist/minecraft-textures.js",
   "repository": "https://github.com/destruc7i0n/minecraft-textures",
@@ -11,7 +11,7 @@
     "dist/**/*"
   ],
   "scripts": {
-    "build": "webpack --display-error-details"
+    "build": "rm -rf ./dist && webpack --display-error-details"
   },
   "devDependencies": {
     "@babel/core": "^7.8.4",
