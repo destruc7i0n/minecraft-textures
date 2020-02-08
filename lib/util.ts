@@ -1,11 +1,18 @@
-
+import { Item } from './types'
 /*
 'id_in_previous-file': {
   ...'data_to_overwrite_to'...
 }
 */
 
-export const updatePropertiesOfItems = (updates = {}, items) => {
+interface Updates {
+  [id: string]: {
+    id: string
+    readable: string
+  }
+}
+
+export const updatePropertiesOfItems = (updates: Updates = {}, items: Item[]) => {
   const ids = Object.keys(updates)
   for (let i = 0; i < items.length; i++) {
     const item = items[i]

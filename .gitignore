@@ -63,3 +63,5 @@ dist
 # ide
 .vscode
 .idea
+
+.DS_Store

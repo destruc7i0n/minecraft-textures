@@ -1,6 +1,6 @@
 {
   "name": "minecraft-textures",
-  "version": "1.16.0-beta.2",
+  "version": "1.16.0-beta.3",
   "description": "base64 encoded Minecraft assets",
   "main": "./dist/minecraft-textures.js",
   "repository": "https://github.com/destruc7i0n/minecraft-textures",
@@ -11,12 +11,17 @@
     "dist/**/*"
   ],
   "scripts": {
-    "build": "rm -rf ./dist && webpack --display-error-details"
+    "package": "yarn clean && yarn build",
+    "build": "webpack --display-error-details && yarn json",
+    "clean": "rm -rf ./dist",
+    "json": "ts-node --project ./tsconfig.dev.json ./lib/toJson.ts"
   },
   "devDependencies": {
-    "@babel/core": "^7.8.4",
-    "@babel/preset-env": "^7.8.4",
-    "babel-loader": "^8.0.6",
+    "@types/node": "^13.7.0",
+    "ts-loader": "^6.2.1",
+    "ts-node": "^8.6.2",
+    "tslib": "^1.10.0",
+    "typescript": "^3.7.5",
     "webpack": "^4.41.5",
     "webpack-cli": "^3.3.10"
   }

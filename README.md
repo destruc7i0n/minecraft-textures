@@ -10,6 +10,7 @@ This is not endorsed by Mojang AB.
 
 #### Notes
 - When upgrading to 1.16, the versions are now dynamically imported.
-    - Sorry to anyone who used the .json files, but this makes the packages much smaller, for faster first load times :(
+    - For anyone using the .json files, you can now use something like this:
+        - https://unpkg.com/minecraft-textures/dist/textures/json/1.16.json
 
 ### Created by TheDestruc7i0n
