@@ -8,8 +8,17 @@ This is not endorsed by Mojang AB.
 
 `npm install minecraft-textures`
 
+#### Example Usage:
+```js
+import hasVersion from 'minecraft-textures'
+const version = '1.16'
+if (hasVersion(version)) {
+    const { default: textures } = await import(`minecraft-textures/dist/textures/${version}.js`)
+}
+```
+
 #### Notes
-- When upgrading to 1.16, the versions are now dynamically imported.
+- When upgrading to 1.16, the versions are now dynamically imported. You will need to import the path provided by `byVersion`.
     - For anyone using the .json files, you can now use something like this:
         - https://unpkg.com/minecraft-textures/dist/textures/json/1.16.json
 

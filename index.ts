@@ -1,6 +1,6 @@
 /* TheDestruc7i0n 2020 */
 
-interface Textures {
+export interface TexturesType {
   comment: string,
   items: {
     readable: string
@@ -17,18 +17,9 @@ const textures: { [key: string]: string } = {
   '1.16': '116',
 }
 
-const byVersion = async (version: string): Promise<Textures | undefined> => {
-  // cast to string if needed
-  version = String(version)
-  // check if the texture exists and return accordingly
-  if (textures.hasOwnProperty(version)) {
-    // return a promise to the file
-    const { default: tex } = await import(`./textures/${textures[version]}`)
-    return tex
-  }
-}
+const hasVersion = (version: string) => Object.keys(textures).includes(version)
 
 export const versions = Object.keys(textures)
 export const latestVersion = versions[versions.length - 1]
 export { textures }
-export default byVersion
+export default hasVersion
