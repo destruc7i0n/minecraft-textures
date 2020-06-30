@@ -9,6 +9,7 @@ interface Updates {
   [id: string]: {
     id: string
     readable: string
+    texture?: string
   }
 }
 
