@@ -1,0 +1,29 @@
+name: Build
+
+on: push
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+      uses: actions/setup-node@v2
+      with:
+        node-version: '14.x'
+    - run: yarn install
+    - run: yarn package
+    - name: Check for duplicates
+      run: |
+        # check for dupes in the latest file
+        cd dist/textures/json
+        dupes=$(jq -r '(.items | map(.id) | group_by(.)) | map(select(length>1) | .[0]) | length' $(ls | sort -r | head -1))
+        if [ $dupes -gt 0 ];
+          echo "Found $dupes duplicate items." 
+          exit 1
+        if 
+        cd ../../..
+    - uses: actions/upload-artifact@v2
+      with:
+        name: dist
+        path: dist
