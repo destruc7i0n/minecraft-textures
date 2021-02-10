@@ -18,10 +18,10 @@ jobs:
         # check for dupes in the latest file
         cd dist/textures/json
         dupes=$(jq -r '(.items | map(.id) | group_by(.)) | map(select(length>1) | .[0]) | length' $(ls | sort -r | head -1))
-        if [ $dupes -gt 0 ];
+        if [ $dupes -gt 0 ]; then
           echo "Found $dupes duplicate items." 
           exit 1
-        if 
+        fi 
         cd ../../..
     - uses: actions/upload-artifact@v2
       with:
