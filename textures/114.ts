@@ -1,4 +1,5 @@
 // 1.14 textures
+import type { TexturesType } from '../lib/types'
 import { updatePropertiesOfItems } from '../lib/util'
 
 import Prev from './113'
@@ -26,8 +27,8 @@ const PrevItems = updatePropertiesOfItems({
   },
 }, Prev.items)
 
-const Textures = {
-  'comment': 'This file is maintained by me. Feel free to use this file, with credit given.',
+const Textures: TexturesType = {
+  'comment': 'This file is maintained by TheDestruc7i0n (https://thedestruc7i0n.ca). Feel free to use this file, with credit given.',
   'items': [
     ...PrevItems,
     {

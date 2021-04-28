@@ -23,6 +23,14 @@ jobs:
           exit 1
         fi 
         cd ../../..
+    - name: List missing items
+      run: |
+        yarn list-missing
+        missing=$(jq -r '. | length' missing.json)
+        if [ $missing -gt 0 ]; then
+          echo "Found $missing missing items."
+          jq '.' missing.json
+        fi
     - uses: actions/upload-artifact@v2
       with:
         name: dist

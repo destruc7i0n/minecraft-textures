@@ -1,14 +1,4 @@
 /* TheDestruc7i0n 2021 */
-
-export interface TexturesType {
-  comment: string,
-  items: {
-    readable: string
-    id: string
-    texture: string
-  }[]
-}
-
 const textures: { [key: string]: string } = {
   '1.12': '112',
   '1.13': '113',

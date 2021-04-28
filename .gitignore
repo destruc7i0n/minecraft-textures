@@ -65,3 +65,6 @@ dist
 .idea
 
 .DS_Store
+
+debug*.html
+missing.json
