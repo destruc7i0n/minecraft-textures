@@ -30,7 +30,7 @@ const main = async () => {
         </head>
         <body>
           <span>File: ${versionId}, Items Count: ${contents.items.length}</span>
-          <div style="display:flex;flex-wrap:wrap;>
+          <div style="display:flex;flex-wrap:wrap;">
             ${output}
           </div>
         </body>
