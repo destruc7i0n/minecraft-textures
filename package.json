@@ -1,6 +1,6 @@
 {
   "name": "minecraft-textures",
-  "version": "1.16.3",
+  "version": "1.17.0-beta.1",
   "description": "base64 encoded Minecraft assets",
   "main": "./dist/minecraft-textures.js",
   "repository": "https://github.com/destruc7i0n/minecraft-textures",
@@ -12,7 +12,7 @@
     "dist/**/*"
   ],
   "scripts": {
-    "package": "yarn clean && yarn build",
+    "dist": "yarn clean && yarn build",
     "build": "webpack && yarn json",
     "clean": "rm -rf ./dist",
     "json": "ts-node --project ./tsconfig.dev.json ./lib/toJson.ts",

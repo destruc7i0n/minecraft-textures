@@ -28,7 +28,7 @@ const PrevItems = updatePropertiesOfItems({
 }, Prev.items)
 
 const Textures: TexturesType = {
-  'comment': 'This file is maintained by TheDestruc7i0n (https://thedestruc7i0n.ca). Feel free to use this file, with credit given.',
+  'comment': 'This file is maintained by TheDestruc7i0n (https://thedestruc7i0n.ca). You may use this file with credit given.',
   'items': [
     ...PrevItems,
     {

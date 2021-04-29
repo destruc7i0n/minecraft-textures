@@ -2,8 +2,11 @@
   "compilerOptions": {
     "target": "es5",
     "lib": ["dom", "esnext"],
+    "resolveJsonModule": true,
     "moduleResolution": "node",
     "strict": true,
+    "allowJs": true,
+    "checkJs": false,
     "allowSyntheticDefaultImports": true
   },
   "include": ["**/*.ts"],

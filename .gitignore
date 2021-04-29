@@ -66,5 +66,5 @@ dist
 
 .DS_Store
 
-debug*.html
+debug/
 missing.json

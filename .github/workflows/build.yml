@@ -11,8 +11,10 @@ jobs:
     - uses: actions/setup-node@v2
       with:
         node-version: '14.x'
-    - run: yarn install
-    - run: yarn package
+    - name: Install packages
+      run: yarn install
+    - name: Build distribution files
+      run: yarn dist
     - name: Check for duplicates
       run: |
         # check for dupes in the latest file
@@ -31,7 +33,16 @@ jobs:
           echo "Found $missing missing items."
           jq '.' missing.json
         fi
-    - uses: actions/upload-artifact@v2
+    - name: Generate debug outputs
+      run: |
+        yarn debug all
+    - name: Upload debug outputs
+      uses: actions/upload-artifact@v2
+      with:
+        name: debug-output
+        path: debug
+    - name: Upload built output
+      uses: actions/upload-artifact@v2
       with:
         name: dist
         path: dist

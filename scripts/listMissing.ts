@@ -2,16 +2,20 @@ import { writeFileSync } from 'fs'
 import fetch from 'node-fetch'
 
 import type { TexturesType } from '../lib/types'
-import { latestVersion, textures } from '../index'
+import { latestVersionFileName, latestVersion } from '../index'
 
-// latest list of items from the reports
+// latest list of items from the reports from Arcensoth
+const VERSION_FILE = 'https://github.com/Arcensoth/mcdata/raw/master/VERSION.txt'
 const ITEMS_FILE = 'https://github.com/Arcensoth/mcdata/raw/master/processed/reports/registries/item/data.json'
 
 // lists all the missing items, probably from a new version
 const main = async () => {
+  const remoteLatestVersion = await (await fetch(VERSION_FILE)).text()
+  console.log(`Comparing (local) items from ${latestVersion} to (remote) ${remoteLatestVersion}`)
+
   const { values: allItems }: { values: string[] } = await (await fetch(ITEMS_FILE)).json()
 
-  const latest: TexturesType = (await import(`../textures/${textures[latestVersion]}.ts`)).default
+  const latest: TexturesType = (await import(`../textures/${latestVersionFileName}.ts`)).default
   const ids = latest.items.map(i => i.id)
 
   // compare files and exclude air

@@ -1,8 +1,8 @@
-import type { TexturesType } from '../lib/types'
 // 1.16 textures fully updated
+import type { TexturesType } from '../lib/types'
 
 const Textures: TexturesType = {
-  'comment': 'This file is maintained by TheDestruc7i0n (https://thedestruc7i0n.ca). Feel free to use this file, with credit given.',
+  'comment': 'This file is maintained by TheDestruc7i0n (https://thedestruc7i0n.ca). You may use this file with credit given.',
   'items': [
     {
       'readable': 'Stone',
@@ -4693,6 +4693,11 @@ const Textures: TexturesType = {
       'readable': 'Piglin Spawn Egg',
       'id': 'minecraft:piglin_spawn_egg',
       'texture': 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAACAklEQVR4XmMYBSM+BBjJDQE/A8X/IL1ffv4GG7Hv+hOyzGIa6ChgIdYBdbUh/5HVcl5/CuZ+hYYADzsrWF7f2wgs3ty6lqgQGfAQIOhKmM+VlcTBPmNhYQbTaqqSYPrIxK1g+u2XH2BawFYTTL958xlMd3RtwGvHEEgD/yFRz8wMcasAPxfYZ3/+/AXTrFBxfk42MF9RQQxMb5u/n4EYMHjTACyfWyhD4t6tzB/sob9//4Hp09N2gul/0BD68RsSIh+//0Lx+PE7L8B8XOXE4E8DsDg+NmkbSpzDfP4HGiLinoZg+V+P34Lp76fvDI00gFESwuLeUkUC7ANmJkg2Ns/2APOFhHjB9OaGlWAaFvfSUkJg/mNoCMC8DzMHyAdnJ/S0MPjSgJ4XJC6loCXd6x0XwJ4RE+OH+Lwe4vPf0LiH+fTUrN1g5vdff7DG/R809TBFgy8E/kPzNSwuWf9B8v2W+lVgR//9BykZzTPcwPxj0PIAV5Jn1pcHS/25/gSrkqFTEsJyg6y/Kdgnv6El32O0fM9pqoLi01evPoL5k6Zsx1orDv6S8NMPSNnOzMSE1ee/fmNP9R8+fAWrh6UpXGlk8LeInDRlUNqCSCUbqqeguefQrWdgcQNXfTA9eeqOwd0iIrktDwsRI2jtxwStK45vOg328eFbz0kyc8DTAMOIBwA5lK3Al04fEAAAAABJRU5ErkJggg=='
+    },
+    {
+      'readable': 'Piglin Brute Spawn Egg',
+      'id': 'minecraft:piglin_brute_spawn_egg',
+      'texture': 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAACRUlEQVR4nO2WTUhUURiG36bBQoM0iWqXla5at2sRJBSEiYtIsoKEIhR3M+VYEUVQmZb0M4sW1WII2ogRlNSuVbhpHYkuVPB3FBWZe2dG3zPnfF5mdMYfxDMDvovnmzv3zPke7rnn3tkFy9kRKFyBkwf3LrLASaQK/k3FNjXXpn6ksu0C90N1upPJ3y+/SCBmBEbmXBK42HieBJ487V7X3OsapGJNQBofqzhEAn6/jwQqTxwhgWeN7SQw7yZJoPpmDQmMT8ySwPOOrzl75DypYl3gXqsWqKrUDctKS0jWMl1f3e4kAdcsRcOjGyTQ1hQm1745c55UsSYg2+zo/iKSS/ExSAIJ06jz1gsSWNSHiCf1h4W4rpLBGYfMLrLqlyp5I3C8VAv4fXrobl1gPJA0BjWBKyQwNDxJAr8/fScLUUAaV5hLb3YdAu8DJFBevo8E7tY9hIprLn1LVzMJ/On7T3oCkmwiaQcq1gVCd2pTM8qDpqc9QgIdPY9JIFj7gPQam7IceTllpn86RrJGnbSeaQcq1gVag1qguFgvQV/kBwkUmZtQ5m9+3UICL5u6SC+ZAqcuV5NAJPyNBAam811AIjejPIhMf1xqu0ZyCdwEuXLbnb6uX8eS0bEZEnjzrtfMkJ5Vv1TJG4HDJX5SCeih9aEG0mvsOHGS2+/zT9ITiEbnSf5hMeffhgtNQFJ1YE9KRCJLki39Ub3dztWfIbM3luQ8qWJdIDMidOHqWZJL49PP6u4PvSQFMrbZWtnQYBXrAlsd6wJLX+SAME1HrPAAAAAASUVORK5CYII='
     },
     {
       'readable': 'Crying Obsidian',
