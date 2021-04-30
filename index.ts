@@ -1,17 +1,8 @@
 /* TheDestruc7i0n 2021 */
+export const textures = ['1.12', '1.13', '1.14', '1.15', '1.16', '1.17']
 
-export const latestVersion = '1.17' as const
-export const textures = {
-  '1.12': '112',
-  '1.13': '113',
-  '1.14': '114',
-  '1.15': '115',
-  '1.16': '116',
-  '1.17': '117',
-} as const
-
-export const versions = Object.keys(textures) as (keyof typeof textures)[]
-export const latestVersionFileName = textures[latestVersion]
+export const versions = textures // reverse compatibility, removed next version!
+export const latestVersion = textures[textures.length - 1]
 
 const hasVersion = (version: string) => Object.keys(textures).includes(version)
 

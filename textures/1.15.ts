@@ -1,7 +1,7 @@
 // 1.15 textures
 import type { TexturesType } from '../lib/types'
 
-import Prev from './114'
+import Prev from './1.14'
 
 const PrevItems = Prev.items
 

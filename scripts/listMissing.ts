@@ -1,8 +1,8 @@
-import { writeFileSync } from 'fs'
+import { writeFileSync as write } from 'fs'
 import fetch from 'node-fetch'
 
 import type { TexturesType } from '../lib/types'
-import { latestVersionFileName, latestVersion } from '../index'
+import { latestVersion } from '../index'
 
 // latest list of items from the reports from Arcensoth
 const VERSION_FILE = 'https://github.com/Arcensoth/mcdata/raw/master/VERSION.txt'
@@ -15,13 +15,15 @@ const main = async () => {
 
   const { values: allItems }: { values: string[] } = await (await fetch(ITEMS_FILE)).json()
 
-  const latest: TexturesType = (await import(`../textures/${latestVersionFileName}.ts`)).default
+  const latest: TexturesType = (await import(`../textures/${latestVersion}.ts`)).default
   const ids = latest.items.map(i => i.id)
 
   // compare files and exclude air
   const diff = allItems.filter(v => !ids.includes(v) && v !== 'minecraft:air')
+
+  console.log(`Found ${diff.length} missing items.`)
   
-  writeFileSync('./missing.json', JSON.stringify(diff, null, 2))
+  write('./missing.json', JSON.stringify(diff, null, 2))
 }
 
 main()

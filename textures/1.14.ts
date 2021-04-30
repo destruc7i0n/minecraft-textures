@@ -2,7 +2,7 @@
 import type { TexturesType } from '../lib/types'
 import { updatePropertiesOfItems } from '../lib/util'
 
-import Prev from './113'
+import Prev from './1.13'
 
 const PrevItems = updatePropertiesOfItems({
   'minecraft:stone_slab': {

@@ -2,7 +2,7 @@
 import type { TexturesType } from '../lib/types'
 import { updatePropertiesOfItems } from '../lib/util'
 
-import Prev from './116'
+import Prev from './1.16'
 
 const PrevItems = updatePropertiesOfItems({
   'minecraft:grass_path': {

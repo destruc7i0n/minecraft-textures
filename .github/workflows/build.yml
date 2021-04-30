@@ -32,7 +32,6 @@ jobs:
         yarn list-missing
         missing=$(jq -r '. | length' missing.json)
         if [ $missing -gt 0 ]; then
-          echo "Found $missing missing items."
           jq '.' missing.json
         fi
     - name: Generate debug outputs

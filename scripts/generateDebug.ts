@@ -1,8 +1,8 @@
-import { writeFileSync, existsSync, mkdirSync } from 'fs'
+import { writeFileSync as write, existsSync as exists, mkdirSync as mkdir } from 'fs'
 
 import type { TexturesType } from '../lib/types'
 
-import { versions, textures } from '../index'
+import { versions } from '../index'
 
 const oneLine = (string: string) => string.split('\n').map(s => s.trim()).join('')
 
@@ -10,13 +10,12 @@ const oneLine = (string: string) => string.split('\n').map(s => s.trim()).join('
 const main = async () => {
   const file = process.argv[2] ?? 'all'
 
-  if (!existsSync('./debug')) mkdirSync('./debug')
+  if (!exists('./debug')) mkdir('./debug')
 
-  for (let versionId of versions) {
-    const fileName = textures[versionId]
-    if (file !== 'all' && fileName !== file) continue
+  for (let version of versions) {
+    if (file !== 'all' && version !== file) continue
 
-    const contents: TexturesType = (await import(`../textures/${fileName}`)).default
+    const contents: TexturesType = (await import(`../textures/${version}`)).default
 
     const output = contents.items
       .reduce((acc, item) => acc + `<img src="${item.texture}" alt="${item.readable}" title="${item.readable} (${item.id})" />`, '')
@@ -29,7 +28,7 @@ const main = async () => {
           </style>
         </head>
         <body>
-          <span>File: ${versionId}, Items Count: ${contents.items.length}</span>
+          <span>Version: ${version}, Items Count: ${contents.items.length}</span>
           <div style="display:flex;flex-wrap:wrap;">
             ${output}
           </div>
@@ -37,7 +36,7 @@ const main = async () => {
       </html>
     `)
 
-    writeFileSync(`./debug/debug-${fileName}.html`, html)
+    write(`./debug/debug-${version}.html`, html)
   }
 }
 
