@@ -17,6 +17,14 @@ jobs:
       run: yarn install
     - name: Build distribution files
       run: yarn dist
+    - name: Generate debug outputs
+      run: |
+        yarn debug all
+    - name: Upload debug outputs
+      uses: actions/upload-artifact@v2
+      with:
+        name: debug-output
+        path: debug
     - name: Check for duplicates
       run: |
         # check for dupes in the latest file
@@ -33,15 +41,8 @@ jobs:
         missing=$(jq -r '. | length' missing.json)
         if [ $missing -gt 0 ]; then
           jq '.' missing.json
+          exit 1
         fi
-    - name: Generate debug outputs
-      run: |
-        yarn debug all
-    - name: Upload debug outputs
-      uses: actions/upload-artifact@v2
-      with:
-        name: debug-output
-        path: debug
     - name: Upload built output
       uses: actions/upload-artifact@v2
       with:

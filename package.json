@@ -1,6 +1,6 @@
 {
   "name": "minecraft-textures",
-  "version": "1.17.0",
+  "version": "1.18.0",
   "description": "base64 encoded Minecraft assets",
   "main": "./dist/minecraft-textures.js",
   "repository": "https://github.com/destruc7i0n/minecraft-textures",
@@ -20,14 +20,14 @@
     "list-missing": "ts-node --project ./tsconfig.dev.json ./scripts/listMissing.ts"
   },
   "devDependencies": {
-    "@types/node": "^15.0.1",
-    "@types/node-fetch": "^2.5.10",
-    "node-fetch": "^2.6.1",
-    "ts-loader": "^9.1.1",
-    "ts-node": "^9.1.1",
-    "tslib": "^2.2.0",
-    "typescript": "^4.2.4",
-    "webpack": "^5.36.2",
-    "webpack-cli": "^4.6.0"
+    "@types/node": "^16.11.11",
+    "@types/node-fetch": "2",
+    "node-fetch": "2",
+    "ts-loader": "^9.2.6",
+    "ts-node": "^10.4.0",
+    "tslib": "^2.3.1",
+    "typescript": "^4.5.2",
+    "webpack": "^5.64.4",
+    "webpack-cli": "^4.9.1"
   }
 }

@@ -8,12 +8,16 @@ import { latestVersion } from '../index'
 const VERSION_FILE = 'https://github.com/Arcensoth/mcdata/raw/master/VERSION.txt'
 const ITEMS_FILE = 'https://github.com/Arcensoth/mcdata/raw/master/processed/reports/registries/item/data.json'
 
+interface Registry {
+  values: string[]
+}
+
 // lists all the missing items, probably from a new version
 const main = async () => {
   const remoteLatestVersion = await (await fetch(VERSION_FILE)).text()
   console.log(`Comparing (local) items from ${latestVersion} to (remote) ${remoteLatestVersion}`)
 
-  const { values: allItems }: { values: string[] } = await (await fetch(ITEMS_FILE)).json()
+  const { values: allItems } = await (await fetch(ITEMS_FILE)).json() as Registry
 
   const latest: TexturesType = (await import(`../textures/${latestVersion}.ts`)).default
   const ids = latest.items.map(i => i.id)
