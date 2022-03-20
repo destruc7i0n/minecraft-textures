@@ -6,11 +6,7 @@ import { Item } from './types'
 */
 
 interface Updates {
-  [id: string]: {
-    id: string
-    readable: string
-    texture?: string
-  }
+  [id: string]: Partial<Item>
 }
 
 export const updatePropertiesOfItems = (updates: Updates = {}, items: Item[]) => {

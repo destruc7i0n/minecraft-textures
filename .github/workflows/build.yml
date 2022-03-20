@@ -25,7 +25,7 @@ jobs:
       with:
         name: debug-output
         path: debug
-    - name: Check for duplicates
+    - name: Check for duplicates in ID
       run: |
         # check for dupes in the latest file
         cd dist/textures/json
@@ -34,6 +34,12 @@ jobs:
           echo "Found $dupes duplicate items." 
           exit 1
         fi 
+        cd ../../..
+    - name: List duplicate textures
+      run: |
+        cd dist/textures/json
+        # most are expected. this is just for debug mostly
+        jq -r '.items | map({id: .id, t: .texture}) | group_by(.t) | map(select(length > 1))' $(ls | sort -r | head -1)
         cd ../../..
     - name: List missing items
       run: |

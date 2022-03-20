@@ -12,25 +12,54 @@ const main = async () => {
 
   if (!exists('./debug')) mkdir('./debug')
 
-  for (let version of versions) {
+  for (const version of versions) {
     if (file !== 'all' && version !== file) continue
 
     const contents: TexturesType = (await import(`../textures/${version}`)).default
 
-    const output = contents.items
+    const palette = contents.items
       .reduce((acc, item) => acc + `<img src="${item.texture}" alt="${item.readable}" title="${item.readable} (${item.id})" />`, '')
+
+    const table = `
+      <table>
+        <tr>
+          <th>Name</th>
+          <th>ID</th>
+          <th>Image</th>
+        </tr>
+        ${contents.items.map(item => `
+          <tr>
+            <td>${item.readable}</td>
+            <td>${item.id}</td>
+            <td><img src="${item.texture}" alt="${item.readable}" title="${item.readable} (${item.id})" /></td>
+          </tr>
+        `).join('')}
+      </table>
+    `
   
     const html = oneLine(`
       <html>
         <head>
+          <title>Debug</title>
           <style>
-            body { max-width: ${32 * 16}px; }
+            table, th, td {
+              border: 1px solid black;
+              border-collapse: collapse;
+            }
           </style>
         </head>
         <body>
           <span>Version: ${version}, Items Count: ${contents.items.length}</span>
-          <div style="display:flex;flex-wrap:wrap;">
-            ${output}
+          <details>
+            <summary>Palette</summary>
+            <div style="max-width: ${32 * 16}px;display:flex;flex-wrap:wrap;">
+              ${palette}
+            </div>
+          </details>
+          <details>
+            <summary>Table</summary>
+            ${table}
+          </details>
           </div>
         </body>
       </html>

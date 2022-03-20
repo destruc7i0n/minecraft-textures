@@ -15,7 +15,7 @@
     "dist": "yarn clean && yarn build",
     "build": "webpack && yarn json",
     "clean": "rm -rf ./dist",
-    "json": "ts-node --project ./tsconfig.dev.json ./lib/toJson.ts",
+    "json": "ts-node --project ./tsconfig.dev.json ./scripts/generateJson.ts",
     "debug": "ts-node --project ./tsconfig.dev.json ./scripts/generateDebug.ts",
     "list-missing": "ts-node --project ./tsconfig.dev.json ./scripts/listMissing.ts"
   },
