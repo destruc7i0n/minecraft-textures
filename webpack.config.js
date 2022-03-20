@@ -24,6 +24,7 @@ module.exports = {
     },
     library: 'minecraft-textures',
     libraryTarget: 'umd',
+    globalObject: 'this',
   },
   module: {
     rules: [
