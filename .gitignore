@@ -60,10 +60,6 @@ dist
 # dotenv environment variables file
 .env
 
-# ide
-.vscode
-.idea
-
 .DS_Store
 
 debug/

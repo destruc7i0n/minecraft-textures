@@ -1,4 +1,4 @@
-import { Item } from './types'
+import { Item } from './types';
 /*
 'id_in_previous-file': {
   ...'data_to_overwrite_to'...
@@ -6,21 +6,24 @@ import { Item } from './types'
 */
 
 interface Updates {
-  [id: string]: Partial<Item>
+  [id: string]: Partial<Item>;
 }
 
-export const updatePropertiesOfItems = (updates: Updates = {}, items: Item[]) => {
-  const ids = Object.keys(updates)
+export const updatePropertiesOfItems = (
+  updates: Updates = {},
+  items: Item[]
+) => {
+  const ids = Object.keys(updates);
   for (let i = 0; i < items.length; i++) {
-    const item = items[i]
-    const { id: itemId } = item
+    const item = items[i];
+    const { id: itemId } = item;
     if (itemId && ids.indexOf(itemId) !== -1) {
       // update the object with the updated data
       items[i] = {
         ...items[i],
-        ...updates[itemId]
-      }
+        ...updates[itemId],
+      };
     }
   }
-  return items
-}
+  return items;
+};
