@@ -10,7 +10,7 @@ export const textures = [
   '1.19',
 ];
 
-export const versions = textures; // reverse compatibility, removed next version!
+export const versions = textures;
 export const latestVersion = textures[textures.length - 1];
 
 const hasVersion = (version: string) => Object.keys(textures).includes(version);
