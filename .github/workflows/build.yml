@@ -4,53 +4,86 @@ on:
   workflow_dispatch: {}
   push: {}
 
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: build
+  cancel-in-progress: true
+
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2
-    - uses: actions/setup-node@v2
-      with:
-        node-version: '14.x'
-    - name: Install packages
-      run: yarn install
-    - name: Build distribution files
-      run: yarn dist
-    - name: Generate debug outputs
-      run: |
-        yarn debug all
-    - name: Upload debug outputs
-      uses: actions/upload-artifact@v2
-      with:
-        name: debug-output
-        path: debug
-    - name: Check for duplicates in ID
-      run: |
-        # check for dupes in the latest file
-        cd dist/textures/json
-        dupes=$(jq -r '(.items | map(.id) | group_by(.)) | map(select(length>1) | .[0]) | length' $(ls | sort -r | head -1))
-        if [ $dupes -gt 0 ]; then
-          echo "Found $dupes duplicate items." 
-          exit 1
-        fi 
-        cd ../../..
-    - name: List duplicate textures
-      run: |
-        cd dist/textures/json
-        # most are expected. this is just for debug mostly
-        jq -r '.items | map({id: .id, t: .texture}) | group_by(.t) | map(select(length > 1))' $(ls | sort -r | head -1)
-        cd ../../..
-    - name: List missing items
-      run: |
-        yarn list-missing
-        missing=$(jq -r '. | length' missing.json)
-        if [ $missing -gt 0 ]; then
-          jq '.' missing.json
-          exit 1
-        fi
-    - name: Upload built output
-      uses: actions/upload-artifact@v2
-      with:
-        name: dist
-        path: dist
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '16.x'
+      - name: Install packages
+        run: yarn install
+      - name: Build distribution files
+        run: yarn dist
+      - name: Generate debug outputs
+        run: |
+          yarn debug all
+      - name: Upload debug outputs
+        uses: actions/upload-artifact@v2
+        with:
+          name: debug-output
+          path: debug
+      - name: Check for duplicates in ID
+        run: |
+          # check for dupes in the latest file
+          cd dist/textures/json
+          dupes=$(jq -r '(.items | map(.id) | group_by(.)) | map(select(length>1) | .[0]) | length' $(ls | sort -r | head -1))
+          if [ $dupes -gt 0 ]; then
+            echo "Found $dupes duplicate items." 
+            exit 1
+          fi 
+          cd ../../..
+      - name: List duplicate textures
+        run: |
+          cd dist/textures/json
+          # most are expected. this is just for debug mostly
+          jq -r '.items | map({id: .id, t: .texture}) | group_by(.t) | map(select(length > 1))' $(ls | sort -r | head -1)
+          cd ../../..
+      - name: List missing items
+        run: |
+          yarn list-missing
+          missing=$(jq -r '. | length' missing.json)
+          if [ $missing -gt 0 ]; then
+            jq '.' missing.json
+            exit 1
+          fi
+      - name: Upload built output
+        uses: actions/upload-artifact@v2
+        with:
+          name: dist
+          path: dist
+
+  pages:
+    if: github.ref == 'refs/heads/master'
+    needs: build
+    runs-on: ubuntu-latest
+
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/configure-pages@v2
+      - uses: actions/download-artifact@v3
+        with:
+          name: debug-output
+          path: debug
+      - name: Upload artifact to GitHub Pages
+        uses: actions/upload-pages-artifact@v1
+        with:
+          path: debug
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v1

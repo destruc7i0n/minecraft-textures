@@ -7,6 +7,7 @@ import {
 import type { TexturesType } from '../lib/types';
 
 import { versions } from '../index';
+import { headers } from '../lib/constants';
 
 const oneLine = (string: string) =>
   string
@@ -69,6 +70,11 @@ const main = async () => {
           <span>
             Version: ${version}, Items Count: ${contents.items.length}
           </span>
+          <br />
+          <span>
+            ${headers.comment}
+          </span>
+          <br /><br />
           <details>
             <summary>Palette</summary>
             <div style="max-width: ${32 * 16}px;display:flex;flex-wrap:wrap;">
