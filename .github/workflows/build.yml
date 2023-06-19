@@ -53,11 +53,9 @@ jobs:
       - name: List missing items
         run: |
           yarn list-missing
-          missing=$(jq -r '. | length' missing.json)
-          if [ $missing -gt 0 ]; then
-            jq '.' missing.json
-            exit 1
-          fi
+      - name: Validate translations
+        run: |
+          yarn validate-translations
       - name: Upload built output
         uses: actions/upload-artifact@v3
         with:
