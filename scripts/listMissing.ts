@@ -35,7 +35,6 @@ const main = async () => {
     // basic readable name from the id, needs to be verified
     const fallbackReadable =
       id
-        .replace('minecraft:', '')
         .split('_')
         .map((w) => w.charAt(0).toUpperCase() + w.slice(1)) // make first letter uppercase
         .join(' ') + ' [verify]';
@@ -52,8 +51,8 @@ const main = async () => {
     }
 
     texturesBootstrap.push({
-      id,
       readable: translationData?.readable ?? fallbackReadable,
+      id: `minecraft:${id}`,
       texture,
     });
   }
