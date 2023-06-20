@@ -8,7 +8,9 @@ import { ItemTextures } from './lib/item-textures';
 
 // lists all the missing items, probably from a new version
 const main = async () => {
-  const remoteLatestVersion = (await (await fetch(VERSION_FILE)).json()).id;
+  const remoteLatestVersion = (
+    (await (await fetch(VERSION_FILE)).json()) as { id: string }
+  ).id;
   console.log(
     `Comparing (local) items from ${latestVersion} to (remote) ${remoteLatestVersion}`
   );
