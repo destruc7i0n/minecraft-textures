@@ -13,7 +13,7 @@ class ItemTextures {
   public async initialize(): Promise<void> {
     if (!this.uvMap) {
       const response = await fetch(ITEM_UVMAP_FILE);
-      this.uvMap = await response.json();
+      this.uvMap = (await response.json()) as UVMap;
     }
     if (!this.atlas) {
       this.atlas = await loadImage(ITEM_ATLAS_FILE);
