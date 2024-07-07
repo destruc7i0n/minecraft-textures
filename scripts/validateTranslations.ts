@@ -20,6 +20,10 @@ const main = async () => {
 
     if (translation !== item.readable) {
       if (translation === 'Music Disc') continue; // we want music discs to have their song in the name
+      if (translation === 'Banner Pattern') continue;
+      if (translation === 'Disc Fragment') continue;
+      if (translation === 'Smithing Template') continue;
+
       invalid[item.id] = {
         current: item.readable,
         expected: translation,

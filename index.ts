@@ -1,4 +1,4 @@
-/* TheDestruc7i0n 2022 */
+/* TheDestruc7i0n 2024 */
 export const textures = [
   '1.12',
   '1.13',
@@ -9,6 +9,7 @@ export const textures = [
   '1.18',
   '1.19',
   '1.20',
+  '1.21',
 ];
 
 export const versions = textures;

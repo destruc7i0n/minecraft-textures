@@ -23,44 +23,55 @@ const main = async () => {
 
   // compare files and exclude air
   const diff = allItems.filter((v) => !ids.includes(v) && v !== 'air');
+  const removed = ids.filter((v) => !allItems.includes(v) && v !== 'air');
+  const dupes = ids.filter((v, i) => ids.indexOf(v) !== i);
 
   let missingCount = diff.length;
 
-  console.log(`Found ${diff.length} missing items.`);
-  if (diff.length === 0) return;
+  if (diff.length > 0) {
+    const itemTextures = new ItemTextures();
+    await itemTextures.initialize();
 
-  const itemTextures = new ItemTextures();
-  await itemTextures.initialize();
+    const texturesBootstrap: Partial<Item>[] = [];
+    for (const id of diff) {
+      // basic readable name from the id, needs to be verified
+      const fallbackReadable =
+        id
+          .split('_')
+          .map((w) => w.charAt(0).toUpperCase() + w.slice(1)) // make first letter uppercase
+          .join(' ') + ' [verify]';
 
-  const texturesBootstrap: Partial<Item>[] = [];
-  for (const id of diff) {
-    // basic readable name from the id, needs to be verified
-    const fallbackReadable =
-      id
-        .split('_')
-        .map((w) => w.charAt(0).toUpperCase() + w.slice(1)) // make first letter uppercase
-        .join(' ') + ' [verify]';
+      let texture = '';
 
-    let texture = '';
+      const translationData = await getTranslationFromId(id);
 
-    const translationData = await getTranslationFromId(id);
+      const textureBuffer = await itemTextures.getImageBufferById(`item/${id}`);
+      if (textureBuffer) {
+        console.log(`Found texture for ${id}`);
+        texture = `data:image/png;base64,${textureBuffer.toString('base64')}`;
+        missingCount--;
+      }
 
-    const textureBuffer = await itemTextures.getImageBufferById(`item/${id}`);
-    if (textureBuffer) {
-      console.log(`Found texture for ${id}`);
-      texture = `data:image/png;base64,${textureBuffer.toString('base64')}`;
-      missingCount--;
+      texturesBootstrap.push({
+        readable: translationData?.readable ?? fallbackReadable,
+        id: `minecraft:${id}`,
+        texture,
+      });
     }
 
-    texturesBootstrap.push({
-      readable: translationData?.readable ?? fallbackReadable,
-      id: `minecraft:${id}`,
-      texture,
-    });
+    console.log(`There are ${missingCount} missing textures.`);
+    console.log(JSON.stringify(texturesBootstrap, null, 2));
   }
 
-  console.log(JSON.stringify(texturesBootstrap, null, 2));
-  console.log(`There are ${missingCount} missing textures left.`);
+  if (removed.length > 0) {
+    console.log(`There are ${removed.length} removed items.`);
+    console.log(JSON.stringify(removed, null, 2));
+  }
+
+  if (dupes.length > 0) {
+    console.log(`There are ${dupes.length} duplicate items.`);
+    console.log(JSON.stringify(dupes, null, 2));
+  }
 };
 
 main();
