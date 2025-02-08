@@ -13,7 +13,7 @@
   ],
   "scripts": {
     "dist": "bun run clean && bun run build",
-    "build": "bun run ./bun.config.ts && bun run json && bun run build:declaration",
+    "build": "bun run ./build.ts && bun run json && bun run build:declaration",
     "build:declaration": "tsc --emitDeclarationOnly --project tsconfig.types.json",
     "clean": "rm -rf ./dist",
     "json": "bun run ./scripts/generateJson.ts",
