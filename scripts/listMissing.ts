@@ -75,13 +75,13 @@ const main = async () => {
               header: true,
             },
             {
-              data: 'Display Name',
+              data: 'Readable',
               header: true,
             },
           ],
           ...texturesBootstrap.map((t) => [
             {
-              data: t.id ?? 'unknown',
+              data: t.id ? `\`${t.id}\`` : 'unknown',
             },
             { data: t.readable ?? 'unknown' },
           ]),
