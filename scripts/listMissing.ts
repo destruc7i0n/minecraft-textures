@@ -81,7 +81,7 @@ const main = async () => {
           ],
           ...texturesBootstrap.map((t) => [
             {
-              data: t.id ? `\`${t.id}\`` : 'unknown',
+              data: t.id ? `<pre><code>${t.id}</code></pre>` : 'unknown',
             },
             { data: t.readable ?? 'unknown' },
           ]),
