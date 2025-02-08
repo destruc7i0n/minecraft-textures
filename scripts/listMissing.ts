@@ -65,6 +65,28 @@ const main = async () => {
 
     if (process.env.GITHUB_ACTIONS) {
       core.error(message);
+
+      core.summary
+        .addHeading('Missing Items', 1)
+        .addTable([
+          [
+            {
+              data: 'ID',
+              header: true,
+            },
+            {
+              data: 'Display Name',
+              header: true,
+            },
+          ],
+          ...texturesBootstrap.map((t) => [
+            {
+              data: t.id ?? 'unknown',
+            },
+            { data: t.readable ?? 'unknown' },
+          ]),
+        ])
+        .write();
     }
   }
 
