@@ -1,3 +1,5 @@
+import * as core from '@actions/core';
+
 import type { TexturesType } from '../lib/types';
 import { latestVersion } from '../index';
 import { getTranslationFromId } from './lib/translations';
@@ -33,15 +35,18 @@ const main = async () => {
 
   const invalidCount = Object.keys(invalid).length;
   if (invalidCount === 0) {
-    console.log('No invalid translations found.');
     return;
   }
-  console.log(`Found ${invalidCount} invalid translations.`);
+
+  const message = `Found ${invalidCount} invalid translations.`;
+  console.log(message);
   console.log(JSON.stringify(invalid, null, 2));
 
-  if (invalidCount > 0) {
-    process.exit(1);
+  if (process.env.GITHUB_ACTIONS) {
+    core.error(message);
   }
+
+  process.exit(1);
 };
 
 main();

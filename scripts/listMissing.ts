@@ -1,3 +1,5 @@
+import * as core from '@actions/core';
+
 import type { Item, TexturesType } from '../lib/types';
 import { latestVersion } from '../index';
 import { ITEMS_FILE, VERSION_FILE } from './lib/mcmeta';
@@ -57,8 +59,13 @@ const main = async () => {
       });
     }
 
-    console.log(`There are ${missingCount} missing textures.`);
+    const message = `There are ${missingCount} missing textures.`;
+    console.log(message);
     console.log(JSON.stringify(texturesBootstrap, null, 2));
+
+    if (process.env.GITHUB_ACTIONS) {
+      core.error(message);
+    }
   }
 
   if (removed.length > 0) {

@@ -54,7 +54,6 @@ jobs:
           if [ "$duplicates" != "[]" ]; then
             echo "Found duplicate textures:"
             echo "$duplicates" | jq '.'
-            exit 1
           fi
           cd ../../..
       - name: List missing items

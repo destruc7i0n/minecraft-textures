@@ -1,3 +1,5 @@
+import * as core from '@actions/core';
+
 import { createCanvas, loadImage, type Image } from 'canvas';
 
 import type { TexturesType, Item } from '../lib/types';
@@ -46,15 +48,21 @@ const main = async () => {
     }
   }
 
-  console.log(`Found ${invalidImages.length} invalid images.`);
   if (invalidImages.length) {
+    const message = `Found ${invalidImages.length} invalid images.`;
+    console.log(message);
     console.log(JSON.stringify(invalidImages, null, 2));
+    if (process.env.GITHUB_ACTIONS) {
+      core.error(message);
+    }
   }
-  console.log(
-    `Found ${invalidDimensions.length} images not ${expectedDimension}x${expectedDimension}.`
-  );
   if (invalidDimensions.length) {
+    const message = `Found ${invalidDimensions.length} images not ${expectedDimension}x${expectedDimension}.`;
+    console.log(message);
     console.log(JSON.stringify(resizedImages, null, 2));
+    if (process.env.GITHUB_ACTIONS) {
+      core.warning(message);
+    }
   }
 
   if (invalidImages.length > 0 || invalidDimensions.length > 0) {

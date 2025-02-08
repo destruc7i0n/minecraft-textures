@@ -5,6 +5,8 @@ import {
 } from 'fs';
 import { resolve } from 'path';
 
+import * as core from '@actions/core';
+
 import { versions } from '../';
 import { SEARCH_ITEMS_ORDERING } from './lib/search-items-ordering';
 import type { TexturesType, TexturesTypeById, Item } from '../lib/types';
@@ -19,6 +21,8 @@ const main = async () => {
   //   versions,
   //   latest: latestVersion,
   // }, null, 2))
+
+  const countByVersion: Record<string, number> = {};
 
   for (const version of versions) {
     console.log(`Generating json for ${version}`);
@@ -58,6 +62,8 @@ const main = async () => {
       textures.items = searchItemsOrder;
     }
 
+    countByVersion[version] = textures.items.length;
+
     // sequential array
     write(
       `./dist/textures/json/${version}.json`,
@@ -79,6 +85,22 @@ const main = async () => {
       `./dist/textures/json/${version}.id.json`,
       JSON.stringify(byId, null, 2)
     );
+  }
+
+  if (process.env.GITHUB_ACTIONS) {
+    core.summary
+      .addHeading('Items', 1)
+      .addTable([
+        [
+          { data: 'Version', header: true },
+          { data: 'Count', header: true },
+        ],
+        ...Object.entries(countByVersion).map(([version, count]) => [
+          { data: version },
+          { data: `${count} items` },
+        ]),
+      ])
+      .write();
   }
 };
 

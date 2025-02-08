@@ -23,6 +23,7 @@
     "validate-image-dimensions": "bun run ./scripts/validateImageDimensions.ts"
   },
   "devDependencies": {
+    "@actions/core": "^1.11.1",
     "@types/bun": "latest",
     "canvas": "^3.1.0",
     "typescript": "^5.7.3"
