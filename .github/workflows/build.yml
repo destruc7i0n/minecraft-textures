@@ -16,6 +16,7 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
+    continue-on-error: true
 
     steps:
       - uses: actions/checkout@v4
@@ -45,21 +46,31 @@ jobs:
           fi 
           cd ../../..
       - name: List duplicate textures
+        if: always()
         run: |
           cd dist/textures/json
           # most are expected. this is just for debug mostly
-          jq -r '.items | map({id: .id, t: .texture}) | group_by(.t) | map(select(length > 1))' $(ls | sort -r | head -1)
+          duplicates=$(jq -r '.items | map({id: .id, t: .texture}) | group_by(.t) | map(select(length > 1))' $(ls | sort -r | head -1))
+          if [ "$duplicates" != "[]" ]; then
+            echo "Found duplicate textures:"
+            echo "$duplicates" | jq '.'
+            exit 1
+          fi
           cd ../../..
       - name: List missing items
+        if: always()
         run: |
           bun run list-missing
       - name: Validate translations
+        if: always()
         run: |
           bun run validate-translations
       - name: Validate image dimensions
+        if: always()
         run: |
           bun run validate-image-dimensions
       - name: Upload built output
+        if: always()
         uses: actions/upload-artifact@v4
         with:
           name: dist

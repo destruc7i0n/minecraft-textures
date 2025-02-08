@@ -56,6 +56,10 @@ const main = async () => {
   if (invalidDimensions.length) {
     console.log(JSON.stringify(resizedImages, null, 2));
   }
+
+  if (invalidImages.length > 0 || invalidDimensions.length > 0) {
+    process.exit(1);
+  }
 };
 
 main();

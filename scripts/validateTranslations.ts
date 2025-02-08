@@ -38,6 +38,10 @@ const main = async () => {
   }
   console.log(`Found ${invalidCount} invalid translations.`);
   console.log(JSON.stringify(invalid, null, 2));
+
+  if (invalidCount > 0) {
+    process.exit(1);
+  }
 };
 
 main();

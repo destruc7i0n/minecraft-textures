@@ -70,6 +70,10 @@ const main = async () => {
     console.log(`There are ${dupes.length} duplicate items.`);
     console.log(JSON.stringify(dupes, null, 2));
   }
+
+  if (dupes.length > 0 || missingCount > 0) {
+    process.exit(1);
+  }
 };
 
 main();
