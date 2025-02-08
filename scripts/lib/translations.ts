@@ -1,5 +1,3 @@
-import fetch from 'node-fetch';
-
 import { LANG_FILE } from './mcmeta';
 import { TextureType } from './types';
 

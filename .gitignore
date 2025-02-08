@@ -63,4 +63,5 @@ dist
 .DS_Store
 
 debug/
+private/
 missing.json

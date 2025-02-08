@@ -1,5 +1,3 @@
-import fetch from 'node-fetch';
-
 import type { Item, TexturesType } from '../lib/types';
 import { latestVersion } from '../index';
 import { ITEMS_FILE, VERSION_FILE } from './lib/mcmeta';

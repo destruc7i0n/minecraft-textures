@@ -10,7 +10,10 @@
     "module": "esnext",
     "importHelpers": true,
     "outDir": "dist/",
-    "declaration": true
+    "declaration": true,
+    "skipLibCheck": true,
+    "verbatimModuleSyntax": true,
+    "types": ["@types/bun"]
   },
   "include": ["index.ts"],
   "exclude": ["node_modules"]

@@ -1,5 +1,3 @@
-import fetch from 'node-fetch';
-
 import { createCanvas, loadImage, Canvas, Image } from 'canvas';
 import { ITEM_ATLAS_FILE, ITEM_UVMAP_FILE } from './mcmeta';
 import { IDMap, UVMap } from './types';

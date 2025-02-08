@@ -1,8 +1,8 @@
 # Minecraft Textures
 
-This is a library containing all the textures I use for my generators. **You're free to use it so long as you credit me** (see below).
+This is a library containing all the textures I use for my generators.
 
-There are textures from 1.12 to 1.20 currently available.
+Textures from 1.12 to 1.21 currently available.
 
 `npm install minecraft-textures`
 
@@ -10,15 +10,13 @@ There are textures from 1.12 to 1.20 currently available.
 
 ```js
 import hasVersion from 'minecraft-textures';
-const version = '1.16';
+const version = '1.21';
 if (hasVersion(version)) {
   const textures = await import(
     `minecraft-textures/dist/textures/json/${version}.json`
   );
 }
 ```
-
-You can also import the JSON files if you are using Node.js.
 
 ## Update Notes
 
@@ -38,7 +36,7 @@ You can also import the JSON files if you are using Node.js.
 
 ## License
 
-Please credit `destruc7i0n (https://thedestruc7i0n.ca)` if you use this.
+Please credit `destruc7i0n (https://thedestruc7i0n.ca)` if you use this. Its not required, but is appreciated.
 
 The Minecraft item icons are owned by Mojang Studios.
 

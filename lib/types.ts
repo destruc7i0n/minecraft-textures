@@ -18,3 +18,10 @@ export interface Item {
   id: string;
   texture: string;
 }
+
+export type Last<T extends readonly any[]> = T extends readonly [
+  ...any[],
+  infer L
+]
+  ? L
+  : never;

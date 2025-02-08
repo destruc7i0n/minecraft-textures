@@ -1,4 +1,6 @@
-/* TheDestruc7i0n 2024 */
+/* TheDestruc7i0n 2025 */
+import type { Last } from './lib/types';
+
 export const textures = [
   '1.12',
   '1.13',
@@ -10,13 +12,16 @@ export const textures = [
   '1.19',
   '1.20',
   '1.21',
-];
+  '1.21.2',
+  '1.21.4',
+] as const;
 
 export const versions = textures;
-export const latestVersion = textures[textures.length - 1];
+export const latestVersion: Last<typeof textures> = '1.21.4';
 
-const hasVersion = (version: string) => Object.keys(textures).includes(version);
+const hasVersion = (version: string) =>
+  textures.includes(version as (typeof textures)[number]);
 
-export * from './lib/types';
+export type { TexturesType, TexturesTypeById, Item } from './lib/types';
 
 export default hasVersion;

@@ -19,16 +19,16 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: oven-sh/setup-bun@v2
         with:
-          node-version: '16.x'
+          bun-version: '1.2'
       - name: Install packages
-        run: yarn install
+        run: bun install --frozen-lockfile
       - name: Build distribution files
-        run: yarn dist
+        run: bun run dist
       - name: Generate debug outputs
         run: |
-          yarn debug all
+          bun run debug all
       - name: Upload debug outputs
         uses: actions/upload-artifact@v4
         with:
@@ -52,10 +52,13 @@ jobs:
           cd ../../..
       - name: List missing items
         run: |
-          yarn list-missing
+          bun run list-missing
       - name: Validate translations
         run: |
-          yarn validate-translations
+          bun run validate-translations
+      - name: Validate image dimensions
+        run: |
+          bun run validate-image-dimensions
       - name: Upload built output
         uses: actions/upload-artifact@v4
         with:
