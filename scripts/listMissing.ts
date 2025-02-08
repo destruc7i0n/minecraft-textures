@@ -66,7 +66,7 @@ const main = async () => {
     if (process.env.GITHUB_ACTIONS) {
       core.error(message);
 
-      core.summary
+      await core.summary
         .addHeading('Missing Items', 1)
         .addTable([
           [

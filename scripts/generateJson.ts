@@ -88,7 +88,7 @@ const main = async () => {
   }
 
   if (process.env.GITHUB_ACTIONS) {
-    core.summary
+    await core.summary
       .addHeading('Generated JSON', 1)
       .addTable([
         [
