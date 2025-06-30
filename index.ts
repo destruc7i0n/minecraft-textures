@@ -14,10 +14,13 @@ export const textures = [
   '1.21',
   '1.21.2',
   '1.21.4',
+  '1.21.5',
+  '1.21.6',
+  // '1.21.7',
 ] as const;
 
 export const versions = textures;
-export const latestVersion: Last<typeof textures> = '1.21.4';
+export const latestVersion: Last<typeof textures> = '1.21.6';
 
 const hasVersion = (version: string) =>
   textures.includes(version as (typeof textures)[number]);
