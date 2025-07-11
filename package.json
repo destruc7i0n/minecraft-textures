@@ -1,6 +1,6 @@
 {
   "name": "minecraft-textures",
-  "version": "1.21.4",
+  "version": "1.21.7",
   "description": "base64 encoded Minecraft assets",
   "main": "./dist/minecraft-textures.js",
   "repository": "https://github.com/destruc7i0n/minecraft-textures",
@@ -25,8 +25,8 @@
   "devDependencies": {
     "@actions/core": "^1.11.1",
     "@types/bun": "latest",
-    "canvas": "^3.1.0",
-    "typescript": "^5.7.3"
+    "canvas": "^3.1.2",
+    "typescript": "^5.8.3"
   },
   "dependencies": {}
 }
