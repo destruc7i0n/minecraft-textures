@@ -64,4 +64,5 @@ dist
 
 debug/
 private/
+tmp/
 missing.json

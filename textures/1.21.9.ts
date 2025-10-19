@@ -1,0 +1,457 @@
+// 1.21.9 textures
+import { updatePropertiesOfItems } from '../lib/util';
+import { headers } from '../lib/constants';
+import type { TexturesType } from '../lib/types';
+
+import Prev from './1.21.7';
+
+const PrevItems = updatePropertiesOfItems(
+  {
+    'minecraft:chain': {
+      readable: 'Iron Chain',
+      id: 'minecraft:iron_chain',
+    },
+  },
+  Prev.items
+);
+
+const Textures: TexturesType = {
+  ...headers,
+  'items': [
+    ...PrevItems,
+    {
+      'readable': 'Acacia Shelf',
+      'id': 'minecraft:acacia_shelf',
+      'texture':
+        'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAC9UExURQAAAEgmGEcmGbBaOrNfPUYlGEMkF7thPsJiP7FePKBYNj8jFj4jFmA4I34/KWo6JXI8JmY5JG07JlgxHWU4I141IXQ+KLZfPXA7JnA9J0kmGKRdPJ1XNmg6JadcOkQlF2M5I2w6JWU5I2c4JHI9J3I6JnE8Jp1YN7BcO0omGaJXN0IkF0YlF0UkF0YmGLZePblfPkMjF6BZOKRaOZRXNkomGEsnGTEcEEYkFysXDEQkFzYeEjsjFjogFE0nGUrqVwsAAAABdFJOUwBA5thmAAABHklEQVR42s2T23KCMBRFoQkqAoLQSqu9328qGkDgnOT/P6tB4IUE3zrjfuBlrTM7M3swzjT2dJqewMSWWa1uhzAZT0gcx8uRFk8okZncmw9L0GBJKZWfLDMBVGFPZbZbWuwyAOT9ivSDsc8kSYpdAVBVwuzfe+8sZWxTNFjwi75wGb2+4e+mwch1QhQhAEchilIr+FeeC7y+zktEVIR5sJi5P6Yoh4Sn4KZ0ORatoFY8Bn7JW0H7Bu8o8FoQB+SMpf03+HcldgKl+wp7gu8HR0FeE0Isq4J+RScQSvIvC0AVwgPnfDwmVpbXY6FOsG0iLEs/1jwM0+n3WohmDUPJc3Q9c0brDqt5kWM59VgdVivasYzBLGSFaZyM8z//4R+/LDbvr/hBqwAAAABJRU5ErkJggg==',
+    },
+    {
+      'readable': 'Bamboo Shelf',
+      'id': 'minecraft:bamboo_shelf',
+      'texture':
+        'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAABXUExURQAAAOzWfeDKadbAXdC5T8CzTcavTLWpSLmmS5mLUZeFQJKDRI59OYt8PId4M3x0MoBxMXVuL2xhLVpRKlZNJVNKIE1IH09GHkhEHUpCHkM8HDw1GjkyFz5atpUAAAABdFJOUwBA5thmAAAA/UlEQVR42s3T0ZKDIAwFUDZI6oJ1tQQTQ///Oxe644tg33ameb0nQ8Y7mg8di+jfxN45AMTpats69OMIMXVj9DgCDJb3LkBrh8GPKMRKLRi8H+s6s0jKRKf45uALpgmZmCJLjuf9NcBtAN5ZiFmztuC+LBJZmVOJpQU/FRCr7Mp9EJZVqGSqWwHSA48tcswVSBfMz020AKmgd+T81AqkANUuqE9TAVwAwK19IksFqpy9H5pPHcL9AGiB9was3yGLKmX006ssPoN5rbc5Z//KakEowDnfK+s4ckKXjrKM6YBli6mWdcRNmwW8yjLmAqxbLctczvwQSubtyP/8h7/o4RnTlGqeAgAAAABJRU5ErkJggg==',
+    },
+    {
+      'readable': 'Birch Shelf',
+      'id': 'minecraft:birch_shelf',
+      'texture':
+        'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAC9UExURQAAAFBIMFNNNUpCLkY8Jj43JkE6KTUrHk1ELVFJMVJKM09GL8KqcTgxIMu2fMy6fsiyec++grigaMSuddDChc27f826fs68gMGqcVBHMMW0fUpAKc/AhMi0eklCLrSbZMWvdcm0esawdq+WX3pqRod+V09HMMmzeXtuSXZsS7ykbIV5U3NnRH9xTLOeaX5uSYd8VnVlQUg+KHdoQ4J0TmpfQnRnRHdsSnFhPlFKMlFKM7imc1JLM1NMNEg/KkneTk0AAAABdFJOUwBA5thmAAABM0lEQVR42s3Tx3KDMBQFUCQ9PWQj01zj9N4cV4qwgP//rIjJxAsE3mUmd3vP0+aOnH+a68Xi9kwdRNFkovVjTz31ZTgxQEBnHQa+SegTIrCjns9mYXh/JwkhgDaIpZzPo+ihPBKAuhatWuvxq14ur4goj8AYJe17tdHrj5iY66JilPKBBdIkAUEQWEkJchtkaaoAsa5pNXANGLZB/q4yQPAocs9FRAtkq2Rb35DS7QO71cZlHJvnhQG8ssGny0+A2yB/awAfmvJihHw81m3wdXDxF0gZC2YB1YDKXIczXzBrrCzJf4AfSDEQgBZ4Oow451JOCyGasfYtoA4GRFFAj8VL51gGrBex51GoSkapY2WX5s9w6SGwqiROR/LTWIXTGZWrbI9gHu9NsmWMOGcDf/MPvwEz7h9VAPaD0QAAAABJRU5ErkJggg==',
+    },
+    {
+      'readable': 'Cherry Shelf',
+      'id': 'minecraft:cherry_shelf',
+      'texture':
+        'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAABOUExURQAAAMuDfpBsZ4FQToNVUodYWolcXotfYo1hZT4kI0QoJ00tLE8xMFc8PlY6PFU4OlE1M1lCQFM2OI9kacd8eNyaos+Hi9ONkdaSl9mWnGtYnI8AAAABdFJOUwBA5thmAAABCUlEQVR42s2TzXLDIAyETSBgol/cxkjv/6KN4+nF2Ll1pjvDaT+ExI6mfyoPIXyy7SX37ws7uHc366Kntln3vgZjFjwr7m7m9mRkWdrJbduAJxGrEvPx7WDdendBItS2HP0p5nXtq6ooS2sLyBFIMWUUFVQhQjgBbiUiMrUmVBGAjsD9Xm7amAlBKiKOQM6zLsL1Ckj5qy6AW/nXQRiAWOYKO3DeQ0qpArxNeSCYhSNwLxV/ATNjOTZZ5g3gB4K7EzEOU5Qd6NYJiaWNYz4AwD0QkSrxMnzUCzBz2sMSHqaYSwjGTO+wZBqUYpmVWFF5rz6GlaOiSGs8nSqmPSyeLpWLqkwfhX+zhz/HvBMTh93jZwAAAABJRU5ErkJggg==',
+    },
+    {
+      'readable': 'Copper Axe',
+      'id': 'minecraft:copper_axe',
+      'texture':
+        'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABmJLR0QA/wD/AP+gvaeTAAABOElEQVRYhe2UMUtCURiGH0OIiAYDUUK6S0NDSwgFgiBtTYF/wM2pJn9HU4sEIf2BwpY2CQTBQXBwiGjJ7iIRCeF8G+TDzqnUe72Xcy/2bocL77nv837ng2VXzC+j0l7G+X6+7tlzea/49QNeFV/UQJJfnZXVDxeXDswmEV0CevKnXguAjeSOKx/jBFy/gr+S66q0OwBY6TUAqnf9X+8yTsD1DLwOR8pZOv98ewag9TIA4PwwC0Cx3pzqZ5yA5014lEkom291awxTkguJnJUC4PS2DUDD/lDuNE7A8x6QJMcHSQcm0y6d35zk5/IxTsDzDEjywv4mALV7G4DH/igGP2dE714UPQJ65w/dd2CS3K2iQ8Dv5KLwE5g17YsqvASC6lxX+AgE3bmu8BHY3V5XdnhQyUXGCfzrC8ZLah0C4KkfAAAAAElFTkSuQmCC',
+    },
+    {
+      'readable': 'Copper Bars',
+      'id': 'minecraft:copper_bars',
+      'texture':
+        'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgBAMAAACBVGfHAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAASUExURQAAAMZzVbBhRqVZP45IMH44IbHsvhoAAAABdFJOUwBA5thmAAAAaElEQVR42n3QsQ3AQAwCQK/ACl6BFViB/VeJEolPETsNsq6B/6pqVZWcGAC64xeawqNcoGWr/4BKNzVAytrRAd5GjEDgPA6kvmB14Jn4hWzKNQGVWOFswgLZRMAr5B8XoE/3Au3cmuACVJ803Y/nlKoAAAAASUVORK5CYII=',
+    },
+    {
+      'readable': 'Copper Boots',
+      'id': 'minecraft:copper_boots',
+      'texture':
+        'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABmJLR0QA/wD/AP+gvaeTAAAA7klEQVRYhWNgGAWjYKQDRkIK4nVk/mMTX3jlCSM56tABEyEH0Bqw4JKA+WjeivUMDAwMDP+PbmdgYGBgcGvux2sguvrHzf3/GRgYGPY9eY81JAZvCMAAzCfEApj6W1eOEaV+8IcADBDrI2LVwcDgDwFSfUQqGPwhAAPHHr6kiQMGXwjASsByRx2yDISFlJW8OAMDAwNDlJECTApriTh4QgCXz2E+evL6A1EGwtTB8g4sJJAASkgMnhCAAfTUDvPRocf4Q+Dxh69QGsKPEhVAMQ9XCA6+EFh27gFWhbjqczzyWFtI6GDAQ2AUjIJRAADeRF7eZJnTFQAAAABJRU5ErkJggg==',
+    },
+    {
+      'readable': 'Copper Chain',
+      'id': 'minecraft:copper_chain',
+      'texture':
+        'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABmJLR0QA/wD/AP+gvaeTAAAAx0lEQVRYhWNgGAUkghZH7f8tjtr/cfFJBUzUcRb5gIVcjZuS3P8zMDAwfP3xkyIHDHgIkA2WRzn8Xx7lQHbcw8CAhwAjqRpgcX/p/hMGBgYGBmVJUQYGBgaGyGUHSDaLgWEQhADJuQCW6mv2X2VkYICkBUocMPRC4O7z13j5pIKhFwIwgJ4byAUDHgJkg2FTEpKdBihN/TAw4CFAcvkNi3dYCAz5uoBsB9Tsv8oIqw8GxAHUAmTnAhgYeXUBzMejreJhUxeMAgAPl0usK9WNnwAAAABJRU5ErkJggg==',
+    },
+    {
+      'readable': 'Copper Chest',
+      'id': 'minecraft:copper_chest',
+      'texture':
+        'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAABSlBMVEUAAABaMytVMSTGc1XAakvggGvTelpPLiKFQStNKh5GJxxCJBk5HRM9IBaYTzelWT+OSDDCakulWD9GJhylWz+MSDBOLiJVMyTTe1pbMyvSelpNKB7RelvRelrGclVPKh6wYEZCJRmFQSlDJBiHQSuOSTCPSDBVMSU5HRGOSDKOSjA9IRZGJh1DJBlGJx1aMyk5HxNNKBxNKx4qCwk6FghCJBuaTzeEQStMTExWVlY5OTlBQUEvLy9qamrLy8tNTU0vLy1RUVE1NTVPLCJXMSSSU0ReJw1YMyt8RTBiMyRwPy6CSjdeJQ2BSjeASjaASjWASjRaMit+RTGLTzqSUkV8RDFVMCRpOiljMSRBEg+JTzuJTTqJTziQU0VaMSuITzqSUUVBEg6wYUbAakl8RzFcLx9jMyRrOinAa0uSU0VyPy6ASjd8RTGJTzrEgxdQAAAAAXRSTlMAQObYZgAAAb9JREFUeNrNk0dv3DAQhcUhJYqkpN11S++998SO03vv1X3taLXDEf//NbM+2EQSG8jNHyBd3sc34ABMdh6He2p1m1iqEUO5RcxRnit1vJLyX4rsqTNnWUjHqk5Hqr1/l4/lVXdCMvmJ7s1bSmVR3FlT60j2hvw/KCULWbohYFjlg0e5XMo0zauJqqNUKsSGEALimpTdbl6pLD/Zrfi0hkjAeUIMPH4yV71qMtufgtaujIS5QBQo7M4OqCGXgzhlj8RCPY/0tm15UqZUtqTBGOfgUrHZUL8Jy/SLPCIuiY92n7HWFJejEfS630dko/kiSjdu7t6bvW4gEvyrhfCzj8F7BGfBzjx8BM5F10Tv20XsP3uK70FAcW3m/oMbzkZCO8J/mqvrIIoC7PTsHWc0RIsaUEvefyesCyEOFdO33ZWrsdAStWw0g2ZRnDtv3OmCC3bFIwK9az8QvmgWRKlHW7BTj5883xQGbPAe2pcNgjPGWssF0S3wh18f4n1DgjPr+LORkITPHNJXYgGM1scso3USs0y+5RaP2k1dNGYcIPkTCtziV6AsL5jodEwIfoB7yhK+JVsRcEUISLYDxf8+xt9jE1/4/ihx1QAAAABJRU5ErkJggg==',
+    },
+    {
+      'readable': 'Copper Chestplate',
+      'id': 'minecraft:copper_chestplate',
+      'texture':
+        'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABmJLR0QA/wD/AP+gvaeTAAABOElEQVRYhe2WMU7DQBBFnxEHgCKisYREkSonCIKCDlFxAnwdLoFEh2hSITqQkEhF6QY6FDeIgjTUpog/CYvXmS1QRiKvsb0ej3b+jP4a1vx3Mt2cDfLa8sFlWWVd71PzbFiC/5LNcOHiagRA/XgLwEs5BuD8vkxKbM3jT4Fwx+Jgr/cdAr9nQb1XXCxPiD8FYjsuTk5nNzcjLf2YdlU+3N3pzBPiT4Hrp2cA8t4WMK8o2z8GoGjiiuC7WMXj1zcAqvdp63s/Ckymn8119nzYrPeb3muqhbXHqvxh4l2Bu+oj9PhWT7dWLlR5S37AkwIxVHF/MExKrOlfhn8FRGrvrfhXQL2UI1rjrfhXQE6WOgEx7w/xq8CCc9UwPxt0SsYIvT/mgGLlCnTubpGjfNv0vy+WVS5WrsCaL58dfhkZbnKiAAAAAElFTkSuQmCC',
+    },
+    {
+      'readable': 'Copper Golem Spawn Egg',
+      'id': 'minecraft:copper_golem_spawn_egg',
+      'texture':
+        'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABmJLR0QA/wD/AP+gvaeTAAABVUlEQVRYhe2VT2rCQBTGP6Vbu1D8U3RTSEHQVSnETTc9geDKM/QCPUIv0DN0JfQSxQriqoLQgBSUWkUFe4C4SD7TmVp9ESSj+FslMy9D3ve+9yYGIQ/XF640FgAeO18xSVw8zKH74CzsB/fV2sb9p5dGqPMOT4HhYgwAGIxnynohk9zpByJXQOTU37Abqne3AAIl2u9dAHL3k8gVEHtAnwP584yy39bijmcO6DV/634o+7oSuWzO/w4iJcxXgDDTSsl7bzk9AMBgMgUQZF5Ip7z9niM611wF9NoTveacgPpktIuW/+S4APDc/1nrBXMVIHrGrL1tFZV1dgc9IPWC+QqQ1S3ou9621PVdMV+BRvM11IG8FaWYr8DK1X6/0+1UZvQ9UuJvyt6opFc+54Z3wdY7u36ZcIFgslVKVwD+Tj7CzNn//01AYr4ChEpI2ZY5iVyBEyeWXSBvwEF3ocQAAAAASUVORK5CYII=',
+    },
+    {
+      'readable': 'Copper Golem Statue',
+      'id': 'minecraft:copper_golem_statue',
+      'texture':
+        'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAABFUExURQAAAOCAa9N6Wr1uU6teRJ9WPpJTRYlPOnpHNm89LGc4KFozK1UxJFguH0ssIU8jFEQmG0AiGTccE0MXCDEWDSkOBRgKBcDw2bEAAAABdFJOUwBA5thmAAAA2ElEQVR42r3TMXbEMAgEUCNtAGswxgqb+x81To/VZadRwS80j8f2+VBbj6l9tRVhbg22AiqwJRgCX4FNBMs5jTFj1aHrCKfniq2LurVWE+ZbkBj1+6EKyE36q/dOZKgr/pEXkXt6CZT5ZIabZVRg38/zONin0xv1IukYyvNHLCrAjYh0cKSaVWAMBoYw9j1KoDvjUrPpmeEVUIYLkBEOFECUYcfMSLfMCgjD1O9cgYdPWrDZdcEelqWO93UZJkpwHIwMANOzBMLfCZszbXsKY8BtWyb/4Vh/ARloCnuTJ1UmAAAAAElFTkSuQmCC',
+    },
+    {
+      'readable': 'Copper Helmet',
+      'id': 'minecraft:copper_helmet',
+      'texture':
+        'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABmJLR0QA/wD/AP+gvaeTAAAA60lEQVRYhe2Wvw7BUBSHv4oHYGgsFYnZExAdbGKyWngdj2H1AjYSCZOxC5u0ixh0MdfAIW3c/pGI4n5be29P+/vuvTkFjebfMdJOHDasIEvhieOlql3IUvQdJH6lJG/XTQCatUrs/OlmC8DS9QGYe6fYd3zcQFE1EE0+6vUBMFpdAILVDICdsw49Z5klAOzHrQDUJvJrQIiuuSr5en8IXYsJbntBRf4NCJJ4vHCejrv+GQC7ek1+N5DA9xiQ5JJUhZz/wc8ZyIp3jN/9Qv4NyPlOWvtX+biB1N1QDCR1t45VDv035L4bajQazQWNJ0fe91NX+gAAAABJRU5ErkJggg==',
+    },
+    {
+      'readable': 'Copper Hoe',
+      'id': 'minecraft:copper_hoe',
+      'texture':
+        'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABmJLR0QA/wD/AP+gvaeTAAABFUlEQVRYhe3WsStFYRzG8Q9JIQN1S7qxGAwWC6tsymIy2kz8B/4Mg5Rktbgx2GS1GQwGpW6n5EoGGRhc0zvcl1v3Hvd0z7l8x9P7O+c83+c3vPx1+tIObsyV6z89P7pJ2npnf9of6BQD7Q6E5Afbm+DhsRadqNRp3UTXDaTegeXyWMMO7K4tgtHSDNg5roDa8DuYnhgCe6fVhm8W10BMMBJMBM4+7sHheQJuq289aiCwslCqw/7qOnh9ugNbJ1fgInnpUQMhedj2y+tnMPk5iO/JA8U3EJIvzY+j+bY3o7gGmnXeavJA8Qz8tvOY4hjoVOcx+TfQ6c5j8msgq85j8mcg685j8mdgdmqk4babVfJA1w388wW1EGgHtkQ6RAAAAABJRU5ErkJggg==',
+    },
+    {
+      'readable': 'Copper Horse Armor',
+      'id': 'minecraft:copper_horse_armor',
+      'texture':
+        'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABmJLR0QA/wD/AP+gvaeTAAABMUlEQVRYhWNgGAWjYBTQCPyZ2fT/z8ym/4TUMdHDMfgAI60MRvf9rSvHGBgYGBi0Ju9AsXP4hQC6z1nS6xiRxdFDYsBDgIVaBj2vCfvPwMDAwGjtycDAwMDw/+h2FHFcYPiEgKisDgMDA8LnsLg+9vAlRMGl21j1Db4Q+HvlNEqcwXwULMSH36R3nxgYGDB9nrLpPN6cNnhCAObzVyu6URS8/wjxmXxEOF6DFixeSJYDBk8IwOIaBmA+h6diKHj47CMDAwMDg7wUPwpfDyrvrafKwMCAyBXeeqr/GRgYGCRbVmFNC4MnBF4/vsLAwEC6z9EBTD8DwxU0PnYweEIA3aVW8uIo/GUXbjEwMDAwXLlAnMEw8wT58ZcfgycE0OMcHUQx4JfHbQ5+fQMeAqNgFAAAwDt8SNQWy+cAAAAASUVORK5CYII=',
+    },
+    {
+      'readable': 'Copper Lantern',
+      'id': 'minecraft:copper_lantern',
+      'texture':
+        'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABmJLR0QA/wD/AP+gvaeTAAABHklEQVRYhe2VsWoCQRRFj0FQQowIwcZKthFsLLUR8gcWfsN+haVfYWNraZtCLLUSCQg2q5WNBIKsBK202H2gRmFnVhgG9pazbx7vnnfZgUQx1WvVT71W/aR7/+WZw+gorXux+1nVdn0pewkU8zkAtjs/1gD2EhDnnfEiFWcA4wSUp5f0SwZEukSME1DOwKP03xKJKuMEIu9L/ve51ywApcLb1ffN7x4A/+8AgDucRuptnIByBvqVYNdOrXx17s3XALRnB6V+9hCQ3YvzWqN6v26p9jbYQ0BSL87dDxcA7+gFBY2w7mulNIA9BG4lzp2MA8DIH2n1sYfAcvMDwHyyCA7CnYtzOU+FdVFlDwFRc/AN/E/7u7wFiv2ME0iU6Ax2B0ly7HAk0wAAAABJRU5ErkJggg==',
+    },
+    {
+      'readable': 'Copper Leggings',
+      'id': 'minecraft:copper_leggings',
+      'texture':
+        'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABmJLR0QA/wD/AP+gvaeTAAAA7ElEQVRYhWNgGAUjHTASUhCvI/OfHIMff/jKwMDAwLDvyXu8djCRYzg1AQsuCZjP5+amMTAwMDAwWnuiyP8/uh2Ff+vKMRT+qjM34UoZGHCHxOANAXQA8zG6T3EBGVEBCOPxB7zqhk4IoPv82MOXKHwreXGyHDB0QgAGYD5fdu4BiviT15C4DjNRJ8m8wR8C6HEP8zmWfP2fgYGBIcyENAcM/hCAAfRUjw5kBbjJcsCAh8CoAwimAUJxDwOw+p9Y9TAw+EMABmAlHbXVD94QgMXpk9esJBlIakgN3hCAgUMEWjSUqh/wEBgFowAAqt5QDzxRVgIAAAAASUVORK5CYII=',
+    },
+    {
+      'readable': 'Copper Nugget',
+      'id': 'minecraft:copper_nugget',
+      'texture':
+        'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABmJLR0QA/wD/AP+gvaeTAAAAxElEQVRYhWNgGAWjYBSMgpEOGCk1YI6r5n9kfsru6ySZyUSpAygFLORqhPnc21wXVZyB4T8DA/EhMfRCAJfPRWV1IIyTl0kyb+iEAMznCSGRDAwMDAz/tUwYGBgYGBivnWFgYGBgeP34ClkOGPwhgB7nRw9uYWBgYGC4vXU9ijpVHlYGBgYGhovvf5DkgMEfAjAfqd57wMDAwMBw+8tvVPlnHyA0lD/5zP2hVRIS7dpcE8X/2MRJ9TE6GPAQGAWjYBSMAgB2OTMUL6eGFwAAAABJRU5ErkJggg==',
+    },
+    {
+      'readable': 'Copper Pickaxe',
+      'id': 'minecraft:copper_pickaxe',
+      'texture':
+        'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABmJLR0QA/wD/AP+gvaeTAAABNUlEQVRYhe2Wv0tCQRzAP0aLRkOBZSC2NDS0uOgUhFsghFOjW5P9Nw4hRDS0pujgJq1va2hwEAR7EBlREA65XEvH4+w97p4pzys/03v37h73/Xy/9wOW/HdiYQeUD9LCpN/1g2v075WwE5g1q6YdZeSX52cAPD0PAfh46Sn91pN7308NATBMfAKwm4oDcNEcKGYiNzB1DTy+j3y/V0t55b017gNw1XYB6A5GlhvQcZxLCoBa8RTwaqRSdwDouG9/1ICMXFb73f0rALcnh4C3Osq1G8AzEbkB430gCBn5UXYT+FntlbojAKol//H2GpjMedA612GfAV3Og/DOCEdpt8fAb3O+s73l2x65Ae3sp835JIX0hgCbzoKgvT1s5DoWz8Cscm7K4hnYz6wp9/55RS6J3MCSLyB5cacCS27PAAAAAElFTkSuQmCC',
+    },
+    {
+      'readable': 'Copper Shovel',
+      'id': 'minecraft:copper_shovel',
+      'texture':
+        'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABmJLR0QA/wD/AP+gvaeTAAABHklEQVRYhe2VP0sCYRyAH8VFwkHhrEB0EWm4RYQCp2gIWvsCbk71CRqbxU8gfoRoagtBENwaHEKcShCLUBDna9Af5x1cmr3He2c+2x3373ne393Bnv9OxK8LV8yMtbr9Pp0D8DycOO4Z9esBNkV5ATFv3FYd+/u9DgA3D13ALqG9QEzVhdzmo/EHALPPAQAFs7w4cFlACH+BdeYJI//j+doLKHsLrk4NC6B2VgJs8+PDNACX93UggN+BP8+AmJ8XUwBcP7YB6N0tpt7LXNBeYOsZcJs3n4YAvL7NIwAXmaQF3uZC+AqIee4oDkDr5QuwzX9LeAqsW/NtCX4B1WvuJngFxFhQveZutBfw/Bf4bS5oL+BpdZI9cMzCzhbY8w0dpWVOwr5tTgAAAABJRU5ErkJggg==',
+    },
+    {
+      'readable': 'Copper Sword',
+      'id': 'minecraft:copper_sword',
+      'texture':
+        'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABmJLR0QA/wD/AP+gvaeTAAABcUlEQVRYhdWVv0rDUBSHv0gdiggqVK1UxM4uLm6CFCxKJ32B1sXNwV0nH8An8E8XcdJJBAcRHyA4OBQXxQZFRQyUTA51CEdJ0hht096b33i5Sc733XNPDHqU8kyu2Wq9r1cFhMXo9geEfP/41LO+uFQENDCQ6taL/eRPJ1UAJlbLnn3KDcTeA1HkcvaX1ocBGhiIrQfCyLNjo0CQXKLcQMc9EEVe3NkFguQS/Qz4Z3b11mpZuezb21gH4PnlFfg7uUS5gdBbMD3YD/yQiom4yCXKDYRWKaTz+QwAR+YDABfbmwAcnrldXymtAP8nlyTHgMR6swHYqqwB7ZNL9DUgERNyK+4bnwDUbQdon1yir4HluUwTYGo8DcCd2QBgcmjAs69TE8oNBCahkC/MjgBwcG4BULMcA6AAnn+FGJH15M0B/98vnXdrurp5B6D26PxKVMgNe55PnIHvHpB7fm26k07OPCqJnwMpucd1W00Byg18AbPflYAJ6X4WAAAAAElFTkSuQmCC',
+    },
+    {
+      'readable': 'Copper Torch',
+      'id': 'minecraft:copper_torch',
+      'texture':
+        'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgBAMAAACBVGfHAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAnUExURQAAAPz8/Jfol2iwbZ19T5N0RUWATGxWNVRELUE0IjwvHTotGzYpF4wrs08AAAABdFJOUwBA5thmAAAAMUlEQVR42mMYhsA4DcpgwqVCSZCQCpdyQipCOwiaMZOgig7KbSlfRdCW3QTNOINLBQDzAAhitV0r3gAAAABJRU5ErkJggg==',
+    },
+    {
+      'readable': 'Crimson Shelf',
+      'id': 'minecraft:crimson_shelf',
+      'texture':
+        'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAABRUExURQAAAJ5DZ5Q9YYc4WoA3WX43Un0zUXAwSHcrSGcsQ2AoP1glOlMkOlIkNVEhNU0cL0UeLT8bKToaJjsYJzYWJDMWJDMWITIVIC8RHSoQGiUPGEer1GEAAAABdFJOUwBA5thmAAAA/UlEQVR42s3T0W7DIAwF0NQOpC2jOPUtdvP/H7qm2aQp0L5N6n29x4BADB+acRyPb+rATBRjfFHTgYiYQ0W35gM/QqSotVM/ZykEqM7XFoQQVsCqEAH2gI8x8DiyVhXB7L6fT1/MkYG1VnfXPcgpnXGDSIW7dcAlTRMggDuWHij5lCpmc3NdzKxdIadiD7G8Ainnxd30BzgacEl/gHdAWYE/wd08Rt6BUvJivyCEcPVmiyfA3ZyJZG5BThvgA4mIobaHvLs7Ecl2m3tQ0gMwB9meCp2bTHFc6xvcFUOTdJkmrwLdpjugnM5us/Xr7ZAFDsXwMucE0+Ft8D//8Bu8oxageoVi2QAAAABJRU5ErkJggg==',
+    },
+    {
+      'readable': 'Dark Oak Shelf',
+      'id': 'minecraft:dark_oak_shelf',
+      'texture':
+        'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAABRUExURQAAAB0WDkQ1I007JUk5JFE+J0c4JCYfFCwjFi8lFzovIE88JjUoGUc3JCMYDS4lFyAYDzImGEg4JBAKBR8YDxUPCBsVDhcTDSAZDx0XDhwWDl5dPM8AAAABdFJOUwBA5thmAAAA+klEQVR42s3TS3LCMBAEUGv0wTKfBFvqntH9DxpDyAYJdqmit/1aG9VMHxq/rvKmDinFKLK8WnuJSUScDesYziGEGJsOgXh/PKYYtTRqD/xtKpK0qbVK91Qvi+xl8gZVM1M87w95JyvMGmlWaB04zJkOt9dLAwdgPmSStO+GDWTpQL5koqKAOwAG4HSl07KBqGOQNxL2AOzBfLqDegd8BVgqqBUUWTpw3fAHQvBwPagPEH1oNgDzLziHo1mjogO5khTxZgar7EDeQUoBMDVA3dSBWdYVgJFm+3wAZjooSoX19f2zdkC20qZpDC5fRH3Uw+QduOlt+D93+APSxRbJev4KawAAAABJRU5ErkJggg==',
+    },
+    {
+      'readable': 'Exposed Copper Bars',
+      'id': 'minecraft:exposed_copper_bars',
+      'texture':
+        'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgBAMAAACBVGfHAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAVUExURQAAALR9c5aKaKZ2YY1vWndpVWVXSHIS4RIAAAABdFJOUwBA5thmAAAAa0lEQVR42n3QQQ3AMAwDwFAwhVEIBVMwBfOHMK1Ss0eTfizrPnEbEamIkHc0AH1xhaSwlAOkbOUNqKWr9fD4gxUD/BfRAoF6HEidYGVByj6gNlVrgNoxQm3C00JtIuAJ6h8HoOv2AOnd1cELjHNBe6hMAPAAAAAASUVORK5CYII=',
+    },
+    {
+      'readable': 'Exposed Copper Chain',
+      'id': 'minecraft:exposed_copper_chain',
+      'texture':
+        'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABmJLR0QA/wD/AP+gvaeTAAAAzElEQVRYhWNgGAUkgrQIz/9pEZ7/cfFJBUzUcRb5gIVcjSvKk/4zMDAw7Hv4nCIHDHgIkA36C6L/9xdEkx33MDDgIcBIqgb0uNeUEGJgYGBgKJywlGSzGBgGQQiQ7IDnP38yPP/5k2HWiu2Ms1ZsJ8vXFDmA2oDkcuD6i3d4+aSCoRcCMDBaEg6bkpDsNEBp6oeBAQ8BkksyWLzDQmDI1wVkpwFYPUBJe5CBYSiGALVSPwwMvRCAAVhd8EGUHSpAnjkDHgJkg2FTF4wCALPBSwV2VmsOAAAAAElFTkSuQmCC',
+    },
+    {
+      'readable': 'Exposed Copper Chest',
+      'id': 'minecraft:exposed_copper_chest',
+      'texture':
+        'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAAilBMVEUAAACEWlROQDZ3U0xsTD9fTD5RSThhWkNQRzp3UkxQRzuFWlRCLidtTD8vLy9BQUFMTEw5OTk1NTVWVlZNTU1RUVFqamrLy8t9cVcuOCJ9cVSSdWGndmHNi4GkdmGWimh8blnMi4F4Y1N9cVaSdWCmdmG4gHY8NykyLSI6LyZCLycwJyFKMy9RODSpVqGGAAAAAXRSTlMAQObYZgAAAWpJREFUeNrNU1lO5DAQTS12Mhsww+wzQCexHTtVvv/1KDcSbUCNxB8vP5be6kge3h+WEO5eoddwRDxPr5ZwWGKMZ9yrCeZ2iCG9pJfVvmg4tEMI6WV3+B//NXtDMsyPAqC7GFvCGuM8L3+PUXPVRwERgBlD+L3EdLApKd2o1tolMADFeNuchyUlcxt6AfEXYrLe22jhWg1aTgIkYHaOCJLNM/e2tQg5JSASseMRAMxbdKt5F+kqmKeJRlN4qGL8z1+XolqfJkzTJxpHqKVouf7xreR8EhCgcwATAlDdVOT6+4Xk0gmc885AiFxFVK4uL3Tb+x+F7NhUDChVs1x93bfSCxyzaxNxgio5Z9nV+L6CmE0EbqIqe/kjVvBEgA8KhwiaS9lzK8j9NT8eS0bfRpbcCqR0guEDOe+5rWAV47fjjKEHsUdk9rBbg+3UfXgOJkSPoCJZPnd0ByLfrimqwzkQQK06vAaob32M98inNCIjUCIjAAAAAElFTkSuQmCC',
+    },
+    {
+      'readable': 'Exposed Copper Golem Statue',
+      'id': 'minecraft:exposed_copper_golem_statue',
+      'texture':
+        'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAABIUExURQAAAMyLgU1EN3dTTGxMP7iAdpaKaFxJPKZ2YWFaQ0E4L41xXXdpVRgWEjUwJiAeGDw3KTgtJSgjHUIvJy8qIkozL1E4NIRaVBHrD9IAAAABdFJOUwBA5thmAAAA20lEQVR42r2TOXbDQAxDTc4iWU7i4Qbe/6Z56anpYrT4BfBAPj4vGnubxtecGyBzDKwd0BtiC3CDxWOj5xNbn5hddh3OzuJ0a895NrYYk24q0hjUguacRBXQMul8nedJFKgr/iEvIjONEuiZVyZMTKUCjuO6mDNU6I16SGLu6d9tSZlhEFHnFO1RhmRO4GiJ45AS6EfCe4QvVbFqp56wBqjIwiqHTCx2FV1LtQBaS6xuZssFNyFDMsIdcTNWN7zdA44SYE6oAHDTEmj5owh3jfuTBcPisZX+w7P+AquHDq3oXJ+YAAAAAElFTkSuQmCC',
+    },
+    {
+      'readable': 'Exposed Copper Lantern',
+      'id': 'minecraft:exposed_copper_lantern',
+      'texture':
+        'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABmJLR0QA/wD/AP+gvaeTAAABKUlEQVRYhe2VIW/CQBiGnxG2JrBsyQIhyFE5U1s1zR/AzCNQm+tPwIFCzmH4D0iC7cRkUUvIQoaAsaWbKOJ6AgIJdyW5XNJXfv3u8r7P97WFXBkVdFpJ0GkluucL5zSjo6LuQZm6dnWZyYC9BGTyz7//TAbsJSCTdwejiywGjBNQdn9s+3WJGCegvAPHtl/3e2CcwMnz6j0/JQB1xwHgrlzdeb7cLACYxzEAL/3hSXcbJ6C8A69lkdT1rnfqUSjqzfhG6T57CMjZu949AJ7/cLhv8q1kwB4Ccus9vwFAu9IGIIoj0eCnfeFMyYA9BPYlk7uOC8B4Pda6xx4Cs9IKgLfpuyikM5fJw7T+s/xSMmAPgd8PQeBxkf4L9rb9diPe/7miAeMEcuXaAmFQTC40PgLrAAAAAElFTkSuQmCC',
+    },
+    {
+      'readable': 'Exposed Lightning Rod',
+      'id': 'minecraft:exposed_lightning_rod',
+      'texture':
+        'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAANlBMVEUAAADMi4G4gHZ3aVWEWlR3U0xhWkNsTD9cSTxNRDdRODRBOC9KMy88NylCLyc4LSUvKiIoIx1mbyN2AAAAAXRSTlMAQObYZgAAAGhJREFUeNrlz1ESgCAIBFAkCVFUuv9lmw7g2nft776ZBfpiUmIGdU6JD2Zfg5yZawVAVKoPAPQBsQYiJnW4EwECa6JiMyCQ4nMHBgSnemxu6BiITTyh6h0CO8eFQQsMxHZftPli4o+5AR8HA2esb26xAAAAAElFTkSuQmCC',
+    },
+    {
+      'readable': 'Jungle Shelf',
+      'id': 'minecraft:jungle_shelf',
+      'texture':
+        'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAABOUExURQAAAL2PZLmLYLKEWax+U52CTJl+SJV7RHpdQXhaPnNWOnBSNmZVMWNSL2FQLFpHKks5KEo4Jkc1JEUzIT80Hj0zHTwxGzcrGjMmFS8iED/WFzAAAAABdFJOUwBA5thmAAABCElEQVR42s2TwW7DIBAFYdcU4xCbxZt98f//aFGq9AB2bpU61xkE0hPun/JFFD9oijE0pgvtORAzT5BTTU1HmlgAuJHA7H2kICKmOmqiaQqBAakopXY6eu8nZmpSobr33q2JmAIgYkVVxzfeti2ZQLEXFcMYrHndDFZ0Vz1Og/ucdy2qBjnMbAhSumd7POS4Cu4pNWdNQluAx3DFshz4DXAS5LkFqE3K0+B9v+e85sPeAVGQ2gVpTs29TjNTFZEuWObbTxCYa60A+iClJ4AQvEitOq655BbESHUXiKIU15FT8hREqrzWdANrTotKs8VK0yPrtmVVKKy4U27vNd0lczYt7iP73/zDb4JEFdiBueuVAAAAAElFTkSuQmCC',
+    },
+    {
+      'readable': 'Mangrove Shelf',
+      'id': 'minecraft:mangrove_shelf',
+      'texture':
+        'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAABXUExURQAAAH5EMnk8Lnk2MHQwMG4tLGwrLFIsIU4nHk4jH0sfH0cdHUYcHUcbHTohGTceF0AXFjMbFDIaFTAYEzAWEy4TFS4TEywSEiwREisREicODiQLDB8KCkYq3s0AAAABdFJOUwBA5thmAAABBUlEQVR42s2T0XKEIAxFaQJdwd2tmmyMV///O0ud6YvivnWml8dzCAx3CP80lFJ6h7mG6PMCJ6JYlWhzE1dCkRNDzRqYiJiJ6WWAeWM3/wgf0/RSAOMBx8h1RYJMX5OqHnkoJUVmW6BPhy6Qo9DnMpgZIA53nIXHIw+mClXI1hJutyHPgIrDNnc/Cfdy63wcdbsSSsnbCJcqSBVwnpC7DbtwcYfS91XYoa0O5tg4wn8FZlY7vUNXGXR1EJGIoj1B18jxJXLuouS8AiBKtSxRjNoSmEn2sqBHHnLXpcSqYk/HghAaXXQqilkcfsZ7F71WBkFo5t7nwUdVhMuUYZwtvM3yN//wG1+DF3OS24KRAAAAAElFTkSuQmCC',
+    },
+    {
+      'readable': 'Oak Shelf',
+      'id': 'minecraft:oak_shelf',
+      'texture':
+        'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAADMUExURQAAAEs+Jkk7I0w+JyIaDzInFi0jFDwxGikgEUo8JKF/SU1AKF5LLDouG5F0Q2lTL11LKnBbNXdgOGNOLHtlP2NQLmBKKmFOLD0xHDkuGnNeOHFbNpl7RmhTL2NQLI90QG5ZNXVeOG9aNT0xG3dhOmhSMGlUL0A0HUQ4ILSRV7GOVruaXkg6Ipt+Rpd7QrKPV6uLVqB+Sr2dYj0wGzwxG6WHTq6MVLybXsCfZbeTV76bYbGRV6yMUUY4IkQ4IkAzHkU4IEc6I0AzHTsuGsk77xoAAAABdFJOUwBA5thmAAABOUlEQVR42s3T2W6DMBAFUJjBbrMSQpqte9N9y1Yg2ICN/f//VKOqVYVJ3ip1Xudcz1iWnX9aURS9H2hnnDO2Xr/tabMdY8lyucqhsc13acrTzQYhz5vSScI5yzJAVHlhz47jJEnTFBGw1KIO+mftjEfRM0oEpbUr6vmu379sP4EJu6DKDj2ywXDUU6BQG0SoDU78wACpdQ7gGSAsEAZjA4Qk1PUIIRY4D4NgupUdbx/ohoE3pQQNQAMal/ToD6ANYFIB6lbgmNB2u19fchJ45BvEcSY+rBFXFWiZNE+YLCwwCOZfIN29yFepRFEH/vyYUsoYc0FiqYs6uLg2gPOsBW71WIBOHdzM19FKlK0SQCE4Vg3u724Xj0KhxirdAEJ/tHj4fbh1zdPxbJsjOHtrNJwpdA5W72/+4SeTnShTGzO1qAAAAABJRU5ErkJggg==',
+    },
+    {
+      'readable': 'Oxidized Copper Bars',
+      'id': 'minecraft:oxidized_copper_bars',
+      'texture':
+        'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgBAMAAACBVGfHAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAASUExURQAAAFKfd0uSgj1/ajhtWDplVM8WH9gAAAABdFJOUwBA5thmAAAAaElEQVR42n3QsQ3AQAwCQK/ACl6BFViB/VeJEolPETsNsq6B/6pqVZWcGAC64xeawqNcoGWr/4BKNzVAytrRAd5GjEDgPA6kvmB14Jn4hWzKNQGVWOFswgLZRMAr5B8XoE/3Au3cmuACVJ803Y/nlKoAAAAASUVORK5CYII=',
+    },
+    {
+      'readable': 'Oxidized Copper Chain',
+      'id': 'minecraft:oxidized_copper_chain',
+      'texture':
+        'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABmJLR0QA/wD/AP+gvaeTAAAAt0lEQVRYhWNgGAUkAuu00P/WaaH/cfFJBUzUcRb5gIVcjT5TWv4zMDAwvL90kSIHDHgIkA3sGrP/2zVmkx33MDDgIcBIqgb0uGeWFmNgYGBgOFQ/lWSzGBgGQQiQnAs+vX3OwMDAwHB01mpGBgZIOUCJA4ZeCPx9+oqqDhh6IQADoyXhsCkJyU4D1MoNAx4CJJffsHiHhcDIqwtgYLQuoBYYeiEAA7C6ANY+IBcMeAiQDYZNXTAKAGkNRUafymyqAAAAAElFTkSuQmCC',
+    },
+    {
+      'readable': 'Oxidized Copper Chest',
+      'id': 'minecraft:oxidized_copper_chest',
+      'texture':
+        'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAAvVBMVEUAAAArTj8jRjofRDkeOjQYMyoXKCJSn3chQC9MqY5OqI5LkoIXKyNYsJJYsJEaMyodRDkhQS8eOjYrTj4eOzQZMyoWKCJMTExBQUE5OTkvLy81NTVNTE1UVlZqampWVlZRUVHLy8tHfmRHfGZOdWAzX1U4b1gzbl0yblxYsZBOdWI8f2o4cl45clwxblw5cF41Z00lRzkmQTYoU0UzblwxX1U5cl5HfmY4bVg9f2o6ZVRtw51YsJBOqY4WKyPVmmxrAAAAAXRSTlMAQObYZgAAAY1JREFUeNrNk9lS3DAQRUctyTNA9g1C9n0BZsZWL5Js6f8/K62XsUMCVbxxqmxX6Z5u3Rev7h/rUk5uiUspx0W5Oc75qOQ0TdP/l8eYcxljSmkq079xykmHlRy/p1z+Utp549FUlKnRPuNB+ConOpjXca2nY07xIh6VEcxB+C2XohMp5lge5niRfk2jsQCzwCzSlJjLcYy6BoyxbrGBfiJ+Fm53K6MBcOAWQn+Juy0xC7dyVqctWAP1IEg/MCMhsYimHqwD6KqZBcRBFW6G2Wj+/tNZZ2EhBNqxKkIkxr8E8+HjG+v881nQJIg0RZ4YU7t3b8/ri0VJRtyHMGy57wXqA3CnZ+fVAcwChR/MQwgofTXGvzp93T1bdviCjPsrojAMYjrnN7V6Cxu7uIKucM8kOOxM5511jx3A01mgHgm3zBiCQMud0wV+7qDlArcVRGh0udPH62t1gDhoticKCA6sd645LVnWCIG/BbHeOu/VWl0HOShsffXezvE1ZSDoKsDqJpAI9O7bIHvXn/EPyR5KndfDyuEAAAAASUVORK5CYII=',
+    },
+    {
+      'readable': 'Oxidized Copper Golem Statue',
+      'id': 'minecraft:oxidized_copper_golem_statue',
+      'texture':
+        'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAABCUExURQAAAG3DnVuzkTt0Xi9aUDNsWzRkSiZLPlCac06mjCNBNkiKfB82LRMhHB03MRcuJh9COBUoIiA+LiRIOitOP0d+ZsmiNusAAAABdFJOUwBA5thmAAAA2klEQVR42r3TSXLFIAwEUItB2E4+aGjd/6px9jK7RCxY6BVFF+j4/6Kyb1P5Os8NiCgFvgO9wregMWQHDmZs+9Tasl2Gqzczeo9YrsripeQk4hFUna5nowzUh1zns4gcacT6S04ikeUp6BF3BMQkjRLM9z1G+DJSpDFOGq3H+lS3DEQhot7CtLtnoLUAWg0wWwqYA7O7L1E1SUDngFVAzQzpCT3gY6mpuWoCKge8i4hNw8sl3cJ9TvjLY3XBZ07HQgrGCKgBWKIpqPGt8LXU378sGsSPbekfDOsPBMgNqvB6CO8AAAAASUVORK5CYII=',
+    },
+    {
+      'readable': 'Oxidized Copper Lantern',
+      'id': 'minecraft:oxidized_copper_lantern',
+      'texture':
+        'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABmJLR0QA/wD/AP+gvaeTAAABIElEQVRYhe2UzUrDQBSFv7T+LCxRqAoidpOlm2xDn6OvkIfyFfoMXZYu202WQamIkND6UzcqsS6md5HSQmYiDCM5m0DmTjj3uycXGtVUPx6s+/FgbXq/9ZdmTHRgelG6/ukc1TLgLgHpvPXxVcuAuwSk8/Hd0KtjwDoBbff70m9KxDoB7QzsS7/pPrBOoPK8ZPbt60sA/O5V6fx98QxA8ZQB1bNgnUDlDMiMT7w5ADe9duk8Xar3q46vZcAdAoenZwAEYReAMLrdWZdMCy0D7hCQ1IfRBQDxeQxA+pmqgkg9Hue5lgF3CGxLOg+OAwBGq5HRd9whIJtuNlGbTmYunc8myabuv/4F32+vACRTtQ+yl/vSef5QlOqqyjqBRo1+AS4ZU7YkuEZNAAAAAElFTkSuQmCC',
+    },
+    {
+      'readable': 'Oxidized Lightning Rod',
+      'id': 'minecraft:oxidized_lightning_rod',
+      'texture':
+        'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAANlBMVEUAAAAkSDorTj9bs5FIinxtw51HfmY7dF4zbFsvWlAmSz4jQTY0ZEoVKCIgPi4dNzEfQjgXLiaeXmxoAAAAAXRSTlMAQObYZgAAAGVJREFUeNrlzkESwCAIA0CUKmhV8P+f7fQBhnvLNTsk9MUrhRnEtRS+mNMZ1MqcMwCikpMDoC+wMxBpkj0lIkBgTNS6bQi0uUVgYTB8BxsCoN1wxYgr1sTgNgw0GBl/6Pee9Md7AJhQA0XnH/gMAAAAAElFTkSuQmCC',
+    },
+    {
+      'readable': 'Pale Oak Shelf',
+      'id': 'minecraft:pale_oak_shelf',
+      'texture':
+        'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAABCUExURQAAAPz49fXt7e3k4ujd3ePY2KShn5+ampqUk5SSkJeQkJOMjI6Eg2VjYmJfX19bW11ZWVtaWVtXV1dRUU9JSUZBQUJ0TiYAAAABdFJOUwBA5thmAAAA9klEQVR42s2T227EIAxEg80CuXiM4+T/f7Uh2lUlQvtWqSPxdA4yYuTpnyYQvX7B1BIj/YCZiTkEUhnjKzFGFqiNZ4cQiCAi8AduMDAHKMTc0eN4z2YIYNXweMKSOTJDIeKucPTCOudcAZi4wnwkpLle1AE5h8K6bbu5qjlOM3sKuZR913Ybx0hYcjl3t4/g2gs5p9Pd5LgFHwipCTfU6xBRPyLl0z5CK0s7oeRyvAWiMChrKW+BOeqzrCbkw92JGFVbWdIJaxOISAEoTJ9lpfQiElEVdzTcJc+pVBEYvOo0yPJd1jTMWrYN1uH+s6t2uM/+N3v4BWCpEQZR+hbcAAAAAElFTkSuQmCC',
+    },
+    {
+      'readable': 'Spruce Shelf',
+      'id': 'minecraft:spruce_shelf',
+      'texture':
+        'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAABgUExURQAAACQbDiYgEikiEywjFTAkFiIXDCohFDUnFnhaNhkZGSkpKYRhN3xcNn1dNzIlFjElFjMmFlM+JENDQ0U1IFY/JGtXMjosF046I0g5IUI3Hz40HYBfN2BQLGZVMG9YMyKxIKkAAAABdFJOUwBA5thmAAAA9ElEQVR42s3T227DIBAEUPaC8Sa22+ZibDDw/39Z7KatFCBvlTqvc1ZCGqH+aWSew4t6GMcYQ4iNOsYpiEgkqtcyDHELQZsqGFMS2Sbp37WBEsiWIyJ932s+FyCElFKMe83MJ4Dne+92grk2rAFQF2DxdyQ0xjAAYQVc7A01nM4IuqsBd7FX/ABAwreOiEqwWJ8BdW3gckf8AJU3ONfhD8AaWDJA3ksgTCk8g3Xp6Btsm2guwHqA4zpp0waDfI1VAYCI0xQbY7kdjOPQHMutS5x/x1KqBP5O/BhLVeKdvREfY6lq3GqvRAComrEeGdTL0N/8w0+dWhAg7pkEUAAAAABJRU5ErkJggg==',
+    },
+    {
+      'readable': 'Warped Shelf',
+      'id': 'minecraft:warped_shelf',
+      'texture':
+        'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAABOUExURQAAABM3NRI1Lxc8PBhDQhtAPxExLTqXlUOfnTCLijCJgzWSjBU6ODynpC2DdyxnZiNfWxxQSCdsah9ZVR9aWh1VTRAsKSZiYRM4Nw4nJLew43sAAAABdFJOUwBA5thmAAABAElEQVR42s2TwXLCMAxE0a4s2Q5QCAl2/v9H24SWAyK9daa67tOuPDs+/NMZhuH8i1zcc6617sj5lHN29863sp/cVwOz3t/I224uhWZqiNmlbOYpkUrVV/NzLT4MbpYIapLX/XZxr04zJlMqQsLU2pVHqnbTJIjAPF9H0siuXASIEePYOpRdkBYRCcBtukzQoy57QJumhZD0DQABuLUFTwCIwLwC2IC7oFYPr5gW+QFKKcIQsQG8C9ayIBKObA/AT7mbKRCPvAPIOSf2d2XN7QtwL4+yyHSIQB2KwEjTtF4YIm5XUFSPptt2LGseISD5DI9lEav57nw0vJiH4d/8w0+KzAy1WtBFEAAAAABJRU5ErkJggg==',
+    },
+    {
+      'readable': 'Waxed Copper Bars',
+      'id': 'minecraft:waxed_copper_bars',
+      'texture':
+        'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgBAMAAACBVGfHAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAASUExURQAAAMZzVbBhRqVZP45IMH44IbHsvhoAAAABdFJOUwBA5thmAAAAaElEQVR42n3QsQ3AQAwCQK/ACl6BFViB/VeJEolPETsNsq6B/6pqVZWcGAC64xeawqNcoGWr/4BKNzVAytrRAd5GjEDgPA6kvmB14Jn4hWzKNQGVWOFswgLZRMAr5B8XoE/3Au3cmuACVJ803Y/nlKoAAAAASUVORK5CYII=',
+    },
+    {
+      'readable': 'Waxed Copper Chain',
+      'id': 'minecraft:waxed_copper_chain',
+      'texture':
+        'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgAgMAAAAOFJJnAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAMUExURQAAALBhRqVZP4JAKlv+m0AAAAABdFJOUwBA5thmAAAAMklEQVR42mPACj58ABJMyCJfF6CLcDGgi8RjqFkAFiFg8gfCJvNjiKwnwq4FxPsCJwAAg80PdzQA6k0AAAAASUVORK5CYII=',
+    },
+    {
+      'readable': 'Waxed Copper Chest',
+      'id': 'minecraft:waxed_copper_chest',
+      'texture':
+        'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAABSlBMVEUAAABaMytVMSTGc1XAakvggGvTelpPLiKFQStNKh5GJxxCJBk5HRM9IBaYTzelWT+OSDDCakulWD9GJhylWz+MSDBOLiJVMyTTe1pbMyvSelpNKB7RelvRelrGclVPKh6wYEZCJRmFQSlDJBiHQSuOSTCPSDBVMSU5HRGOSDKOSjA9IRZGJh1DJBlGJx1aMyk5HxNNKBxNKx4qCwk6FghCJBuaTzeEQStMTExWVlY5OTlBQUEvLy9qamrLy8tNTU0vLy1RUVE1NTVPLCJXMSSSU0ReJw1YMyt8RTBiMyRwPy6CSjdeJQ2BSjeASjaASjWASjRaMit+RTGLTzqSUkV8RDFVMCRpOiljMSRBEg+JTzuJTTqJTziQU0VaMSuITzqSUUVBEg6wYUbAakl8RzFcLx9jMyRrOinAa0uSU0VyPy6ASjd8RTGJTzrEgxdQAAAAAXRSTlMAQObYZgAAAb9JREFUeNrNk0dv3DAQhcUhJYqkpN11S++998SO03vv1X3taLXDEf//NbM+2EQSG8jNHyBd3sc34ABMdh6He2p1m1iqEUO5RcxRnit1vJLyX4rsqTNnWUjHqk5Hqr1/l4/lVXdCMvmJ7s1bSmVR3FlT60j2hvw/KCULWbohYFjlg0e5XMo0zauJqqNUKsSGEALimpTdbl6pLD/Zrfi0hkjAeUIMPH4yV71qMtufgtaujIS5QBQo7M4OqCGXgzhlj8RCPY/0tm15UqZUtqTBGOfgUrHZUL8Jy/SLPCIuiY92n7HWFJejEfS630dko/kiSjdu7t6bvW4gEvyrhfCzj8F7BGfBzjx8BM5F10Tv20XsP3uK70FAcW3m/oMbzkZCO8J/mqvrIIoC7PTsHWc0RIsaUEvefyesCyEOFdO33ZWrsdAStWw0g2ZRnDtv3OmCC3bFIwK9az8QvmgWRKlHW7BTj5883xQGbPAe2pcNgjPGWssF0S3wh18f4n1DgjPr+LORkITPHNJXYgGM1scso3USs0y+5RaP2k1dNGYcIPkTCtziV6AsL5jodEwIfoB7yhK+JVsRcEUISLYDxf8+xt9jE1/4/ihx1QAAAABJRU5ErkJggg==',
+    },
+    {
+      'readable': 'Waxed Copper Golem Statue',
+      'id': 'minecraft:waxed_copper_golem_statue',
+      'texture':
+        'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAABFUExURQAAAOCAa9N6Wr1uU6teRJ9WPpJTRYlPOnpHNm89LGc4KFozK1UxJFguH0ssIU8jFEQmG0AiGTccE0MXCDEWDSkOBRgKBcDw2bEAAAABdFJOUwBA5thmAAAA2ElEQVR42r3TMXbEMAgEUCNtAGswxgqb+x81To/VZadRwS80j8f2+VBbj6l9tRVhbg22AiqwJRgCX4FNBMs5jTFj1aHrCKfniq2LurVWE+ZbkBj1+6EKyE36q/dOZKgr/pEXkXt6CZT5ZIabZVRg38/zONin0xv1IukYyvNHLCrAjYh0cKSaVWAMBoYw9j1KoDvjUrPpmeEVUIYLkBEOFECUYcfMSLfMCgjD1O9cgYdPWrDZdcEelqWO93UZJkpwHIwMANOzBMLfCZszbXsKY8BtWyb/4Vh/ARloCnuTJ1UmAAAAAElFTkSuQmCC',
+    },
+    {
+      'readable': 'Waxed Copper Lantern',
+      'id': 'minecraft:waxed_copper_lantern',
+      'texture':
+        'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgBAMAAACBVGfHAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAeUExURQAAAPz8/Nn12Zfol2iwbcBqS6VZP0WATJhPN4JAKgStUSoAAAABdFJOUwBA5thmAAAATklEQVR42q3PMRHAMBADQVMwBVMQBVF4Ck/BFERBbAMgM/oUuXK7W9/TBB5BnsBrAEvOIFsR1FWtCJe8EZoAO0FhH1SGszOIAPWG+eWvHkQ3K29B1iQpAAAAAElFTkSuQmCC',
+    },
+    {
+      'readable': 'Waxed Exposed Copper Bars',
+      'id': 'minecraft:waxed_exposed_copper_bars',
+      'texture':
+        'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgBAMAAACBVGfHAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAVUExURQAAALR9c5aKaKZ2YY1vWndpVWVXSHIS4RIAAAABdFJOUwBA5thmAAAAa0lEQVR42n3QQQ3AMAwDwFAwhVEIBVMwBfOHMK1Ss0eTfizrPnEbEamIkHc0AH1xhaSwlAOkbOUNqKWr9fD4gxUD/BfRAoF6HEidYGVByj6gNlVrgNoxQm3C00JtIuAJ6h8HoOv2AOnd1cELjHNBe6hMAPAAAAAASUVORK5CYII=',
+    },
+    {
+      'readable': 'Waxed Exposed Copper Chain',
+      'id': 'minecraft:waxed_exposed_copper_chain',
+      'texture':
+        'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgBAMAAACBVGfHAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAPUExURQAAAJaKaKZ2YY1vWmVXSJXPzmgAAAABdFJOUwBA5thmAAAAOUlEQVR42sXPIQEAMBDDwFqYhbdQC/GvaQIG8myBh9psIxiMQRqBoQLNCz+WBoNSgyCAw5wH/Mu6Cyp4DMGnXqp1AAAAAElFTkSuQmCC',
+    },
+    {
+      'readable': 'Waxed Exposed Copper Chest',
+      'id': 'minecraft:waxed_exposed_copper_chest',
+      'texture':
+        'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAAilBMVEUAAACEWlROQDZ3U0xsTD9fTD5RSThhWkNQRzp3UkxQRzuFWlRCLidtTD8vLy9BQUFMTEw5OTk1NTVWVlZNTU1RUVFqamrLy8t9cVcuOCJ9cVSSdWGndmHNi4GkdmGWimh8blnMi4F4Y1N9cVaSdWCmdmG4gHY8NykyLSI6LyZCLycwJyFKMy9RODSpVqGGAAAAAXRSTlMAQObYZgAAAWpJREFUeNrNU1lO5DAQTS12Mhsww+wzQCexHTtVvv/1KDcSbUCNxB8vP5be6kge3h+WEO5eoddwRDxPr5ZwWGKMZ9yrCeZ2iCG9pJfVvmg4tEMI6WV3+B//NXtDMsyPAqC7GFvCGuM8L3+PUXPVRwERgBlD+L3EdLApKd2o1tolMADFeNuchyUlcxt6AfEXYrLe22jhWg1aTgIkYHaOCJLNM/e2tQg5JSASseMRAMxbdKt5F+kqmKeJRlN4qGL8z1+XolqfJkzTJxpHqKVouf7xreR8EhCgcwATAlDdVOT6+4Xk0gmc885AiFxFVK4uL3Tb+x+F7NhUDChVs1x93bfSCxyzaxNxgio5Z9nV+L6CmE0EbqIqe/kjVvBEgA8KhwiaS9lzK8j9NT8eS0bfRpbcCqR0guEDOe+5rWAV47fjjKEHsUdk9rBbg+3UfXgOJkSPoCJZPnd0ByLfrimqwzkQQK06vAaob32M98inNCIjUCIjAAAAAElFTkSuQmCC',
+    },
+    {
+      'readable': 'Waxed Exposed Copper Golem Statue',
+      'id': 'minecraft:waxed_exposed_copper_golem_statue',
+      'texture':
+        'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAABIUExURQAAAMyLgU1EN3dTTGxMP7iAdpaKaFxJPKZ2YWFaQ0E4L41xXXdpVRgWEjUwJiAeGDw3KTgtJSgjHUIvJy8qIkozL1E4NIRaVBHrD9IAAAABdFJOUwBA5thmAAAA20lEQVR42r2TOXbDQAxDTc4iWU7i4Qbe/6Z56anpYrT4BfBAPj4vGnubxtecGyBzDKwd0BtiC3CDxWOj5xNbn5hddh3OzuJ0a895NrYYk24q0hjUguacRBXQMul8nedJFKgr/iEvIjONEuiZVyZMTKUCjuO6mDNU6I16SGLu6d9tSZlhEFHnFO1RhmRO4GiJ45AS6EfCe4QvVbFqp56wBqjIwiqHTCx2FV1LtQBaS6xuZssFNyFDMsIdcTNWN7zdA44SYE6oAHDTEmj5owh3jfuTBcPisZX+w7P+AquHDq3oXJ+YAAAAAElFTkSuQmCC',
+    },
+    {
+      'readable': 'Waxed Exposed Copper Lantern',
+      'id': 'minecraft:waxed_exposed_copper_lantern',
+      'texture':
+        'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgBAMAAACBVGfHAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAhUExURQAAAPz8/Nn12Zfol2iwbbiAdpaKaKZ2YY1vWndpVUWATPS8P9AAAAABdFJOUwBA5thmAAAAUElEQVR42q3PQRHAMBBC0VqIhVjAAhbWQi2sBSxgISoroDMkh/zjuzA853kH1g7kAKcjcgbZiqCuakVY5IrQBNgJCmOiMsyR4SVA/WH/5VYfzqks5ckFzrgAAAAASUVORK5CYII=',
+    },
+    {
+      'readable': 'Waxed Exposed Lightning Rod',
+      'id': 'minecraft:waxed_exposed_lightning_rod',
+      'texture':
+        'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAANlBMVEUAAADMi4G4gHZ3aVWEWlR3U0xhWkNsTD9cSTxNRDdRODRBOC9KMy88NylCLyc4LSUvKiIoIx1mbyN2AAAAAXRSTlMAQObYZgAAAGhJREFUeNrlz1ESgCAIBFAkCVFUuv9lmw7g2nft776ZBfpiUmIGdU6JD2Zfg5yZawVAVKoPAPQBsQYiJnW4EwECa6JiMyCQ4nMHBgSnemxu6BiITTyh6h0CO8eFQQsMxHZftPli4o+5AR8HA2esb26xAAAAAElFTkSuQmCC',
+    },
+    {
+      'readable': 'Waxed Lightning Rod',
+      'id': 'minecraft:waxed_lightning_rod',
+      'texture':
+        'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgBAMAAACBVGfHAAAAMFBMVEUBAABVMSSJTzqASjdPLiLTelqSU0VaMytCJBlrOilyPy7ggGtGJxw9IBZjMySlWT+Fb4jJAAAAAXRSTlMAQObYZgAAAFdJREFUeNpjoCvYHYrKz976NRBFIC01vBBFIMmo0BFFINmosBFFQGlSiSADqggan8HSA01AWYSggAyagBW6gJYLmoCxBJrASl80gXVnMRxGSMW8XoYBBQD9AREYzpCDPwAAAABJRU5ErkJggg==',
+    },
+    {
+      'readable': 'Waxed Oxidized Copper Bars',
+      'id': 'minecraft:waxed_oxidized_copper_bars',
+      'texture':
+        'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgBAMAAACBVGfHAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAASUExURQAAAFKfd0uSgj1/ajhtWDplVM8WH9gAAAABdFJOUwBA5thmAAAAaElEQVR42n3QsQ3AQAwCQK/ACl6BFViB/VeJEolPETsNsq6B/6pqVZWcGAC64xeawqNcoGWr/4BKNzVAytrRAd5GjEDgPA6kvmB14Jn4hWzKNQGVWOFswgLZRMAr5B8XoE/3Au3cmuACVJ803Y/nlKoAAAAASUVORK5CYII=',
+    },
+    {
+      'readable': 'Waxed Oxidized Copper Chain',
+      'id': 'minecraft:waxed_oxidized_copper_chain',
+      'texture':
+        'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgAgMAAAAOFJJnAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAMUExURQAAAEuSgj1/ajplVNGP/FgAAAABdFJOUwBA5thmAAAALklEQVR42mPACj58ABJMyCJfMUS4GNBF4hegiywA66LcZH4MkfXk2bUAh104AQA9LBC3rzz4cAAAAABJRU5ErkJggg==',
+    },
+    {
+      'readable': 'Waxed Oxidized Copper Chest',
+      'id': 'minecraft:waxed_oxidized_copper_chest',
+      'texture':
+        'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAAvVBMVEUAAAArTj8jRjofRDkeOjQYMyoXKCJSn3chQC9MqY5OqI5LkoIXKyNYsJJYsJEaMyodRDkhQS8eOjYrTj4eOzQZMyoWKCJMTExBQUE5OTkvLy81NTVNTE1UVlZqampWVlZRUVHLy8tHfmRHfGZOdWAzX1U4b1gzbl0yblxYsZBOdWI8f2o4cl45clwxblw5cF41Z00lRzkmQTYoU0UzblwxX1U5cl5HfmY4bVg9f2o6ZVRtw51YsJBOqY4WKyPVmmxrAAAAAXRSTlMAQObYZgAAAY1JREFUeNrNk9lS3DAQRUctyTNA9g1C9n0BZsZWL5Js6f8/K62XsUMCVbxxqmxX6Z5u3Rev7h/rUk5uiUspx0W5Oc75qOQ0TdP/l8eYcxljSmkq079xykmHlRy/p1z+Utp549FUlKnRPuNB+ConOpjXca2nY07xIh6VEcxB+C2XohMp5lge5niRfk2jsQCzwCzSlJjLcYy6BoyxbrGBfiJ+Fm53K6MBcOAWQn+Juy0xC7dyVqctWAP1IEg/MCMhsYimHqwD6KqZBcRBFW6G2Wj+/tNZZ2EhBNqxKkIkxr8E8+HjG+v881nQJIg0RZ4YU7t3b8/ri0VJRtyHMGy57wXqA3CnZ+fVAcwChR/MQwgofTXGvzp93T1bdviCjPsrojAMYjrnN7V6Cxu7uIKucM8kOOxM5511jx3A01mgHgm3zBiCQMud0wV+7qDlArcVRGh0udPH62t1gDhoticKCA6sd645LVnWCIG/BbHeOu/VWl0HOShsffXezvE1ZSDoKsDqJpAI9O7bIHvXn/EPyR5KndfDyuEAAAAASUVORK5CYII=',
+    },
+    {
+      'readable': 'Waxed Oxidized Copper Golem Statue',
+      'id': 'minecraft:waxed_oxidized_copper_golem_statue',
+      'texture':
+        'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAABCUExURQAAAG3DnVuzkTt0Xi9aUDNsWzRkSiZLPlCac06mjCNBNkiKfB82LRMhHB03MRcuJh9COBUoIiA+LiRIOitOP0d+ZsmiNusAAAABdFJOUwBA5thmAAAA2klEQVR42r3TSXLFIAwEUItB2E4+aGjd/6px9jK7RCxY6BVFF+j4/6Kyb1P5Os8NiCgFvgO9wregMWQHDmZs+9Tasl2Gqzczeo9YrsripeQk4hFUna5nowzUh1zns4gcacT6S04ikeUp6BF3BMQkjRLM9z1G+DJSpDFOGq3H+lS3DEQhot7CtLtnoLUAWg0wWwqYA7O7L1E1SUDngFVAzQzpCT3gY6mpuWoCKge8i4hNw8sl3cJ9TvjLY3XBZ07HQgrGCKgBWKIpqPGt8LXU378sGsSPbekfDOsPBMgNqvB6CO8AAAAASUVORK5CYII=',
+    },
+    {
+      'readable': 'Waxed Oxidized Copper Lantern',
+      'id': 'minecraft:waxed_oxidized_copper_lantern',
+      'texture':
+        'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgBAMAAACBVGfHAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAhUExURQAAAPz8/Nn12Zfol2iwbVKfd0uSgj1/akWATDhxWjplVHcrKjAAAAABdFJOUwBA5thmAAAAUElEQVR42q3NQRUAIQwD0bWABSzUQi1goRZiAQuxEJUrgPdSDszxX+a7Tx2IHVAGbieUB0q0IFRBDrgzNx0gIxIOKsaM8jCHh/5CrAWe8KofrHswFf6MFvIAAAAASUVORK5CYII=',
+    },
+    {
+      'readable': 'Waxed Oxidized Lightning Rod',
+      'id': 'minecraft:waxed_oxidized_lightning_rod',
+      'texture':
+        'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAANlBMVEUAAAAkSDorTj9bs5FIinxtw51HfmY7dF4zbFsvWlAmSz4jQTY0ZEoVKCIgPi4dNzEfQjgXLiaeXmxoAAAAAXRSTlMAQObYZgAAAGVJREFUeNrlzkESwCAIA0CUKmhV8P+f7fQBhnvLNTsk9MUrhRnEtRS+mNMZ1MqcMwCikpMDoC+wMxBpkj0lIkBgTNS6bQi0uUVgYTB8BxsCoN1wxYgr1sTgNgw0GBl/6Pee9Md7AJhQA0XnH/gMAAAAAElFTkSuQmCC',
+    },
+    {
+      'readable': 'Waxed Weathered Copper Bars',
+      'id': 'minecraft:waxed_weathered_copper_bars',
+      'texture':
+        'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgBAMAAACBVGfHAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAVUExURQAAAGWndouFb2uVW2uAUEhwYz1dU2t40BoAAAABdFJOUwBA5thmAAAAa0lEQVR42n3QQQ3AMAwDwFAwhVEIBVMwhfCHMK1qskeTfqzoPnZrZi4zU2Q0AH1xBaewlAO4IuQ3oLKbaiDLfMUAfyNaIFCPA6kT9iY9e+IBtSmvDqiMEWoTeqhNBGKC+scBGNU9gEfe6uAF0HNBv5kwzIYAAAAASUVORK5CYII=',
+    },
+    {
+      'readable': 'Waxed Weathered Copper Chain',
+      'id': 'minecraft:waxed_weathered_copper_chain',
+      'texture':
+        'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgBAMAAACBVGfHAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAPUExURQAAAIuFb2uVW0hwYz1dUwILl1UAAAABdFJOUwBA5thmAAAAOUlEQVR42sXPIQEAMBDDwFiYhVmohfrXNAEP8myFhxq2KzW4BgSB2wiEDvjxlBqkMeAIbFoywFvWezOADMHl9jdsAAAAAElFTkSuQmCC',
+    },
+    {
+      'readable': 'Waxed Weathered Copper Chest',
+      'id': 'minecraft:waxed_weathered_copper_chest',
+      'texture':
+        'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAABsUExURQAAAMvLy3m1l2WndmOedmuVW3OLVmpqamlwRk51YkhwY0FsTEBnTE5hQ1pXSFZWVkVhO0paOFFRUU1NTUxMTERILkFBQS9IQDBIPDk5OShDLzA8KSc/LzU1NTg1LCs8JC44Ii8vLyotHB0tJzDvEFAAAAABdFJOUwBA5thmAAABbElEQVR42s2TTXPeIAyE3dfGBaQm0EaBqqoh8P//Y4QPMZOvmdyyBx28j5ZlPCzfT7sx5jN7H4DZPrCN2b01xtttew/RZWt3a25e52bWt+HW+91vKu+99WYgc7VT27auOocUWG8vgAP9utsz4aZnnAk3yS8AAKAiVhmzjg66zTIDMSA4DR6b/rSZa+XrCIohOsBVK6iGLVLLlZAAQoioKQqsapciVbhPCRRijBidcznz8a8Ic2v5AhCJBhTI5ab+zx+PTSTPCQBEESi6fBzM97//lzkBHKmlw4FjDe/3f556K3wBQSukCJASZHX6w+OTlDIlAP0KqA3Qpc6l9Ye/XUTmBLwLShCNkqdqkUMuIMKdRqALBLmVUmsV0bIXkMJJhHGLLko0Rfp0zZQIUZuGiFxEiiK992OZW1IaPRWorERvnXmZBZiIELVkZW5q5+W1ECglBVrvTWR5TwApackuvHwkOP/m8plc/upjfAZPciLbiPnN6wAAAABJRU5ErkJggg==',
+    },
+    {
+      'readable': 'Waxed Weathered Copper Golem Statue',
+      'id': 'minecraft:waxed_weathered_copper_golem_statue',
+      'texture':
+        'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAABOUExURQAAAHm1l2WndkFsTENHLEVhO1pXSEVTNC5HPmuVWyg8NouFb2uAUGdtRDEzLRgZFR4fHDg1LCkrGxwrJis8JCszIBglIShDLzBIPE51YhfFO1YAAAABdFJOUwBA5thmAAAA3UlEQVR42r3Tu3YDIQwEUAvBPrxO4gU9Rv//o9n0Wrp4GgrdgjmCx+dDZT6m8lVmJKIU+Aw0hk9BZcgMPJgxnVOtQ2cd9lbPk+4rlp2X00vJScQliJ3266AM8EX213EcRI684h95EYkMT0GLeEZAVEwzsK7P57aFD6U38kXSVlv0H3bNQBQiajXUmnsGag2gcmBdNQVtDfTFfYiZnglYWuBkwFQFyMAS8NpNTdwsAxzwJle64uaSruHeO/xmWU3w7t0xkIJtC5gCGGIp4Pg2+Bjm908WFeKPaewfPusvtQMQE9gz3SwAAAAASUVORK5CYII=',
+    },
+    {
+      'readable': 'Waxed Weathered Copper Lantern',
+      'id': 'minecraft:waxed_weathered_copper_lantern',
+      'texture':
+        'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgBAMAAACBVGfHAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAeUExURQAAAPz8/Nn12Zfol2iwbYuFb2uAUEWATEhwYz1dU7qjTB4AAAABdFJOUwBA5thmAAAATElEQVR42q3NMRHAMBADwVAwBVN4Ck8hFETBFETh2AZAZmQXvnKbe85jB3gHJsDpxGQwOAJIEGF1rwjuqnYC1ZilDHNk2F+QXvGHW307BC6fgdThpQAAAABJRU5ErkJggg==',
+    },
+    {
+      'readable': 'Waxed Weathered Lightning Rod',
+      'id': 'minecraft:waxed_weathered_lightning_rod',
+      'texture':
+        'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAAPFBMVEUAAAB5tZdlp3ZOdWJnbURBbExaV0hFYTtFUzRDRywwSDwuRz4oQy8oPDY4NSwrPCQrMyApKxscKyYYJSHAe/QgAAAAAXRSTlMAQObYZgAAAGpJREFUeNrl0EEWgCAIBFDESFMMk/vftdcBHBftiu38xzygL04IzCCOIfDGrHMQI3MpAEiSogZAesA1ByKHFFMlAgTGRLn2AYFUXQKDICU9Iai7dVyRx7JiLM40x6B1f/eo2gbe0Jo7/XFueuwDp7aWLAMAAAAASUVORK5CYII=',
+    },
+    {
+      'readable': 'Weathered Copper Bars',
+      'id': 'minecraft:weathered_copper_bars',
+      'texture':
+        'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgBAMAAACBVGfHAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAVUExURQAAAGWndouFb2uVW2uAUEhwYz1dU2t40BoAAAABdFJOUwBA5thmAAAAa0lEQVR42n3QQQ3AMAwDwFAwhVEIBVMwhfCHMK1qskeTfqzoPnZrZi4zU2Q0AH1xBaewlAO4IuQ3oLKbaiDLfMUAfyNaIFCPA6kT9iY9e+IBtSmvDqiMEWoTeqhNBGKC+scBGNU9gEfe6uAF0HNBv5kwzIYAAAAASUVORK5CYII=',
+    },
+    {
+      'readable': 'Weathered Copper Chain',
+      'id': 'minecraft:weathered_copper_chain',
+      'texture':
+        'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABmJLR0QA/wD/AP+gvaeTAAAA0klEQVRYhWNgGAUkAru4kP92cSH/cfFJBUzUcRb5gIVcjTnTY/4zMDAwXDr+gyIHDHgIkA08C1P+examkB33MDDgIcBIqgb0uOcWFmBgYGBg2N4/h2SzGBgGQQiQnAvu3uJgYGBgYDi0aAkjAwOkHKDEAUMvBL6+/UBVBwy9EICB0ZJw2JSEZKcBauWGAQ8BkstvWLzDQmDk1QUwcGjRGkYGBgaG3vaC/wwMDAzbyTRn6IUAeurfeP0JRQ4YeiEAA7C6ANY+IBcMeAiQDYZNXTAKALzdRojl7BtYAAAAAElFTkSuQmCC',
+    },
+    {
+      'readable': 'Weathered Copper Chest',
+      'id': 'minecraft:weathered_copper_chest',
+      'texture':
+        'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAABsUExURQAAAMvLy3m1l2WndmOedmuVW3OLVmpqamlwRk51YkhwY0FsTEBnTE5hQ1pXSFZWVkVhO0paOFFRUU1NTUxMTERILkFBQS9IQDBIPDk5OShDLzA8KSc/LzU1NTg1LCs8JC44Ii8vLyotHB0tJzDvEFAAAAABdFJOUwBA5thmAAABbElEQVR42s2TTXPeIAyE3dfGBaQm0EaBqqoh8P//Y4QPMZOvmdyyBx28j5ZlPCzfT7sx5jN7H4DZPrCN2b01xtttew/RZWt3a25e52bWt+HW+91vKu+99WYgc7VT27auOocUWG8vgAP9utsz4aZnnAk3yS8AAKAiVhmzjg66zTIDMSA4DR6b/rSZa+XrCIohOsBVK6iGLVLLlZAAQoioKQqsapciVbhPCRRijBidcznz8a8Ic2v5AhCJBhTI5ab+zx+PTSTPCQBEESi6fBzM97//lzkBHKmlw4FjDe/3f556K3wBQSukCJASZHX6w+OTlDIlAP0KqA3Qpc6l9Ye/XUTmBLwLShCNkqdqkUMuIMKdRqALBLmVUmsV0bIXkMJJhHGLLko0Rfp0zZQIUZuGiFxEiiK992OZW1IaPRWorERvnXmZBZiIELVkZW5q5+W1ECglBVrvTWR5TwApackuvHwkOP/m8plc/upjfAZPciLbiPnN6wAAAABJRU5ErkJggg==',
+    },
+    {
+      'readable': 'Weathered Copper Golem Statue',
+      'id': 'minecraft:weathered_copper_golem_statue',
+      'texture':
+        'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAABOUExURQAAAHm1l2WndkFsTENHLEVhO1pXSEVTNC5HPmuVWyg8NouFb2uAUGdtRDEzLRgZFR4fHDg1LCkrGxwrJis8JCszIBglIShDLzBIPE51YhfFO1YAAAABdFJOUwBA5thmAAAA3UlEQVR42r3Tu3YDIQwEUAvBPrxO4gU9Rv//o9n0Wrp4GgrdgjmCx+dDZT6m8lVmJKIU+Aw0hk9BZcgMPJgxnVOtQ2cd9lbPk+4rlp2X00vJScQliJ3266AM8EX213EcRI684h95EYkMT0GLeEZAVEwzsK7P57aFD6U38kXSVlv0H3bNQBQiajXUmnsGag2gcmBdNQVtDfTFfYiZnglYWuBkwFQFyMAS8NpNTdwsAxzwJle64uaSruHeO/xmWU3w7t0xkIJtC5gCGGIp4Pg2+Bjm908WFeKPaewfPusvtQMQE9gz3SwAAAAASUVORK5CYII=',
+    },
+    {
+      'readable': 'Weathered Copper Lantern',
+      'id': 'minecraft:weathered_copper_lantern',
+      'texture':
+        'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABmJLR0QA/wD/AP+gvaeTAAABHElEQVRYhe2VsYrCQBCGvzMeHneN4vUqsZOTNBZpfAprSx/M2gewSWNzbVCuMyhYi8KhKBK8YrNFxEB2c7As5G9CJjPLP99OdqFUQQ3Ho/twPLrr1lf+04yOqrqFsuuPZr2QAXsJyM5P+2MhA/YSkJ0vprOXIgaME1B2nzX9ukSME1Cegazp1z0PjBPIvV+P532/G6e+L9dO6j3vLBgnoDwDb90rALHXScfZAHBZ15TWs4eAnPK29w6A5/ee5m0PZyUD9hBwG3sAvvwBAJPPCQDRNRIJvng44VzJgD0EHiU7d2suAMFvoLWOPQSiQxOA+PtHBJI9l52HSXyb5OWVPQTk7eeE4m9YhTsAOq8tEb/tkjznSXW2jBMoVeoPdipLdoXgsIMAAAAASUVORK5CYII=',
+    },
+    {
+      'readable': 'Weathered Lightning Rod',
+      'id': 'minecraft:weathered_lightning_rod',
+      'texture':
+        'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAAPFBMVEUAAAB5tZdlp3ZOdWJnbURBbExaV0hFYTtFUzRDRywwSDwuRz4oQy8oPDY4NSwrPCQrMyApKxscKyYYJSHAe/QgAAAAAXRSTlMAQObYZgAAAGpJREFUeNrl0EEWgCAIBFDESFMMk/vftdcBHBftiu38xzygL04IzCCOIfDGrHMQI3MpAEiSogZAesA1ByKHFFMlAgTGRLn2AYFUXQKDICU9Iai7dVyRx7JiLM40x6B1f/eo2gbe0Jo7/XFueuwDp7aWLAMAAAAASUVORK5CYII=',
+    },
+  ],
+};
+
+export default Textures;
