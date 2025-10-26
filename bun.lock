@@ -6,8 +6,8 @@
       "devDependencies": {
         "@actions/core": "^1.11.1",
         "@types/bun": "latest",
-        "canvas": "^3.1.2",
-        "typescript": "^5.8.3",
+        "canvas": "^3.2.0",
+        "typescript": "^5.9.3",
       },
     },
   },

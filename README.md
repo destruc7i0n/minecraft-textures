@@ -2,20 +2,51 @@
 
 This is a library containing all the textures I use for my generators.
 
-Textures from 1.12 to 1.21.4 currently available.
+Textures from 1.12 to 1.21.9 currently available.
 
 `npm install minecraft-textures`
 
-## Example Usage:
+## Usage
+
+Check if a version is available:
 
 ```js
-import hasVersion from 'minecraft-textures';
+import hasVersion, { versions, latestVersion } from 'minecraft-textures';
+
 const version = '1.21';
 if (hasVersion(version)) {
   const textures = await import(
     `minecraft-textures/dist/textures/json/${version}.json`
   );
 }
+
+console.log(versions); // all available versions
+console.log(latestVersion); // '1.21'
+```
+
+The textures are base64-encoded PNG images:
+
+```js
+const textures = await import(
+  'minecraft-textures/dist/textures/json/1.21.json'
+);
+
+// textures.items is an array of { readable, id, texture }
+const item = textures.items[0];
+console.log(item.readable); // "Diamond Sword"
+console.log(item.id); // "minecraft:diamond_sword"
+console.log(item.texture); // "data:image/png;base64,..."
+```
+
+For ID-based lookups, use the `.id.json` files:
+
+```js
+const textures = await import(
+  'minecraft-textures/dist/textures/json/1.21.id.json'
+);
+
+const sword = textures.items['minecraft:diamond_sword'];
+// { readable: "Diamond Sword", texture: "data:image/png;base64,..." }
 ```
 
 ## Update Notes

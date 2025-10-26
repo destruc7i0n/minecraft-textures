@@ -21,7 +21,7 @@ export const textures = [
 ] as const;
 
 export const versions = textures;
-export const latestVersion: Last<typeof textures> = '1.21.9';
+export const latestVersion = textures.at(-1) as Last<typeof textures>;
 
 const hasVersion = (version: string) =>
   textures.includes(version as (typeof textures)[number]);
