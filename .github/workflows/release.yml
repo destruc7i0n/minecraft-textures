@@ -1,0 +1,51 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - '*'
+
+jobs:
+  release:
+    permissions:
+      id-token: write # Required for OIDC
+      contents: write # for softprops/action-gh-release to create GitHub release
+
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify package.json version matches tag
+        run: |
+          TAG_VERSION=${GITHUB_REF#refs/tags/}
+          PACKAGE_VERSION=$(jq -r '.version' package.json)
+          echo "Tag version: $TAG_VERSION"
+          echo "Package version: $PACKAGE_VERSION"
+          if [ "$TAG_VERSION" != "$PACKAGE_VERSION" ]; then
+            echo "Error: Tag version ($TAG_VERSION) does not match package.json version ($PACKAGE_VERSION)"
+            exit 1
+          fi
+      - uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          registry-url: 'https://registry.npmjs.org'
+      - name: Install packages
+        run: bun install --frozen-lockfile
+      - name: Build distribution files
+        run: bun run dist
+      - name: Update npm
+        run: npm install -g npm@latest
+      - name: Publish to npm
+        run: npm publish --access public
+      - name: Generate debug outputs
+        run: |
+          bun run debug all
+      - name: Release
+        uses: softprops/action-gh-release@v2
+        with:
+          draft: true
+          files:
+            - dist/*
+            - debug/*
