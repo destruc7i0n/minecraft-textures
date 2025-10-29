@@ -17,6 +17,8 @@ jobs:
       - name: Verify package.json version matches tag
         run: |
           TAG_VERSION=${GITHUB_REF#refs/tags/}
+          # strip 'v' prefix if present (handle both 1.21.9 and v1.21.9)
+          TAG_VERSION=${TAG_VERSION#v}
           PACKAGE_VERSION=$(jq -r '.version' package.json)
           echo "Tag version: $TAG_VERSION"
           echo "Package version: $PACKAGE_VERSION"
@@ -38,7 +40,7 @@ jobs:
       - name: Update npm
         run: npm install -g npm@latest
       - name: Publish to npm
-        run: npm publish --access public
+        run: npm publish --provenance --access public
       - name: Generate debug outputs
         run: |
           bun run debug all
@@ -46,6 +48,6 @@ jobs:
         uses: softprops/action-gh-release@v2
         with:
           draft: true
-          files:
-            - dist/*
-            - debug/*
+          files: |
+            dist/**
+            debug/**
