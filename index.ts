@@ -18,6 +18,7 @@ export const textures = [
   '1.21.6',
   '1.21.7',
   '1.21.9',
+  '1.21.11',
 ] as const;
 
 export const versions = textures;
