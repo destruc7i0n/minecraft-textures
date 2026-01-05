@@ -19,6 +19,8 @@
     "json": "bun run ./scripts/generateJson.ts",
     "debug": "bun run ./scripts/generateDebug.ts",
     "list-missing": "bun run ./scripts/listMissing.ts",
+    "update-textures": "bun run ./scripts/updateTextures.ts",
+    "compare-textures": "bun run ./scripts/compareTextures.ts",
     "validate-translations": "bun run ./scripts/validateTranslations.ts",
     "validate-image-dimensions": "bun run ./scripts/validateImageDimensions.ts"
   },
