@@ -14,6 +14,16 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - name: Validate tag format
+        run: |
+          TAG_NAME=${GITHUB_REF#refs/tags/}
+          echo "Tag: $TAG_NAME"
+          if [[ ! "$TAG_NAME" =~ ^v ]]; then
+            echo "Error: Tag must start with 'v'"
+            echo "Received: $TAG_NAME"
+            exit 1
+          fi
+          echo "Tag format is valid"
       - name: Verify package.json version matches tag
         run: |
           TAG_VERSION=${GITHUB_REF#refs/tags/}
@@ -44,10 +54,32 @@ jobs:
       - name: Generate debug outputs
         run: |
           bun run debug all
+      - name: Create release archives
+        run: |
+          cd dist
+          zip -r ../package.zip .
+          cd ..
+
+          zip -r debug-visualizations.zip debug/*.html
+
+          PACKAGE_VERSION=$(jq -r '.version' package.json)
+          if [ -f "debug/debug-${PACKAGE_VERSION}.html" ]; then
+            cp "debug/debug-${PACKAGE_VERSION}.html" debug-latest.html
+            echo "Using debug-${PACKAGE_VERSION}.html as latest"
+          else
+            # Fallback to most recent file
+            LATEST_DEBUG=$(ls -t debug/debug-*.html | head -n1)
+            cp "$LATEST_DEBUG" debug-latest.html
+            echo "Using $LATEST_DEBUG as latest"
+          fi
+
+          ls -lh package.zip debug-visualizations.zip debug-latest.html
       - name: Release
         uses: softprops/action-gh-release@v2
         with:
-          draft: true
+          draft: false
+          generate_release_notes: true
           files: |
-            dist/**
-            debug/**
+            package.zip
+            debug-visualizations.zip
+            debug-latest.html
