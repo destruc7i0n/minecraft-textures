@@ -1,5 +1,9 @@
 # Minecraft Textures
 
+[![npm version][npm-version-src]][npm-version-href]
+[![GitHub Actions][github-actions-src]][github-actions-href]
+[![npm downloads][npm-downloads-src]][npm-downloads-href]
+
 This is a library containing all the textures I use for my generators.
 
 Textures from 1.12 to 1.21.11 currently available.
@@ -72,3 +76,10 @@ Please credit `destruc7i0n (https://thedestruc7i0n.ca)` if you use this. Its not
 The Minecraft item icons are owned by Mojang Studios.
 
 This project is not affiliated with Mojang Studios.
+
+[npm-version-src]: https://img.shields.io/npm/v/minecraft-textures?style=flat-square
+[npm-version-href]: https://npmjs.com/package/minecraft-textures
+[npm-downloads-src]: https://img.shields.io/npm/dm/minecraft-textures?style=flat-square
+[npm-downloads-href]: https://npmjs.com/package/minecraft-textures
+[github-actions-src]: https://img.shields.io/github/actions/workflow/status/destruc7i0n/minecraft-textures/build.yml?style=flat-square&branch=master
+[github-actions-href]: https://github.com/destruc7i0n/minecraft-textures/actions/workflows/build.yml
