@@ -21,7 +21,7 @@ export interface Item {
 
 export type Last<T extends readonly any[]> = T extends readonly [
   ...any[],
-  infer L
+  infer L,
 ]
   ? L
   : never;

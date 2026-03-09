@@ -45,6 +45,10 @@ jobs:
           registry-url: 'https://registry.npmjs.org'
       - name: Install packages
         run: bun install --frozen-lockfile
+      - name: Check formatting
+        run: bun run format:check
+      - name: Lint
+        run: bun run lint
       - name: Build distribution files
         run: bun run dist
       - name: Update npm

@@ -88,7 +88,7 @@ const PrevItems = updatePropertiesOfItems(
         'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAABcklEQVR4nO2VO0sDQRRGJyJWopDCRyMEFDsFRSKksFJsREQQAkFbwT9ja2llJfbaWpjGwkpxQbDxUQQMViLqt5HDhXUHXAlONuQU35LLknuYmTtbcIHpCXSuwMzOxqcebnC2ojQa97dK597LK0rnRh7ulFYvTkwpDerX+wepvVKLMR0n8DhdVBpjNw2lQaPuEdiu7rUEzmvzSmuICL+BRgg8j5eURlTdLOjxg9RiTHCB1aXvLWiuV5SGT8BXRyR/Ar5DOHBWV9pSJ+tvy2Wlc33NYaVz/fVT5R8OYXCByaPjlgD4LhyWmEbUgffzJ8AYRgslpcEf0igpwBUN1PMn4BtDBGiU3Jqni0ulMbo4p8yjAGP4urWmNBg3nwBbA9TzJ8AY0gC4eJJXLo3afhEFE/jtGIJPjDHN/DEKLsAYRrs1pcGSIkBjDid1QDjzFgQX8B1ClvRj6EVpS04jBHgPMm9BcAEuonZxdXiS2iu1GPNfAl9H6n4wL/C6IgAAAABJRU5ErkJggg==',
     },
   },
-  Prev.items
+  Prev.items,
 );
 
 const Textures: TexturesType = {

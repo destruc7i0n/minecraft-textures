@@ -15,7 +15,7 @@ promises.push(
     format: 'cjs',
     target: 'node',
     naming: { entry: 'minecraft-textures.[ext]' },
-  })
+  }),
 );
 
 const texturesDir = './textures';
@@ -30,7 +30,7 @@ for (const file of textureFiles) {
       format: 'cjs',
       target: 'node',
       naming: { entry: '[name].[ext]' },
-    })
+    }),
   );
 }
 

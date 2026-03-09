@@ -1,32 +1,40 @@
 {
   "name": "minecraft-textures",
   "version": "1.21.11",
-  "description": "base64 encoded Minecraft assets",
-  "main": "./dist/minecraft-textures.js",
-  "repository": "https://github.com/destruc7i0n/minecraft-textures",
-  "author": "TheDestruc7i0n",
-  "license": "GPL-3.0",
   "private": false,
-  "types": "./dist/index.d.ts",
+  "description": "base64 encoded Minecraft assets",
+  "license": "GPL-3.0",
+  "author": "TheDestruc7i0n",
+  "repository": "https://github.com/destruc7i0n/minecraft-textures",
   "files": [
     "dist/**/*"
   ],
+  "main": "./dist/minecraft-textures.js",
+  "types": "./dist/index.d.ts",
   "scripts": {
     "dist": "bun run clean && bun run build",
     "build": "bun run ./build.ts && bun run json && bun run build:declaration",
-    "build:declaration": "tsc --emitDeclarationOnly --project tsconfig.types.json",
+    "build:declaration": "tsgo --emitDeclarationOnly --project tsconfig.types.json",
     "clean": "rm -rf ./dist",
+    "format": "oxfmt",
+    "format:check": "oxfmt --check",
+    "lint": "oxlint",
+    "lint:fix": "oxlint --fix",
+    "typecheck": "tsgo --noEmit",
     "json": "bun run ./scripts/generateJson.ts",
     "debug": "bun run ./scripts/generateDebug.ts",
     "list-missing": "bun run ./scripts/listMissing.ts",
     "validate-translations": "bun run ./scripts/validateTranslations.ts",
     "validate-image-dimensions": "bun run ./scripts/validateImageDimensions.ts"
   },
+  "dependencies": {},
   "devDependencies": {
-    "@actions/core": "^1.11.1",
-    "@types/bun": "latest",
-    "canvas": "^3.2.0",
+    "@actions/core": "^3.0.0",
+    "@types/bun": "1.3.10",
+    "@typescript/native-preview": "^7.0.0-dev.20260308.1",
+    "canvas": "^3.2.1",
+    "oxfmt": "^0.36.0",
+    "oxlint": "^1.51.0",
     "typescript": "^5.9.3"
-  },
-  "dependencies": {}
+  }
 }
