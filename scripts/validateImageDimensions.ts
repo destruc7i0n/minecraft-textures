@@ -19,7 +19,7 @@ const main = async () => {
     let image: Image;
     try {
       image = await loadImage(item.texture);
-    } catch (e) {
+    } catch {
       invalidImages.push(item.id);
       continue;
     }
@@ -43,7 +43,7 @@ const main = async () => {
       resizedImages.push(item);
     } else {
       console.log(
-        `${item.id} is not a multiple of ${expectedDimension}. Skipped resizing.`
+        `${item.id} is not a multiple of ${expectedDimension}. Skipped resizing.`,
       );
     }
   }

@@ -12,7 +12,7 @@ const main = async () => {
     (await (await fetch(VERSION_FILE)).json()) as { id: string }
   ).id;
   console.log(
-    `Comparing (local) items from ${latestVersion} to (remote) ${remoteLatestVersion}`
+    `Comparing (local) items from ${latestVersion} to (remote) ${remoteLatestVersion}`,
   );
 
   const allItems = (await (await fetch(ITEMS_FILE)).json()) as string[];

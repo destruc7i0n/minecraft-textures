@@ -18,7 +18,7 @@ class ItemTextures {
     }
     if (!this.canvas) {
       const atlasSize = this.upperPowerOfTwo(
-        Math.max(this.atlas.width, this.atlas.height)
+        Math.max(this.atlas.width, this.atlas.height),
       );
       this.canvas = createCanvas(atlasSize, atlasSize);
       const ctx = this.canvas.getContext('2d');
@@ -81,7 +81,7 @@ class ItemTextures {
       0,
       0,
       32,
-      32
+      32,
     );
 
     return itemCanvas.toBuffer('image/png');

@@ -31,9 +31,8 @@ console.log(latestVersion); // '1.21'
 The textures are base64-encoded PNG images:
 
 ```js
-const textures = await import(
-  'minecraft-textures/dist/textures/json/1.21.json'
-);
+const textures =
+  await import('minecraft-textures/dist/textures/json/1.21.json');
 
 // textures.items is an array of { readable, id, texture }
 const item = textures.items[0];
@@ -45,9 +44,8 @@ console.log(item.texture); // "data:image/png;base64,..."
 For ID-based lookups, use the `.id.json` files:
 
 ```js
-const textures = await import(
-  'minecraft-textures/dist/textures/json/1.21.id.json'
-);
+const textures =
+  await import('minecraft-textures/dist/textures/json/1.21.id.json');
 
 const sword = textures.items['minecraft:diamond_sword'];
 // { readable: "Diamond Sword", texture: "data:image/png;base64,..." }

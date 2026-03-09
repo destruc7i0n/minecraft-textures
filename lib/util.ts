@@ -11,7 +11,7 @@ interface Updates {
 
 export const updatePropertiesOfItems = (
   updates: Updates = {},
-  items: Item[]
+  items: Item[],
 ) => {
   const ids = Object.keys(updates);
   for (let i = 0; i < items.length; i++) {

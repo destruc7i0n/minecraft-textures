@@ -31,7 +31,7 @@ const main = async () => {
       (acc, item) =>
         acc +
         `<img src="${item.texture}" alt="${item.readable}" title="${item.readable} (${item.id})" />`,
-      ''
+      '',
     );
 
     const table = `
@@ -49,7 +49,7 @@ const main = async () => {
             <td>${item.id}</td>
             <td><img src="${item.texture}" alt="${item.readable}" title="${item.readable} (${item.id})" /></td>
           </tr>
-        `
+        `,
           )
           .join('')}
       </table>

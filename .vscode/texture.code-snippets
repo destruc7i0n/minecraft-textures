@@ -6,8 +6,8 @@
       "\t'readable': '$1',",
       "\t'id': '$2',",
       "\t'texture': '$3',",
-      "},"
+      "},",
     ],
-    "description": "Texture definition"
-  }
+    "description": "Texture definition",
+  },
 }

@@ -12,7 +12,7 @@ const PrevItems = updatePropertiesOfItems(
       id: 'minecraft:iron_chain',
     },
   },
-  Prev.items
+  Prev.items,
 );
 
 const Textures: TexturesType = {

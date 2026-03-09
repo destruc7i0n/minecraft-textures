@@ -28,7 +28,7 @@ const PrevItems = updatePropertiesOfItems(
       'readable': 'Yellow Dye',
     },
   },
-  Prev.items
+  Prev.items,
 );
 
 const Textures: TexturesType = {
