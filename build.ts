@@ -1,13 +1,12 @@
 import fs from 'fs';
 import path from 'path';
 
-import type { BuildOutput } from 'bun';
-
 console.time('build');
 
-const promises: Promise<BuildOutput>[] = [];
+const texturesDir = './textures';
+const textureFiles = fs.readdirSync(texturesDir);
 
-promises.push(
+const results = await Promise.all([
   Bun.build({
     entrypoints: ['./index.ts'],
     outdir: './dist',
@@ -16,13 +15,7 @@ promises.push(
     target: 'node',
     naming: { entry: 'minecraft-textures.[ext]' },
   }),
-);
-
-const texturesDir = './textures';
-const textureFiles = fs.readdirSync(texturesDir);
-
-for (const file of textureFiles) {
-  promises.push(
+  ...textureFiles.map((file) =>
     Bun.build({
       entrypoints: [path.resolve(texturesDir, file)],
       outdir: './dist/textures',
@@ -31,10 +24,9 @@ for (const file of textureFiles) {
       target: 'node',
       naming: { entry: '[name].[ext]' },
     }),
-  );
-}
+  ),
+]);
 
-const results = await Promise.all(promises);
 const failed = results.filter((r) => !r.success);
 if (failed.length > 0) {
   console.error(`Build failed for ${failed.length} files`);
