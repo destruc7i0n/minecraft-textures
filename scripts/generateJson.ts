@@ -8,9 +8,11 @@ import { resolve } from 'path';
 import * as core from '@actions/core';
 
 import { versions } from '../';
-import { SEARCH_ITEMS_ORDERING } from './lib/search-items-ordering';
 import type { TexturesType, TexturesTypeById, Item } from '../lib/types';
 import { compareMinecraftVersions } from './lib/util';
+
+const ITEM_GROUPS_DUMPER_URL =
+  'https://raw.githubusercontent.com/destruc7i0n/item-groups-dumper/refs/heads/main/generated/items.json';
 
 // convert the js to json for npm
 const main = async () => {
@@ -21,6 +23,11 @@ const main = async () => {
   //   versions,
   //   latest: latestVersion,
   // }, null, 2))
+
+  console.log('Fetching items ordering...');
+  const SEARCH_ITEMS_ORDERING: string[] = await fetch(
+    ITEM_GROUPS_DUMPER_URL,
+  ).then((r) => r.json());
 
   const countByVersion: Record<string, number> = {};
 
