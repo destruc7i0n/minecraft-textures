@@ -26,7 +26,8 @@
     "list-missing": "bun run ./scripts/listMissing.ts",
     "validate-translations": "bun run ./scripts/validateTranslations.ts",
     "validate-image-dimensions": "bun run ./scripts/validateImageDimensions.ts",
-    "texture-comparison": "bun run ./scripts/generateTextureComparison.ts"
+    "texture-comparison": "bun run ./scripts/generateTextureComparison.ts",
+    "bump": "bun run ./scripts/bump.ts"
   },
   "dependencies": {},
   "devDependencies": {

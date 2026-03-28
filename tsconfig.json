@@ -13,7 +13,8 @@
     "declaration": true,
     "skipLibCheck": true,
     "verbatimModuleSyntax": true,
-    "types": ["@types/bun"]
+    "moduleDetection": "force",
+    "types": ["bun"]
   },
   "include": ["index.ts"],
   "exclude": ["node_modules"]
