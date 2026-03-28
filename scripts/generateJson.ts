@@ -1,8 +1,3 @@
-import {
-  writeFileSync as write,
-  existsSync as exists,
-  mkdirSync as mkdir,
-} from 'fs';
 import { resolve } from 'path';
 
 import * as core from '@actions/core';
@@ -16,9 +11,6 @@ const ITEM_GROUPS_DUMPER_URL =
 
 // convert the js to json for npm
 const main = async () => {
-  if (!exists('./dist/textures/json'))
-    mkdir('./dist/textures/json', { recursive: true });
-
   // write(`./dist/textures/json/versions.json`, JSON.stringify({
   //   versions,
   //   latest: latestVersion,
@@ -73,7 +65,7 @@ const main = async () => {
       countByVersion[version] = textures.items.length;
 
       // sequential array
-      write(
+      await Bun.write(
         `./dist/textures/json/${version}.json`,
         JSON.stringify(textures, null, 2),
       );
@@ -89,7 +81,7 @@ const main = async () => {
           {},
         ),
       };
-      write(
+      await Bun.write(
         `./dist/textures/json/${version}.id.json`,
         JSON.stringify(byId, null, 2),
       );

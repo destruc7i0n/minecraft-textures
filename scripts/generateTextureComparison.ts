@@ -1,9 +1,3 @@
-import {
-  writeFileSync as write,
-  existsSync as exists,
-  mkdirSync as mkdir,
-} from 'fs';
-
 import type { TexturesType } from '../lib/types';
 import { latestVersion } from '../index';
 import { ItemTextures } from './lib/item-textures';
@@ -55,8 +49,6 @@ const main = async () => {
       `  ${item.id} (${item.readable}): ${item.similarity.toFixed(1)}% similar`,
     ),
   );
-
-  if (!exists('./debug')) mkdir('./debug');
 
   const updatePropertiesData = JSON.stringify(
     changed.map((item) => ({ id: item.id, texture: item.remoteTexture })),
@@ -228,7 +220,7 @@ const main = async () => {
 </body>
 </html>`;
 
-  write('./debug/texture-comparison.html', html);
+  await Bun.write('./debug/texture-comparison.html', html);
   console.log('Written to ./debug/texture-comparison.html');
 };
 

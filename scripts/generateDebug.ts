@@ -1,9 +1,3 @@
-import {
-  writeFileSync as write,
-  existsSync as exists,
-  mkdirSync as mkdir,
-} from 'fs';
-
 import type { TexturesType } from '../lib/types';
 
 import { versions } from '../index';
@@ -19,13 +13,15 @@ const oneLine = (string: string) =>
 const main = async () => {
   const file = process.argv[2] ?? 'all';
 
-  if (!exists('./debug')) mkdir('./debug');
-
   for (const version of versions) {
     if (file !== 'all' && version !== file) continue;
 
-    const contents: TexturesType = (await import(`../textures/${version}`))
-      .default;
+    const jsonPath = `./dist/textures/json/${version}.json`;
+    if (!(await Bun.file(jsonPath).exists())) {
+      console.error(`JSON not found for ${version} - run generateJson first`);
+      continue;
+    }
+    const contents = (await Bun.file(jsonPath).json()) as TexturesType;
 
     const palette = contents.items.reduce(
       (acc, item) =>
@@ -93,7 +89,7 @@ const main = async () => {
       </html>
     `);
 
-    write(`./debug/debug-${version}.html`, html);
+    await Bun.write(`./debug/debug-${version}.html`, html);
   }
 };
 
