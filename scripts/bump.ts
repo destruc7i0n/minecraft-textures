@@ -1,18 +1,21 @@
 // bumps the version across package.json and README.md to match index.ts
 import { latestVersion } from '../index.ts';
 
+const toSemver = (v: string) => (v.split('.').length < 3 ? `${v}.0` : v);
+
 const packageJson = await Bun.file('./package.json').json();
 const oldVersion = packageJson.version as string;
+const semverVersion = toSemver(latestVersion);
 
-if (oldVersion === latestVersion) {
-  console.log(`Already at ${latestVersion}, nothing to do.`);
+if (oldVersion === semverVersion) {
+  console.log(`Already at ${semverVersion}, nothing to do.`);
   process.exit(0);
 }
 
 // update package.json
-packageJson.version = latestVersion;
+packageJson.version = semverVersion;
 await Bun.write('./package.json', JSON.stringify(packageJson, null, 2) + '\n');
-console.log(`package.json: ${oldVersion} → ${latestVersion}`);
+console.log(`package.json: ${oldVersion} -> ${semverVersion}`);
 
 // update README.md
 const readme = await Bun.file('./README.md').text();
@@ -27,4 +30,4 @@ if (readme === updatedReadme) {
   console.log(`README.md: updated latest to ${latestVersion}`);
 }
 
-console.log(`\ngit tag v${latestVersion} && git push origin v${latestVersion}`);
+console.log(`\ngit tag v${semverVersion} && git push origin v${semverVersion}`);
