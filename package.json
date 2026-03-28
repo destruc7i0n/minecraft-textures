@@ -16,8 +16,8 @@
     "build": "bun run ./build.ts && bun run json && bun run build:declaration",
     "build:declaration": "tsgo --emitDeclarationOnly --project tsconfig.types.json",
     "clean": "rm -rf ./dist",
-    "format": "oxfmt",
-    "format:check": "oxfmt --check",
+    "format": "oxfmt --check",
+    "format:fix": "oxfmt",
     "lint": "oxlint",
     "lint:fix": "oxlint --fix",
     "typecheck": "tsgo --noEmit",
@@ -32,10 +32,10 @@
   "devDependencies": {
     "@actions/core": "^3.0.0",
     "@types/bun": "1.3.11",
-    "@typescript/native-preview": "^7.0.0-dev.20260323.1",
+    "@typescript/native-preview": "^7.0.0-dev.20260327.2",
     "canvas": "^3.2.2",
-    "oxfmt": "^0.41.0",
-    "oxlint": "^1.56.0",
+    "oxfmt": "^0.42.0",
+    "oxlint": "^1.57.0",
     "typescript": "^6.0.2"
   }
 }

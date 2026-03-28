@@ -16,17 +16,16 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
-    continue-on-error: true
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
       - uses: oven-sh/setup-bun@v2
         with:
           bun-version: latest
       - name: Install packages
         run: bun install --frozen-lockfile
       - name: Check formatting
-        run: bun run format:check
+        run: bun run format
       - name: Lint
         run: bun run lint
       - name: Build distribution files
@@ -35,11 +34,10 @@ jobs:
         run: |
           bun run debug all
       - name: Generate texture comparison
-        if: always()
         run: |
           bun run texture-comparison
       - name: Upload debug outputs
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: debug-output
           path: debug
@@ -49,12 +47,11 @@ jobs:
           cd dist/textures/json
           dupes=$(jq -r '(.items | map(.id) | group_by(.)) | map(select(length>1) | .[0]) | length' $(ls | sort -r | head -1))
           if [ $dupes -gt 0 ]; then
-            echo "Found $dupes duplicate items." 
+            echo "Found $dupes duplicate items."
             exit 1
-          fi 
+          fi
           cd ../../..
       - name: List duplicate textures
-        if: always()
         run: |
           cd dist/textures/json
           # most are expected. this is just for debug mostly
@@ -65,20 +62,16 @@ jobs:
           fi
           cd ../../..
       - name: List missing items
-        if: always()
         run: |
           bun run list-missing
       - name: Validate translations
-        if: always()
         run: |
           bun run validate-translations
       - name: Validate image dimensions
-        if: always()
         run: |
           bun run validate-image-dimensions
       - name: Upload built output
-        if: always()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: dist
           path: dist
@@ -93,9 +86,9 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
       - uses: actions/configure-pages@v5
-      - uses: actions/download-artifact@v4
+      - uses: actions/download-artifact@v8
         with:
           name: debug-output
           path: debug

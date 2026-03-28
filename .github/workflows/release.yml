@@ -13,7 +13,7 @@ jobs:
 
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
       - name: Validate tag format
         run: |
           TAG_NAME=${GITHUB_REF#refs/tags/}
@@ -39,14 +39,14 @@ jobs:
       - uses: oven-sh/setup-bun@v2
         with:
           bun-version: latest
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v6
         with:
           node-version: '22'
           registry-url: 'https://registry.npmjs.org'
       - name: Install packages
         run: bun install --frozen-lockfile
       - name: Check formatting
-        run: bun run format:check
+        run: bun run format
       - name: Lint
         run: bun run lint
       - name: Build distribution files
