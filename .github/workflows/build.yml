@@ -89,15 +89,15 @@ jobs:
 
     steps:
       - uses: actions/checkout@v6
-      - uses: actions/configure-pages@v5
+      - uses: actions/configure-pages@v6
       - uses: actions/download-artifact@v8
         with:
           name: debug-output
           path: debug
       - name: Upload artifact to GitHub Pages
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v4
         with:
           path: debug
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v5
