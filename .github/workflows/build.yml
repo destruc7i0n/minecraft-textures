@@ -24,7 +24,6 @@ jobs:
       - uses: oven-sh/setup-bun@v2
         with:
           bun-version: latest
-          cache: true
       - name: Install packages
         run: bun install --frozen-lockfile
       - name: Check formatting
