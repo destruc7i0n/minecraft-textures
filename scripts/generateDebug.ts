@@ -58,7 +58,7 @@ const main = async () => {
     const html = oneLine(`
       <html>
         <head>
-          <title>Debug — ${version}</title>
+          <title>Debug - ${version}</title>
           <style>
             * { box-sizing: border-box; margin: 0; padding: 0; }
             body { font-family: monospace; background: #1a1a1a; color: #eee; padding: 24px; }
@@ -77,7 +77,7 @@ const main = async () => {
           </style>
         </head>
         <body>
-          <h1>Debug — ${version}</h1>
+          <h1>Debug - ${version}</h1>
           <p>${contents.items.length} items - ${headers.comment}</p>
           <details open>
             <summary>Palette</summary>
