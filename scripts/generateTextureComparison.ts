@@ -1,4 +1,8 @@
-import { writeFileSync as write, existsSync as exists, mkdirSync as mkdir } from 'fs';
+import {
+  writeFileSync as write,
+  existsSync as exists,
+  mkdirSync as mkdir,
+} from 'fs';
 
 import type { TexturesType } from '../lib/types';
 import { latestVersion } from '../index';
@@ -14,7 +18,8 @@ interface ComparisonItem {
 }
 
 const main = async () => {
-  const latest: TexturesType = (await import(`../textures/${latestVersion}.ts`)).default;
+  const latest: TexturesType = (await import(`../textures/${latestVersion}.ts`))
+    .default;
 
   const itemTextures = new ItemTextures();
   await itemTextures.initialize();
@@ -27,7 +32,10 @@ const main = async () => {
     const remoteBuf = await itemTextures.getImageBufferById(`item/${remoteId}`);
     if (!remoteBuf) continue;
 
-    const { identical, similarity } = await compareImages(item.texture, remoteBuf);
+    const { identical, similarity } = await compareImages(
+      item.texture,
+      remoteBuf,
+    );
     if (!identical) {
       changed.push({
         id: item.id,
@@ -43,7 +51,9 @@ const main = async () => {
 
   console.log(`Found ${changed.length} items with different textures.`);
   changed.forEach((item) =>
-    console.log(`  ${item.id} (${item.readable}): ${item.similarity.toFixed(1)}% similar`),
+    console.log(
+      `  ${item.id} (${item.readable}): ${item.similarity.toFixed(1)}% similar`,
+    ),
   );
 
   if (!exists('./debug')) mkdir('./debug');

@@ -14,7 +14,7 @@ async function imageToCanvas(source: string | Buffer): Promise<Canvas | null> {
 
 export async function compareImages(
   image1: string | Buffer,
-  image2: string | Buffer
+  image2: string | Buffer,
 ): Promise<{ identical: boolean; similarity: number }> {
   const canvas1 = await imageToCanvas(image1);
   const canvas2 = await imageToCanvas(image2);
@@ -56,7 +56,10 @@ export async function compareImages(
     }
   }
 
-  const similarity = visiblePixels === 0 ? 100 : ((visiblePixels - differentPixels) / visiblePixels) * 100;
+  const similarity =
+    visiblePixels === 0
+      ? 100
+      : ((visiblePixels - differentPixels) / visiblePixels) * 100;
   const identical = differentPixels === 0;
 
   return { identical, similarity };
