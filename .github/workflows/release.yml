@@ -3,7 +3,7 @@ name: Release
 on:
   push:
     tags:
-      - '*'
+      - 'v*'
 
 jobs:
   release:
@@ -14,16 +14,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
-      - name: Validate tag format
-        run: |
-          TAG_NAME=${GITHUB_REF#refs/tags/}
-          echo "Tag: $TAG_NAME"
-          if [[ ! "$TAG_NAME" =~ ^v ]]; then
-            echo "Error: Tag must start with 'v'"
-            echo "Received: $TAG_NAME"
-            exit 1
-          fi
-          echo "Tag format is valid"
       - name: Verify package.json version matches tag
         run: |
           TAG_VERSION=${GITHUB_REF#refs/tags/}
@@ -39,6 +29,7 @@ jobs:
       - uses: oven-sh/setup-bun@v2
         with:
           bun-version: latest
+          cache: true
       - uses: actions/setup-node@v6
         with:
           node-version: '22'
@@ -51,8 +42,6 @@ jobs:
         run: bun run lint
       - name: Build distribution files
         run: bun run dist
-      - name: Update npm
-        run: npm install -g npm@latest
       - name: Publish to npm
         run: npm publish --provenance --access public
       - name: Generate debug outputs
