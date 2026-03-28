@@ -3,7 +3,7 @@
     "target": "es2015",
     "lib": ["dom", "esnext"],
     "resolveJsonModule": true,
-    "moduleResolution": "node",
+    "moduleResolution": "bundler",
     "strict": true,
     "allowJs": true,
     "checkJs": false,
