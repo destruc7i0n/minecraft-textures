@@ -6,7 +6,7 @@
 
 This is a library containing all the textures I use for my generators.
 
-Textures from 1.12 to 1.21.11 currently available.
+Textures from 1.12 to 26.1 currently available.
 
 `npm install minecraft-textures`
 
