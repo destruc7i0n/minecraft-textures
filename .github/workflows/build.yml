@@ -34,6 +34,10 @@ jobs:
       - name: Generate debug outputs
         run: |
           bun run debug all
+      - name: Generate texture comparison
+        if: always()
+        run: |
+          bun run texture-comparison
       - name: Upload debug outputs
         uses: actions/upload-artifact@v4
         with:
