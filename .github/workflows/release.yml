@@ -41,6 +41,8 @@ jobs:
         run: bun run lint
       - name: Build distribution files
         run: bun run dist
+      - name: Update npm
+        run: npm install -g npm@latest
       - name: Publish to npm
         run: npm publish --provenance --access public
       - name: Generate debug outputs
