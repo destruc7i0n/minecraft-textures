@@ -48,7 +48,13 @@ jobs:
       - name: Update npm
         run: npm install -g npm@latest
       - name: Publish to npm
-        run: npm publish --provenance --access public
+        run: |
+          PACKAGE_VERSION=$(jq -r '.version' package.json)
+          if [[ "$PACKAGE_VERSION" == *-* ]]; then
+            npm publish --provenance --access public --tag beta
+          else
+            npm publish --provenance --access public
+          fi
       - name: Generate debug outputs
         run: |
           bun run debug all

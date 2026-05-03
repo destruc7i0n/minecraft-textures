@@ -2,7 +2,7 @@
   "name": "minecraft-textures",
   "version": "26.1.0",
   "private": false,
-  "description": "base64 encoded Minecraft assets",
+  "description": "Minecraft item texture metadata and PNG assets",
   "license": "GPL-3.0",
   "author": "TheDestruc7i0n",
   "repository": "https://github.com/destruc7i0n/minecraft-textures",
