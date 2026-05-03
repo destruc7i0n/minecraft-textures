@@ -4,54 +4,101 @@
 [![GitHub Actions][github-actions-src]][github-actions-href]
 [![npm downloads][npm-downloads-src]][npm-downloads-href]
 
-This is a library containing all the textures I use for my generators.
-
-Textures from 1.12 to 26.1 currently available.
+Minecraft item texture metadata and PNG assets for versions 1.12 through 26.1.
 
 `npm install minecraft-textures`
 
 ## Usage
 
-Check if a version is available:
+Use the generated manifests for item metadata and relative PNG asset paths:
+
+```js
+import manifestIndex from 'minecraft-textures/manifest/index.json';
+import manifest from 'minecraft-textures/manifest/26.1.json';
+
+const assetBaseUrl = `/minecraft-textures/${manifestIndex.packageVersion}`;
+
+const items = manifest.items.map((item) => ({
+  ...item,
+  textureUrl: `${assetBaseUrl}/${item.texture}`,
+}));
+```
+
+`manifest.items` is an array of `{ id, readable, texture }`. The `texture`
+field is a relative PNG path like `26.1/diamond_sword.png`.
+
+Serve or copy `dist/textures/assets` at `assetBaseUrl`; each manifest texture
+path is relative to that directory. The same PNG files are also exported for
+bundlers from `minecraft-textures/assets/*`.
+
+To check available versions:
 
 ```js
 import hasVersion, { versions, latestVersion } from 'minecraft-textures';
 
 const version = '1.21';
 if (hasVersion(version)) {
-  const textures = await import(
-    `minecraft-textures/dist/textures/json/${version}.json`
+  const { default: manifest } = await import(
+    `minecraft-textures/manifest/${version}.json`,
+    { with: { type: 'json' } }
   );
+  console.log(manifest.items.length);
 }
 
 console.log(versions); // all available versions
-console.log(latestVersion); // '1.21'
+console.log(latestVersion); // '26.1'
 ```
 
-The textures are base64-encoded PNG images:
+## Deprecated Base64 Compatibility
+
+The legacy base64 JSON files are still generated for compatibility, but they
+are deprecated. New consumers should use `minecraft-textures/manifest/*.json`
+plus PNG assets from `dist/textures/assets`.
+
+These imports will be removed in a future major release.
+
+For legacy array JSON:
 
 ```js
-const textures =
-  await import('minecraft-textures/dist/textures/json/1.21.json');
+const { default: textures } = await import(
+  'minecraft-textures/dist/textures/json/1.21.json',
+  { with: { type: 'json' } }
+);
 
 // textures.items is an array of { readable, id, texture }
-const item = textures.items[0];
+const item = textures.items.find(
+  (item) => item.id === 'minecraft:diamond_sword',
+);
 console.log(item.readable); // "Diamond Sword"
 console.log(item.id); // "minecraft:diamond_sword"
 console.log(item.texture); // "data:image/png;base64,..."
 ```
 
-For ID-based lookups, use the `.id.json` files:
+For legacy ID-based lookups:
 
 ```js
-const textures =
-  await import('minecraft-textures/dist/textures/json/1.21.id.json');
+const { default: textures } = await import(
+  'minecraft-textures/dist/textures/json/1.21.id.json',
+  { with: { type: 'json' } }
+);
 
 const sword = textures.items['minecraft:diamond_sword'];
 // { readable: "Diamond Sword", texture: "data:image/png;base64,..." }
 ```
 
+For legacy per-version JS:
+
+```js
+const textures = require('minecraft-textures/dist/textures/1.21.js').default;
+```
+
 ## Update Notes
+
+### 26.1.0
+
+- Texture images now live as PNG files in `data/textures`.
+- Version and item metadata now lives in `data/versions`.
+- Legacy base64 JSON and per-version JS files are deprecated and will be removed in a future release. Use manifests and PNG assets for new code.
 
 ### 1.20
 
@@ -63,13 +110,12 @@ const sword = textures.items['minecraft:diamond_sword'];
 
 ### 1.16
 
-- The versions are now dynamically imported. You will need to import the path provided by `byVersion`.
-  - For anyone using the .json files, you can now use something like this:
-    - https://unpkg.com/minecraft-textures/dist/textures/json/1.16.json
+- For anyone using the .json files, you can use a URL like:
+  - https://unpkg.com/minecraft-textures/dist/textures/json/1.16.json
 
 ## License
 
-Please credit `destruc7i0n (https://thedestruc7i0n.ca)` if you use this. Its not required, but is appreciated.
+Please credit `destruc7i0n (https://thedestruc7i0n.ca)` if you use this. It's not required, but is appreciated.
 
 The Minecraft item icons are owned by Mojang Studios.
 

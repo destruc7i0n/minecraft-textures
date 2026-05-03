@@ -39,12 +39,25 @@ jobs:
         run: bun run format
       - name: Lint
         run: bun run lint
+      - name: Typecheck
+        run: bun run typecheck
+      - name: Test
+        run: bun run test
       - name: Build distribution files
         run: bun run dist
       - name: Update npm
         run: npm install -g npm@latest
       - name: Publish to npm
-        run: npm publish --provenance --access public
+        id: publish
+        run: |
+          PACKAGE_VERSION=$(jq -r '.version' package.json)
+          if [[ "$PACKAGE_VERSION" == *-* ]]; then
+            echo "prerelease=true" >> "$GITHUB_OUTPUT"
+            npm publish --provenance --access public --tag beta
+          else
+            echo "prerelease=false" >> "$GITHUB_OUTPUT"
+            npm publish --provenance --access public
+          fi
       - name: Generate debug outputs
         run: |
           bun run debug all
@@ -69,9 +82,10 @@ jobs:
 
           ls -lh package.zip debug-visualizations.zip debug-latest.html
       - name: Release
-        uses: softprops/action-gh-release@v2
+        uses: softprops/action-gh-release@v3
         with:
           draft: false
+          prerelease: ${{ steps.publish.outputs.prerelease == 'true' }}
           generate_release_notes: true
           files: |
             package.zip

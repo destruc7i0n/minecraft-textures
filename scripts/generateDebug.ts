@@ -1,7 +1,7 @@
-import type { TexturesType } from '../lib/types';
-
 import { versions } from '../index';
 import { headers } from '../lib/constants';
+import { resolveDataVersion } from './lib/data/resolver';
+import { pngToDataUrl } from './lib/data/png';
 
 const oneLine = (string: string) =>
   string
@@ -9,24 +9,24 @@ const oneLine = (string: string) =>
     .map((s) => s.trim())
     .join('');
 
-// generates a debug sheet of the textures in an html file
 const main = async () => {
-  const file = process.argv[2] ?? 'all';
+  const target = process.argv[2] ?? 'all';
 
   for (const version of versions) {
-    if (file !== 'all' && version !== file) continue;
+    if (target !== 'all' && version !== target) continue;
 
-    const jsonPath = `./dist/textures/json/${version}.json`;
-    if (!(await Bun.file(jsonPath).exists())) {
-      console.error(`JSON not found for ${version} - run generateJson first`);
-      continue;
-    }
-    const contents = (await Bun.file(jsonPath).json()) as TexturesType;
+    const resolved = resolveDataVersion(version);
+    const items = await Promise.all(
+      resolved.items.map(async (item) => ({
+        ...item,
+        textureDataUrl: await pngToDataUrl(item.dataTexturePath),
+      })),
+    );
 
-    const palette = contents.items.reduce(
+    const palette = items.reduce(
       (acc, item) =>
         acc +
-        `<img src="${item.texture}" alt="${item.readable}" title="${item.readable} (${item.id})" />`,
+        `<img src="${item.textureDataUrl}" alt="${item.readable}" title="${item.readable} (${item.id})" />`,
       '',
     );
 
@@ -37,13 +37,13 @@ const main = async () => {
           <th>ID</th>
           <th>Image</th>
         </tr>
-        ${contents.items
+        ${items
           .map(
             (item) => `
           <tr>
             <td>${item.readable}</td>
             <td>${item.id}</td>
-            <td><img src="${item.texture}" alt="${item.readable}" title="${item.readable} (${item.id})" /></td>
+            <td><img src="${item.textureDataUrl}" alt="${item.readable}" title="${item.readable} (${item.id})" /></td>
           </tr>
         `,
           )
@@ -74,7 +74,7 @@ const main = async () => {
         </head>
         <body>
           <h1>Debug - ${version}</h1>
-          <p>${contents.items.length} items - ${headers.comment}</p>
+          <p>${items.length} items - ${headers.comment}</p>
           <details open>
             <summary>Palette</summary>
             <div class="palette">

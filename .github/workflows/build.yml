@@ -30,6 +30,10 @@ jobs:
         run: bun run format
       - name: Lint
         run: bun run lint
+      - name: Typecheck
+        run: bun run typecheck
+      - name: Test
+        run: bun run test
       - name: Build distribution files
         run: bun run dist
       - name: Generate debug outputs
@@ -45,38 +49,45 @@ jobs:
           path: debug
       - name: Check for duplicates in ID
         run: |
-          # check for dupes in the latest file
-          cd dist/textures/json
-          dupes=$(jq -r '(.items | map(.id) | group_by(.)) | map(select(length>1) | .[0]) | length' $(ls | sort -r | head -1))
+          latest=$(jq -r '.latestVersion' dist/textures/manifest/index.json)
+          file="dist/textures/manifest/$latest.json"
+          dupes=$(jq -r '(.items | map(.id) | group_by(.)) | map(select(length>1) | .[0]) | length' "$file")
           if [ $dupes -gt 0 ]; then
             echo "Found $dupes duplicate items."
             exit 1
           fi
-          cd ../../..
       - name: List duplicate textures
         run: |
-          cd dist/textures/json
+          latest=$(jq -r '.latestVersion' dist/textures/manifest/index.json)
+          file="dist/textures/manifest/$latest.json"
           # most are expected. this is just for debug mostly
-          duplicates=$(jq -r '.items | map({id: .id, t: .texture}) | group_by(.t) | map(select(length > 1))' $(ls | sort -r | head -1))
+          duplicates=$(jq -r '.items | map({id: .id, t: .texture}) | group_by(.t) | map(select(length > 1))' "$file")
           if [ "$duplicates" != "[]" ]; then
             echo "Found duplicate textures:"
             echo "$duplicates" | jq '.'
           fi
-          cd ../../..
-      - name: List missing items
-        run: |
-          bun run list-missing
       - name: Validate translations
         run: |
           bun run validate-translations
-      - name: Validate image dimensions
+      - name: Validate textures
         run: |
-          bun run validate-image-dimensions
+          bun run validate-textures
       - name: Upload built output
         uses: actions/upload-artifact@v7
         with:
           name: dist
           path: dist
+      - name: List missing items
+        id: list-missing
+        run: |
+          bun run list-missing
+      - name: Upload missing textures
+        if: ${{ failure() && steps.list-missing.outcome == 'failure' }}
+        uses: actions/upload-artifact@v7
+        with:
+          name: missing-textures
+          path: debug/missing-textures
+          if-no-files-found: ignore
 
   pages:
     if: github.ref == 'refs/heads/master'
