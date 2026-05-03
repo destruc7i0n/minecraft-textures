@@ -1,9 +1,6 @@
-import { discoverDataVersions } from './lib/data/versions';
+import { latestVersion } from '../index';
 
 const toSemver = (v: string) => (v.split('.').length < 3 ? `${v}.0` : v);
-
-const latestVersion = discoverDataVersions().at(-1);
-if (!latestVersion) throw new Error('No data versions found');
 
 const packageJson = await Bun.file('./package.json').json();
 const oldVersion = packageJson.version as string;

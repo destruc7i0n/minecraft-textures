@@ -1,7 +1,7 @@
+import { versions } from '../index';
 import { headers } from '../lib/constants';
-import { createLegacyJson } from './lib/data/legacy';
 import { resolveDataVersion } from './lib/data/resolver';
-import { discoverDataVersions } from './lib/data/versions';
+import { pngToDataUrl } from './lib/data/png';
 
 const oneLine = (string: string) =>
   string
@@ -10,17 +10,23 @@ const oneLine = (string: string) =>
     .join('');
 
 const main = async () => {
-  const file = process.argv[2] ?? 'all';
+  const target = process.argv[2] ?? 'all';
 
-  for (const version of discoverDataVersions()) {
-    if (file !== 'all' && version !== file) continue;
+  for (const version of versions) {
+    if (target !== 'all' && version !== target) continue;
 
-    const contents = await createLegacyJson(resolveDataVersion(version));
+    const resolved = resolveDataVersion(version);
+    const items = await Promise.all(
+      resolved.items.map(async (item) => ({
+        ...item,
+        textureDataUrl: await pngToDataUrl(item.dataTexturePath),
+      })),
+    );
 
-    const palette = contents.items.reduce(
+    const palette = items.reduce(
       (acc, item) =>
         acc +
-        `<img src="${item.texture}" alt="${item.readable}" title="${item.readable} (${item.id})" />`,
+        `<img src="${item.textureDataUrl}" alt="${item.readable}" title="${item.readable} (${item.id})" />`,
       '',
     );
 
@@ -31,13 +37,13 @@ const main = async () => {
           <th>ID</th>
           <th>Image</th>
         </tr>
-        ${contents.items
+        ${items
           .map(
             (item) => `
           <tr>
             <td>${item.readable}</td>
             <td>${item.id}</td>
-            <td><img src="${item.texture}" alt="${item.readable}" title="${item.readable} (${item.id})" /></td>
+            <td><img src="${item.textureDataUrl}" alt="${item.readable}" title="${item.readable} (${item.id})" /></td>
           </tr>
         `,
           )
@@ -68,7 +74,7 @@ const main = async () => {
         </head>
         <body>
           <h1>Debug - ${version}</h1>
-          <p>${contents.items.length} items - ${headers.comment}</p>
+          <p>${items.length} items - ${headers.comment}</p>
           <details open>
             <summary>Palette</summary>
             <div class="palette">

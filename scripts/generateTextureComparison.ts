@@ -1,11 +1,13 @@
+import { mkdir, rm } from 'fs/promises';
+
+import { latestVersion } from '../index';
 import type { DataItem } from './lib/data/types';
 import { ItemTextures } from './lib/item-textures';
 import { compareImages } from './lib/image-comparison';
 import { defaultTextureName, resolveDataVersion } from './lib/data/resolver';
-import { discoverDataVersions } from './lib/data/versions';
-import { pngToDataUrl } from './lib/data/png';
+import { pngBytesToDataUrl, pngToDataUrl } from './lib/data/png';
 
-interface ComparisonItem {
+interface ChangedItem {
   id: string;
   readable: string;
   similarity: number;
@@ -14,15 +16,27 @@ interface ComparisonItem {
   textureFile: string;
 }
 
+interface ChangedCandidate {
+  id: string;
+  readable: string;
+  similarity: number;
+  dataTexturePath: string;
+  preferredTextureFile: string;
+  defaultTextureFile: string;
+  remoteTextureBytes: Uint8Array;
+}
+
+const OUTPUT_DIR = './debug/texture-comparison';
+
 const main = async () => {
-  const latestVersion = discoverDataVersions().at(-1);
-  if (!latestVersion) throw new Error('No data versions found');
+  await rm(OUTPUT_DIR, { recursive: true, force: true });
+  await rm('./debug/texture-comparison.html', { force: true });
 
   const latest = resolveDataVersion(latestVersion);
   const itemTextures = new ItemTextures();
   await itemTextures.initialize();
 
-  const changed: ComparisonItem[] = [];
+  const candidates: ChangedCandidate[] = [];
 
   for (const item of latest.items) {
     const remoteId = item.id.replace('minecraft:', '');
@@ -34,42 +48,50 @@ const main = async () => {
       remoteBuf,
     );
     if (!identical) {
-      changed.push({
+      candidates.push({
         id: item.id,
         readable: item.readable,
         similarity,
-        currentTexture: await pngToDataUrl(item.dataTexturePath),
-        remoteTexture: `data:image/png;base64,${remoteBuf.toString('base64')}`,
-        textureFile: defaultTextureName(item.id),
+        dataTexturePath: item.dataTexturePath,
+        preferredTextureFile: item.texture.split('/').at(-1)!,
+        defaultTextureFile: defaultTextureName(item.id),
+        remoteTextureBytes: new Uint8Array(remoteBuf),
       });
     }
   }
 
-  changed.sort((a, b) => a.similarity - b.similarity);
+  const preferredCounts = candidates.reduce((acc, item) => {
+    acc.set(
+      item.preferredTextureFile,
+      (acc.get(item.preferredTextureFile) ?? 0) + 1,
+    );
+    return acc;
+  }, new Map<string, number>());
 
-  console.log(`Found ${changed.length} items with different textures.`);
-  changed.forEach((item) =>
-    console.log(
-      `  ${item.id} (${item.readable}): ${item.similarity.toFixed(1)}% similar`,
-    ),
-  );
+  const changed: ChangedItem[] = [];
+  const textureOverrides: Record<string, Partial<DataItem>> = {};
 
-  const suggestedUpdate = changed.reduce<Record<string, Partial<DataItem>>>(
-    (acc, item) => {
-      acc[item.id] = { texture: item.textureFile };
-      return acc;
-    },
-    {},
-  );
-  console.log(JSON.stringify({ update: suggestedUpdate }, null, 2));
+  for (const item of candidates.sort((a, b) => a.similarity - b.similarity)) {
+    const hasFilenameConflict =
+      (preferredCounts.get(item.preferredTextureFile) ?? 0) > 1;
+    const textureFile = hasFilenameConflict
+      ? item.defaultTextureFile
+      : item.preferredTextureFile;
+    const needsTextureOverride = textureFile !== item.preferredTextureFile;
 
-  const updateData = JSON.stringify(
-    changed.map((item) => ({
+    if (needsTextureOverride) {
+      textureOverrides[item.id] = { texture: textureFile };
+    }
+
+    changed.push({
       id: item.id,
-      texture: item.textureFile,
-      remoteTexture: item.remoteTexture,
-    })),
-  );
+      readable: item.readable,
+      similarity: item.similarity,
+      currentTexture: await pngToDataUrl(item.dataTexturePath),
+      remoteTexture: pngBytesToDataUrl(item.remoteTextureBytes),
+      textureFile,
+    });
+  }
 
   const cards = changed
     .map(
@@ -83,6 +105,7 @@ const main = async () => {
       <div class="label">
         <strong>${item.readable}</strong>
         <span>${item.id}</span>
+        <span>${item.textureFile}</span>
         <span>${item.similarity.toFixed(1)}% similar</span>
       </div>
     </div>`,
@@ -167,24 +190,9 @@ const main = async () => {
     <button id="btn-slider" class="active" onclick="setMode('slider')">Slider</button>
     <button id="btn-overlay" onclick="setMode('overlay')">Overlay</button>
     <button id="btn-diff" onclick="setMode('diff')">Diff</button>
-    <button onclick="copyUpdateJson(event)">Copy data JSON update</button>
   </div>
   <div class="grid">${cards}</div>
   <script>
-    const UPDATE_DATA = ${updateData};
-
-    function copyUpdateJson(event) {
-      const update = UPDATE_DATA.reduce((acc, item) => {
-        acc[item.id] = { texture: item.texture };
-        return acc;
-      }, {});
-      navigator.clipboard.writeText(JSON.stringify({ update }, null, 2)).then(() => {
-        const btn = event.target;
-        btn.textContent = 'Copied!';
-        setTimeout(() => btn.textContent = 'Copy data JSON update', 1500);
-      });
-    }
-
     function setMode(mode) {
       document.querySelectorAll('.viewer').forEach(v => {
         v.dataset.mode = mode;
@@ -227,8 +235,21 @@ const main = async () => {
 </body>
 </html>`;
 
-  await Bun.write('./debug/texture-comparison.html', html);
-  console.log('Written to ./debug/texture-comparison.html');
+  await mkdir(OUTPUT_DIR, { recursive: true });
+  await Bun.write(`${OUTPUT_DIR}/index.html`, html);
+
+  console.log(`${changed.length} changed textures.`);
+  changed.forEach((item) =>
+    console.log(
+      `  ${item.id} (${item.readable}): ${item.similarity.toFixed(1)}% similar -> ${item.textureFile}`,
+    ),
+  );
+  console.log(`Wrote ${OUTPUT_DIR}/index.html`);
+
+  if (Object.keys(textureOverrides).length > 0) {
+    console.log('Filename conflicts; add this update block:');
+    console.log(JSON.stringify({ update: textureOverrides }, null, 2));
+  }
 };
 
 main();

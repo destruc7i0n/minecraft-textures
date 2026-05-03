@@ -1,21 +1,31 @@
 import * as core from '@actions/core';
+import { readdirSync } from 'fs';
+import { join } from 'path';
 
 import { loadImage } from 'canvas';
 
+import { versions } from '../index';
 import { resolveDataVersion } from './lib/data/resolver';
-import { discoverDataVersions } from './lib/data/versions';
+import { TEXTURE_DATA_DIR } from './lib/data/versions';
 
 const expectedDimension = 32;
+// these are 32x31
+const dimensionExceptions = new Set([
+  'data/textures/1.12/end_crystal.png',
+  'data/textures/1.13/end_crystal.png',
+]);
 
 const main = async () => {
   const invalidImages: string[] = [];
   const invalidDimensions: string[] = [];
+  const paths = new Set(findPngFiles(TEXTURE_DATA_DIR));
 
-  const latestVersion = discoverDataVersions().at(-1);
-  if (!latestVersion) throw new Error('No data versions found');
-
-  const latest = resolveDataVersion(latestVersion);
-  const paths = new Set(latest.items.map((item) => item.dataTexturePath));
+  for (const version of versions) {
+    const resolved = resolveDataVersion(version);
+    for (const item of resolved.items) {
+      paths.add(item.dataTexturePath);
+    }
+  }
 
   for (const path of paths) {
     let image: Awaited<ReturnType<typeof loadImage>>;
@@ -28,6 +38,8 @@ const main = async () => {
 
     const { width, height } = image;
     if (width !== expectedDimension || height !== expectedDimension) {
+      if (dimensionExceptions.has(path)) continue;
+
       console.log(`${path} is ${width}x${height}`);
       invalidDimensions.push(path);
     }
@@ -56,3 +68,11 @@ const main = async () => {
 };
 
 main();
+
+function findPngFiles(dir: string): string[] {
+  return readdirSync(dir, { withFileTypes: true }).flatMap((entry) => {
+    const path = join(dir, entry.name);
+    if (entry.isDirectory()) return findPngFiles(path);
+    return entry.isFile() && entry.name.endsWith('.png') ? [path] : [];
+  });
+}

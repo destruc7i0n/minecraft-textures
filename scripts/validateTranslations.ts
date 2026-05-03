@@ -1,13 +1,10 @@
 import * as core from '@actions/core';
 
+import { latestVersion } from '../index';
 import { resolveDataVersion } from './lib/data/resolver';
-import { discoverDataVersions } from './lib/data/versions';
 import { getTranslationFromId } from './lib/translations';
 
 const main = async () => {
-  const latestVersion = discoverDataVersions().at(-1);
-  if (!latestVersion) throw new Error('No data versions found');
-
   const latest = resolveDataVersion(latestVersion);
   const invalid: Record<string, { current: string; expected: string }> = {};
 
