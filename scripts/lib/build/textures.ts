@@ -1,13 +1,17 @@
 import { join } from 'path';
 
 import { headers } from '../../../lib/constants';
-import { createLegacyIdJson, createLegacyJson } from '../data/legacy';
+import {
+  createLegacyIdJson,
+  createLegacyJson,
+  type LegacyJson,
+} from '../data/legacy';
 import type {
   ResolvedVersion,
   TextureManifest,
   TextureManifestItem,
 } from '../data/types';
-import { writeFile, writeJson } from './files';
+import { writeJson } from './files';
 
 export async function writeManifestIndex(
   versions: string[],
@@ -96,11 +100,24 @@ function toManifestById(
   };
 }
 
-async function writeLegacyVersionJs(version: string, legacy: unknown) {
-  await writeFile(
-    `./dist/textures/${version}.js`,
-    `Object.defineProperty(exports, "__esModule", { value: true });
-exports.default = ${JSON.stringify(legacy)};
-`,
-  );
+async function writeLegacyVersionJs(version: string, legacy: LegacyJson) {
+  const source = await Bun.file('./src/legacy-textures.ts').text();
+
+  const result = await Bun.build({
+    entrypoints: ['/virtual/legacy-textures.ts'],
+    files: {
+      '/virtual/legacy-textures.ts': source,
+      '/virtual/legacy-textures.json': JSON.stringify(legacy),
+    },
+    outdir: './dist/textures',
+    format: 'cjs',
+    target: 'node',
+    naming: `${version}.js`,
+  });
+
+  if (!result.success) {
+    throw new Error(
+      `Failed to build legacy JS ${version}:\n${result.logs.join('\n')}`,
+    );
+  }
 }

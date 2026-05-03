@@ -67,15 +67,15 @@ jobs:
             echo "$duplicates" | jq '.'
           fi
           cd ../../..
-      - name: List missing items
-        run: |
-          bun run list-missing
       - name: Validate translations
         run: |
           bun run validate-translations
       - name: Validate image dimensions
         run: |
           bun run validate-image-dimensions
+      - name: List missing items
+        run: |
+          bun run list-missing
       - name: Upload built output
         uses: actions/upload-artifact@v7
         with:
