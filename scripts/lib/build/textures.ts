@@ -6,6 +6,7 @@ import {
   createLegacyJson,
   type LegacyJson,
 } from '../data/legacy';
+import { addPngTextMetadata, DIST_PNG_METADATA } from '../data/png';
 import type {
   ResolvedVersion,
   TextureManifest,
@@ -55,9 +56,12 @@ export async function writeResolvedAssets(versions: ResolvedVersion[]) {
   }
 
   await Promise.all(
-    Array.from(assets, ([texture, source]) =>
-      Bun.write(join('./dist/textures/assets', texture), Bun.file(source)),
-    ),
+    Array.from(assets, async ([texture, source]) => {
+      const bytes = await Bun.file(source).bytes();
+      const output = addPngTextMetadata(bytes, DIST_PNG_METADATA);
+
+      await Bun.write(join('./dist/textures/assets', texture), output);
+    }),
   );
 }
 
