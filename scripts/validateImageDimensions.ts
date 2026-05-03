@@ -1,50 +1,35 @@
 import * as core from '@actions/core';
 
-import { createCanvas, loadImage, type Image } from 'canvas';
+import { loadImage } from 'canvas';
 
-import type { TexturesType, Item } from '../lib/types';
-import { latestVersion } from '../index';
+import { resolveDataVersion } from './lib/data/resolver';
+import { discoverDataVersions } from './lib/data/versions';
 
 const expectedDimension = 32;
 
 const main = async () => {
-  const latest: TexturesType = (await import(`../textures/${latestVersion}.ts`))
-    .default;
-
   const invalidImages: string[] = [];
   const invalidDimensions: string[] = [];
-  const resizedImages: Item[] = [];
 
-  for (const item of latest.items) {
-    let image: Image;
+  const latestVersion = discoverDataVersions().at(-1);
+  if (!latestVersion) throw new Error('No data versions found');
+
+  const latest = resolveDataVersion(latestVersion);
+  const paths = new Set(latest.items.map((item) => item.dataTexturePath));
+
+  for (const path of paths) {
+    let image: Awaited<ReturnType<typeof loadImage>>;
     try {
-      image = await loadImage(item.texture);
+      image = await loadImage(path);
     } catch {
-      invalidImages.push(item.id);
+      invalidImages.push(path);
       continue;
     }
 
     const { width, height } = image;
-
     if (width !== expectedDimension || height !== expectedDimension) {
-      console.log(`${item.id} is ${width}x${height}`);
-      invalidDimensions.push(item.id);
-    } else {
-      continue;
-    }
-
-    if (width !== expectedDimension || height !== expectedDimension) {
-      // resize the image to the expected dimension
-      const canvas = createCanvas(expectedDimension, expectedDimension);
-      const ctx = canvas.getContext('2d');
-      ctx.imageSmoothingEnabled = false;
-      ctx.drawImage(image, 0, 0, expectedDimension, expectedDimension);
-      item.texture = canvas.toDataURL();
-      resizedImages.push(item);
-    } else {
-      console.log(
-        `${item.id} is not a multiple of ${expectedDimension}. Skipped resizing.`,
-      );
+      console.log(`${path} is ${width}x${height}`);
+      invalidDimensions.push(path);
     }
   }
 
@@ -59,7 +44,7 @@ const main = async () => {
   if (invalidDimensions.length) {
     const message = `Found ${invalidDimensions.length} images not ${expectedDimension}x${expectedDimension}.`;
     console.log(message);
-    console.log(JSON.stringify(resizedImages, null, 2));
+    console.log(JSON.stringify(invalidDimensions, null, 2));
     if (process.env.GITHUB_ACTIONS) {
       core.warning(message);
     }

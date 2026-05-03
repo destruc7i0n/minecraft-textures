@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "target": "es2015",
+    "target": "es2017",
     "lib": ["dom", "esnext"],
     "resolveJsonModule": true,
     "moduleResolution": "bundler",
@@ -16,6 +16,13 @@
     "moduleDetection": "force",
     "types": ["bun"]
   },
-  "include": ["index.ts"],
-  "exclude": ["node_modules"]
+  "include": [
+    "index.ts",
+    "src/**/*.ts",
+    "build.ts",
+    "scripts/**/*.ts",
+    "test/**/*.ts",
+    "lib/**/*.ts"
+  ],
+  "exclude": ["node_modules", "dist"]
 }

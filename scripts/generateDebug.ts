@@ -1,7 +1,7 @@
-import type { TexturesType } from '../lib/types';
-
-import { versions } from '../index';
 import { headers } from '../lib/constants';
+import { createLegacyJson } from './lib/data/legacy';
+import { resolveDataVersion } from './lib/data/resolver';
+import { discoverDataVersions } from './lib/data/versions';
 
 const oneLine = (string: string) =>
   string
@@ -9,19 +9,13 @@ const oneLine = (string: string) =>
     .map((s) => s.trim())
     .join('');
 
-// generates a debug sheet of the textures in an html file
 const main = async () => {
   const file = process.argv[2] ?? 'all';
 
-  for (const version of versions) {
+  for (const version of discoverDataVersions()) {
     if (file !== 'all' && version !== file) continue;
 
-    const jsonPath = `./dist/textures/json/${version}.json`;
-    if (!(await Bun.file(jsonPath).exists())) {
-      console.error(`JSON not found for ${version} - run generateJson first`);
-      continue;
-    }
-    const contents = (await Bun.file(jsonPath).json()) as TexturesType;
+    const contents = await createLegacyJson(resolveDataVersion(version));
 
     const palette = contents.items.reduce(
       (acc, item) =>

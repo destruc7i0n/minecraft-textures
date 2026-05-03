@@ -1,7 +1,9 @@
-import type { TexturesType } from '../lib/types';
-import { latestVersion } from '../index';
+import type { DataItem } from './lib/data/types';
 import { ItemTextures } from './lib/item-textures';
 import { compareImages } from './lib/image-comparison';
+import { defaultTextureName, resolveDataVersion } from './lib/data/resolver';
+import { discoverDataVersions } from './lib/data/versions';
+import { pngToDataUrl } from './lib/data/png';
 
 interface ComparisonItem {
   id: string;
@@ -9,25 +11,26 @@ interface ComparisonItem {
   similarity: number;
   currentTexture: string;
   remoteTexture: string;
+  textureFile: string;
 }
 
 const main = async () => {
-  const latest: TexturesType = (await import(`../textures/${latestVersion}.ts`))
-    .default;
+  const latestVersion = discoverDataVersions().at(-1);
+  if (!latestVersion) throw new Error('No data versions found');
 
+  const latest = resolveDataVersion(latestVersion);
   const itemTextures = new ItemTextures();
   await itemTextures.initialize();
 
   const changed: ComparisonItem[] = [];
 
   for (const item of latest.items) {
-    if (!item.texture) continue;
     const remoteId = item.id.replace('minecraft:', '');
     const remoteBuf = await itemTextures.getImageBufferById(`item/${remoteId}`);
     if (!remoteBuf) continue;
 
     const { identical, similarity } = await compareImages(
-      item.texture,
+      item.dataTexturePath,
       remoteBuf,
     );
     if (!identical) {
@@ -35,8 +38,9 @@ const main = async () => {
         id: item.id,
         readable: item.readable,
         similarity,
-        currentTexture: item.texture,
+        currentTexture: await pngToDataUrl(item.dataTexturePath),
         remoteTexture: `data:image/png;base64,${remoteBuf.toString('base64')}`,
+        textureFile: defaultTextureName(item.id),
       });
     }
   }
@@ -50,8 +54,21 @@ const main = async () => {
     ),
   );
 
-  const updatePropertiesData = JSON.stringify(
-    changed.map((item) => ({ id: item.id, texture: item.remoteTexture })),
+  const suggestedUpdate = changed.reduce<Record<string, Partial<DataItem>>>(
+    (acc, item) => {
+      acc[item.id] = { texture: item.textureFile };
+      return acc;
+    },
+    {},
+  );
+  console.log(JSON.stringify({ update: suggestedUpdate }, null, 2));
+
+  const updateData = JSON.stringify(
+    changed.map((item) => ({
+      id: item.id,
+      texture: item.textureFile,
+      remoteTexture: item.remoteTexture,
+    })),
   );
 
   const cards = changed
@@ -111,21 +128,14 @@ const main = async () => {
       height: 128px;
       image-rendering: pixelated;
     }
-
-    /* slider mode */
     .viewer[data-mode="slider"] { cursor: ew-resize; user-select: none; }
     .viewer[data-mode="slider"] .img-new { clip-path: inset(0 50% 0 0); }
     .viewer[data-mode="slider"] .handle { display: block; }
-
-    /* overlay mode */
     .viewer[data-mode="overlay"] .img-new { opacity: 0.5; }
     .viewer[data-mode="overlay"] .handle { display: none; }
-
-    /* diff mode */
     .viewer[data-mode="diff"] .img-old { display: none; }
     .viewer[data-mode="diff"] .img-new { mix-blend-mode: difference; background: white; }
     .viewer[data-mode="diff"] .handle { display: none; }
-
     .handle {
       display: none;
       position: absolute;
@@ -157,28 +167,25 @@ const main = async () => {
     <button id="btn-slider" class="active" onclick="setMode('slider')">Slider</button>
     <button id="btn-overlay" onclick="setMode('overlay')">Overlay</button>
     <button id="btn-diff" onclick="setMode('diff')">Diff</button>
-    <button onclick="copyUpdateProperties()">Copy updatePropertiesOfItems</button>
+    <button onclick="copyUpdateJson(event)">Copy data JSON update</button>
   </div>
   <div class="grid">${cards}</div>
   <script>
-    const UPDATE_DATA = ${updatePropertiesData};
+    const UPDATE_DATA = ${updateData};
 
-    function copyUpdateProperties() {
-      const entries = UPDATE_DATA.map(({ id, texture }) =>
-        "  '" + id + "': { 'texture': '" + texture + "' },"
-      ).join('\\n');
-      const ts = 'const PrevItems = updatePropertiesOfItems({\\n' + entries + '\\n}, Prev.items);';
-      navigator.clipboard.writeText(ts).then(() => {
+    function copyUpdateJson(event) {
+      const update = UPDATE_DATA.reduce((acc, item) => {
+        acc[item.id] = { texture: item.texture };
+        return acc;
+      }, {});
+      navigator.clipboard.writeText(JSON.stringify({ update }, null, 2)).then(() => {
         const btn = event.target;
         btn.textContent = 'Copied!';
-        setTimeout(() => btn.textContent = 'Copy updatePropertiesOfItems', 1500);
+        setTimeout(() => btn.textContent = 'Copy data JSON update', 1500);
       });
     }
 
-    let currentMode = 'slider';
-
     function setMode(mode) {
-      currentMode = mode;
       document.querySelectorAll('.viewer').forEach(v => {
         v.dataset.mode = mode;
         if (mode !== 'slider') {

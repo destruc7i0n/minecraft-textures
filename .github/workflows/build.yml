@@ -30,6 +30,10 @@ jobs:
         run: bun run format
       - name: Lint
         run: bun run lint
+      - name: Typecheck
+        run: bun run typecheck
+      - name: Test
+        run: bun run test
       - name: Build distribution files
         run: bun run dist
       - name: Generate debug outputs

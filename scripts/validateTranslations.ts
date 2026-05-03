@@ -1,13 +1,14 @@
 import * as core from '@actions/core';
 
-import type { TexturesType } from '../lib/types';
-import { latestVersion } from '../index';
+import { resolveDataVersion } from './lib/data/resolver';
+import { discoverDataVersions } from './lib/data/versions';
 import { getTranslationFromId } from './lib/translations';
 
 const main = async () => {
-  const latest: TexturesType = (await import(`../textures/${latestVersion}.ts`))
-    .default;
+  const latestVersion = discoverDataVersions().at(-1);
+  if (!latestVersion) throw new Error('No data versions found');
 
+  const latest = resolveDataVersion(latestVersion);
   const invalid: Record<string, { current: string; expected: string }> = {};
 
   for (const item of latest.items) {
@@ -21,7 +22,7 @@ const main = async () => {
     const { readable: translation } = translationData;
 
     if (translation !== item.readable) {
-      if (translation === 'Music Disc') continue; // we want music discs to have their song in the name
+      if (translation === 'Music Disc') continue;
       if (translation === 'Banner Pattern') continue;
       if (translation === 'Disc Fragment') continue;
       if (translation === 'Smithing Template') continue;
@@ -34,9 +35,7 @@ const main = async () => {
   }
 
   const invalidCount = Object.keys(invalid).length;
-  if (invalidCount === 0) {
-    return;
-  }
+  if (invalidCount === 0) return;
 
   const message = `Found ${invalidCount} invalid translations.`;
   console.log(message);

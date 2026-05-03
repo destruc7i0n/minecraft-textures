@@ -1,36 +1,36 @@
-import fs from 'fs';
-import path from 'path';
+import {
+  writeDeclarations,
+  writePackageRuntime,
+} from './scripts/lib/build/package';
+import {
+  writeManifestIndex,
+  writeResolvedAssets,
+  writeVersionOutputs,
+} from './scripts/lib/build/textures';
+import { resolveDataVersion } from './scripts/lib/data/resolver';
+import { discoverDataVersions } from './scripts/lib/data/versions';
 
 console.time('build');
 
-const texturesDir = './textures';
-const textureFiles = fs.readdirSync(texturesDir);
+const packageJson = await Bun.file('./package.json').json();
+const packageVersion = packageJson.version as string;
+const versions = discoverDataVersions();
+const latestVersion = versions.at(-1);
 
-const results = await Promise.all([
-  Bun.build({
-    entrypoints: ['./index.ts'],
-    outdir: './dist',
-    minify: true,
-    format: 'cjs',
-    target: 'node',
-    naming: { entry: 'minecraft-textures.[ext]' },
-  }),
-  ...textureFiles.map((file) =>
-    Bun.build({
-      entrypoints: [path.resolve(texturesDir, file)],
-      outdir: './dist/textures',
-      minify: true,
-      format: 'cjs',
-      target: 'node',
-      naming: { entry: '[name].[ext]' },
-    }),
-  ),
+if (!latestVersion) {
+  throw new Error('No data versions found');
+}
+
+const resolvedVersions = versions.map((version) => resolveDataVersion(version));
+const manifestIndex = { packageVersion, latestVersion, versions };
+
+await Promise.all([
+  writeDeclarations(versions, latestVersion),
+  writeResolvedAssets(resolvedVersions),
+  writeManifestIndex(versions, latestVersion, packageVersion),
+  ...resolvedVersions.map((version) => writeVersionOutputs(version)),
 ]);
 
-const failed = results.filter((r) => !r.success);
-if (failed.length > 0) {
-  console.error(`Build failed for ${failed.length} files`);
-  process.exit(1);
-}
+await writePackageRuntime(manifestIndex);
 
 console.timeEnd('build');
