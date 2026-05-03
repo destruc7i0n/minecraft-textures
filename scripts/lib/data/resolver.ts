@@ -91,6 +91,11 @@ function validateBaseItems(version: string, file: DataVersionFile): DataItem[] {
   if (!('items' in file) || !file.items) {
     throw new Error(`${version} must define items or extends`);
   }
+  if ('add' in file || 'update' in file || 'remove' in file) {
+    throw new Error(
+      `${version} cannot define add, update, or remove without extends`,
+    );
+  }
   return applyOrder(file.items, file.order);
 }
 

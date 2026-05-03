@@ -98,6 +98,19 @@ describe('data resolver', () => {
     });
   });
 
+  test('fails when base versions include overlay fields', async () => {
+    const { versionDir, textureDir } = await fixture();
+    writeJson(join(versionDir, '1.0.json'), {
+      version: '1.0',
+      items: [{ id: 'minecraft:stone', readable: 'Stone' }],
+      add: [{ id: 'minecraft:granite', readable: 'Granite' }],
+    });
+
+    expect(() => resolveDataVersion('1.0', { versionDir, textureDir })).toThrow(
+      /without extends/,
+    );
+  });
+
   test('fails on extends cycles and invalid update/remove targets', async () => {
     const { versionDir, textureDir } = await fixture();
     writeJson(join(versionDir, '1.0.json'), {
