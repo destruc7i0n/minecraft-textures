@@ -73,10 +73,11 @@ jobs:
         run: |
           bun run validate-image-dimensions
       - name: List missing items
+        id: list-missing
         run: |
           bun run list-missing
       - name: Upload missing textures
-        if: always()
+        if: ${{ failure() && steps.list-missing.outcome == 'failure' }}
         uses: actions/upload-artifact@v7
         with:
           name: missing-textures
