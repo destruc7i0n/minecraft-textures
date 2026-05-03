@@ -1,5 +1,5 @@
 export async function writeJson(path: string, value: unknown) {
-  await writeFile(path, `${JSON.stringify(value, null, 2)}\n`);
+  await writeFile(path, JSON.stringify(value, null, 2));
 }
 
 export async function writeFile(path: string, contents: string) {

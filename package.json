@@ -41,8 +41,6 @@
     "validate-translations": "bun run ./scripts/validateTranslations.ts",
     "validate-image-dimensions": "bun run ./scripts/validateImageDimensions.ts",
     "texture-comparison": "bun run ./scripts/generateTextureComparison.ts",
-    "compare-legacy-json": "bun run ./scripts/compareLegacyJson.ts",
-    "compare-published-package": "bun run ./scripts/comparePublishedPackage.ts",
     "bump": "bun run ./scripts/bump.ts"
   },
   "dependencies": {},
