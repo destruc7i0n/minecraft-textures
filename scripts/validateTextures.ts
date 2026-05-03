@@ -18,16 +18,24 @@ const dimensionExceptions = new Set([
 const main = async () => {
   const invalidImages: string[] = [];
   const invalidDimensions: string[] = [];
-  const paths = new Set(findPngFiles(TEXTURE_DATA_DIR));
+  const unusedImages: string[] = [];
+  const sourcePngs = new Set(findPngFiles(TEXTURE_DATA_DIR));
+  const referencedPngs = new Set<string>();
 
   for (const version of versions) {
     const resolved = resolveDataVersion(version);
     for (const item of resolved.items) {
-      paths.add(item.dataTexturePath);
+      referencedPngs.add(item.dataTexturePath);
     }
   }
 
-  for (const path of paths) {
+  for (const path of sourcePngs) {
+    if (!referencedPngs.has(path)) {
+      unusedImages.push(path);
+    }
+  }
+
+  for (const path of sourcePngs) {
     let image: Awaited<ReturnType<typeof loadImage>>;
     try {
       image = await loadImage(path);
@@ -61,8 +69,20 @@ const main = async () => {
       core.warning(message);
     }
   }
+  if (unusedImages.length) {
+    const message = `Found ${unusedImages.length} unused images.`;
+    console.log(message);
+    console.log(JSON.stringify(unusedImages, null, 2));
+    if (process.env.GITHUB_ACTIONS) {
+      core.error(message);
+    }
+  }
 
-  if (invalidImages.length > 0 || invalidDimensions.length > 0) {
+  if (
+    invalidImages.length > 0 ||
+    invalidDimensions.length > 0 ||
+    unusedImages.length > 0
+  ) {
     process.exit(1);
   }
 };

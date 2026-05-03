@@ -69,9 +69,14 @@ jobs:
       - name: Validate translations
         run: |
           bun run validate-translations
-      - name: Validate image dimensions
+      - name: Validate textures
         run: |
-          bun run validate-image-dimensions
+          bun run validate-textures
+      - name: Upload built output
+        uses: actions/upload-artifact@v7
+        with:
+          name: dist
+          path: dist
       - name: List missing items
         id: list-missing
         run: |
@@ -83,11 +88,6 @@ jobs:
           name: missing-textures
           path: debug/missing-textures
           if-no-files-found: ignore
-      - name: Upload built output
-        uses: actions/upload-artifact@v7
-        with:
-          name: dist
-          path: dist
 
   pages:
     if: github.ref == 'refs/heads/master'

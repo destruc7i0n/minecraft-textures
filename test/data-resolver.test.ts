@@ -162,6 +162,22 @@ describe('data resolver', () => {
     expect(() => resolveDataVersion('1.2', { versionDir, textureDir })).toThrow(
       /duplicate/,
     );
+
+    writeJson(join(versionDir, '1.3.json'), {
+      version: '1.3',
+      extends: '1.0',
+      update: { 'minecraft:stone': { id: 'minecraft:diorite' } },
+      add: [
+        {
+          id: 'minecraft:diorite',
+          readable: 'Diorite',
+          texture: 'diorite.png',
+        },
+      ],
+    });
+    expect(() => resolveDataVersion('1.3', { versionDir, textureDir })).toThrow(
+      /duplicate/,
+    );
   });
 
   test('defaultTextureName is stable', () => {

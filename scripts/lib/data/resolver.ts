@@ -105,7 +105,6 @@ function applyOverlay(
     texture: item.texture.split('/').slice(1).join('/'),
   }));
   const inheritedIds = new Set(items.map((item) => item.id));
-  const addedIds = new Set<string>();
 
   for (const id of file.remove ?? []) {
     const index = items.findIndex((item) => item.id === id);
@@ -135,14 +134,15 @@ function applyOverlay(
     items[index] = next;
   }
 
+  const currentIds = new Set(items.map((item) => item.id));
   for (const item of file.add ?? []) {
     if (inheritedIds.has(item.id)) {
       throw new Error(`${version} cannot add inherited id ${item.id}`);
     }
-    if (addedIds.has(item.id)) {
+    if (currentIds.has(item.id)) {
       throw new Error(`${version} cannot add duplicate id ${item.id}`);
     }
-    addedIds.add(item.id);
+    currentIds.add(item.id);
     items.push(item);
   }
 
