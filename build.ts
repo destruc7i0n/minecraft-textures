@@ -14,11 +14,11 @@ const packageVersion = packageJson.version as string;
 const versions = [...packageVersions];
 
 const resolvedVersions = versions.map((version) => resolveDataVersion(version));
+const assets = await writeResolvedAssets(resolvedVersions);
 
 await Promise.all([
-  writeResolvedAssets(resolvedVersions),
   writeManifestIndex(versions, latestVersion, packageVersion),
-  ...resolvedVersions.map((version) => writeVersionOutputs(version)),
+  ...resolvedVersions.map((version) => writeVersionOutputs(version, assets)),
 ]);
 
 await writePackageRuntime();

@@ -24,8 +24,8 @@ const items = manifest.items.map((item) => ({
 }));
 ```
 
-`manifest.items` is an array of `{ id, readable, texture }`. The `texture`
-field is a relative PNG path like `26.1/diamond_sword.png`.
+`manifest.items` is an array of `{ id, readable, texture }`. Use `texture` as
+a path relative to `dist/textures/assets`.
 
 Serve or copy `dist/textures/assets` at `assetBaseUrl`; each manifest texture
 path is relative to that directory. The same PNG files are also exported for
