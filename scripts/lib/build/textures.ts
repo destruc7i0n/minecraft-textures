@@ -1,22 +1,19 @@
-import { createHash } from 'node:crypto';
-import { mkdir, rm } from 'fs/promises';
-import { join } from 'path';
-
 import { headers } from '../../../lib/constants';
 import {
-  createLegacyIdJson,
   createLegacyJson,
+  createLegacyJsonById,
   type LegacyJson,
 } from '../data/legacy';
-import { addPngTextMetadata, DIST_PNG_METADATA } from '../data/png';
 import type {
   ResolvedVersion,
   TextureManifest,
   TextureManifestItem,
 } from '../data/types';
+import {
+  requireBuiltTexture,
+  type BuiltTextureCatalog,
+} from './build-textures';
 import { writeJson } from './files';
-
-export type PublishedAssets = Map<string, string>;
 
 export async function writeManifestIndex(
   versions: string[],
@@ -32,11 +29,14 @@ export async function writeManifestIndex(
 
 export async function writeVersionOutputs(
   version: ResolvedVersion,
-  assets: PublishedAssets,
+  catalog: BuiltTextureCatalog,
 ) {
-  const manifestItems = createManifestItems(version, assets);
-  const legacy = await createLegacyJson(version);
-  const legacyById = await createLegacyIdJson(version);
+  const manifestItems = createManifestItems(version, catalog);
+  const legacy = createLegacyJson(
+    version,
+    (item) => requireBuiltTexture(catalog, item).dataUrl,
+  );
+  const legacyById = createLegacyJsonById(legacy);
 
   await Promise.all([
     writeJson(
@@ -53,71 +53,15 @@ export async function writeVersionOutputs(
   ]);
 }
 
-export async function writeResolvedAssets(
-  versions: ResolvedVersion[],
-  options: { outputDir?: string } = {},
-): Promise<PublishedAssets> {
-  const outputDir = options.outputDir ?? './dist/textures/assets';
-  const assetPathBySourcePath: PublishedAssets = new Map();
-  const outputByAssetPath = new Map<string, Uint8Array>();
-
-  for (const version of versions) {
-    for (const item of version.items) {
-      if (assetPathBySourcePath.has(item.dataTexturePath)) continue;
-
-      const bytes = await Bun.file(item.dataTexturePath).bytes();
-      const output = addPngTextMetadata(bytes, DIST_PNG_METADATA);
-      const texture = `${hashPng(output)}.png`;
-      const existing = outputByAssetPath.get(texture);
-
-      assetPathBySourcePath.set(item.dataTexturePath, texture);
-      if (existing && !bytesEqual(existing, output)) {
-        throw new Error(`Hash collision for ${texture}`);
-      }
-      outputByAssetPath.set(texture, output);
-    }
-  }
-
-  await rm(outputDir, { recursive: true, force: true });
-  await mkdir(outputDir, { recursive: true });
-  await Promise.all(
-    Array.from(outputByAssetPath, async ([texture, output]) => {
-      await Bun.write(join(outputDir, texture), output);
-    }),
-  );
-
-  return assetPathBySourcePath;
-}
-
 function createManifestItems(
   version: ResolvedVersion,
-  assets: PublishedAssets,
+  catalog: BuiltTextureCatalog,
 ): TextureManifestItem[] {
   return version.items.map((item) => ({
     id: item.id,
     readable: item.readable,
-    texture: resolvePublishedAsset(item, assets),
+    texture: requireBuiltTexture(catalog, item).assetPath,
   }));
-}
-
-function resolvePublishedAsset(
-  item: ResolvedVersion['items'][number],
-  assets: PublishedAssets,
-): string {
-  const texture = assets.get(item.dataTexturePath);
-  if (!texture) {
-    throw new Error(`Missing published asset for ${item.id}`);
-  }
-
-  return texture;
-}
-
-function hashPng(bytes: Uint8Array): string {
-  return createHash('sha256').update(bytes).digest('hex').slice(0, 16);
-}
-
-function bytesEqual(a: Uint8Array, b: Uint8Array): boolean {
-  return a.length === b.length && a.every((byte, index) => byte === b[index]);
 }
 
 function toManifest(

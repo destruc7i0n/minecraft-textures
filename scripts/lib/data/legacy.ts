@@ -1,6 +1,5 @@
 import { headers } from '../../../lib/constants';
-import { pngToDataUrl } from './png';
-import type { ResolvedVersion } from './types';
+import type { ResolvedItem, ResolvedVersion } from './types';
 
 export interface LegacyJson {
   comment: string;
@@ -18,18 +17,17 @@ export interface LegacyJsonById {
   items: Record<string, { readable: string; texture: string }>;
 }
 
-export async function createLegacyJson(
+export function createLegacyJson(
   version: ResolvedVersion,
-): Promise<LegacyJson> {
+  textureForItem: (item: ResolvedItem) => string,
+): LegacyJson {
   return {
     comment: headers.comment,
-    items: await Promise.all(
-      version.items.map(async (item) => ({
-        readable: item.readable,
-        id: item.id,
-        texture: await pngToDataUrl(item.dataTexturePath),
-      })),
-    ),
+    items: version.items.map((item) => ({
+      readable: item.readable,
+      id: item.id,
+      texture: textureForItem(item),
+    })),
   };
 }
 
@@ -47,10 +45,4 @@ export function createLegacyJsonById(legacy: LegacyJson): LegacyJsonById {
       {} as Record<string, { readable: string; texture: string }>,
     ),
   };
-}
-
-export async function createLegacyIdJson(
-  version: ResolvedVersion,
-): Promise<LegacyJsonById> {
-  return createLegacyJsonById(await createLegacyJson(version));
 }

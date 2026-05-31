@@ -1,8 +1,8 @@
 import { latestVersion, versions as packageVersions } from './index';
+import { buildTextures } from './scripts/lib/build/build-textures';
 import { writePackageRuntime } from './scripts/lib/build/package';
 import {
   writeManifestIndex,
-  writeResolvedAssets,
   writeVersionOutputs,
 } from './scripts/lib/build/textures';
 import { resolveDataVersion } from './scripts/lib/data/resolver';
@@ -14,12 +14,13 @@ const packageVersion = packageJson.version as string;
 const versions = [...packageVersions];
 
 const resolvedVersions = versions.map((version) => resolveDataVersion(version));
-const assets = await writeResolvedAssets(resolvedVersions);
+const textureCatalog = await buildTextures(resolvedVersions);
 
-await Promise.all([
-  writeManifestIndex(versions, latestVersion, packageVersion),
-  ...resolvedVersions.map((version) => writeVersionOutputs(version, assets)),
-]);
+await writeManifestIndex(versions, latestVersion, packageVersion);
+
+for (const version of resolvedVersions) {
+  await writeVersionOutputs(version, textureCatalog);
+}
 
 await writePackageRuntime();
 

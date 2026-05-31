@@ -4,7 +4,6 @@ import { dirname, join } from 'path';
 import { tmpdir } from 'os';
 
 import {
-  createLegacyIdJson,
   createLegacyJson,
   createLegacyJsonById,
 } from '../scripts/lib/data/legacy';
@@ -33,6 +32,9 @@ const writeJson = (path: string, value: unknown) => {
   writeFileSync(path, `${JSON.stringify(value, null, 2)}\n`);
 };
 
+const createTestLegacyJson = (version: ReturnType<typeof resolveDataVersion>) =>
+  createLegacyJson(version, (item) => item.dataTexturePath);
+
 describe('data resolver', () => {
   test('discovers data versions in Minecraft version order', () => {
     const versions = discoverDataVersions();
@@ -51,18 +53,18 @@ describe('data resolver', () => {
     ]);
   });
 
-  test('legacy by-id JSON is derived from the legacy array JSON', async () => {
+  test('legacy by-id JSON is derived from the legacy array JSON', () => {
     const resolved = resolveDataVersion('1.13');
-    const legacy = await createLegacyJson(resolved);
-    const byId = await createLegacyIdJson(resolved);
+    const legacy = createTestLegacyJson(resolved);
+    const byId = createLegacyJsonById(legacy);
 
     expect(byId).toEqual(createLegacyJsonById(legacy));
   });
 
-  test('legacy by-id JSON uses the last duplicate id from the array JSON', async () => {
+  test('legacy by-id JSON uses the last duplicate id from the array JSON', () => {
     const resolved = resolveDataVersion('1.12');
-    const legacy = await createLegacyJson(resolved);
-    const byId = await createLegacyIdJson(resolved);
+    const legacy = createTestLegacyJson(resolved);
+    const byId = createLegacyJsonById(legacy);
     const wheatItems = legacy.items.filter(
       (item) => item.id === 'minecraft:wheat',
     );
