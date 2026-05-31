@@ -69,9 +69,7 @@ export function resolveDataVersion(
     const rawItems = file.extends
       ? applyOverlay(targetVersion, resolve(file.extends), file)
       : validateBaseItems(targetVersion, file);
-    const items = rawItems.map((item) =>
-      resolveTextureAsset(item, ancestry, textureDir),
-    );
+    const items = rawItems.map((item) => resolveTextureAsset(item, textureDir));
     const resolved = {
       version: targetVersion,
       extends: file.extends,
@@ -107,7 +105,7 @@ function applyOverlay(
   const items = parent.items.map<DataItem>((item) => ({
     id: item.id,
     readable: item.readable,
-    texture: item.texture.split('/').slice(1).join('/'),
+    texture: item.texture,
   }));
   const inheritedIds = new Set(items.map((item) => item.id));
 
@@ -183,24 +181,38 @@ function applyOrder(
   return ordered;
 }
 
-function resolveTextureAsset(
-  item: DataItem,
-  ancestry: string[],
-  textureDir: string,
-): ResolvedItem {
-  const name = item.texture ?? defaultTextureName(item.id);
+function resolveTextureAsset(item: DataItem, textureDir: string): ResolvedItem {
+  const texture = requireTexturePath(item);
+  const dataTexturePath = join(textureDir, texture);
 
-  for (const version of [...ancestry].reverse()) {
-    const dataTexturePath = join(textureDir, version, name);
-    if (existsSync(dataTexturePath)) {
-      return {
-        id: item.id,
-        readable: item.readable,
-        texture: `${version}/${name}`,
-        dataTexturePath,
-      };
-    }
+  if (existsSync(dataTexturePath)) {
+    return {
+      id: item.id,
+      readable: item.readable,
+      texture,
+      dataTexturePath,
+    };
   }
 
-  throw new Error(`Missing texture for ${item.id}: ${name}`);
+  throw new Error(`Missing texture for ${item.id}: ${dataTexturePath}`);
+}
+
+function requireTexturePath(item: DataItem): string {
+  if (!item.texture) {
+    throw new Error(`${item.id} must define texture`);
+  }
+  if (!item.texture.includes('/')) {
+    throw new Error(
+      `${item.id} texture must include a version folder: ${item.texture}`,
+    );
+  }
+  if (
+    item.texture.startsWith('/') ||
+    item.texture.includes('..') ||
+    !item.texture.endsWith('.png')
+  ) {
+    throw new Error(`${item.id} texture path is invalid: ${item.texture}`);
+  }
+
+  return item.texture;
 }

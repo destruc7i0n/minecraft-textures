@@ -5,112 +5,178 @@
     {
       "id": "minecraft:white_bundle",
       "readable": "White Bundle",
-      "texture": "white_bundle.png"
+      "texture": "1.21.2/white_bundle.png"
     },
     {
       "id": "minecraft:light_gray_bundle",
       "readable": "Light Gray Bundle",
-      "texture": "light_gray_bundle.png"
+      "texture": "1.21.2/light_gray_bundle.png"
     },
     {
       "id": "minecraft:gray_bundle",
       "readable": "Gray Bundle",
-      "texture": "gray_bundle.png"
+      "texture": "1.21.2/gray_bundle.png"
     },
     {
       "id": "minecraft:black_bundle",
       "readable": "Black Bundle",
-      "texture": "black_bundle.png"
+      "texture": "1.21.2/black_bundle.png"
     },
     {
       "id": "minecraft:brown_bundle",
       "readable": "Brown Bundle",
-      "texture": "brown_bundle.png"
+      "texture": "1.21.2/brown_bundle.png"
     },
     {
       "id": "minecraft:red_bundle",
       "readable": "Red Bundle",
-      "texture": "red_bundle.png"
+      "texture": "1.21.2/red_bundle.png"
     },
     {
       "id": "minecraft:orange_bundle",
       "readable": "Orange Bundle",
-      "texture": "orange_bundle.png"
+      "texture": "1.21.2/orange_bundle.png"
     },
     {
       "id": "minecraft:yellow_bundle",
       "readable": "Yellow Bundle",
-      "texture": "yellow_bundle.png"
+      "texture": "1.21.2/yellow_bundle.png"
     },
     {
       "id": "minecraft:lime_bundle",
       "readable": "Lime Bundle",
-      "texture": "lime_bundle.png"
+      "texture": "1.21.2/lime_bundle.png"
     },
     {
       "id": "minecraft:green_bundle",
       "readable": "Green Bundle",
-      "texture": "green_bundle.png"
+      "texture": "1.21.2/green_bundle.png"
     },
     {
       "id": "minecraft:cyan_bundle",
       "readable": "Cyan Bundle",
-      "texture": "cyan_bundle.png"
+      "texture": "1.21.2/cyan_bundle.png"
     },
     {
       "id": "minecraft:light_blue_bundle",
       "readable": "Light Blue Bundle",
-      "texture": "light_blue_bundle.png"
+      "texture": "1.21.2/light_blue_bundle.png"
     },
     {
       "id": "minecraft:blue_bundle",
       "readable": "Blue Bundle",
-      "texture": "blue_bundle.png"
+      "texture": "1.21.2/blue_bundle.png"
     },
     {
       "id": "minecraft:purple_bundle",
       "readable": "Purple Bundle",
-      "texture": "purple_bundle.png"
+      "texture": "1.21.2/purple_bundle.png"
     },
     {
       "id": "minecraft:magenta_bundle",
       "readable": "Magenta Bundle",
-      "texture": "magenta_bundle.png"
+      "texture": "1.21.2/magenta_bundle.png"
     },
     {
       "id": "minecraft:pink_bundle",
       "readable": "Pink Bundle",
-      "texture": "pink_bundle.png"
+      "texture": "1.21.2/pink_bundle.png"
     },
     {
       "id": "minecraft:field_masoned_banner_pattern",
       "readable": "Field Masoned Banner Pattern",
-      "texture": "field_masoned_banner_pattern.png"
+      "texture": "1.21.2/field_masoned_banner_pattern.png"
     },
     {
       "id": "minecraft:bordure_indented_banner_pattern",
       "readable": "Bordure Indented Banner Pattern",
-      "texture": "bordure_indented_banner_pattern.png"
+      "texture": "1.21.2/bordure_indented_banner_pattern.png"
     }
   ],
   "update": {
     "minecraft:flower_banner_pattern": {
-      "readable": "Flower Charge Banner Pattern"
+      "readable": "Flower Charge Banner Pattern",
+      "texture": "1.21.2/flower_banner_pattern.png"
     },
     "minecraft:creeper_banner_pattern": {
-      "readable": "Creeper Charge Banner Pattern"
+      "readable": "Creeper Charge Banner Pattern",
+      "texture": "1.21.2/creeper_banner_pattern.png"
     },
     "minecraft:skull_banner_pattern": {
-      "readable": "Skull Charge Banner Pattern"
+      "readable": "Skull Charge Banner Pattern",
+      "texture": "1.21.2/skull_banner_pattern.png"
     },
     "minecraft:piglin_banner_pattern": {
-      "readable": "Snout Banner Pattern"
+      "readable": "Snout Banner Pattern",
+      "texture": "1.21.2/piglin_banner_pattern.png"
     },
     "minecraft:flow_banner_pattern": {
-      "readable": "Flow Banner Pattern"
+      "readable": "Flow Banner Pattern",
+      "texture": "1.21.2/flow_banner_pattern.png"
     },
     "minecraft:guster_banner_pattern": {
-      "readable": "Guster Banner Pattern"
+      "readable": "Guster Banner Pattern",
+      "texture": "1.21.2/guster_banner_pattern.png"
+    },
+    "minecraft:compass": {
+      "texture": "1.21.2/compass.png"
+    },
+    "minecraft:recovery_compass": {
+      "texture": "1.21.2/recovery_compass.png"
+    },
+    "minecraft:clock": {
+      "texture": "1.21.2/clock.png"
+    },
+    "minecraft:spyglass": {
+      "texture": "1.21.2/spyglass.png"
+    },
+    "minecraft:map": {
+      "texture": "1.21.2/map.png"
+    },
+    "minecraft:writable_book": {
+      "texture": "1.21.2/writable_book.png"
+    },
+    "minecraft:wind_charge": {
+      "texture": "1.21.2/wind_charge.png"
+    },
+    "minecraft:ender_pearl": {
+      "texture": "1.21.2/ender_pearl.png"
+    },
+    "minecraft:elytra": {
+      "texture": "1.21.2/elytra.png"
+    },
+    "minecraft:firework_rocket": {
+      "texture": "1.21.2/firework_rocket.png"
+    },
+    "minecraft:saddle": {
+      "texture": "1.21.2/saddle.png"
+    },
+    "minecraft:carrot_on_a_stick": {
+      "texture": "1.21.2/carrot_on_a_stick.png"
+    },
+    "minecraft:warped_fungus_on_a_stick": {
+      "texture": "1.21.2/warped_fungus_on_a_stick.png"
+    },
+    "minecraft:oak_boat": {
+      "texture": "1.21.2/oak_boat.png"
+    },
+    "minecraft:spruce_boat": {
+      "texture": "1.21.2/spruce_boat.png"
+    },
+    "minecraft:spruce_chest_boat": {
+      "texture": "1.21.2/spruce_chest_boat.png"
+    },
+    "minecraft:mojang_banner_pattern": {
+      "texture": "1.21.2/mojang_banner_pattern.png"
+    },
+    "minecraft:globe_banner_pattern": {
+      "texture": "1.21.2/globe_banner_pattern.png"
+    },
+    "minecraft:flow_pottery_sherd": {
+      "texture": "1.21.2/flow_pottery_sherd.png"
+    },
+    "minecraft:friend_pottery_sherd": {
+      "texture": "1.21.2/friend_pottery_sherd.png"
     }
   },
   "order": [

@@ -5,39 +5,62 @@
     {
       "id": "minecraft:bee_nest",
       "readable": "Bee Nest",
-      "texture": "bee_nest.png"
+      "texture": "1.15/bee_nest.png"
     },
     {
       "id": "minecraft:honeycomb_block",
       "readable": "Honeycomb Block",
-      "texture": "honeycomb_block.png"
+      "texture": "1.15/honeycomb_block.png"
     },
     {
       "id": "minecraft:honey_block",
       "readable": "Honey Block",
-      "texture": "honey_block.png"
+      "texture": "1.15/honey_block.png"
     },
     {
       "id": "minecraft:beehive",
       "readable": "Beehive",
-      "texture": "beehive.png"
+      "texture": "1.15/beehive.png"
     },
     {
       "id": "minecraft:honey_bottle",
       "readable": "Honey Bottle",
-      "texture": "honey_bottle.png"
+      "texture": "1.15/honey_bottle.png"
     },
     {
       "id": "minecraft:honeycomb",
       "readable": "Honeycomb",
-      "texture": "honeycomb.png"
+      "texture": "1.15/honeycomb.png"
     },
     {
       "id": "minecraft:bee_spawn_egg",
       "readable": "Bee Spawn Egg",
-      "texture": "bee_spawn_egg.png"
+      "texture": "1.15/bee_spawn_egg.png"
     }
   ],
+  "update": {
+    "minecraft:slime_block": {
+      "texture": "1.15/slime_block.png"
+    },
+    "minecraft:cobweb": {
+      "texture": "1.15/cobweb.png"
+    },
+    "minecraft:torch": {
+      "texture": "1.15/torch.png"
+    },
+    "minecraft:painting": {
+      "texture": "1.15/painting.png"
+    },
+    "minecraft:charcoal": {
+      "texture": "1.15/charcoal.png"
+    },
+    "minecraft:nautilus_shell": {
+      "texture": "1.15/nautilus_shell.png"
+    },
+    "minecraft:cod_spawn_egg": {
+      "texture": "1.15/cod_spawn_egg.png"
+    }
+  },
   "order": [
     "minecraft:oak_log",
     "minecraft:oak_wood",

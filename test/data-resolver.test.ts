@@ -80,11 +80,17 @@ describe('data resolver', () => {
     });
   });
 
-  test('resolves base and overlay versions with child texture overrides', async () => {
+  test('preserves inherited explicit texture paths across overlays', async () => {
     const { versionDir, textureDir } = await fixture();
     writeJson(join(versionDir, '1.0.json'), {
       version: '1.0',
-      items: [{ id: 'minecraft:stone', readable: 'Stone' }],
+      items: [
+        {
+          id: 'minecraft:stone',
+          readable: 'Stone',
+          texture: '1.0/stone.png',
+        },
+      ],
     });
     writeJson(join(versionDir, '1.1.json'), {
       version: '1.1',
@@ -96,8 +102,57 @@ describe('data resolver', () => {
     expect(resolved.items[0]).toMatchObject({
       id: 'minecraft:stone',
       readable: 'Better Stone',
+      texture: '1.0/stone.png',
+    });
+  });
+
+  test('uses child texture overrides when update texture is explicit', async () => {
+    const { versionDir, textureDir } = await fixture();
+    writeJson(join(versionDir, '1.0.json'), {
+      version: '1.0',
+      items: [
+        {
+          id: 'minecraft:stone',
+          readable: 'Stone',
+          texture: '1.0/stone.png',
+        },
+      ],
+    });
+    writeJson(join(versionDir, '1.1.json'), {
+      version: '1.1',
+      extends: '1.0',
+      update: {
+        'minecraft:stone': {
+          readable: 'Better Stone',
+          texture: '1.1/stone.png',
+        },
+      },
+    });
+
+    const resolved = resolveDataVersion('1.1', { versionDir, textureDir });
+    expect(resolved.items[0]).toMatchObject({
+      id: 'minecraft:stone',
+      readable: 'Better Stone',
       texture: '1.1/stone.png',
     });
+  });
+
+  test('fails when texture paths do not include a version folder', async () => {
+    const { versionDir, textureDir } = await fixture();
+    writeJson(join(versionDir, '1.0.json'), {
+      version: '1.0',
+      items: [
+        {
+          id: 'minecraft:stone',
+          readable: 'Stone',
+          texture: 'stone.png',
+        },
+      ],
+    });
+
+    expect(() => resolveDataVersion('1.0', { versionDir, textureDir })).toThrow(
+      /must include a version folder/,
+    );
   });
 
   test('fails when base versions include overlay fields', async () => {
@@ -129,7 +184,13 @@ describe('data resolver', () => {
 
     writeJson(join(versionDir, '2.0.json'), {
       version: '2.0',
-      items: [{ id: 'minecraft:stone', readable: 'Stone' }],
+      items: [
+        {
+          id: 'minecraft:stone',
+          readable: 'Stone',
+          texture: '2.0/stone.png',
+        },
+      ],
     });
     mkdirSync(join(textureDir, '2.0'), { recursive: true });
     writeFileSync(
@@ -151,8 +212,16 @@ describe('data resolver', () => {
     writeJson(join(versionDir, '1.0.json'), {
       version: '1.0',
       items: [
-        { id: 'minecraft:stone', readable: 'Stone' },
-        { id: 'minecraft:granite', readable: 'Granite' },
+        {
+          id: 'minecraft:stone',
+          readable: 'Stone',
+          texture: '1.0/stone.png',
+        },
+        {
+          id: 'minecraft:granite',
+          readable: 'Granite',
+          texture: '1.0/granite.png',
+        },
       ],
     });
     writeFileSync(
@@ -163,7 +232,13 @@ describe('data resolver', () => {
     writeJson(join(versionDir, '1.1.json'), {
       version: '1.1',
       extends: '1.0',
-      add: [{ id: 'minecraft:stone', readable: 'Stone' }],
+      add: [
+        {
+          id: 'minecraft:stone',
+          readable: 'Stone',
+          texture: '1.1/stone.png',
+        },
+      ],
     });
     expect(() => resolveDataVersion('1.1', { versionDir, textureDir })).toThrow(
       /inherited/,
@@ -186,7 +261,7 @@ describe('data resolver', () => {
         {
           id: 'minecraft:diorite',
           readable: 'Diorite',
-          texture: 'diorite.png',
+          texture: '1.0/granite.png',
         },
       ],
     });

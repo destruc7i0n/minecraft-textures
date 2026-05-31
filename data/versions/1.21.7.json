@@ -5,9 +5,14 @@
     {
       "id": "minecraft:music_disc_lava_chicken",
       "readable": "Lava Chicken Disc",
-      "texture": "music_disc_lava_chicken.png"
+      "texture": "1.21.7/music_disc_lava_chicken.png"
     }
   ],
+  "update": {
+    "minecraft:wooden_sword": {
+      "texture": "1.21.7/wooden_sword.png"
+    }
+  },
   "order": [
     "minecraft:oak_log",
     "minecraft:oak_wood",

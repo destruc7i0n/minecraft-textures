@@ -5,174 +5,290 @@
     {
       "id": "minecraft:pale_oak_log",
       "readable": "Pale Oak Log",
-      "texture": "pale_oak_log.png"
+      "texture": "1.21.4/pale_oak_log.png"
     },
     {
       "id": "minecraft:pale_oak_wood",
       "readable": "Pale Oak Wood",
-      "texture": "pale_oak_wood.png"
+      "texture": "1.21.4/pale_oak_wood.png"
     },
     {
       "id": "minecraft:stripped_pale_oak_log",
       "readable": "Stripped Pale Oak Log",
-      "texture": "stripped_pale_oak_log.png"
+      "texture": "1.21.4/stripped_pale_oak_log.png"
     },
     {
       "id": "minecraft:stripped_pale_oak_wood",
       "readable": "Stripped Pale Oak Wood",
-      "texture": "stripped_pale_oak_wood.png"
+      "texture": "1.21.4/stripped_pale_oak_wood.png"
     },
     {
       "id": "minecraft:pale_oak_planks",
       "readable": "Pale Oak Planks",
-      "texture": "pale_oak_planks.png"
+      "texture": "1.21.4/pale_oak_planks.png"
     },
     {
       "id": "minecraft:pale_oak_stairs",
       "readable": "Pale Oak Stairs",
-      "texture": "pale_oak_stairs.png"
+      "texture": "1.21.4/pale_oak_stairs.png"
     },
     {
       "id": "minecraft:pale_oak_slab",
       "readable": "Pale Oak Slab",
-      "texture": "pale_oak_slab.png"
+      "texture": "1.21.4/pale_oak_slab.png"
     },
     {
       "id": "minecraft:pale_oak_fence",
       "readable": "Pale Oak Fence",
-      "texture": "pale_oak_fence.png"
+      "texture": "1.21.4/pale_oak_fence.png"
     },
     {
       "id": "minecraft:pale_oak_fence_gate",
       "readable": "Pale Oak Fence Gate",
-      "texture": "pale_oak_fence_gate.png"
+      "texture": "1.21.4/pale_oak_fence_gate.png"
     },
     {
       "id": "minecraft:pale_oak_door",
       "readable": "Pale Oak Door",
-      "texture": "pale_oak_door.png"
+      "texture": "1.21.4/pale_oak_door.png"
     },
     {
       "id": "minecraft:pale_oak_trapdoor",
       "readable": "Pale Oak Trapdoor",
-      "texture": "pale_oak_trapdoor.png"
+      "texture": "1.21.4/pale_oak_trapdoor.png"
     },
     {
       "id": "minecraft:pale_oak_pressure_plate",
       "readable": "Pale Oak Pressure Plate",
-      "texture": "pale_oak_pressure_plate.png"
+      "texture": "1.21.4/pale_oak_pressure_plate.png"
     },
     {
       "id": "minecraft:pale_oak_button",
       "readable": "Pale Oak Button",
-      "texture": "pale_oak_button.png"
+      "texture": "1.21.4/pale_oak_button.png"
     },
     {
       "id": "minecraft:resin_bricks",
       "readable": "Resin Bricks",
-      "texture": "resin_bricks.png"
+      "texture": "1.21.4/resin_bricks.png"
     },
     {
       "id": "minecraft:resin_brick_stairs",
       "readable": "Resin Brick Stairs",
-      "texture": "resin_brick_stairs.png"
+      "texture": "1.21.4/resin_brick_stairs.png"
     },
     {
       "id": "minecraft:resin_brick_slab",
       "readable": "Resin Brick Slab",
-      "texture": "resin_brick_slab.png"
+      "texture": "1.21.4/resin_brick_slab.png"
     },
     {
       "id": "minecraft:resin_brick_wall",
       "readable": "Resin Brick Wall",
-      "texture": "resin_brick_wall.png"
+      "texture": "1.21.4/resin_brick_wall.png"
     },
     {
       "id": "minecraft:chiseled_resin_bricks",
       "readable": "Chiseled Resin Bricks",
-      "texture": "chiseled_resin_bricks.png"
+      "texture": "1.21.4/chiseled_resin_bricks.png"
     },
     {
       "id": "minecraft:pale_moss_block",
       "readable": "Pale Moss Block",
-      "texture": "pale_moss_block.png"
+      "texture": "1.21.4/pale_moss_block.png"
     },
     {
       "id": "minecraft:pale_moss_carpet",
       "readable": "Pale Moss Carpet",
-      "texture": "pale_moss_carpet.png"
+      "texture": "1.21.4/pale_moss_carpet.png"
     },
     {
       "id": "minecraft:pale_hanging_moss",
       "readable": "Pale Hanging Moss",
-      "texture": "pale_hanging_moss.png"
+      "texture": "1.21.4/pale_hanging_moss.png"
     },
     {
       "id": "minecraft:pale_oak_leaves",
       "readable": "Pale Oak Leaves",
-      "texture": "pale_oak_leaves.png"
+      "texture": "1.21.4/pale_oak_leaves.png"
     },
     {
       "id": "minecraft:pale_oak_sapling",
       "readable": "Pale Oak Sapling",
-      "texture": "pale_oak_sapling.png"
+      "texture": "1.21.4/pale_oak_sapling.png"
     },
     {
       "id": "minecraft:closed_eyeblossom",
       "readable": "Closed Eyeblossom",
-      "texture": "closed_eyeblossom.png"
+      "texture": "1.21.4/closed_eyeblossom.png"
     },
     {
       "id": "minecraft:open_eyeblossom",
       "readable": "Open Eyeblossom",
-      "texture": "open_eyeblossom.png"
+      "texture": "1.21.4/open_eyeblossom.png"
     },
     {
       "id": "minecraft:resin_block",
       "readable": "Block of Resin",
-      "texture": "resin_block.png"
+      "texture": "1.21.4/resin_block.png"
     },
     {
       "id": "minecraft:pale_oak_sign",
       "readable": "Pale Oak Sign",
-      "texture": "pale_oak_sign.png"
+      "texture": "1.21.4/pale_oak_sign.png"
     },
     {
       "id": "minecraft:pale_oak_hanging_sign",
       "readable": "Pale Oak Hanging Sign",
-      "texture": "pale_oak_hanging_sign.png"
+      "texture": "1.21.4/pale_oak_hanging_sign.png"
     },
     {
       "id": "minecraft:pale_oak_boat",
       "readable": "Pale Oak Boat",
-      "texture": "pale_oak_boat.png"
+      "texture": "1.21.4/pale_oak_boat.png"
     },
     {
       "id": "minecraft:pale_oak_chest_boat",
       "readable": "Pale Oak Boat with Chest",
-      "texture": "pale_oak_chest_boat.png"
+      "texture": "1.21.4/pale_oak_chest_boat.png"
     },
     {
       "id": "minecraft:resin_clump",
       "readable": "Resin Clump",
-      "texture": "resin_clump.png"
+      "texture": "1.21.4/resin_clump.png"
     },
     {
       "id": "minecraft:resin_brick",
       "readable": "Resin Brick",
-      "texture": "resin_brick.png"
+      "texture": "1.21.4/resin_brick.png"
     },
     {
       "id": "minecraft:creaking_heart",
       "readable": "Creaking Heart",
-      "texture": "creaking_heart.png"
+      "texture": "1.21.4/creaking_heart.png"
     },
     {
       "id": "minecraft:creaking_spawn_egg",
       "readable": "Creaking Spawn Egg",
-      "texture": "creaking_spawn_egg.png"
+      "texture": "1.21.4/creaking_spawn_egg.png"
     }
   ],
+  "update": {
+    "minecraft:bamboo_block": {
+      "texture": "1.21.4/bamboo_block.png"
+    },
+    "minecraft:stripped_bamboo_block": {
+      "texture": "1.21.4/stripped_bamboo_block.png"
+    },
+    "minecraft:bamboo_planks": {
+      "texture": "1.21.4/bamboo_planks.png"
+    },
+    "minecraft:bamboo_mosaic": {
+      "texture": "1.21.4/bamboo_mosaic.png"
+    },
+    "minecraft:bamboo_stairs": {
+      "texture": "1.21.4/bamboo_stairs.png"
+    },
+    "minecraft:bamboo_mosaic_stairs": {
+      "texture": "1.21.4/bamboo_mosaic_stairs.png"
+    },
+    "minecraft:bamboo_slab": {
+      "texture": "1.21.4/bamboo_slab.png"
+    },
+    "minecraft:bamboo_mosaic_slab": {
+      "texture": "1.21.4/bamboo_mosaic_slab.png"
+    },
+    "minecraft:bamboo_fence": {
+      "texture": "1.21.4/bamboo_fence.png"
+    },
+    "minecraft:bamboo_fence_gate": {
+      "texture": "1.21.4/bamboo_fence_gate.png"
+    },
+    "minecraft:bamboo_door": {
+      "texture": "1.21.4/bamboo_door.png"
+    },
+    "minecraft:bamboo_trapdoor": {
+      "texture": "1.21.4/bamboo_trapdoor.png"
+    },
+    "minecraft:bamboo_pressure_plate": {
+      "texture": "1.21.4/bamboo_pressure_plate.png"
+    },
+    "minecraft:red_sandstone_wall": {
+      "texture": "1.21.4/red_sandstone_wall.png"
+    },
+    "minecraft:chiseled_red_sandstone": {
+      "texture": "1.21.4/chiseled_red_sandstone.png"
+    },
+    "minecraft:smooth_red_sandstone": {
+      "texture": "1.21.4/smooth_red_sandstone.png"
+    },
+    "minecraft:smooth_red_sandstone_stairs": {
+      "texture": "1.21.4/smooth_red_sandstone_stairs.png"
+    },
+    "minecraft:smooth_red_sandstone_slab": {
+      "texture": "1.21.4/smooth_red_sandstone_slab.png"
+    },
+    "minecraft:nether_bricks": {
+      "texture": "1.21.4/nether_bricks.png"
+    },
+    "minecraft:cracked_nether_bricks": {
+      "texture": "1.21.4/cracked_nether_bricks.png"
+    },
+    "minecraft:chiseled_nether_bricks": {
+      "texture": "1.21.4/chiseled_nether_bricks.png"
+    },
+    "minecraft:red_nether_bricks": {
+      "texture": "1.21.4/red_nether_bricks.png"
+    },
+    "minecraft:deepslate_gold_ore": {
+      "texture": "1.21.4/deepslate_gold_ore.png"
+    },
+    "minecraft:redstone_ore": {
+      "texture": "1.21.4/redstone_ore.png"
+    },
+    "minecraft:deepslate_redstone_ore": {
+      "texture": "1.21.4/deepslate_redstone_ore.png"
+    },
+    "minecraft:short_grass": {
+      "texture": "1.21.4/short_grass.png"
+    },
+    "minecraft:wither_rose": {
+      "texture": "1.21.4/wither_rose.png"
+    },
+    "minecraft:glow_lichen": {
+      "texture": "1.21.4/glow_lichen.png"
+    },
+    "minecraft:hanging_roots": {
+      "texture": "1.21.4/hanging_roots.png"
+    },
+    "minecraft:smoker": {
+      "texture": "1.21.4/smoker.png"
+    },
+    "minecraft:infested_chiseled_stone_bricks": {
+      "texture": "1.21.4/infested_chiseled_stone_bricks.png"
+    },
+    "minecraft:infested_deepslate": {
+      "texture": "1.21.4/infested_deepslate.png"
+    },
+    "minecraft:mace": {
+      "texture": "1.21.4/mace.png"
+    },
+    "minecraft:shield": {
+      "texture": "1.21.4/shield.png"
+    },
+    "minecraft:blue_dye": {
+      "texture": "1.21.4/blue_dye.png"
+    },
+    "minecraft:danger_pottery_sherd": {
+      "texture": "1.21.4/danger_pottery_sherd.png"
+    },
+    "minecraft:allay_spawn_egg": {
+      "texture": "1.21.4/allay_spawn_egg.png"
+    },
+    "minecraft:repeating_command_block": {
+      "texture": "1.21.4/repeating_command_block.png"
+    }
+  },
   "order": [
     "minecraft:oak_log",
     "minecraft:oak_wood",

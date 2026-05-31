@@ -5,404 +5,640 @@
     {
       "id": "minecraft:tuff_stairs",
       "readable": "Tuff Stairs",
-      "texture": "tuff_stairs.png"
+      "texture": "1.21/tuff_stairs.png"
     },
     {
       "id": "minecraft:tuff_slab",
       "readable": "Tuff Slab",
-      "texture": "tuff_slab.png"
+      "texture": "1.21/tuff_slab.png"
     },
     {
       "id": "minecraft:tuff_wall",
       "readable": "Tuff Wall",
-      "texture": "tuff_wall.png"
+      "texture": "1.21/tuff_wall.png"
     },
     {
       "id": "minecraft:chiseled_tuff",
       "readable": "Chiseled Tuff",
-      "texture": "chiseled_tuff.png"
+      "texture": "1.21/chiseled_tuff.png"
     },
     {
       "id": "minecraft:polished_tuff",
       "readable": "Polished Tuff",
-      "texture": "polished_tuff.png"
+      "texture": "1.21/polished_tuff.png"
     },
     {
       "id": "minecraft:polished_tuff_stairs",
       "readable": "Polished Tuff Stairs",
-      "texture": "polished_tuff_stairs.png"
+      "texture": "1.21/polished_tuff_stairs.png"
     },
     {
       "id": "minecraft:polished_tuff_slab",
       "readable": "Polished Tuff Slab",
-      "texture": "polished_tuff_slab.png"
+      "texture": "1.21/polished_tuff_slab.png"
     },
     {
       "id": "minecraft:polished_tuff_wall",
       "readable": "Polished Tuff Wall",
-      "texture": "polished_tuff_wall.png"
+      "texture": "1.21/polished_tuff_wall.png"
     },
     {
       "id": "minecraft:tuff_bricks",
       "readable": "Tuff Bricks",
-      "texture": "tuff_bricks.png"
+      "texture": "1.21/tuff_bricks.png"
     },
     {
       "id": "minecraft:tuff_brick_stairs",
       "readable": "Tuff Brick Stairs",
-      "texture": "tuff_brick_stairs.png"
+      "texture": "1.21/tuff_brick_stairs.png"
     },
     {
       "id": "minecraft:tuff_brick_slab",
       "readable": "Tuff Brick Slab",
-      "texture": "tuff_brick_slab.png"
+      "texture": "1.21/tuff_brick_slab.png"
     },
     {
       "id": "minecraft:tuff_brick_wall",
       "readable": "Tuff Brick Wall",
-      "texture": "tuff_brick_wall.png"
+      "texture": "1.21/tuff_brick_wall.png"
     },
     {
       "id": "minecraft:chiseled_tuff_bricks",
       "readable": "Chiseled Tuff Bricks",
-      "texture": "chiseled_tuff_bricks.png"
+      "texture": "1.21/chiseled_tuff_bricks.png"
     },
     {
       "id": "minecraft:chiseled_copper",
       "readable": "Chiseled Copper",
-      "texture": "chiseled_copper.png"
+      "texture": "1.21/chiseled_copper.png"
     },
     {
       "id": "minecraft:copper_grate",
       "readable": "Copper Grate",
-      "texture": "copper_grate.png"
+      "texture": "1.21/copper_grate.png"
     },
     {
       "id": "minecraft:copper_door",
       "readable": "Copper Door",
-      "texture": "copper_door.png"
+      "texture": "1.21/copper_door.png"
     },
     {
       "id": "minecraft:copper_trapdoor",
       "readable": "Copper Trapdoor",
-      "texture": "copper_trapdoor.png"
+      "texture": "1.21/copper_trapdoor.png"
     },
     {
       "id": "minecraft:copper_bulb",
       "readable": "Copper Bulb",
-      "texture": "copper_bulb.png"
+      "texture": "1.21/copper_bulb.png"
     },
     {
       "id": "minecraft:exposed_chiseled_copper",
       "readable": "Exposed Chiseled Copper",
-      "texture": "exposed_chiseled_copper.png"
+      "texture": "1.21/exposed_chiseled_copper.png"
     },
     {
       "id": "minecraft:exposed_copper_grate",
       "readable": "Exposed Copper Grate",
-      "texture": "exposed_copper_grate.png"
+      "texture": "1.21/exposed_copper_grate.png"
     },
     {
       "id": "minecraft:exposed_copper_door",
       "readable": "Exposed Copper Door",
-      "texture": "exposed_copper_door.png"
+      "texture": "1.21/exposed_copper_door.png"
     },
     {
       "id": "minecraft:exposed_copper_trapdoor",
       "readable": "Exposed Copper Trapdoor",
-      "texture": "exposed_copper_trapdoor.png"
+      "texture": "1.21/exposed_copper_trapdoor.png"
     },
     {
       "id": "minecraft:exposed_copper_bulb",
       "readable": "Exposed Copper Bulb",
-      "texture": "exposed_copper_bulb.png"
+      "texture": "1.21/exposed_copper_bulb.png"
     },
     {
       "id": "minecraft:weathered_chiseled_copper",
       "readable": "Weathered Chiseled Copper",
-      "texture": "weathered_chiseled_copper.png"
+      "texture": "1.21/weathered_chiseled_copper.png"
     },
     {
       "id": "minecraft:weathered_copper_grate",
       "readable": "Weathered Copper Grate",
-      "texture": "weathered_copper_grate.png"
+      "texture": "1.21/weathered_copper_grate.png"
     },
     {
       "id": "minecraft:weathered_copper_door",
       "readable": "Weathered Copper Door",
-      "texture": "weathered_copper_door.png"
+      "texture": "1.21/weathered_copper_door.png"
     },
     {
       "id": "minecraft:weathered_copper_trapdoor",
       "readable": "Weathered Copper Trapdoor",
-      "texture": "weathered_copper_trapdoor.png"
+      "texture": "1.21/weathered_copper_trapdoor.png"
     },
     {
       "id": "minecraft:weathered_copper_bulb",
       "readable": "Weathered Copper Bulb",
-      "texture": "weathered_copper_bulb.png"
+      "texture": "1.21/weathered_copper_bulb.png"
     },
     {
       "id": "minecraft:oxidized_chiseled_copper",
       "readable": "Oxidized Chiseled Copper",
-      "texture": "oxidized_chiseled_copper.png"
+      "texture": "1.21/oxidized_chiseled_copper.png"
     },
     {
       "id": "minecraft:oxidized_copper_grate",
       "readable": "Oxidized Copper Grate",
-      "texture": "oxidized_copper_grate.png"
+      "texture": "1.21/oxidized_copper_grate.png"
     },
     {
       "id": "minecraft:oxidized_copper_door",
       "readable": "Oxidized Copper Door",
-      "texture": "oxidized_copper_door.png"
+      "texture": "1.21/oxidized_copper_door.png"
     },
     {
       "id": "minecraft:oxidized_copper_trapdoor",
       "readable": "Oxidized Copper Trapdoor",
-      "texture": "oxidized_copper_trapdoor.png"
+      "texture": "1.21/oxidized_copper_trapdoor.png"
     },
     {
       "id": "minecraft:oxidized_copper_bulb",
       "readable": "Oxidized Copper Bulb",
-      "texture": "oxidized_copper_bulb.png"
+      "texture": "1.21/oxidized_copper_bulb.png"
     },
     {
       "id": "minecraft:waxed_chiseled_copper",
       "readable": "Waxed Chiseled Copper",
-      "texture": "waxed_chiseled_copper.png"
+      "texture": "1.21/waxed_chiseled_copper.png"
     },
     {
       "id": "minecraft:waxed_copper_grate",
       "readable": "Waxed Copper Grate",
-      "texture": "waxed_copper_grate.png"
+      "texture": "1.21/waxed_copper_grate.png"
     },
     {
       "id": "minecraft:waxed_copper_door",
       "readable": "Waxed Copper Door",
-      "texture": "waxed_copper_door.png"
+      "texture": "1.21/waxed_copper_door.png"
     },
     {
       "id": "minecraft:waxed_copper_trapdoor",
       "readable": "Waxed Copper Trapdoor",
-      "texture": "waxed_copper_trapdoor.png"
+      "texture": "1.21/waxed_copper_trapdoor.png"
     },
     {
       "id": "minecraft:waxed_copper_bulb",
       "readable": "Waxed Copper Bulb",
-      "texture": "waxed_copper_bulb.png"
+      "texture": "1.21/waxed_copper_bulb.png"
     },
     {
       "id": "minecraft:waxed_exposed_chiseled_copper",
       "readable": "Waxed Exposed Chiseled Copper",
-      "texture": "waxed_exposed_chiseled_copper.png"
+      "texture": "1.21/waxed_exposed_chiseled_copper.png"
     },
     {
       "id": "minecraft:waxed_exposed_copper_grate",
       "readable": "Waxed Exposed Copper Grate",
-      "texture": "waxed_exposed_copper_grate.png"
+      "texture": "1.21/waxed_exposed_copper_grate.png"
     },
     {
       "id": "minecraft:waxed_exposed_copper_door",
       "readable": "Waxed Exposed Copper Door",
-      "texture": "waxed_exposed_copper_door.png"
+      "texture": "1.21/waxed_exposed_copper_door.png"
     },
     {
       "id": "minecraft:waxed_exposed_copper_trapdoor",
       "readable": "Waxed Exposed Copper Trapdoor",
-      "texture": "waxed_exposed_copper_trapdoor.png"
+      "texture": "1.21/waxed_exposed_copper_trapdoor.png"
     },
     {
       "id": "minecraft:waxed_exposed_copper_bulb",
       "readable": "Waxed Exposed Copper Bulb",
-      "texture": "waxed_exposed_copper_bulb.png"
+      "texture": "1.21/waxed_exposed_copper_bulb.png"
     },
     {
       "id": "minecraft:waxed_weathered_chiseled_copper",
       "readable": "Waxed Weathered Chiseled Copper",
-      "texture": "waxed_weathered_chiseled_copper.png"
+      "texture": "1.21/waxed_weathered_chiseled_copper.png"
     },
     {
       "id": "minecraft:waxed_weathered_copper_grate",
       "readable": "Waxed Weathered Copper Grate",
-      "texture": "waxed_weathered_copper_grate.png"
+      "texture": "1.21/waxed_weathered_copper_grate.png"
     },
     {
       "id": "minecraft:waxed_weathered_copper_door",
       "readable": "Waxed Weathered Copper Door",
-      "texture": "waxed_weathered_copper_door.png"
+      "texture": "1.21/waxed_weathered_copper_door.png"
     },
     {
       "id": "minecraft:waxed_weathered_copper_trapdoor",
       "readable": "Waxed Weathered Copper Trapdoor",
-      "texture": "waxed_weathered_copper_trapdoor.png"
+      "texture": "1.21/waxed_weathered_copper_trapdoor.png"
     },
     {
       "id": "minecraft:waxed_weathered_copper_bulb",
       "readable": "Waxed Weathered Copper Bulb",
-      "texture": "waxed_weathered_copper_bulb.png"
+      "texture": "1.21/waxed_weathered_copper_bulb.png"
     },
     {
       "id": "minecraft:waxed_oxidized_chiseled_copper",
       "readable": "Waxed Oxidized Chiseled Copper",
-      "texture": "waxed_oxidized_chiseled_copper.png"
+      "texture": "1.21/waxed_oxidized_chiseled_copper.png"
     },
     {
       "id": "minecraft:waxed_oxidized_copper_grate",
       "readable": "Waxed Oxidized Copper Grate",
-      "texture": "waxed_oxidized_copper_grate.png"
+      "texture": "1.21/waxed_oxidized_copper_grate.png"
     },
     {
       "id": "minecraft:waxed_oxidized_copper_door",
       "readable": "Waxed Oxidized Copper Door",
-      "texture": "waxed_oxidized_copper_door.png"
+      "texture": "1.21/waxed_oxidized_copper_door.png"
     },
     {
       "id": "minecraft:waxed_oxidized_copper_trapdoor",
       "readable": "Waxed Oxidized Copper Trapdoor",
-      "texture": "waxed_oxidized_copper_trapdoor.png"
+      "texture": "1.21/waxed_oxidized_copper_trapdoor.png"
     },
     {
       "id": "minecraft:waxed_oxidized_copper_bulb",
       "readable": "Waxed Oxidized Copper Bulb",
-      "texture": "waxed_oxidized_copper_bulb.png"
+      "texture": "1.21/waxed_oxidized_copper_bulb.png"
     },
     {
       "id": "minecraft:short_grass",
       "readable": "Short Grass",
-      "texture": "short_grass.png"
+      "texture": "1.21/short_grass.png"
     },
     {
       "id": "minecraft:vault",
       "readable": "Vault",
-      "texture": "vault.png"
+      "texture": "1.21/vault.png"
     },
     {
       "id": "minecraft:crafter",
       "readable": "Crafter",
-      "texture": "crafter.png"
+      "texture": "1.21/crafter.png"
     },
     {
       "id": "minecraft:wind_charge",
       "readable": "Wind Charge",
-      "texture": "wind_charge.png"
+      "texture": "1.21/wind_charge.png"
     },
     {
       "id": "minecraft:music_disc_creator_music_box",
       "readable": "Music Disc",
-      "texture": "music_disc_creator_music_box.png"
+      "texture": "1.21/music_disc_creator_music_box.png"
     },
     {
       "id": "minecraft:music_disc_creator",
       "readable": "Music Disc",
-      "texture": "music_disc_creator.png"
+      "texture": "1.21/music_disc_creator.png"
     },
     {
       "id": "minecraft:music_disc_precipice",
       "readable": "Music Disc",
-      "texture": "music_disc_precipice.png"
+      "texture": "1.21/music_disc_precipice.png"
     },
     {
       "id": "minecraft:mace",
       "readable": "Mace",
-      "texture": "mace.png"
+      "texture": "1.21/mace.png"
     },
     {
       "id": "minecraft:wolf_armor",
       "readable": "Wolf Armor",
-      "texture": "wolf_armor.png"
+      "texture": "1.21/wolf_armor.png"
     },
     {
       "id": "minecraft:ominous_bottle",
       "readable": "Ominous Bottle",
-      "texture": "ominous_bottle.png"
+      "texture": "1.21/ominous_bottle.png"
     },
     {
       "id": "minecraft:turtle_scute",
       "readable": "Turtle Scute",
-      "texture": "turtle_scute.png"
+      "texture": "1.21/turtle_scute.png"
     },
     {
       "id": "minecraft:armadillo_scute",
       "readable": "Armadillo Scute",
-      "texture": "armadillo_scute.png"
+      "texture": "1.21/armadillo_scute.png"
     },
     {
       "id": "minecraft:breeze_rod",
       "readable": "Breeze Rod",
-      "texture": "breeze_rod.png"
+      "texture": "1.21/breeze_rod.png"
     },
     {
       "id": "minecraft:heavy_core",
       "readable": "Heavy Core",
-      "texture": "heavy_core.png"
+      "texture": "1.21/heavy_core.png"
     },
     {
       "id": "minecraft:flow_banner_pattern",
       "readable": "Banner Pattern",
-      "texture": "flow_banner_pattern.png"
+      "texture": "1.21/flow_banner_pattern.png"
     },
     {
       "id": "minecraft:guster_banner_pattern",
       "readable": "Banner Pattern",
-      "texture": "guster_banner_pattern.png"
+      "texture": "1.21/guster_banner_pattern.png"
     },
     {
       "id": "minecraft:flow_pottery_sherd",
       "readable": "Flow Pottery Sherd",
-      "texture": "flow_pottery_sherd.png"
+      "texture": "1.21/flow_pottery_sherd.png"
     },
     {
       "id": "minecraft:guster_pottery_sherd",
       "readable": "Guster Pottery Sherd",
-      "texture": "guster_pottery_sherd.png"
+      "texture": "1.21/guster_pottery_sherd.png"
     },
     {
       "id": "minecraft:scrape_pottery_sherd",
       "readable": "Scrape Pottery Sherd",
-      "texture": "scrape_pottery_sherd.png"
+      "texture": "1.21/scrape_pottery_sherd.png"
     },
     {
       "id": "minecraft:flow_armor_trim_smithing_template",
       "readable": "Smithing Template",
-      "texture": "flow_armor_trim_smithing_template.png"
+      "texture": "1.21/flow_armor_trim_smithing_template.png"
     },
     {
       "id": "minecraft:bolt_armor_trim_smithing_template",
       "readable": "Smithing Template",
-      "texture": "bolt_armor_trim_smithing_template.png"
+      "texture": "1.21/bolt_armor_trim_smithing_template.png"
     },
     {
       "id": "minecraft:trial_key",
       "readable": "Trial Key",
-      "texture": "trial_key.png"
+      "texture": "1.21/trial_key.png"
     },
     {
       "id": "minecraft:ominous_trial_key",
       "readable": "Ominous Trial Key",
-      "texture": "ominous_trial_key.png"
+      "texture": "1.21/ominous_trial_key.png"
     },
     {
       "id": "minecraft:trial_spawner",
       "readable": "Trial Spawner",
-      "texture": "trial_spawner.png"
+      "texture": "1.21/trial_spawner.png"
     },
     {
       "id": "minecraft:armadillo_spawn_egg",
       "readable": "Armadillo Spawn Egg",
-      "texture": "armadillo_spawn_egg.png"
+      "texture": "1.21/armadillo_spawn_egg.png"
     },
     {
       "id": "minecraft:bogged_spawn_egg",
       "readable": "Bogged Spawn Egg",
-      "texture": "bogged_spawn_egg.png"
+      "texture": "1.21/bogged_spawn_egg.png"
     },
     {
       "id": "minecraft:breeze_spawn_egg",
       "readable": "Breeze Spawn Egg",
-      "texture": "breeze_spawn_egg.png"
+      "texture": "1.21/breeze_spawn_egg.png"
     }
   ],
+  "update": {
+    "minecraft:bricks": {
+      "texture": "1.21/bricks.png"
+    },
+    "minecraft:brick_stairs": {
+      "texture": "1.21/brick_stairs.png"
+    },
+    "minecraft:brick_slab": {
+      "texture": "1.21/brick_slab.png"
+    },
+    "minecraft:brick_wall": {
+      "texture": "1.21/brick_wall.png"
+    },
+    "minecraft:packed_mud": {
+      "texture": "1.21/packed_mud.png"
+    },
+    "minecraft:mud_bricks": {
+      "texture": "1.21/mud_bricks.png"
+    },
+    "minecraft:mud_brick_stairs": {
+      "texture": "1.21/mud_brick_stairs.png"
+    },
+    "minecraft:mud_brick_slab": {
+      "texture": "1.21/mud_brick_slab.png"
+    },
+    "minecraft:mud_brick_wall": {
+      "texture": "1.21/mud_brick_wall.png"
+    },
+    "minecraft:sandstone": {
+      "texture": "1.21/sandstone.png"
+    },
+    "minecraft:sandstone_stairs": {
+      "texture": "1.21/sandstone_stairs.png"
+    },
+    "minecraft:sandstone_slab": {
+      "texture": "1.21/sandstone_slab.png"
+    },
+    "minecraft:sandstone_wall": {
+      "texture": "1.21/sandstone_wall.png"
+    },
+    "minecraft:oxidized_cut_copper_stairs": {
+      "texture": "1.21/oxidized_cut_copper_stairs.png"
+    },
+    "minecraft:oxidized_cut_copper_slab": {
+      "texture": "1.21/oxidized_cut_copper_slab.png"
+    },
+    "minecraft:waxed_cut_copper_slab": {
+      "texture": "1.21/waxed_cut_copper_slab.png"
+    },
+    "minecraft:waxed_exposed_copper": {
+      "texture": "1.21/waxed_exposed_copper.png"
+    },
+    "minecraft:waxed_exposed_cut_copper": {
+      "texture": "1.21/waxed_exposed_cut_copper.png"
+    },
+    "minecraft:waxed_exposed_cut_copper_slab": {
+      "texture": "1.21/waxed_exposed_cut_copper_slab.png"
+    },
+    "minecraft:waxed_weathered_copper": {
+      "texture": "1.21/waxed_weathered_copper.png"
+    },
+    "minecraft:waxed_oxidized_copper": {
+      "texture": "1.21/waxed_oxidized_copper.png"
+    },
+    "minecraft:waxed_oxidized_cut_copper": {
+      "texture": "1.21/waxed_oxidized_cut_copper.png"
+    },
+    "minecraft:waxed_oxidized_cut_copper_stairs": {
+      "texture": "1.21/waxed_oxidized_cut_copper_stairs.png"
+    },
+    "minecraft:white_wool": {
+      "texture": "1.21/white_wool.png"
+    },
+    "minecraft:light_gray_wool": {
+      "texture": "1.21/light_gray_wool.png"
+    },
+    "minecraft:red_wool": {
+      "texture": "1.21/red_wool.png"
+    },
+    "minecraft:orange_wool": {
+      "texture": "1.21/orange_wool.png"
+    },
+    "minecraft:yellow_wool": {
+      "texture": "1.21/yellow_wool.png"
+    },
+    "minecraft:green_wool": {
+      "texture": "1.21/green_wool.png"
+    },
+    "minecraft:cyan_wool": {
+      "texture": "1.21/cyan_wool.png"
+    },
+    "minecraft:magenta_wool": {
+      "texture": "1.21/magenta_wool.png"
+    },
+    "minecraft:pink_wool": {
+      "texture": "1.21/pink_wool.png"
+    },
+    "minecraft:white_carpet": {
+      "texture": "1.21/white_carpet.png"
+    },
+    "minecraft:gray_carpet": {
+      "texture": "1.21/gray_carpet.png"
+    },
+    "minecraft:black_carpet": {
+      "texture": "1.21/black_carpet.png"
+    },
+    "minecraft:yellow_carpet": {
+      "texture": "1.21/yellow_carpet.png"
+    },
+    "minecraft:lime_carpet": {
+      "texture": "1.21/lime_carpet.png"
+    },
+    "minecraft:green_carpet": {
+      "texture": "1.21/green_carpet.png"
+    },
+    "minecraft:light_blue_carpet": {
+      "texture": "1.21/light_blue_carpet.png"
+    },
+    "minecraft:blue_carpet": {
+      "texture": "1.21/blue_carpet.png"
+    },
+    "minecraft:terracotta": {
+      "texture": "1.21/terracotta.png"
+    },
+    "minecraft:white_terracotta": {
+      "texture": "1.21/white_terracotta.png"
+    },
+    "minecraft:light_gray_terracotta": {
+      "texture": "1.21/light_gray_terracotta.png"
+    },
+    "minecraft:black_terracotta": {
+      "texture": "1.21/black_terracotta.png"
+    },
+    "minecraft:brown_terracotta": {
+      "texture": "1.21/brown_terracotta.png"
+    },
+    "minecraft:lime_terracotta": {
+      "texture": "1.21/lime_terracotta.png"
+    },
+    "minecraft:green_terracotta": {
+      "texture": "1.21/green_terracotta.png"
+    },
+    "minecraft:cyan_terracotta": {
+      "texture": "1.21/cyan_terracotta.png"
+    },
+    "minecraft:blue_terracotta": {
+      "texture": "1.21/blue_terracotta.png"
+    },
+    "minecraft:purple_terracotta": {
+      "texture": "1.21/purple_terracotta.png"
+    },
+    "minecraft:light_gray_concrete": {
+      "texture": "1.21/light_gray_concrete.png"
+    },
+    "minecraft:gray_concrete": {
+      "texture": "1.21/gray_concrete.png"
+    },
+    "minecraft:black_concrete": {
+      "texture": "1.21/black_concrete.png"
+    },
+    "minecraft:lily_pad": {
+      "texture": "1.21/lily_pad.png"
+    },
+    "minecraft:diamond_axe": {
+      "texture": "1.21/diamond_axe.png"
+    },
+    "minecraft:brush": {
+      "texture": "1.21/brush.png"
+    },
+    "minecraft:iron_chestplate": {
+      "texture": "1.21/iron_chestplate.png"
+    },
+    "minecraft:potato": {
+      "texture": "1.21/potato.png"
+    },
+    "minecraft:poisonous_potato": {
+      "texture": "1.21/poisonous_potato.png"
+    },
+    "minecraft:beetroot": {
+      "texture": "1.21/beetroot.png"
+    },
+    "minecraft:cod": {
+      "texture": "1.21/cod.png"
+    },
+    "minecraft:gold_nugget": {
+      "texture": "1.21/gold_nugget.png"
+    },
+    "minecraft:book": {
+      "texture": "1.21/book.png"
+    },
+    "minecraft:howl_pottery_sherd": {
+      "texture": "1.21/howl_pottery_sherd.png"
+    },
+    "minecraft:miner_pottery_sherd": {
+      "texture": "1.21/miner_pottery_sherd.png"
+    },
+    "minecraft:netherite_upgrade_smithing_template": {
+      "texture": "1.21/netherite_upgrade_smithing_template.png"
+    },
+    "minecraft:sentry_armor_trim_smithing_template": {
+      "texture": "1.21/sentry_armor_trim_smithing_template.png"
+    },
+    "minecraft:squid_spawn_egg": {
+      "texture": "1.21/squid_spawn_egg.png"
+    },
+    "minecraft:tadpole_spawn_egg": {
+      "texture": "1.21/tadpole_spawn_egg.png"
+    },
+    "minecraft:villager_spawn_egg": {
+      "texture": "1.21/villager_spawn_egg.png"
+    },
+    "minecraft:drowned_spawn_egg": {
+      "texture": "1.21/drowned_spawn_egg.png"
+    },
+    "minecraft:cave_spider_spawn_egg": {
+      "texture": "1.21/cave_spider_spawn_egg.png"
+    },
+    "minecraft:wither_skeleton_spawn_egg": {
+      "texture": "1.21/wither_skeleton_spawn_egg.png"
+    },
+    "minecraft:zoglin_spawn_egg": {
+      "texture": "1.21/zoglin_spawn_egg.png"
+    },
+    "minecraft:enderman_spawn_egg": {
+      "texture": "1.21/enderman_spawn_egg.png"
+    },
+    "minecraft:endermite_spawn_egg": {
+      "texture": "1.21/endermite_spawn_egg.png"
+    },
+    "minecraft:petrified_oak_slab": {
+      "texture": "1.21/petrified_oak_slab.png"
+    },
+    "minecraft:structure_void": {
+      "texture": "1.21/structure_void.png"
+    }
+  },
   "remove": ["minecraft:grass", "minecraft:scute"],
   "order": [
     "minecraft:oak_log",

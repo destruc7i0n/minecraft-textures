@@ -5,519 +5,797 @@
     {
       "id": "minecraft:cherry_log",
       "readable": "Cherry Log",
-      "texture": "cherry_log.png"
+      "texture": "1.20/cherry_log.png"
     },
     {
       "id": "minecraft:cherry_wood",
       "readable": "Cherry Wood",
-      "texture": "cherry_wood.png"
+      "texture": "1.20/cherry_wood.png"
     },
     {
       "id": "minecraft:stripped_cherry_log",
       "readable": "Stripped Cherry Log",
-      "texture": "stripped_cherry_log.png"
+      "texture": "1.20/stripped_cherry_log.png"
     },
     {
       "id": "minecraft:stripped_cherry_wood",
       "readable": "Stripped Cherry Wood",
-      "texture": "stripped_cherry_wood.png"
+      "texture": "1.20/stripped_cherry_wood.png"
     },
     {
       "id": "minecraft:cherry_planks",
       "readable": "Cherry Planks",
-      "texture": "cherry_planks.png"
+      "texture": "1.20/cherry_planks.png"
     },
     {
       "id": "minecraft:cherry_stairs",
       "readable": "Cherry Stairs",
-      "texture": "cherry_stairs.png"
+      "texture": "1.20/cherry_stairs.png"
     },
     {
       "id": "minecraft:cherry_slab",
       "readable": "Cherry Slab",
-      "texture": "cherry_slab.png"
+      "texture": "1.20/cherry_slab.png"
     },
     {
       "id": "minecraft:cherry_fence",
       "readable": "Cherry Fence",
-      "texture": "cherry_fence.png"
+      "texture": "1.20/cherry_fence.png"
     },
     {
       "id": "minecraft:cherry_fence_gate",
       "readable": "Cherry Fence Gate",
-      "texture": "cherry_fence_gate.png"
+      "texture": "1.20/cherry_fence_gate.png"
     },
     {
       "id": "minecraft:cherry_door",
       "readable": "Cherry Door",
-      "texture": "cherry_door.png"
+      "texture": "1.20/cherry_door.png"
     },
     {
       "id": "minecraft:cherry_trapdoor",
       "readable": "Cherry Trapdoor",
-      "texture": "cherry_trapdoor.png"
+      "texture": "1.20/cherry_trapdoor.png"
     },
     {
       "id": "minecraft:cherry_pressure_plate",
       "readable": "Cherry Pressure Plate",
-      "texture": "cherry_pressure_plate.png"
+      "texture": "1.20/cherry_pressure_plate.png"
     },
     {
       "id": "minecraft:cherry_button",
       "readable": "Cherry Button",
-      "texture": "cherry_button.png"
+      "texture": "1.20/cherry_button.png"
     },
     {
       "id": "minecraft:bamboo_block",
       "readable": "Block of Bamboo",
-      "texture": "bamboo_block.png"
+      "texture": "1.20/bamboo_block.png"
     },
     {
       "id": "minecraft:stripped_bamboo_block",
       "readable": "Block of Stripped Bamboo",
-      "texture": "stripped_bamboo_block.png"
+      "texture": "1.20/stripped_bamboo_block.png"
     },
     {
       "id": "minecraft:bamboo_planks",
       "readable": "Bamboo Planks",
-      "texture": "bamboo_planks.png"
+      "texture": "1.20/bamboo_planks.png"
     },
     {
       "id": "minecraft:bamboo_mosaic",
       "readable": "Bamboo Mosaic",
-      "texture": "bamboo_mosaic.png"
+      "texture": "1.20/bamboo_mosaic.png"
     },
     {
       "id": "minecraft:bamboo_stairs",
       "readable": "Bamboo Stairs",
-      "texture": "bamboo_stairs.png"
+      "texture": "1.20/bamboo_stairs.png"
     },
     {
       "id": "minecraft:bamboo_mosaic_stairs",
       "readable": "Bamboo Mosaic Stairs",
-      "texture": "bamboo_mosaic_stairs.png"
+      "texture": "1.20/bamboo_mosaic_stairs.png"
     },
     {
       "id": "minecraft:bamboo_slab",
       "readable": "Bamboo Slab",
-      "texture": "bamboo_slab.png"
+      "texture": "1.20/bamboo_slab.png"
     },
     {
       "id": "minecraft:bamboo_mosaic_slab",
       "readable": "Bamboo Mosaic Slab",
-      "texture": "bamboo_mosaic_slab.png"
+      "texture": "1.20/bamboo_mosaic_slab.png"
     },
     {
       "id": "minecraft:bamboo_fence",
       "readable": "Bamboo Fence",
-      "texture": "bamboo_fence.png"
+      "texture": "1.20/bamboo_fence.png"
     },
     {
       "id": "minecraft:bamboo_fence_gate",
       "readable": "Bamboo Fence Gate",
-      "texture": "bamboo_fence_gate.png"
+      "texture": "1.20/bamboo_fence_gate.png"
     },
     {
       "id": "minecraft:bamboo_door",
       "readable": "Bamboo Door",
-      "texture": "bamboo_door.png"
+      "texture": "1.20/bamboo_door.png"
     },
     {
       "id": "minecraft:bamboo_trapdoor",
       "readable": "Bamboo Trapdoor",
-      "texture": "bamboo_trapdoor.png"
+      "texture": "1.20/bamboo_trapdoor.png"
     },
     {
       "id": "minecraft:bamboo_pressure_plate",
       "readable": "Bamboo Pressure Plate",
-      "texture": "bamboo_pressure_plate.png"
+      "texture": "1.20/bamboo_pressure_plate.png"
     },
     {
       "id": "minecraft:bamboo_button",
       "readable": "Bamboo Button",
-      "texture": "bamboo_button.png"
+      "texture": "1.20/bamboo_button.png"
     },
     {
       "id": "minecraft:cherry_leaves",
       "readable": "Cherry Leaves",
-      "texture": "cherry_leaves.png"
+      "texture": "1.20/cherry_leaves.png"
     },
     {
       "id": "minecraft:cherry_sapling",
       "readable": "Cherry Sapling",
-      "texture": "cherry_sapling.png"
+      "texture": "1.20/cherry_sapling.png"
     },
     {
       "id": "minecraft:torchflower",
       "readable": "Torchflower",
-      "texture": "torchflower.png"
+      "texture": "1.20/torchflower.png"
     },
     {
       "id": "minecraft:pink_petals",
       "readable": "Pink Petals",
-      "texture": "pink_petals.png"
+      "texture": "1.20/pink_petals.png"
     },
     {
       "id": "minecraft:pitcher_plant",
       "readable": "Pitcher Plant",
-      "texture": "pitcher_plant.png"
+      "texture": "1.20/pitcher_plant.png"
     },
     {
       "id": "minecraft:sniffer_egg",
       "readable": "Sniffer Egg",
-      "texture": "sniffer_egg.png"
+      "texture": "1.20/sniffer_egg.png"
     },
     {
       "id": "minecraft:torchflower_seeds",
       "readable": "Torchflower Seeds",
-      "texture": "torchflower_seeds.png"
+      "texture": "1.20/torchflower_seeds.png"
     },
     {
       "id": "minecraft:pitcher_pod",
       "readable": "Pitcher Pod",
-      "texture": "pitcher_pod.png"
+      "texture": "1.20/pitcher_pod.png"
     },
     {
       "id": "minecraft:suspicious_sand",
       "readable": "Suspicious Sand",
-      "texture": "suspicious_sand.png"
+      "texture": "1.20/suspicious_sand.png"
     },
     {
       "id": "minecraft:suspicious_gravel",
       "readable": "Suspicious Gravel",
-      "texture": "suspicious_gravel.png"
+      "texture": "1.20/suspicious_gravel.png"
     },
     {
       "id": "minecraft:decorated_pot",
       "readable": "Decorated Pot",
-      "texture": "decorated_pot.png"
+      "texture": "1.20/decorated_pot.png"
     },
     {
       "id": "minecraft:chiseled_bookshelf",
       "readable": "Chiseled Bookshelf",
-      "texture": "chiseled_bookshelf.png"
+      "texture": "1.20/chiseled_bookshelf.png"
     },
     {
       "id": "minecraft:oak_hanging_sign",
       "readable": "Oak Hanging Sign",
-      "texture": "oak_hanging_sign.png"
+      "texture": "1.20/oak_hanging_sign.png"
     },
     {
       "id": "minecraft:spruce_hanging_sign",
       "readable": "Spruce Hanging Sign",
-      "texture": "spruce_hanging_sign.png"
+      "texture": "1.20/spruce_hanging_sign.png"
     },
     {
       "id": "minecraft:birch_hanging_sign",
       "readable": "Birch Hanging Sign",
-      "texture": "birch_hanging_sign.png"
+      "texture": "1.20/birch_hanging_sign.png"
     },
     {
       "id": "minecraft:jungle_hanging_sign",
       "readable": "Jungle Hanging Sign",
-      "texture": "jungle_hanging_sign.png"
+      "texture": "1.20/jungle_hanging_sign.png"
     },
     {
       "id": "minecraft:acacia_hanging_sign",
       "readable": "Acacia Hanging Sign",
-      "texture": "acacia_hanging_sign.png"
+      "texture": "1.20/acacia_hanging_sign.png"
     },
     {
       "id": "minecraft:dark_oak_hanging_sign",
       "readable": "Dark Oak Hanging Sign",
-      "texture": "dark_oak_hanging_sign.png"
+      "texture": "1.20/dark_oak_hanging_sign.png"
     },
     {
       "id": "minecraft:mangrove_hanging_sign",
       "readable": "Mangrove Hanging Sign",
-      "texture": "mangrove_hanging_sign.png"
+      "texture": "1.20/mangrove_hanging_sign.png"
     },
     {
       "id": "minecraft:cherry_sign",
       "readable": "Cherry Sign",
-      "texture": "cherry_sign.png"
+      "texture": "1.20/cherry_sign.png"
     },
     {
       "id": "minecraft:cherry_hanging_sign",
       "readable": "Cherry Hanging Sign",
-      "texture": "cherry_hanging_sign.png"
+      "texture": "1.20/cherry_hanging_sign.png"
     },
     {
       "id": "minecraft:bamboo_sign",
       "readable": "Bamboo Sign",
-      "texture": "bamboo_sign.png"
+      "texture": "1.20/bamboo_sign.png"
     },
     {
       "id": "minecraft:bamboo_hanging_sign",
       "readable": "Bamboo Hanging Sign",
-      "texture": "bamboo_hanging_sign.png"
+      "texture": "1.20/bamboo_hanging_sign.png"
     },
     {
       "id": "minecraft:crimson_hanging_sign",
       "readable": "Crimson Hanging Sign",
-      "texture": "crimson_hanging_sign.png"
+      "texture": "1.20/crimson_hanging_sign.png"
     },
     {
       "id": "minecraft:warped_hanging_sign",
       "readable": "Warped Hanging Sign",
-      "texture": "warped_hanging_sign.png"
+      "texture": "1.20/warped_hanging_sign.png"
     },
     {
       "id": "minecraft:piglin_head",
       "readable": "Piglin Head",
-      "texture": "piglin_head.png"
+      "texture": "1.20/piglin_head.png"
     },
     {
       "id": "minecraft:calibrated_sculk_sensor",
       "readable": "Calibrated Sculk Sensor",
-      "texture": "calibrated_sculk_sensor.png"
+      "texture": "1.20/calibrated_sculk_sensor.png"
     },
     {
       "id": "minecraft:bamboo_chest_raft",
       "readable": "Bamboo Raft with Chest",
-      "texture": "bamboo_chest_raft.png"
+      "texture": "1.20/bamboo_chest_raft.png"
     },
     {
       "id": "minecraft:brush",
       "readable": "Brush",
-      "texture": "brush.png"
+      "texture": "1.20/brush.png"
     },
     {
       "id": "minecraft:cherry_boat",
       "readable": "Cherry Boat",
-      "texture": "cherry_boat.png"
+      "texture": "1.20/cherry_boat.png"
     },
     {
       "id": "minecraft:cherry_chest_boat",
       "readable": "Cherry Boat with Chest",
-      "texture": "cherry_chest_boat.png"
+      "texture": "1.20/cherry_chest_boat.png"
     },
     {
       "id": "minecraft:bamboo_raft",
       "readable": "Bamboo Raft",
-      "texture": "bamboo_raft.png"
+      "texture": "1.20/bamboo_raft.png"
     },
     {
       "id": "minecraft:music_disc_relic",
       "readable": "Relic Music Disc",
-      "texture": "music_disc_relic.png"
+      "texture": "1.20/music_disc_relic.png"
     },
     {
       "id": "minecraft:angler_pottery_sherd",
       "readable": "Angler Pottery Sherd",
-      "texture": "angler_pottery_sherd.png"
+      "texture": "1.20/angler_pottery_sherd.png"
     },
     {
       "id": "minecraft:archer_pottery_sherd",
       "readable": "Archer Pottery Sherd",
-      "texture": "archer_pottery_sherd.png"
+      "texture": "1.20/archer_pottery_sherd.png"
     },
     {
       "id": "minecraft:arms_up_pottery_sherd",
       "readable": "Arms Up Pottery Sherd",
-      "texture": "arms_up_pottery_sherd.png"
+      "texture": "1.20/arms_up_pottery_sherd.png"
     },
     {
       "id": "minecraft:blade_pottery_sherd",
       "readable": "Blade Pottery Sherd",
-      "texture": "blade_pottery_sherd.png"
+      "texture": "1.20/blade_pottery_sherd.png"
     },
     {
       "id": "minecraft:brewer_pottery_sherd",
       "readable": "Brewer Pottery Sherd",
-      "texture": "brewer_pottery_sherd.png"
+      "texture": "1.20/brewer_pottery_sherd.png"
     },
     {
       "id": "minecraft:burn_pottery_sherd",
       "readable": "Burn Pottery Sherd",
-      "texture": "burn_pottery_sherd.png"
+      "texture": "1.20/burn_pottery_sherd.png"
     },
     {
       "id": "minecraft:danger_pottery_sherd",
       "readable": "Danger Pottery Sherd",
-      "texture": "danger_pottery_sherd.png"
+      "texture": "1.20/danger_pottery_sherd.png"
     },
     {
       "id": "minecraft:explorer_pottery_sherd",
       "readable": "Explorer Pottery Sherd",
-      "texture": "explorer_pottery_sherd.png"
+      "texture": "1.20/explorer_pottery_sherd.png"
     },
     {
       "id": "minecraft:friend_pottery_sherd",
       "readable": "Friend Pottery Sherd",
-      "texture": "friend_pottery_sherd.png"
+      "texture": "1.20/friend_pottery_sherd.png"
     },
     {
       "id": "minecraft:heart_pottery_sherd",
       "readable": "Heart Pottery Sherd",
-      "texture": "heart_pottery_sherd.png"
+      "texture": "1.20/heart_pottery_sherd.png"
     },
     {
       "id": "minecraft:heartbreak_pottery_sherd",
       "readable": "Heartbreak Pottery Sherd",
-      "texture": "heartbreak_pottery_sherd.png"
+      "texture": "1.20/heartbreak_pottery_sherd.png"
     },
     {
       "id": "minecraft:howl_pottery_sherd",
       "readable": "Howl Pottery Sherd",
-      "texture": "howl_pottery_sherd.png"
+      "texture": "1.20/howl_pottery_sherd.png"
     },
     {
       "id": "minecraft:miner_pottery_sherd",
       "readable": "Miner Pottery Sherd",
-      "texture": "miner_pottery_sherd.png"
+      "texture": "1.20/miner_pottery_sherd.png"
     },
     {
       "id": "minecraft:mourner_pottery_sherd",
       "readable": "Mourner Pottery Sherd",
-      "texture": "mourner_pottery_sherd.png"
+      "texture": "1.20/mourner_pottery_sherd.png"
     },
     {
       "id": "minecraft:plenty_pottery_sherd",
       "readable": "Plenty Pottery Sherd",
-      "texture": "plenty_pottery_sherd.png"
+      "texture": "1.20/plenty_pottery_sherd.png"
     },
     {
       "id": "minecraft:prize_pottery_sherd",
       "readable": "Prize Pottery Sherd",
-      "texture": "prize_pottery_sherd.png"
+      "texture": "1.20/prize_pottery_sherd.png"
     },
     {
       "id": "minecraft:sheaf_pottery_sherd",
       "readable": "Sheaf Pottery Sherd",
-      "texture": "sheaf_pottery_sherd.png"
+      "texture": "1.20/sheaf_pottery_sherd.png"
     },
     {
       "id": "minecraft:shelter_pottery_sherd",
       "readable": "Shelter Pottery Sherd",
-      "texture": "shelter_pottery_sherd.png"
+      "texture": "1.20/shelter_pottery_sherd.png"
     },
     {
       "id": "minecraft:skull_pottery_sherd",
       "readable": "Skull Pottery Sherd",
-      "texture": "skull_pottery_sherd.png"
+      "texture": "1.20/skull_pottery_sherd.png"
     },
     {
       "id": "minecraft:snort_pottery_sherd",
       "readable": "Snort Pottery Sherd",
-      "texture": "snort_pottery_sherd.png"
+      "texture": "1.20/snort_pottery_sherd.png"
     },
     {
       "id": "minecraft:netherite_upgrade_smithing_template",
       "readable": "Netherite Upgrade Smithing Template",
-      "texture": "netherite_upgrade_smithing_template.png"
+      "texture": "1.20/netherite_upgrade_smithing_template.png"
     },
     {
       "id": "minecraft:sentry_armor_trim_smithing_template",
       "readable": "Sentry Armor Trim Smithing Template",
-      "texture": "sentry_armor_trim_smithing_template.png"
+      "texture": "1.20/sentry_armor_trim_smithing_template.png"
     },
     {
       "id": "minecraft:vex_armor_trim_smithing_template",
       "readable": "Vex Armor Trim Smithing Template",
-      "texture": "vex_armor_trim_smithing_template.png"
+      "texture": "1.20/vex_armor_trim_smithing_template.png"
     },
     {
       "id": "minecraft:wild_armor_trim_smithing_template",
       "readable": "Wild Armor Trim Smithing Template",
-      "texture": "wild_armor_trim_smithing_template.png"
+      "texture": "1.20/wild_armor_trim_smithing_template.png"
     },
     {
       "id": "minecraft:coast_armor_trim_smithing_template",
       "readable": "Coast Armor Trim Smithing Template",
-      "texture": "coast_armor_trim_smithing_template.png"
+      "texture": "1.20/coast_armor_trim_smithing_template.png"
     },
     {
       "id": "minecraft:dune_armor_trim_smithing_template",
       "readable": "Dune Armor Trim Smithing Template",
-      "texture": "dune_armor_trim_smithing_template.png"
+      "texture": "1.20/dune_armor_trim_smithing_template.png"
     },
     {
       "id": "minecraft:wayfinder_armor_trim_smithing_template",
       "readable": "Wayfinder Armor Trim Smithing Template",
-      "texture": "wayfinder_armor_trim_smithing_template.png"
+      "texture": "1.20/wayfinder_armor_trim_smithing_template.png"
     },
     {
       "id": "minecraft:raiser_armor_trim_smithing_template",
       "readable": "Raiser Armor Trim Smithing Template",
-      "texture": "raiser_armor_trim_smithing_template.png"
+      "texture": "1.20/raiser_armor_trim_smithing_template.png"
     },
     {
       "id": "minecraft:shaper_armor_trim_smithing_template",
       "readable": "Shaper Armor Trim Smithing Template",
-      "texture": "shaper_armor_trim_smithing_template.png"
+      "texture": "1.20/shaper_armor_trim_smithing_template.png"
     },
     {
       "id": "minecraft:host_armor_trim_smithing_template",
       "readable": "Host Armor Trim Smithing Template",
-      "texture": "host_armor_trim_smithing_template.png"
+      "texture": "1.20/host_armor_trim_smithing_template.png"
     },
     {
       "id": "minecraft:ward_armor_trim_smithing_template",
       "readable": "Ward Armor Trim Smithing Template",
-      "texture": "ward_armor_trim_smithing_template.png"
+      "texture": "1.20/ward_armor_trim_smithing_template.png"
     },
     {
       "id": "minecraft:silence_armor_trim_smithing_template",
       "readable": "Silence Armor Trim Smithing Template",
-      "texture": "silence_armor_trim_smithing_template.png"
+      "texture": "1.20/silence_armor_trim_smithing_template.png"
     },
     {
       "id": "minecraft:tide_armor_trim_smithing_template",
       "readable": "Tide Armor Trim Smithing Template",
-      "texture": "tide_armor_trim_smithing_template.png"
+      "texture": "1.20/tide_armor_trim_smithing_template.png"
     },
     {
       "id": "minecraft:snout_armor_trim_smithing_template",
       "readable": "Snout Armor Trim Smithing Template",
-      "texture": "snout_armor_trim_smithing_template.png"
+      "texture": "1.20/snout_armor_trim_smithing_template.png"
     },
     {
       "id": "minecraft:rib_armor_trim_smithing_template",
       "readable": "Rib Armor Trim Smithing Template",
-      "texture": "rib_armor_trim_smithing_template.png"
+      "texture": "1.20/rib_armor_trim_smithing_template.png"
     },
     {
       "id": "minecraft:eye_armor_trim_smithing_template",
       "readable": "Eye Armor Trim Smithing Template",
-      "texture": "eye_armor_trim_smithing_template.png"
+      "texture": "1.20/eye_armor_trim_smithing_template.png"
     },
     {
       "id": "minecraft:spire_armor_trim_smithing_template",
       "readable": "Spire Armor Trim Smithing Template",
-      "texture": "spire_armor_trim_smithing_template.png"
+      "texture": "1.20/spire_armor_trim_smithing_template.png"
     },
     {
       "id": "minecraft:camel_spawn_egg",
       "readable": "Camel Spawn Egg",
-      "texture": "camel_spawn_egg.png"
+      "texture": "1.20/camel_spawn_egg.png"
     },
     {
       "id": "minecraft:sniffer_spawn_egg",
       "readable": "Sniffer Spawn Egg",
-      "texture": "sniffer_spawn_egg.png"
+      "texture": "1.20/sniffer_spawn_egg.png"
     },
     {
       "id": "minecraft:iron_golem_spawn_egg",
       "readable": "Iron Golem Spawn Egg",
-      "texture": "iron_golem_spawn_egg.png"
+      "texture": "1.20/iron_golem_spawn_egg.png"
     },
     {
       "id": "minecraft:snow_golem_spawn_egg",
       "readable": "Snow Golem Spawn Egg",
-      "texture": "snow_golem_spawn_egg.png"
+      "texture": "1.20/snow_golem_spawn_egg.png"
     },
     {
       "id": "minecraft:ender_dragon_spawn_egg",
       "readable": "Ender Dragon Spawn Egg",
-      "texture": "ender_dragon_spawn_egg.png"
+      "texture": "1.20/ender_dragon_spawn_egg.png"
     },
     {
       "id": "minecraft:wither_spawn_egg",
       "readable": "Wither Spawn Egg",
-      "texture": "wither_spawn_egg.png"
+      "texture": "1.20/wither_spawn_egg.png"
     }
   ],
+  "update": {
+    "minecraft:crimson_stem": {
+      "texture": "1.20/crimson_stem.png"
+    },
+    "minecraft:crimson_hyphae": {
+      "texture": "1.20/crimson_hyphae.png"
+    },
+    "minecraft:stripped_crimson_stem": {
+      "texture": "1.20/stripped_crimson_stem.png"
+    },
+    "minecraft:stripped_crimson_hyphae": {
+      "texture": "1.20/stripped_crimson_hyphae.png"
+    },
+    "minecraft:crimson_planks": {
+      "texture": "1.20/crimson_planks.png"
+    },
+    "minecraft:crimson_stairs": {
+      "texture": "1.20/crimson_stairs.png"
+    },
+    "minecraft:crimson_slab": {
+      "texture": "1.20/crimson_slab.png"
+    },
+    "minecraft:crimson_fence": {
+      "texture": "1.20/crimson_fence.png"
+    },
+    "minecraft:crimson_fence_gate": {
+      "texture": "1.20/crimson_fence_gate.png"
+    },
+    "minecraft:crimson_door": {
+      "texture": "1.20/crimson_door.png"
+    },
+    "minecraft:crimson_trapdoor": {
+      "texture": "1.20/crimson_trapdoor.png"
+    },
+    "minecraft:crimson_pressure_plate": {
+      "texture": "1.20/crimson_pressure_plate.png"
+    },
+    "minecraft:crimson_button": {
+      "texture": "1.20/crimson_button.png"
+    },
+    "minecraft:warped_stem": {
+      "texture": "1.20/warped_stem.png"
+    },
+    "minecraft:warped_hyphae": {
+      "texture": "1.20/warped_hyphae.png"
+    },
+    "minecraft:stripped_warped_stem": {
+      "texture": "1.20/stripped_warped_stem.png"
+    },
+    "minecraft:stripped_warped_hyphae": {
+      "texture": "1.20/stripped_warped_hyphae.png"
+    },
+    "minecraft:warped_planks": {
+      "texture": "1.20/warped_planks.png"
+    },
+    "minecraft:warped_stairs": {
+      "texture": "1.20/warped_stairs.png"
+    },
+    "minecraft:warped_slab": {
+      "texture": "1.20/warped_slab.png"
+    },
+    "minecraft:warped_fence": {
+      "texture": "1.20/warped_fence.png"
+    },
+    "minecraft:warped_fence_gate": {
+      "texture": "1.20/warped_fence_gate.png"
+    },
+    "minecraft:warped_door": {
+      "texture": "1.20/warped_door.png"
+    },
+    "minecraft:warped_trapdoor": {
+      "texture": "1.20/warped_trapdoor.png"
+    },
+    "minecraft:warped_pressure_plate": {
+      "texture": "1.20/warped_pressure_plate.png"
+    },
+    "minecraft:warped_button": {
+      "texture": "1.20/warped_button.png"
+    },
+    "minecraft:stone": {
+      "texture": "1.20/stone.png"
+    },
+    "minecraft:red_tulip": {
+      "texture": "1.20/red_tulip.png"
+    },
+    "minecraft:weeping_vines": {
+      "texture": "1.20/weeping_vines.png"
+    },
+    "minecraft:beetroot_seeds": {
+      "texture": "1.20/beetroot_seeds.png"
+    },
+    "minecraft:sweet_berries": {
+      "texture": "1.20/sweet_berries.png"
+    },
+    "minecraft:tube_coral": {
+      "texture": "1.20/tube_coral.png"
+    },
+    "minecraft:dead_horn_coral": {
+      "texture": "1.20/dead_horn_coral.png"
+    },
+    "minecraft:dead_tube_coral_fan": {
+      "texture": "1.20/dead_tube_coral_fan.png"
+    },
+    "minecraft:dead_brain_coral_fan": {
+      "texture": "1.20/dead_brain_coral_fan.png"
+    },
+    "minecraft:infested_chiseled_stone_bricks": {
+      "texture": "1.20/infested_chiseled_stone_bricks.png"
+    },
+    "minecraft:infested_deepslate": {
+      "texture": "1.20/infested_deepslate.png"
+    },
+    "minecraft:comparator": {
+      "texture": "1.20/comparator.png"
+    },
+    "minecraft:piston": {
+      "texture": "1.20/piston.png"
+    },
+    "minecraft:dropper": {
+      "texture": "1.20/dropper.png"
+    },
+    "minecraft:trapped_chest": {
+      "texture": "1.20/trapped_chest.png"
+    },
+    "minecraft:rail": {
+      "texture": "1.20/rail.png"
+    },
+    "minecraft:detector_rail": {
+      "texture": "1.20/detector_rail.png"
+    },
+    "minecraft:minecart": {
+      "texture": "1.20/minecart.png"
+    },
+    "minecraft:chest_minecart": {
+      "texture": "1.20/chest_minecart.png"
+    },
+    "minecraft:tnt_minecart": {
+      "texture": "1.20/tnt_minecart.png"
+    },
+    "minecraft:oak_chest_boat": {
+      "texture": "1.20/oak_chest_boat.png"
+    },
+    "minecraft:tnt": {
+      "texture": "1.20/tnt.png"
+    },
+    "minecraft:wooden_shovel": {
+      "texture": "1.20/wooden_shovel.png"
+    },
+    "minecraft:wooden_pickaxe": {
+      "texture": "1.20/wooden_pickaxe.png"
+    },
+    "minecraft:wooden_hoe": {
+      "texture": "1.20/wooden_hoe.png"
+    },
+    "minecraft:stone_pickaxe": {
+      "texture": "1.20/stone_pickaxe.png"
+    },
+    "minecraft:golden_hoe": {
+      "texture": "1.20/golden_hoe.png"
+    },
+    "minecraft:lava_bucket": {
+      "texture": "1.20/lava_bucket.png"
+    },
+    "minecraft:carrot_on_a_stick": {
+      "texture": "1.20/carrot_on_a_stick.png"
+    },
+    "minecraft:leather_boots": {
+      "texture": "1.20/leather_boots.png"
+    },
+    "minecraft:bow": {
+      "texture": "1.20/bow.png"
+    },
+    "minecraft:crossbow": {
+      "texture": "1.20/crossbow.png"
+    },
+    "minecraft:arrow": {
+      "texture": "1.20/arrow.png"
+    },
+    "minecraft:beef": {
+      "texture": "1.20/beef.png"
+    },
+    "minecraft:vindicator_spawn_egg": {
+      "texture": "1.20/vindicator_spawn_egg.png"
+    },
+    "minecraft:blaze_spawn_egg": {
+      "texture": "1.20/blaze_spawn_egg.png"
+    },
+    "minecraft:ghast_spawn_egg": {
+      "texture": "1.20/ghast_spawn_egg.png"
+    },
+    "minecraft:hoglin_spawn_egg": {
+      "texture": "1.20/hoglin_spawn_egg.png"
+    },
+    "minecraft:magma_cube_spawn_egg": {
+      "texture": "1.20/magma_cube_spawn_egg.png"
+    },
+    "minecraft:piglin_spawn_egg": {
+      "texture": "1.20/piglin_spawn_egg.png"
+    },
+    "minecraft:piglin_brute_spawn_egg": {
+      "texture": "1.20/piglin_brute_spawn_egg.png"
+    },
+    "minecraft:strider_spawn_egg": {
+      "texture": "1.20/strider_spawn_egg.png"
+    },
+    "minecraft:wither_skeleton_spawn_egg": {
+      "texture": "1.20/wither_skeleton_spawn_egg.png"
+    },
+    "minecraft:zoglin_spawn_egg": {
+      "texture": "1.20/zoglin_spawn_egg.png"
+    },
+    "minecraft:zombified_piglin_spawn_egg": {
+      "texture": "1.20/zombified_piglin_spawn_egg.png"
+    },
+    "minecraft:enderman_spawn_egg": {
+      "texture": "1.20/enderman_spawn_egg.png"
+    },
+    "minecraft:endermite_spawn_egg": {
+      "texture": "1.20/endermite_spawn_egg.png"
+    },
+    "minecraft:shulker_spawn_egg": {
+      "texture": "1.20/shulker_spawn_egg.png"
+    },
+    "minecraft:grass": {
+      "texture": "1.20/grass.png"
+    },
+    "minecraft:petrified_oak_slab": {
+      "texture": "1.20/petrified_oak_slab.png"
+    },
+    "minecraft:frosted_ice": {
+      "texture": "1.20/frosted_ice.png"
+    },
+    "minecraft:command_block_minecart": {
+      "texture": "1.20/command_block_minecart.png"
+    },
+    "minecraft:knowledge_book": {
+      "texture": "1.20/knowledge_book.png"
+    },
+    "minecraft:written_book": {
+      "texture": "1.20/written_book.png"
+    },
+    "minecraft:filled_map": {
+      "texture": "1.20/filled_map.png"
+    },
+    "minecraft:scute": {
+      "texture": "1.20/scute.png"
+    },
+    "minecraft:command_block": {
+      "texture": "1.20/command_block.png"
+    },
+    "minecraft:repeating_command_block": {
+      "texture": "1.20/repeating_command_block.png"
+    },
+    "minecraft:chain_command_block": {
+      "texture": "1.20/chain_command_block.png"
+    },
+    "minecraft:barrier": {
+      "texture": "1.20/barrier.png"
+    },
+    "minecraft:structure_block": {
+      "texture": "1.20/structure_block.png"
+    },
+    "minecraft:structure_void": {
+      "texture": "1.20/structure_void.png"
+    },
+    "minecraft:debug_stick": {
+      "texture": "1.20/debug_stick.png"
+    },
+    "minecraft:jigsaw": {
+      "texture": "1.20/jigsaw.png"
+    },
+    "minecraft:chain": {
+      "texture": "1.20/chain.png"
+    },
+    "minecraft:light": {
+      "texture": "1.20/light.png"
+    }
+  },
   "order": [
     "minecraft:oak_log",
     "minecraft:oak_wood",

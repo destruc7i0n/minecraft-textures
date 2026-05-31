@@ -43,7 +43,11 @@ const main = async () => {
           .join(' ') + ' [verify]';
       const translationData = await getTranslationFromId(id);
       missingItems.push(
-        toDataItem(id, translationData?.readable ?? fallbackReadable),
+        toDataItem(
+          id,
+          translationData?.readable ?? fallbackReadable,
+          remoteLatestVersion,
+        ),
       );
     }
 
@@ -65,7 +69,7 @@ const main = async () => {
     console.log(
       `Fetched textures: ${missingItems.length - unableToFetch.length}/${missingItems.length}`,
     );
-    logMissingItems(remoteLatestVersion, missingItems, unableToFetch);
+    logMissingItems(missingItems, unableToFetch);
     if (unableToFetch.length > 0) {
       console.log(
         `Could not fetch ${unableToFetch.length} textures. See ${MISSING_TEXTURE_DIR}/unable-to-fetch.txt`,
@@ -125,7 +129,7 @@ async function writeMissingTextureFolder({
   );
 
   for (const item of missingItems) {
-    const relativePath = `data/textures/${targetVersion}/${item.texture}`;
+    const relativePath = dataTextureRelativePath(item);
     const texture = await itemTextures.getImageBufferById(
       `item/${item.id.replace('minecraft:', '')}`,
     );
@@ -148,16 +152,12 @@ async function writeMissingTextureFolder({
   return unableToFetch;
 }
 
-function logMissingItems(
-  targetVersion: string,
-  missingItems: DataItem[],
-  unableToFetch: string[],
-) {
+function logMissingItems(missingItems: DataItem[], unableToFetch: string[]) {
   const missingTexturePaths = new Set(unableToFetch);
 
   console.log('Missing items:');
   for (const item of missingItems) {
-    const texturePath = `data/textures/${targetVersion}/${item.texture}`;
+    const texturePath = dataTextureRelativePath(item);
     const textureStatus = missingTexturePaths.has(texturePath)
       ? 'not fetched'
       : 'fetched';
@@ -201,13 +201,21 @@ function createMissingVersionFile({
   );
 }
 
-function toDataItem(id: string, readable: string): DataItem {
+function toDataItem(
+  id: string,
+  readable: string,
+  targetVersion: string,
+): DataItem {
   const fullId = `minecraft:${id}`;
   return {
     id: fullId,
     readable,
-    texture: defaultTextureName(fullId),
+    texture: `${targetVersion}/${defaultTextureName(fullId)}`,
   };
+}
+
+function dataTextureRelativePath(item: DataItem) {
+  return `data/textures/${item.texture}`;
 }
 
 function mergeUniqueItems(existing: DataItem[], additions: DataItem[]) {

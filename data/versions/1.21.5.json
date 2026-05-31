@@ -5,59 +5,331 @@
     {
       "id": "minecraft:short_dry_grass",
       "readable": "Short Dry Grass",
-      "texture": "short_dry_grass.png"
+      "texture": "1.21.5/short_dry_grass.png"
     },
     {
       "id": "minecraft:bush",
       "readable": "Bush",
-      "texture": "bush.png"
+      "texture": "1.21.5/bush.png"
     },
     {
       "id": "minecraft:cactus_flower",
       "readable": "Cactus Flower",
-      "texture": "cactus_flower.png"
+      "texture": "1.21.5/cactus_flower.png"
     },
     {
       "id": "minecraft:wildflowers",
       "readable": "Wildflowers",
-      "texture": "wildflowers.png"
+      "texture": "1.21.5/wildflowers.png"
     },
     {
       "id": "minecraft:leaf_litter",
       "readable": "Leaf Litter",
-      "texture": "leaf_litter.png"
+      "texture": "1.21.5/leaf_litter.png"
     },
     {
       "id": "minecraft:firefly_bush",
       "readable": "Firefly Bush",
-      "texture": "firefly_bush.png"
+      "texture": "1.21.5/firefly_bush.png"
     },
     {
       "id": "minecraft:tall_dry_grass",
       "readable": "Tall Dry Grass",
-      "texture": "tall_dry_grass.png"
+      "texture": "1.21.5/tall_dry_grass.png"
     },
     {
       "id": "minecraft:brown_egg",
       "readable": "Brown Egg",
-      "texture": "brown_egg.png"
+      "texture": "1.21.5/brown_egg.png"
     },
     {
       "id": "minecraft:blue_egg",
       "readable": "Blue Egg",
-      "texture": "blue_egg.png"
+      "texture": "1.21.5/blue_egg.png"
     },
     {
       "id": "minecraft:test_block",
       "readable": "Test Block",
-      "texture": "test_block.png"
+      "texture": "1.21.5/test_block.png"
     },
     {
       "id": "minecraft:test_instance_block",
       "readable": "Test Instance Block",
-      "texture": "test_instance_block.png"
+      "texture": "1.21.5/test_instance_block.png"
     }
   ],
+  "update": {
+    "minecraft:dead_bush": {
+      "texture": "1.21.5/dead_bush.png"
+    },
+    "minecraft:dandelion": {
+      "texture": "1.21.5/dandelion.png"
+    },
+    "minecraft:wither_rose": {
+      "texture": "1.21.5/wither_rose.png"
+    },
+    "minecraft:cactus": {
+      "texture": "1.21.5/cactus.png"
+    },
+    "minecraft:crimson_roots": {
+      "texture": "1.21.5/crimson_roots.png"
+    },
+    "minecraft:nether_sprouts": {
+      "texture": "1.21.5/nether_sprouts.png"
+    },
+    "minecraft:small_dripleaf": {
+      "texture": "1.21.5/small_dripleaf.png"
+    },
+    "minecraft:enchanted_golden_apple": {
+      "texture": "1.21.5/enchanted_golden_apple.png"
+    },
+    "minecraft:melon_slice": {
+      "texture": "1.21.5/melon_slice.png"
+    },
+    "minecraft:chicken_spawn_egg": {
+      "texture": "1.21.5/chicken_spawn_egg.png"
+    },
+    "minecraft:cow_spawn_egg": {
+      "texture": "1.21.5/cow_spawn_egg.png"
+    },
+    "minecraft:pig_spawn_egg": {
+      "texture": "1.21.5/pig_spawn_egg.png"
+    },
+    "minecraft:sheep_spawn_egg": {
+      "texture": "1.21.5/sheep_spawn_egg.png"
+    },
+    "minecraft:camel_spawn_egg": {
+      "texture": "1.21.5/camel_spawn_egg.png"
+    },
+    "minecraft:donkey_spawn_egg": {
+      "texture": "1.21.5/donkey_spawn_egg.png"
+    },
+    "minecraft:horse_spawn_egg": {
+      "texture": "1.21.5/horse_spawn_egg.png"
+    },
+    "minecraft:mule_spawn_egg": {
+      "texture": "1.21.5/mule_spawn_egg.png"
+    },
+    "minecraft:cat_spawn_egg": {
+      "texture": "1.21.5/cat_spawn_egg.png"
+    },
+    "minecraft:parrot_spawn_egg": {
+      "texture": "1.21.5/parrot_spawn_egg.png"
+    },
+    "minecraft:wolf_spawn_egg": {
+      "texture": "1.21.5/wolf_spawn_egg.png"
+    },
+    "minecraft:armadillo_spawn_egg": {
+      "texture": "1.21.5/armadillo_spawn_egg.png"
+    },
+    "minecraft:bat_spawn_egg": {
+      "texture": "1.21.5/bat_spawn_egg.png"
+    },
+    "minecraft:bee_spawn_egg": {
+      "texture": "1.21.5/bee_spawn_egg.png"
+    },
+    "minecraft:fox_spawn_egg": {
+      "texture": "1.21.5/fox_spawn_egg.png"
+    },
+    "minecraft:goat_spawn_egg": {
+      "texture": "1.21.5/goat_spawn_egg.png"
+    },
+    "minecraft:llama_spawn_egg": {
+      "texture": "1.21.5/llama_spawn_egg.png"
+    },
+    "minecraft:ocelot_spawn_egg": {
+      "texture": "1.21.5/ocelot_spawn_egg.png"
+    },
+    "minecraft:panda_spawn_egg": {
+      "texture": "1.21.5/panda_spawn_egg.png"
+    },
+    "minecraft:polar_bear_spawn_egg": {
+      "texture": "1.21.5/polar_bear_spawn_egg.png"
+    },
+    "minecraft:rabbit_spawn_egg": {
+      "texture": "1.21.5/rabbit_spawn_egg.png"
+    },
+    "minecraft:axolotl_spawn_egg": {
+      "texture": "1.21.5/axolotl_spawn_egg.png"
+    },
+    "minecraft:cod_spawn_egg": {
+      "texture": "1.21.5/cod_spawn_egg.png"
+    },
+    "minecraft:dolphin_spawn_egg": {
+      "texture": "1.21.5/dolphin_spawn_egg.png"
+    },
+    "minecraft:frog_spawn_egg": {
+      "texture": "1.21.5/frog_spawn_egg.png"
+    },
+    "minecraft:glow_squid_spawn_egg": {
+      "texture": "1.21.5/glow_squid_spawn_egg.png"
+    },
+    "minecraft:pufferfish_spawn_egg": {
+      "texture": "1.21.5/pufferfish_spawn_egg.png"
+    },
+    "minecraft:salmon_spawn_egg": {
+      "texture": "1.21.5/salmon_spawn_egg.png"
+    },
+    "minecraft:squid_spawn_egg": {
+      "texture": "1.21.5/squid_spawn_egg.png"
+    },
+    "minecraft:tadpole_spawn_egg": {
+      "texture": "1.21.5/tadpole_spawn_egg.png"
+    },
+    "minecraft:tropical_fish_spawn_egg": {
+      "texture": "1.21.5/tropical_fish_spawn_egg.png"
+    },
+    "minecraft:turtle_spawn_egg": {
+      "texture": "1.21.5/turtle_spawn_egg.png"
+    },
+    "minecraft:allay_spawn_egg": {
+      "texture": "1.21.5/allay_spawn_egg.png"
+    },
+    "minecraft:mooshroom_spawn_egg": {
+      "texture": "1.21.5/mooshroom_spawn_egg.png"
+    },
+    "minecraft:sniffer_spawn_egg": {
+      "texture": "1.21.5/sniffer_spawn_egg.png"
+    },
+    "minecraft:iron_golem_spawn_egg": {
+      "texture": "1.21.5/iron_golem_spawn_egg.png"
+    },
+    "minecraft:snow_golem_spawn_egg": {
+      "texture": "1.21.5/snow_golem_spawn_egg.png"
+    },
+    "minecraft:trader_llama_spawn_egg": {
+      "texture": "1.21.5/trader_llama_spawn_egg.png"
+    },
+    "minecraft:villager_spawn_egg": {
+      "texture": "1.21.5/villager_spawn_egg.png"
+    },
+    "minecraft:wandering_trader_spawn_egg": {
+      "texture": "1.21.5/wandering_trader_spawn_egg.png"
+    },
+    "minecraft:bogged_spawn_egg": {
+      "texture": "1.21.5/bogged_spawn_egg.png"
+    },
+    "minecraft:drowned_spawn_egg": {
+      "texture": "1.21.5/drowned_spawn_egg.png"
+    },
+    "minecraft:husk_spawn_egg": {
+      "texture": "1.21.5/husk_spawn_egg.png"
+    },
+    "minecraft:skeleton_spawn_egg": {
+      "texture": "1.21.5/skeleton_spawn_egg.png"
+    },
+    "minecraft:skeleton_horse_spawn_egg": {
+      "texture": "1.21.5/skeleton_horse_spawn_egg.png"
+    },
+    "minecraft:stray_spawn_egg": {
+      "texture": "1.21.5/stray_spawn_egg.png"
+    },
+    "minecraft:zombie_spawn_egg": {
+      "texture": "1.21.5/zombie_spawn_egg.png"
+    },
+    "minecraft:zombie_horse_spawn_egg": {
+      "texture": "1.21.5/zombie_horse_spawn_egg.png"
+    },
+    "minecraft:zombie_villager_spawn_egg": {
+      "texture": "1.21.5/zombie_villager_spawn_egg.png"
+    },
+    "minecraft:cave_spider_spawn_egg": {
+      "texture": "1.21.5/cave_spider_spawn_egg.png"
+    },
+    "minecraft:spider_spawn_egg": {
+      "texture": "1.21.5/spider_spawn_egg.png"
+    },
+    "minecraft:breeze_spawn_egg": {
+      "texture": "1.21.5/breeze_spawn_egg.png"
+    },
+    "minecraft:creaking_spawn_egg": {
+      "texture": "1.21.5/creaking_spawn_egg.png"
+    },
+    "minecraft:creeper_spawn_egg": {
+      "texture": "1.21.5/creeper_spawn_egg.png"
+    },
+    "minecraft:elder_guardian_spawn_egg": {
+      "texture": "1.21.5/elder_guardian_spawn_egg.png"
+    },
+    "minecraft:guardian_spawn_egg": {
+      "texture": "1.21.5/guardian_spawn_egg.png"
+    },
+    "minecraft:phantom_spawn_egg": {
+      "texture": "1.21.5/phantom_spawn_egg.png"
+    },
+    "minecraft:silverfish_spawn_egg": {
+      "texture": "1.21.5/silverfish_spawn_egg.png"
+    },
+    "minecraft:slime_spawn_egg": {
+      "texture": "1.21.5/slime_spawn_egg.png"
+    },
+    "minecraft:warden_spawn_egg": {
+      "texture": "1.21.5/warden_spawn_egg.png"
+    },
+    "minecraft:witch_spawn_egg": {
+      "texture": "1.21.5/witch_spawn_egg.png"
+    },
+    "minecraft:evoker_spawn_egg": {
+      "texture": "1.21.5/evoker_spawn_egg.png"
+    },
+    "minecraft:pillager_spawn_egg": {
+      "texture": "1.21.5/pillager_spawn_egg.png"
+    },
+    "minecraft:ravager_spawn_egg": {
+      "texture": "1.21.5/ravager_spawn_egg.png"
+    },
+    "minecraft:vex_spawn_egg": {
+      "texture": "1.21.5/vex_spawn_egg.png"
+    },
+    "minecraft:vindicator_spawn_egg": {
+      "texture": "1.21.5/vindicator_spawn_egg.png"
+    },
+    "minecraft:blaze_spawn_egg": {
+      "texture": "1.21.5/blaze_spawn_egg.png"
+    },
+    "minecraft:ghast_spawn_egg": {
+      "texture": "1.21.5/ghast_spawn_egg.png"
+    },
+    "minecraft:hoglin_spawn_egg": {
+      "texture": "1.21.5/hoglin_spawn_egg.png"
+    },
+    "minecraft:magma_cube_spawn_egg": {
+      "texture": "1.21.5/magma_cube_spawn_egg.png"
+    },
+    "minecraft:piglin_spawn_egg": {
+      "texture": "1.21.5/piglin_spawn_egg.png"
+    },
+    "minecraft:piglin_brute_spawn_egg": {
+      "texture": "1.21.5/piglin_brute_spawn_egg.png"
+    },
+    "minecraft:strider_spawn_egg": {
+      "texture": "1.21.5/strider_spawn_egg.png"
+    },
+    "minecraft:wither_skeleton_spawn_egg": {
+      "texture": "1.21.5/wither_skeleton_spawn_egg.png"
+    },
+    "minecraft:zoglin_spawn_egg": {
+      "texture": "1.21.5/zoglin_spawn_egg.png"
+    },
+    "minecraft:zombified_piglin_spawn_egg": {
+      "texture": "1.21.5/zombified_piglin_spawn_egg.png"
+    },
+    "minecraft:enderman_spawn_egg": {
+      "texture": "1.21.5/enderman_spawn_egg.png"
+    },
+    "minecraft:endermite_spawn_egg": {
+      "texture": "1.21.5/endermite_spawn_egg.png"
+    },
+    "minecraft:shulker_spawn_egg": {
+      "texture": "1.21.5/shulker_spawn_egg.png"
+    },
+    "minecraft:ender_dragon_spawn_egg": {
+      "texture": "1.21.5/ender_dragon_spawn_egg.png"
+    },
+    "minecraft:wither_spawn_egg": {
+      "texture": "1.21.5/wither_spawn_egg.png"
+    }
+  },
   "order": [
     "minecraft:oak_log",
     "minecraft:oak_wood",

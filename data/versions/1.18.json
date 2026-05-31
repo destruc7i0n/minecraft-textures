@@ -5,9 +5,44 @@
     {
       "id": "minecraft:music_disc_otherside",
       "readable": "Otherside Disc",
-      "texture": "music_disc_otherside.png"
+      "texture": "1.18/music_disc_otherside.png"
     }
   ],
+  "update": {
+    "minecraft:item_frame": {
+      "texture": "1.18/item_frame.png"
+    },
+    "minecraft:glow_item_frame": {
+      "texture": "1.18/glow_item_frame.png"
+    },
+    "minecraft:oak_sign": {
+      "texture": "1.18/oak_sign.png"
+    },
+    "minecraft:spruce_sign": {
+      "texture": "1.18/spruce_sign.png"
+    },
+    "minecraft:birch_sign": {
+      "texture": "1.18/birch_sign.png"
+    },
+    "minecraft:jungle_sign": {
+      "texture": "1.18/jungle_sign.png"
+    },
+    "minecraft:acacia_sign": {
+      "texture": "1.18/acacia_sign.png"
+    },
+    "minecraft:dark_oak_sign": {
+      "texture": "1.18/dark_oak_sign.png"
+    },
+    "minecraft:crimson_sign": {
+      "texture": "1.18/crimson_sign.png"
+    },
+    "minecraft:warped_sign": {
+      "texture": "1.18/warped_sign.png"
+    },
+    "minecraft:music_disc_pigstep": {
+      "texture": "1.18/music_disc_pigstep.png"
+    }
+  },
   "order": [
     "minecraft:oak_log",
     "minecraft:oak_wood",

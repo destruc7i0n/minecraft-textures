@@ -5,89 +5,142 @@
     {
       "id": "minecraft:wooden_spear",
       "readable": "Wooden Spear",
-      "texture": "wooden_spear.png"
+      "texture": "1.21.11/wooden_spear.png"
     },
     {
       "id": "minecraft:stone_spear",
       "readable": "Stone Spear",
-      "texture": "stone_spear.png"
+      "texture": "1.21.11/stone_spear.png"
     },
     {
       "id": "minecraft:copper_spear",
       "readable": "Copper Spear",
-      "texture": "copper_spear.png"
+      "texture": "1.21.11/copper_spear.png"
     },
     {
       "id": "minecraft:iron_spear",
       "readable": "Iron Spear",
-      "texture": "iron_spear.png"
+      "texture": "1.21.11/iron_spear.png"
     },
     {
       "id": "minecraft:golden_spear",
       "readable": "Golden Spear",
-      "texture": "golden_spear.png"
+      "texture": "1.21.11/golden_spear.png"
     },
     {
       "id": "minecraft:diamond_spear",
       "readable": "Diamond Spear",
-      "texture": "diamond_spear.png"
+      "texture": "1.21.11/diamond_spear.png"
     },
     {
       "id": "minecraft:netherite_spear",
       "readable": "Netherite Spear",
-      "texture": "netherite_spear.png"
+      "texture": "1.21.11/netherite_spear.png"
     },
     {
       "id": "minecraft:netherite_horse_armor",
       "readable": "Netherite Horse Armor",
-      "texture": "netherite_horse_armor.png"
+      "texture": "1.21.11/netherite_horse_armor.png"
     },
     {
       "id": "minecraft:copper_nautilus_armor",
       "readable": "Copper Nautilus Armor",
-      "texture": "copper_nautilus_armor.png"
+      "texture": "1.21.11/copper_nautilus_armor.png"
     },
     {
       "id": "minecraft:iron_nautilus_armor",
       "readable": "Iron Nautilus Armor",
-      "texture": "iron_nautilus_armor.png"
+      "texture": "1.21.11/iron_nautilus_armor.png"
     },
     {
       "id": "minecraft:golden_nautilus_armor",
       "readable": "Golden Nautilus Armor",
-      "texture": "golden_nautilus_armor.png"
+      "texture": "1.21.11/golden_nautilus_armor.png"
     },
     {
       "id": "minecraft:diamond_nautilus_armor",
       "readable": "Diamond Nautilus Armor",
-      "texture": "diamond_nautilus_armor.png"
+      "texture": "1.21.11/diamond_nautilus_armor.png"
     },
     {
       "id": "minecraft:netherite_nautilus_armor",
       "readable": "Netherite Nautilus Armor",
-      "texture": "netherite_nautilus_armor.png"
+      "texture": "1.21.11/netherite_nautilus_armor.png"
     },
     {
       "id": "minecraft:nautilus_spawn_egg",
       "readable": "Nautilus Spawn Egg",
-      "texture": "nautilus_spawn_egg.png"
+      "texture": "1.21.11/nautilus_spawn_egg.png"
     },
     {
       "id": "minecraft:camel_husk_spawn_egg",
       "readable": "Camel Husk Spawn Egg",
-      "texture": "camel_husk_spawn_egg.png"
+      "texture": "1.21.11/camel_husk_spawn_egg.png"
     },
     {
       "id": "minecraft:parched_spawn_egg",
       "readable": "Parched Spawn Egg",
-      "texture": "parched_spawn_egg.png"
+      "texture": "1.21.11/parched_spawn_egg.png"
     },
     {
       "id": "minecraft:zombie_nautilus_spawn_egg",
       "readable": "Zombie Nautilus Spawn Egg",
-      "texture": "zombie_nautilus_spawn_egg.png"
+      "texture": "1.21.11/zombie_nautilus_spawn_egg.png"
     }
   ],
+  "update": {
+    "minecraft:trident": {
+      "texture": "1.21.11/trident.png"
+    },
+    "minecraft:mace": {
+      "texture": "1.21.11/mace.png"
+    },
+    "minecraft:shield": {
+      "texture": "1.21.11/shield.png"
+    },
+    "minecraft:leather_helmet": {
+      "texture": "1.21.11/leather_helmet.png"
+    },
+    "minecraft:leather_chestplate": {
+      "texture": "1.21.11/leather_chestplate.png"
+    },
+    "minecraft:leather_leggings": {
+      "texture": "1.21.11/leather_leggings.png"
+    },
+    "minecraft:leather_boots": {
+      "texture": "1.21.11/leather_boots.png"
+    },
+    "minecraft:crossbow": {
+      "texture": "1.21.11/crossbow.png"
+    },
+    "minecraft:spectral_arrow": {
+      "texture": "1.21.11/spectral_arrow.png"
+    },
+    "minecraft:tipped_arrow": {
+      "texture": "1.21.11/tipped_arrow.png"
+    },
+    "minecraft:apple": {
+      "texture": "1.21.11/apple.png"
+    },
+    "minecraft:golden_apple": {
+      "texture": "1.21.11/golden_apple.png"
+    },
+    "minecraft:enchanted_golden_apple": {
+      "texture": "1.21.11/enchanted_golden_apple.png"
+    },
+    "minecraft:villager_spawn_egg": {
+      "texture": "1.21.11/villager_spawn_egg.png"
+    },
+    "minecraft:guardian_spawn_egg": {
+      "texture": "1.21.11/guardian_spawn_egg.png"
+    },
+    "minecraft:slime_spawn_egg": {
+      "texture": "1.21.11/slime_spawn_egg.png"
+    },
+    "minecraft:vex_spawn_egg": {
+      "texture": "1.21.11/vex_spawn_egg.png"
+    }
+  },
   "order": [
     "minecraft:oak_log",
     "minecraft:oak_wood",

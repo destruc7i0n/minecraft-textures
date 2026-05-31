@@ -69,7 +69,7 @@ const main = async () => {
   }, new Map<string, number>());
 
   const changed: ChangedItem[] = [];
-  const textureOverrides: Record<string, Partial<DataItem>> = {};
+  const textureUpdates: Record<string, Partial<DataItem>> = {};
 
   for (const item of candidates.sort((a, b) => a.similarity - b.similarity)) {
     const hasFilenameConflict =
@@ -77,11 +77,10 @@ const main = async () => {
     const textureFile = hasFilenameConflict
       ? item.defaultTextureFile
       : item.preferredTextureFile;
-    const needsTextureOverride = textureFile !== item.preferredTextureFile;
 
-    if (needsTextureOverride) {
-      textureOverrides[item.id] = { texture: textureFile };
-    }
+    textureUpdates[item.id] = {
+      texture: `${latestVersion}/${textureFile}`,
+    };
 
     changed.push({
       id: item.id,
@@ -246,9 +245,9 @@ const main = async () => {
   );
   console.log(`Wrote ${OUTPUT_DIR}/index.html`);
 
-  if (Object.keys(textureOverrides).length > 0) {
-    console.log('Filename conflicts; add this update block:');
-    console.log(JSON.stringify({ update: textureOverrides }, null, 2));
+  if (Object.keys(textureUpdates).length > 0) {
+    console.log('Texture changes; add this update block:');
+    console.log(JSON.stringify({ update: textureUpdates }, null, 2));
   }
 };
 

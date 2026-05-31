@@ -5,99 +5,158 @@
     {
       "id": "minecraft:dried_ghast",
       "readable": "Dried Ghast",
-      "texture": "dried_ghast.png"
+      "texture": "1.21.6/dried_ghast.png"
     },
     {
       "id": "minecraft:white_harness",
       "readable": "White Harness",
-      "texture": "white_harness.png"
+      "texture": "1.21.6/white_harness.png"
     },
     {
       "id": "minecraft:light_gray_harness",
       "readable": "Light Gray Harness",
-      "texture": "light_gray_harness.png"
+      "texture": "1.21.6/light_gray_harness.png"
     },
     {
       "id": "minecraft:gray_harness",
       "readable": "Gray Harness",
-      "texture": "gray_harness.png"
+      "texture": "1.21.6/gray_harness.png"
     },
     {
       "id": "minecraft:black_harness",
       "readable": "Black Harness",
-      "texture": "black_harness.png"
+      "texture": "1.21.6/black_harness.png"
     },
     {
       "id": "minecraft:brown_harness",
       "readable": "Brown Harness",
-      "texture": "brown_harness.png"
+      "texture": "1.21.6/brown_harness.png"
     },
     {
       "id": "minecraft:red_harness",
       "readable": "Red Harness",
-      "texture": "red_harness.png"
+      "texture": "1.21.6/red_harness.png"
     },
     {
       "id": "minecraft:orange_harness",
       "readable": "Orange Harness",
-      "texture": "orange_harness.png"
+      "texture": "1.21.6/orange_harness.png"
     },
     {
       "id": "minecraft:yellow_harness",
       "readable": "Yellow Harness",
-      "texture": "yellow_harness.png"
+      "texture": "1.21.6/yellow_harness.png"
     },
     {
       "id": "minecraft:lime_harness",
       "readable": "Lime Harness",
-      "texture": "lime_harness.png"
+      "texture": "1.21.6/lime_harness.png"
     },
     {
       "id": "minecraft:green_harness",
       "readable": "Green Harness",
-      "texture": "green_harness.png"
+      "texture": "1.21.6/green_harness.png"
     },
     {
       "id": "minecraft:cyan_harness",
       "readable": "Cyan Harness",
-      "texture": "cyan_harness.png"
+      "texture": "1.21.6/cyan_harness.png"
     },
     {
       "id": "minecraft:light_blue_harness",
       "readable": "Light Blue Harness",
-      "texture": "light_blue_harness.png"
+      "texture": "1.21.6/light_blue_harness.png"
     },
     {
       "id": "minecraft:blue_harness",
       "readable": "Blue Harness",
-      "texture": "blue_harness.png"
+      "texture": "1.21.6/blue_harness.png"
     },
     {
       "id": "minecraft:purple_harness",
       "readable": "Purple Harness",
-      "texture": "purple_harness.png"
+      "texture": "1.21.6/purple_harness.png"
     },
     {
       "id": "minecraft:magenta_harness",
       "readable": "Magenta Harness",
-      "texture": "magenta_harness.png"
+      "texture": "1.21.6/magenta_harness.png"
     },
     {
       "id": "minecraft:pink_harness",
       "readable": "Pink Harness",
-      "texture": "pink_harness.png"
+      "texture": "1.21.6/pink_harness.png"
     },
     {
       "id": "minecraft:music_disc_tears",
       "readable": "Tears Disc",
-      "texture": "music_disc_tears.png"
+      "texture": "1.21.6/music_disc_tears.png"
     },
     {
       "id": "minecraft:happy_ghast_spawn_egg",
       "readable": "Happy Ghast Spawn Egg",
-      "texture": "happy_ghast_spawn_egg.png"
+      "texture": "1.21.6/happy_ghast_spawn_egg.png"
     }
   ],
+  "update": {
+    "minecraft:wheat_seeds": {
+      "texture": "1.21.6/wheat_seeds.png"
+    },
+    "minecraft:warped_fungus_on_a_stick": {
+      "texture": "1.21.6/warped_fungus_on_a_stick.png"
+    },
+    "minecraft:oak_boat": {
+      "texture": "1.21.6/oak_boat.png"
+    },
+    "minecraft:spruce_boat": {
+      "texture": "1.21.6/spruce_boat.png"
+    },
+    "minecraft:spruce_chest_boat": {
+      "texture": "1.21.6/spruce_chest_boat.png"
+    },
+    "minecraft:birch_boat": {
+      "texture": "1.21.6/birch_boat.png"
+    },
+    "minecraft:birch_chest_boat": {
+      "texture": "1.21.6/birch_chest_boat.png"
+    },
+    "minecraft:jungle_boat": {
+      "texture": "1.21.6/jungle_boat.png"
+    },
+    "minecraft:jungle_chest_boat": {
+      "texture": "1.21.6/jungle_chest_boat.png"
+    },
+    "minecraft:acacia_boat": {
+      "texture": "1.21.6/acacia_boat.png"
+    },
+    "minecraft:acacia_chest_boat": {
+      "texture": "1.21.6/acacia_chest_boat.png"
+    },
+    "minecraft:dark_oak_boat": {
+      "texture": "1.21.6/dark_oak_boat.png"
+    },
+    "minecraft:dark_oak_chest_boat": {
+      "texture": "1.21.6/dark_oak_chest_boat.png"
+    },
+    "minecraft:mangrove_boat": {
+      "texture": "1.21.6/mangrove_boat.png"
+    },
+    "minecraft:mangrove_chest_boat": {
+      "texture": "1.21.6/mangrove_chest_boat.png"
+    },
+    "minecraft:cherry_boat": {
+      "texture": "1.21.6/cherry_boat.png"
+    },
+    "minecraft:cherry_chest_boat": {
+      "texture": "1.21.6/cherry_chest_boat.png"
+    },
+    "minecraft:iron_helmet": {
+      "texture": "1.21.6/iron_helmet.png"
+    },
+    "minecraft:repeating_command_block": {
+      "texture": "1.21.6/repeating_command_block.png"
+    }
+  },
   "order": [
     "minecraft:oak_log",
     "minecraft:oak_wood",

@@ -5,259 +5,429 @@
     {
       "id": "minecraft:mangrove_log",
       "readable": "Mangrove Log",
-      "texture": "mangrove_log.png"
+      "texture": "1.19/mangrove_log.png"
     },
     {
       "id": "minecraft:mangrove_wood",
       "readable": "Mangrove Wood",
-      "texture": "mangrove_wood.png"
+      "texture": "1.19/mangrove_wood.png"
     },
     {
       "id": "minecraft:stripped_mangrove_log",
       "readable": "Stripped Mangrove Log",
-      "texture": "stripped_mangrove_log.png"
+      "texture": "1.19/stripped_mangrove_log.png"
     },
     {
       "id": "minecraft:stripped_mangrove_wood",
       "readable": "Stripped Mangrove Wood",
-      "texture": "stripped_mangrove_wood.png"
+      "texture": "1.19/stripped_mangrove_wood.png"
     },
     {
       "id": "minecraft:mangrove_planks",
       "readable": "Mangrove Planks",
-      "texture": "mangrove_planks.png"
+      "texture": "1.19/mangrove_planks.png"
     },
     {
       "id": "minecraft:mangrove_stairs",
       "readable": "Mangrove Stairs",
-      "texture": "mangrove_stairs.png"
+      "texture": "1.19/mangrove_stairs.png"
     },
     {
       "id": "minecraft:mangrove_slab",
       "readable": "Mangrove Slab",
-      "texture": "mangrove_slab.png"
+      "texture": "1.19/mangrove_slab.png"
     },
     {
       "id": "minecraft:mangrove_fence",
       "readable": "Mangrove Fence",
-      "texture": "mangrove_fence.png"
+      "texture": "1.19/mangrove_fence.png"
     },
     {
       "id": "minecraft:mangrove_fence_gate",
       "readable": "Mangrove Fence Gate",
-      "texture": "mangrove_fence_gate.png"
+      "texture": "1.19/mangrove_fence_gate.png"
     },
     {
       "id": "minecraft:mangrove_door",
       "readable": "Mangrove Door",
-      "texture": "mangrove_door.png"
+      "texture": "1.19/mangrove_door.png"
     },
     {
       "id": "minecraft:mangrove_trapdoor",
       "readable": "Mangrove Trapdoor",
-      "texture": "mangrove_trapdoor.png"
+      "texture": "1.19/mangrove_trapdoor.png"
     },
     {
       "id": "minecraft:mangrove_pressure_plate",
       "readable": "Mangrove Pressure Plate",
-      "texture": "mangrove_pressure_plate.png"
+      "texture": "1.19/mangrove_pressure_plate.png"
     },
     {
       "id": "minecraft:mangrove_button",
       "readable": "Mangrove Button",
-      "texture": "mangrove_button.png"
+      "texture": "1.19/mangrove_button.png"
     },
     {
       "id": "minecraft:reinforced_deepslate",
       "readable": "Reinforced Deepslate",
-      "texture": "reinforced_deepslate.png"
+      "texture": "1.19/reinforced_deepslate.png"
     },
     {
       "id": "minecraft:packed_mud",
       "readable": "Packed Mud",
-      "texture": "packed_mud.png"
+      "texture": "1.19/packed_mud.png"
     },
     {
       "id": "minecraft:mud_bricks",
       "readable": "Mud Bricks",
-      "texture": "mud_bricks.png"
+      "texture": "1.19/mud_bricks.png"
     },
     {
       "id": "minecraft:mud_brick_stairs",
       "readable": "Mud Brick Stairs",
-      "texture": "mud_brick_stairs.png"
+      "texture": "1.19/mud_brick_stairs.png"
     },
     {
       "id": "minecraft:mud_brick_slab",
       "readable": "Mud Brick Slab",
-      "texture": "mud_brick_slab.png"
+      "texture": "1.19/mud_brick_slab.png"
     },
     {
       "id": "minecraft:mud_brick_wall",
       "readable": "Mud Brick Wall",
-      "texture": "mud_brick_wall.png"
+      "texture": "1.19/mud_brick_wall.png"
     },
     {
       "id": "minecraft:mud",
       "readable": "Mud",
-      "texture": "mud.png"
+      "texture": "1.19/mud.png"
     },
     {
       "id": "minecraft:mangrove_roots",
       "readable": "Mangrove Roots",
-      "texture": "mangrove_roots.png"
+      "texture": "1.19/mangrove_roots.png"
     },
     {
       "id": "minecraft:muddy_mangrove_roots",
       "readable": "Muddy Mangrove Roots",
-      "texture": "muddy_mangrove_roots.png"
+      "texture": "1.19/muddy_mangrove_roots.png"
     },
     {
       "id": "minecraft:mangrove_leaves",
       "readable": "Mangrove Leaves",
-      "texture": "mangrove_leaves.png"
+      "texture": "1.19/mangrove_leaves.png"
     },
     {
       "id": "minecraft:mangrove_propagule",
       "readable": "Mangrove Propagule",
-      "texture": "mangrove_propagule.png"
+      "texture": "1.19/mangrove_propagule.png"
     },
     {
       "id": "minecraft:frogspawn",
       "readable": "Frogspawn",
-      "texture": "frogspawn.png"
+      "texture": "1.19/frogspawn.png"
     },
     {
       "id": "minecraft:ochre_froglight",
       "readable": "Ochre Froglight",
-      "texture": "ochre_froglight.png"
+      "texture": "1.19/ochre_froglight.png"
     },
     {
       "id": "minecraft:verdant_froglight",
       "readable": "Verdant Froglight",
-      "texture": "verdant_froglight.png"
+      "texture": "1.19/verdant_froglight.png"
     },
     {
       "id": "minecraft:pearlescent_froglight",
       "readable": "Pearlescent Froglight",
-      "texture": "pearlescent_froglight.png"
+      "texture": "1.19/pearlescent_froglight.png"
     },
     {
       "id": "minecraft:sculk",
       "readable": "Sculk",
-      "texture": "sculk.png"
+      "texture": "1.19/sculk.png"
     },
     {
       "id": "minecraft:sculk_vein",
       "readable": "Sculk Vein",
-      "texture": "sculk_vein.png"
+      "texture": "1.19/sculk_vein.png"
     },
     {
       "id": "minecraft:sculk_catalyst",
       "readable": "Sculk Catalyst",
-      "texture": "sculk_catalyst.png"
+      "texture": "1.19/sculk_catalyst.png"
     },
     {
       "id": "minecraft:sculk_shrieker",
       "readable": "Sculk Shrieker",
-      "texture": "sculk_shrieker.png"
+      "texture": "1.19/sculk_shrieker.png"
     },
     {
       "id": "minecraft:mangrove_sign",
       "readable": "Mangrove Sign",
-      "texture": "mangrove_sign.png"
+      "texture": "1.19/mangrove_sign.png"
     },
     {
       "id": "minecraft:oak_chest_boat",
       "readable": "Oak Boat with Chest",
-      "texture": "oak_chest_boat.png"
+      "texture": "1.19/oak_chest_boat.png"
     },
     {
       "id": "minecraft:tadpole_bucket",
       "readable": "Bucket of Tadpole",
-      "texture": "tadpole_bucket.png"
+      "texture": "1.19/tadpole_bucket.png"
     },
     {
       "id": "minecraft:recovery_compass",
       "readable": "Recovery Compass",
-      "texture": "recovery_compass.png"
+      "texture": "1.19/recovery_compass.png"
     },
     {
       "id": "minecraft:spruce_chest_boat",
       "readable": "Spruce Boat with Chest",
-      "texture": "spruce_chest_boat.png"
+      "texture": "1.19/spruce_chest_boat.png"
     },
     {
       "id": "minecraft:birch_chest_boat",
       "readable": "Birch Boat with Chest",
-      "texture": "birch_chest_boat.png"
+      "texture": "1.19/birch_chest_boat.png"
     },
     {
       "id": "minecraft:jungle_chest_boat",
       "readable": "Jungle Boat with Chest",
-      "texture": "jungle_chest_boat.png"
+      "texture": "1.19/jungle_chest_boat.png"
     },
     {
       "id": "minecraft:acacia_chest_boat",
       "readable": "Acacia Boat with Chest",
-      "texture": "acacia_chest_boat.png"
+      "texture": "1.19/acacia_chest_boat.png"
     },
     {
       "id": "minecraft:dark_oak_chest_boat",
       "readable": "Dark Oak Boat with Chest",
-      "texture": "dark_oak_chest_boat.png"
+      "texture": "1.19/dark_oak_chest_boat.png"
     },
     {
       "id": "minecraft:mangrove_boat",
       "readable": "Mangrove Boat",
-      "texture": "mangrove_boat.png"
+      "texture": "1.19/mangrove_boat.png"
     },
     {
       "id": "minecraft:mangrove_chest_boat",
       "readable": "Mangrove Boat with Chest",
-      "texture": "mangrove_chest_boat.png"
+      "texture": "1.19/mangrove_chest_boat.png"
     },
     {
       "id": "minecraft:goat_horn",
       "readable": "Goat Horn",
-      "texture": "goat_horn.png"
+      "texture": "1.19/goat_horn.png"
     },
     {
       "id": "minecraft:music_disc_5",
       "readable": "5 Disc",
-      "texture": "music_disc_5.png"
+      "texture": "1.19/music_disc_5.png"
     },
     {
       "id": "minecraft:echo_shard",
       "readable": "Echo Shard",
-      "texture": "echo_shard.png"
+      "texture": "1.19/echo_shard.png"
     },
     {
       "id": "minecraft:disc_fragment_5",
       "readable": "Disc Fragment 5",
-      "texture": "disc_fragment_5.png"
+      "texture": "1.19/disc_fragment_5.png"
     },
     {
       "id": "minecraft:frog_spawn_egg",
       "readable": "Frog Spawn Egg",
-      "texture": "frog_spawn_egg.png"
+      "texture": "1.19/frog_spawn_egg.png"
     },
     {
       "id": "minecraft:tadpole_spawn_egg",
       "readable": "Tadpole Spawn Egg",
-      "texture": "tadpole_spawn_egg.png"
+      "texture": "1.19/tadpole_spawn_egg.png"
     },
     {
       "id": "minecraft:allay_spawn_egg",
       "readable": "Allay Spawn Egg",
-      "texture": "allay_spawn_egg.png"
+      "texture": "1.19/allay_spawn_egg.png"
     },
     {
       "id": "minecraft:warden_spawn_egg",
       "readable": "Warden Spawn Egg",
-      "texture": "warden_spawn_egg.png"
+      "texture": "1.19/warden_spawn_egg.png"
     }
   ],
+  "update": {
+    "minecraft:crimson_stem": {
+      "texture": "1.19/crimson_stem.png"
+    },
+    "minecraft:crimson_hyphae": {
+      "texture": "1.19/crimson_hyphae.png"
+    },
+    "minecraft:stripped_crimson_stem": {
+      "texture": "1.19/stripped_crimson_stem.png"
+    },
+    "minecraft:stripped_crimson_hyphae": {
+      "texture": "1.19/stripped_crimson_hyphae.png"
+    },
+    "minecraft:crimson_planks": {
+      "texture": "1.19/crimson_planks.png"
+    },
+    "minecraft:crimson_stairs": {
+      "texture": "1.19/crimson_stairs.png"
+    },
+    "minecraft:crimson_slab": {
+      "texture": "1.19/crimson_slab.png"
+    },
+    "minecraft:crimson_fence": {
+      "texture": "1.19/crimson_fence.png"
+    },
+    "minecraft:crimson_fence_gate": {
+      "texture": "1.19/crimson_fence_gate.png"
+    },
+    "minecraft:crimson_door": {
+      "texture": "1.19/crimson_door.png"
+    },
+    "minecraft:crimson_trapdoor": {
+      "texture": "1.19/crimson_trapdoor.png"
+    },
+    "minecraft:crimson_pressure_plate": {
+      "texture": "1.19/crimson_pressure_plate.png"
+    },
+    "minecraft:crimson_button": {
+      "texture": "1.19/crimson_button.png"
+    },
+    "minecraft:cut_sandstone": {
+      "texture": "1.19/cut_sandstone.png"
+    },
+    "minecraft:chiseled_red_sandstone": {
+      "texture": "1.19/chiseled_red_sandstone.png"
+    },
+    "minecraft:smooth_red_sandstone": {
+      "texture": "1.19/smooth_red_sandstone.png"
+    },
+    "minecraft:smooth_red_sandstone_stairs": {
+      "texture": "1.19/smooth_red_sandstone_stairs.png"
+    },
+    "minecraft:smooth_red_sandstone_slab": {
+      "texture": "1.19/smooth_red_sandstone_slab.png"
+    },
+    "minecraft:cut_red_sandstone": {
+      "texture": "1.19/cut_red_sandstone.png"
+    },
+    "minecraft:soul_sand": {
+      "texture": "1.19/soul_sand.png"
+    },
+    "minecraft:azalea": {
+      "texture": "1.19/azalea.png"
+    },
+    "minecraft:flowering_azalea": {
+      "texture": "1.19/flowering_azalea.png"
+    },
+    "minecraft:poppy": {
+      "texture": "1.19/poppy.png"
+    },
+    "minecraft:sugar_cane": {
+      "texture": "1.19/sugar_cane.png"
+    },
+    "minecraft:tube_coral": {
+      "texture": "1.19/tube_coral.png"
+    },
+    "minecraft:composter": {
+      "texture": "1.19/composter.png"
+    },
+    "minecraft:note_block": {
+      "texture": "1.19/note_block.png"
+    },
+    "minecraft:jukebox": {
+      "texture": "1.19/jukebox.png"
+    },
+    "minecraft:enchanting_table": {
+      "texture": "1.19/enchanting_table.png"
+    },
+    "minecraft:end_crystal": {
+      "texture": "1.19/end_crystal.png"
+    },
+    "minecraft:brewing_stand": {
+      "texture": "1.19/brewing_stand.png"
+    },
+    "minecraft:cauldron": {
+      "texture": "1.19/cauldron.png"
+    },
+    "minecraft:dispenser": {
+      "texture": "1.19/dispenser.png"
+    },
+    "minecraft:powder_snow_bucket": {
+      "texture": "1.19/powder_snow_bucket.png"
+    },
+    "minecraft:oak_boat": {
+      "texture": "1.19/oak_boat.png"
+    },
+    "minecraft:spruce_boat": {
+      "texture": "1.19/spruce_boat.png"
+    },
+    "minecraft:birch_boat": {
+      "texture": "1.19/birch_boat.png"
+    },
+    "minecraft:jungle_boat": {
+      "texture": "1.19/jungle_boat.png"
+    },
+    "minecraft:acacia_boat": {
+      "texture": "1.19/acacia_boat.png"
+    },
+    "minecraft:dark_oak_boat": {
+      "texture": "1.19/dark_oak_boat.png"
+    },
+    "minecraft:music_disc_mellohi": {
+      "texture": "1.19/music_disc_mellohi.png"
+    },
+    "minecraft:netherite_sword": {
+      "texture": "1.19/netherite_sword.png"
+    },
+    "minecraft:iron_leggings": {
+      "texture": "1.19/iron_leggings.png"
+    },
+    "minecraft:golden_helmet": {
+      "texture": "1.19/golden_helmet.png"
+    },
+    "minecraft:golden_leggings": {
+      "texture": "1.19/golden_leggings.png"
+    },
+    "minecraft:diamond_helmet": {
+      "texture": "1.19/diamond_helmet.png"
+    },
+    "minecraft:diamond_leggings": {
+      "texture": "1.19/diamond_leggings.png"
+    },
+    "minecraft:diamond_boots": {
+      "texture": "1.19/diamond_boots.png"
+    },
+    "minecraft:netherite_helmet": {
+      "texture": "1.19/netherite_helmet.png"
+    },
+    "minecraft:netherite_chestplate": {
+      "texture": "1.19/netherite_chestplate.png"
+    },
+    "minecraft:spectral_arrow": {
+      "texture": "1.19/spectral_arrow.png"
+    },
+    "minecraft:pig_spawn_egg": {
+      "texture": "1.19/pig_spawn_egg.png"
+    },
+    "minecraft:sheep_spawn_egg": {
+      "texture": "1.19/sheep_spawn_egg.png"
+    },
+    "minecraft:frosted_ice": {
+      "texture": "1.19/frosted_ice.png"
+    },
+    "minecraft:scute": {
+      "texture": "1.19/scute.png"
+    },
+    "minecraft:chain_command_block": {
+      "texture": "1.19/chain_command_block.png"
+    }
+  },
   "order": [
     "minecraft:oak_log",
     "minecraft:oak_wood",

@@ -5,9 +5,185 @@
     {
       "id": "minecraft:golden_dandelion",
       "readable": "Golden Dandelion",
-      "texture": "golden_dandelion.png"
+      "texture": "26.1/golden_dandelion.png"
     }
   ],
+  "update": {
+    "minecraft:pink_petals": {
+      "texture": "26.1/pink_petals.png"
+    },
+    "minecraft:sugar_cane": {
+      "texture": "26.1/sugar_cane.png"
+    },
+    "minecraft:melon_seeds": {
+      "texture": "26.1/melon_seeds.png"
+    },
+    "minecraft:beetroot_seeds": {
+      "texture": "26.1/beetroot_seeds.png"
+    },
+    "minecraft:campfire": {
+      "texture": "26.1/campfire.png"
+    },
+    "minecraft:soul_campfire": {
+      "texture": "26.1/soul_campfire.png"
+    },
+    "minecraft:end_crystal": {
+      "texture": "26.1/end_crystal.png"
+    },
+    "minecraft:oak_chest_boat": {
+      "texture": "26.1/oak_chest_boat.png"
+    },
+    "minecraft:bundle": {
+      "texture": "26.1/bundle.png"
+    },
+    "minecraft:oak_boat": {
+      "texture": "26.1/oak_boat.png"
+    },
+    "minecraft:spruce_boat": {
+      "texture": "26.1/spruce_boat.png"
+    },
+    "minecraft:spruce_chest_boat": {
+      "texture": "26.1/spruce_chest_boat.png"
+    },
+    "minecraft:birch_boat": {
+      "texture": "26.1/birch_boat.png"
+    },
+    "minecraft:birch_chest_boat": {
+      "texture": "26.1/birch_chest_boat.png"
+    },
+    "minecraft:jungle_boat": {
+      "texture": "26.1/jungle_boat.png"
+    },
+    "minecraft:jungle_chest_boat": {
+      "texture": "26.1/jungle_chest_boat.png"
+    },
+    "minecraft:acacia_boat": {
+      "texture": "26.1/acacia_boat.png"
+    },
+    "minecraft:acacia_chest_boat": {
+      "texture": "26.1/acacia_chest_boat.png"
+    },
+    "minecraft:dark_oak_boat": {
+      "texture": "26.1/dark_oak_boat.png"
+    },
+    "minecraft:dark_oak_chest_boat": {
+      "texture": "26.1/dark_oak_chest_boat.png"
+    },
+    "minecraft:mangrove_chest_boat": {
+      "texture": "26.1/mangrove_chest_boat.png"
+    },
+    "minecraft:pale_oak_boat": {
+      "texture": "26.1/pale_oak_boat.png"
+    },
+    "minecraft:pale_oak_chest_boat": {
+      "texture": "26.1/pale_oak_chest_boat.png"
+    },
+    "minecraft:goat_horn": {
+      "texture": "26.1/goat_horn.png"
+    },
+    "minecraft:music_disc_otherside": {
+      "texture": "26.1/music_disc_otherside.png"
+    },
+    "minecraft:dried_kelp": {
+      "texture": "26.1/dried_kelp.png"
+    },
+    "minecraft:potion": {
+      "texture": "26.1/potion.png"
+    },
+    "minecraft:splash_potion": {
+      "texture": "26.1/splash_potion.png"
+    },
+    "minecraft:lingering_potion": {
+      "texture": "26.1/lingering_potion.png"
+    },
+    "minecraft:raw_copper": {
+      "texture": "26.1/raw_copper.png"
+    },
+    "minecraft:raw_iron": {
+      "texture": "26.1/raw_iron.png"
+    },
+    "minecraft:raw_gold": {
+      "texture": "26.1/raw_gold.png"
+    },
+    "minecraft:nether_star": {
+      "texture": "26.1/nether_star.png"
+    },
+    "minecraft:white_dye": {
+      "texture": "26.1/white_dye.png"
+    },
+    "minecraft:light_gray_dye": {
+      "texture": "26.1/light_gray_dye.png"
+    },
+    "minecraft:gray_dye": {
+      "texture": "26.1/gray_dye.png"
+    },
+    "minecraft:black_dye": {
+      "texture": "26.1/black_dye.png"
+    },
+    "minecraft:brown_dye": {
+      "texture": "26.1/brown_dye.png"
+    },
+    "minecraft:red_dye": {
+      "texture": "26.1/red_dye.png"
+    },
+    "minecraft:orange_dye": {
+      "texture": "26.1/orange_dye.png"
+    },
+    "minecraft:yellow_dye": {
+      "texture": "26.1/yellow_dye.png"
+    },
+    "minecraft:lime_dye": {
+      "texture": "26.1/lime_dye.png"
+    },
+    "minecraft:green_dye": {
+      "texture": "26.1/green_dye.png"
+    },
+    "minecraft:cyan_dye": {
+      "texture": "26.1/cyan_dye.png"
+    },
+    "minecraft:light_blue_dye": {
+      "texture": "26.1/light_blue_dye.png"
+    },
+    "minecraft:blue_dye": {
+      "texture": "26.1/blue_dye.png"
+    },
+    "minecraft:purple_dye": {
+      "texture": "26.1/purple_dye.png"
+    },
+    "minecraft:magenta_dye": {
+      "texture": "26.1/magenta_dye.png"
+    },
+    "minecraft:pink_dye": {
+      "texture": "26.1/pink_dye.png"
+    },
+    "minecraft:firework_star": {
+      "texture": "26.1/firework_star.png"
+    },
+    "minecraft:experience_bottle": {
+      "texture": "26.1/experience_bottle.png"
+    },
+    "minecraft:enchanted_book": {
+      "texture": "26.1/enchanted_book.png"
+    },
+    "minecraft:mooshroom_spawn_egg": {
+      "texture": "26.1/mooshroom_spawn_egg.png"
+    },
+    "minecraft:zombie_horse_spawn_egg": {
+      "texture": "26.1/zombie_horse_spawn_egg.png"
+    },
+    "minecraft:breeze_spawn_egg": {
+      "texture": "26.1/breeze_spawn_egg.png"
+    },
+    "minecraft:blaze_spawn_egg": {
+      "texture": "26.1/blaze_spawn_egg.png"
+    },
+    "minecraft:written_book": {
+      "texture": "26.1/written_book.png"
+    },
+    "minecraft:filled_map": {
+      "texture": "26.1/filled_map.png"
+    }
+  },
   "order": [
     "minecraft:oak_log",
     "minecraft:oak_wood",
