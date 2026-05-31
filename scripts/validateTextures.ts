@@ -9,11 +9,6 @@ import { resolveDataVersion } from './lib/data/resolver';
 import { TEXTURE_DATA_DIR } from './lib/data/versions';
 
 const expectedDimension = 32;
-// these are 32x31
-const dimensionExceptions = new Set([
-  'data/textures/1.12/end_crystal.png',
-  'data/textures/1.13/end_crystal.png',
-]);
 
 const main = async () => {
   const invalidImages: string[] = [];
@@ -46,8 +41,6 @@ const main = async () => {
 
     const { width, height } = image;
     if (width !== expectedDimension || height !== expectedDimension) {
-      if (dimensionExceptions.has(path)) continue;
-
       console.log(`${path} is ${width}x${height}`);
       invalidDimensions.push(path);
     }
