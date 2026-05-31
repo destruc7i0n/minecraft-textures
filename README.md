@@ -88,7 +88,7 @@ const sword = textures.items['minecraft:diamond_sword'];
 
 ## Update Notes
 
-### 26.2.0-beta.2
+### 26.2.0-beta.3
 
 - Texture images now live as PNG files in `data/textures`.
 - Version and item metadata now lives in `data/versions`.
