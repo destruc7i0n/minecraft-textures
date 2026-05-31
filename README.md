@@ -94,10 +94,11 @@ const textures = require('minecraft-textures/dist/textures/1.21.js').default;
 
 ## Update Notes
 
-### 26.2.0-beta.1
+### 26.2.0-beta.2
 
 - Texture images now live as PNG files in `data/textures`.
 - Version and item metadata now lives in `data/versions`.
+- Legacy base64 PNG data URLs now include the same PNG metadata as published asset PNGs.
 - Legacy base64 JSON and per-version JS files are deprecated and will be removed in a future release. Use manifests and PNG assets for new code.
 
 ### 1.20
