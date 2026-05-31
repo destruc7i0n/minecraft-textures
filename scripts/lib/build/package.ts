@@ -2,9 +2,9 @@ export async function writePackageRuntime() {
   const result = await Bun.build({
     entrypoints: ['./index.ts'],
     outdir: './dist',
-    format: 'cjs',
+    format: 'esm',
     target: 'node',
-    naming: 'minecraft-textures.js',
+    naming: 'minecraft-textures.mjs',
   });
 
   if (!result.success) {

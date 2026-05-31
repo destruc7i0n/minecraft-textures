@@ -13,8 +13,8 @@ Minecraft item texture metadata and PNG assets for versions 1.12 through 26.1.
 Use the generated manifests for item metadata and relative PNG asset paths:
 
 ```js
-import manifestIndex from 'minecraft-textures/manifest/index.json';
-import manifest from 'minecraft-textures/manifest/26.1.json';
+import manifestIndex from 'minecraft-textures/manifest/index.json' with { type: 'json' };
+import manifest from 'minecraft-textures/manifest/26.1.json' with { type: 'json' };
 
 const assetBaseUrl = `/minecraft-textures/${manifestIndex.packageVersion}`;
 
@@ -86,20 +86,13 @@ const sword = textures.items['minecraft:diamond_sword'];
 // { readable: "Diamond Sword", texture: "data:image/png;base64,..." }
 ```
 
-For legacy per-version JS:
-
-```js
-const textures = require('minecraft-textures/dist/textures/1.21.js').default;
-```
-
 ## Update Notes
 
 ### 26.2.0-beta.2
 
 - Texture images now live as PNG files in `data/textures`.
 - Version and item metadata now lives in `data/versions`.
-- Legacy base64 PNG data URLs now include the same PNG metadata as published asset PNGs.
-- Legacy base64 JSON and per-version JS files are deprecated and will be removed in a future release. Use manifests and PNG assets for new code.
+- Legacy base64 JSON files are deprecated and will be removed in a future release. Use manifests and PNG assets for new code.
 
 ### 1.20
 
