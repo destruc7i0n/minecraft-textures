@@ -39,7 +39,7 @@ describe('data resolver', () => {
   test('discovers data versions in Minecraft version order', () => {
     const versions = discoverDataVersions();
     expect(versions.slice(0, 3)).toEqual(['1.12', '1.13', '1.14']);
-    expect(versions.at(-1)).toBe('26.1');
+    expect(versions.at(-1)).toBe('26.2');
   });
 
   test('preserves legacy 1.12 duplicate ids for array compatibility', () => {

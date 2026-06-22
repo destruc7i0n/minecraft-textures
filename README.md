@@ -4,7 +4,7 @@
 [![GitHub Actions][github-actions-src]][github-actions-href]
 [![npm downloads][npm-downloads-src]][npm-downloads-href]
 
-Minecraft item texture metadata and PNG assets for versions 1.12 through 26.1.
+Minecraft item texture metadata and PNG assets for versions 1.12 through 26.2.
 
 `npm install minecraft-textures`
 
@@ -14,7 +14,7 @@ Use the generated manifests for item metadata and relative PNG asset paths:
 
 ```js
 import manifestIndex from 'minecraft-textures/manifest/index.json' with { type: 'json' };
-import manifest from 'minecraft-textures/manifest/26.1.json' with { type: 'json' };
+import manifest from 'minecraft-textures/manifest/26.2.json' with { type: 'json' };
 
 const assetBaseUrl = `/minecraft-textures/${manifestIndex.packageVersion}`;
 
@@ -46,7 +46,7 @@ if (hasVersion(version)) {
 }
 
 console.log(versions); // all available versions
-console.log(latestVersion); // '26.1'
+console.log(latestVersion); // '26.2'
 ```
 
 ## Deprecated Base64 Compatibility
@@ -88,7 +88,7 @@ const sword = textures.items['minecraft:diamond_sword'];
 
 ## Update Notes
 
-### 26.2.0-beta.3
+### 26.2.0
 
 - Texture images now live as PNG files in `data/textures`.
 - Version and item metadata now lives in `data/versions`.
