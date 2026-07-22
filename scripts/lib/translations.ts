@@ -1,33 +1,36 @@
-import { LANG_FILE } from './mcmeta';
-import { TextureType } from './types';
+import { langFile } from './mcmeta';
 
-const globalLang = global as unknown as { lang: Record<string, string> };
+const langCache = new Map<string, Record<string, string>>();
 
-export const getLang = async () => {
-  if (globalLang.lang) return globalLang.lang;
+export const getLang = async (
+  version?: string,
+): Promise<Record<string, string>> => {
+  const url = langFile(version);
+  const cached = langCache.get(url);
+  if (cached) return cached;
 
-  const lang = (await (await fetch(LANG_FILE)).json()) as Record<
-    string,
-    string
-  >;
-  globalLang.lang = lang;
+  const response = await fetch(url);
+  // unreleased versions have no tag yet, the branch is all there is
+  if (!response.ok && version) {
+    console.warn(
+      `No mcmeta lang tag for ${version}; falling back to the latest release.`,
+    );
+    return getLang();
+  }
+  if (!response.ok) {
+    throw new Error(`Could not fetch ${url}: ${response.status}`);
+  }
+
+  const lang = (await response.json()) as Record<string, string>;
+  langCache.set(url, lang);
   return lang;
 };
 
-export const getTranslationFromId = async (id: string) => {
-  const lang = await getLang();
-
-  if (id.startsWith('minecraft:')) id = id.replace('minecraft:', '');
-  const translationKey = `minecraft.${id}`;
-  if (lang[`block.${translationKey}`]) {
-    return {
-      type: TextureType.BLOCK,
-      readable: lang[`block.${translationKey}`],
-    };
-  } else if (lang[`item.${translationKey}`]) {
-    return {
-      type: TextureType.ITEM,
-      readable: lang[`item.${translationKey}`],
-    };
-  }
+export const getVanillaName = async (
+  id: string,
+  version?: string,
+): Promise<string | undefined> => {
+  const lang = await getLang(version);
+  const key = `minecraft.${id.replace(/^minecraft:/, '')}`;
+  return lang[`block.${key}`] ?? lang[`item.${key}`];
 };

@@ -10,7 +10,7 @@ import {
   loadDataVersionFile,
   resolveDataVersion,
 } from './lib/data/resolver';
-import { getTranslationFromId } from './lib/translations';
+import { getVanillaName } from './lib/translations';
 
 const MISSING_TEXTURE_DIR = './debug/missing-textures';
 
@@ -35,20 +35,20 @@ const main = async () => {
 
   if (missingIds.length > 0) {
     const missingItems: DataItem[] = [];
+    const takenReadables = new Set(latest.items.map((item) => item.readable));
     for (const id of missingIds) {
       const fallbackReadable =
         id
           .split('_')
           .map((w) => w.charAt(0).toUpperCase() + w.slice(1))
           .join(' ') + ' [verify]';
-      const translationData = await getTranslationFromId(id);
-      missingItems.push(
-        toDataItem(
-          id,
-          translationData?.readable ?? fallbackReadable,
-          remoteLatestVersion,
-        ),
-      );
+      // a name that's already taken is a family label, not this item's name
+      const vanilla = await getVanillaName(id);
+      const readable =
+        vanilla && !takenReadables.has(vanilla) ? vanilla : fallbackReadable;
+      takenReadables.add(readable);
+
+      missingItems.push(toDataItem(id, readable, remoteLatestVersion));
     }
 
     const itemTextures = new ItemTextures();

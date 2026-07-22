@@ -2,44 +2,64 @@ import * as core from '@actions/core';
 
 import { latestVersion } from '../index';
 import { resolveDataVersion } from './lib/data/resolver';
-import { getTranslationFromId } from './lib/translations';
+import { getVanillaName } from './lib/translations';
 
 const main = async () => {
-  const latest = resolveDataVersion(latestVersion);
-  const invalid: Record<string, { current: string; expected: string }> = {};
+  const { items } = resolveDataVersion(latestVersion);
 
-  for (const item of latest.items) {
-    const translationData = await getTranslationFromId(item.id);
+  const vanillaNames = new Map<string, string>();
+  const usageCount = new Map<string, number>();
 
-    if (!translationData) {
+  for (const item of items) {
+    const vanilla = await getVanillaName(item.id, latestVersion);
+
+    if (!vanilla) {
       console.log(`Could not find translation for ${item.id}`);
       continue;
     }
 
-    const { readable: translation } = translationData;
+    vanillaNames.set(item.id, vanilla);
+    usageCount.set(vanilla, (usageCount.get(vanilla) ?? 0) + 1);
+  }
 
-    if (translation !== item.readable) {
-      if (translation === 'Music Disc') continue;
-      if (translation === 'Banner Pattern') continue;
-      if (translation === 'Disc Fragment') continue;
-      if (translation === 'Smithing Template') continue;
+  const mismatched: Record<string, { current: string; expected: string }> = {};
+  const indistinguishable: Record<string, string> = {};
 
-      invalid[item.id] = {
-        current: item.readable,
-        expected: translation,
-      };
+  for (const item of items) {
+    const vanilla = vanillaNames.get(item.id);
+    if (!vanilla) continue;
+
+    // a name shared by more than one item is a family label (every disc is
+    // just "Music Disc"), and only the tooltip says which one it is
+    if ((usageCount.get(vanilla) ?? 0) > 1) {
+      if (item.readable === vanilla) indistinguishable[item.id] = vanilla;
+    } else if (item.readable !== vanilla) {
+      mismatched[item.id] = { current: item.readable, expected: vanilla };
     }
   }
 
-  const invalidCount = Object.keys(invalid).length;
-  if (invalidCount === 0) return;
+  const mismatchedCount = Object.keys(mismatched).length;
+  const indistinguishableCount = Object.keys(indistinguishable).length;
+  if (mismatchedCount === 0 && indistinguishableCount === 0) return;
 
-  const message = `Found ${invalidCount} invalid translations.`;
-  console.log(message);
-  console.log(JSON.stringify(invalid, null, 2));
+  const messages: string[] = [];
+
+  if (mismatchedCount > 0) {
+    messages.push(`Found ${mismatchedCount} readables that no longer match.`);
+    console.log(messages.at(-1));
+    console.log(JSON.stringify(mismatched, null, 2));
+  }
+
+  if (indistinguishableCount > 0) {
+    messages.push(
+      `Found ${indistinguishableCount} readables left on a shared name. Give each a distinguishing name.`,
+    );
+    console.log(messages.at(-1));
+    console.log(JSON.stringify(indistinguishable, null, 2));
+  }
 
   if (process.env.GITHUB_ACTIONS) {
-    core.error(message);
+    core.error(messages.join(' '));
   }
 
   process.exit(1);
