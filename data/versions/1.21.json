@@ -289,17 +289,17 @@
     },
     {
       "id": "minecraft:music_disc_creator_music_box",
-      "readable": "Music Disc",
+      "readable": "Creator (Music Box) Disc",
       "texture": "1.21/music_disc_creator_music_box.png"
     },
     {
       "id": "minecraft:music_disc_creator",
-      "readable": "Music Disc",
+      "readable": "Creator Disc",
       "texture": "1.21/music_disc_creator.png"
     },
     {
       "id": "minecraft:music_disc_precipice",
-      "readable": "Music Disc",
+      "readable": "Precipice Disc",
       "texture": "1.21/music_disc_precipice.png"
     },
     {
@@ -339,12 +339,12 @@
     },
     {
       "id": "minecraft:flow_banner_pattern",
-      "readable": "Banner Pattern",
+      "readable": "Flow Banner Pattern",
       "texture": "1.21/flow_banner_pattern.png"
     },
     {
       "id": "minecraft:guster_banner_pattern",
-      "readable": "Banner Pattern",
+      "readable": "Guster Banner Pattern",
       "texture": "1.21/guster_banner_pattern.png"
     },
     {
@@ -364,12 +364,12 @@
     },
     {
       "id": "minecraft:flow_armor_trim_smithing_template",
-      "readable": "Smithing Template",
+      "readable": "Flow Armor Trim Smithing Template",
       "texture": "1.21/flow_armor_trim_smithing_template.png"
     },
     {
       "id": "minecraft:bolt_armor_trim_smithing_template",
-      "readable": "Smithing Template",
+      "readable": "Bolt Armor Trim Smithing Template",
       "texture": "1.21/bolt_armor_trim_smithing_template.png"
     },
     {

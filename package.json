@@ -1,6 +1,6 @@
 {
   "name": "minecraft-textures",
-  "version": "26.2.0",
+  "version": "26.2.1",
   "private": false,
   "description": "Minecraft item texture metadata and PNG assets",
   "license": "GPL-3.0",
@@ -50,11 +50,11 @@
   "devDependencies": {
     "@actions/core": "^3.0.1",
     "@types/bun": "1.3.14",
-    "@typescript/native-preview": "^7.0.0-dev.20260527.2",
+    "@typescript/native-preview": "^7.0.0-dev.20260707.2",
     "canvas": "^3.2.3",
     "meta-png": "^1.0.6",
-    "oxfmt": "^0.52.0",
-    "oxlint": "^1.67.0",
-    "typescript": "^6.0.3"
+    "oxfmt": "^0.60.0",
+    "oxlint": "^1.75.0",
+    "typescript": "^7.0.2"
   }
 }
