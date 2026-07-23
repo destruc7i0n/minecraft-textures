@@ -5,6 +5,10 @@ on:
     tags:
       - 'v*'
 
+concurrency:
+  group: release-${{ github.ref }}
+  cancel-in-progress: false
+
 jobs:
   release:
     permissions:
@@ -35,14 +39,15 @@ jobs:
           registry-url: 'https://registry.npmjs.org'
       - name: Install packages
         run: bun install --frozen-lockfile
-      - name: Check formatting
-        run: bun run format
-      - name: Lint
-        run: bun run lint
-      - name: Typecheck
-        run: bun run typecheck
-      - name: Test
-        run: bun run test
+      - parallel:
+          - name: Check formatting
+            run: bun run format
+          - name: Lint
+            run: bun run lint
+          - name: Typecheck
+            run: bun run typecheck
+          - name: Test
+            run: bun run test
       - name: Build distribution files
         run: bun run dist
       - name: Update npm
