@@ -22,7 +22,7 @@ export interface Item {
 export interface Potion extends Item {
   potion?: string;
   bedrockPotion?: string;
-  /** Java effect lines at 20 ticks/second; empty for effectless potions. */
+  /** Java tooltip text, e.g. "Strength II (01:30)"; empty if no effects. */
   tooltip?: string[];
 }
 
