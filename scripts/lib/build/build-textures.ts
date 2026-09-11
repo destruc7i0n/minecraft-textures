@@ -22,7 +22,7 @@ export interface BuiltTextureCatalog {
 
 export async function buildTextures(
   versions: ResolvedVersion[],
-  options: { outputDir?: string } = {},
+  options: { outputDir?: string; additionalTexturePaths?: string[] } = {},
 ): Promise<BuiltTextureCatalog> {
   const outputDir = options.outputDir ?? './dist/textures/assets';
   const bySourcePath = new Map<string, BuiltTexture>();
@@ -31,7 +31,11 @@ export async function buildTextures(
   await rm(outputDir, { recursive: true, force: true });
   await mkdir(outputDir, { recursive: true });
 
-  for (const sourcePath of uniqueTexturePaths(versions)) {
+  const paths = new Set([
+    ...uniqueTexturePaths(versions),
+    ...(options.additionalTexturePaths ?? []),
+  ]);
+  for (const sourcePath of paths) {
     const sourceBytes = await Bun.file(sourcePath).bytes();
     const bytes = addPngTextMetadata(sourceBytes, DIST_PNG_METADATA);
 

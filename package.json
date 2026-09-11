@@ -18,6 +18,7 @@
       "import": "./dist/minecraft-textures.mjs"
     },
     "./manifest/index.json": "./dist/textures/manifest/index.json",
+    "./manifest/potions/*.json": "./dist/textures/manifest/potions/*.json",
     "./manifest/*.json": "./dist/textures/manifest/*.json",
     "./assets/*": "./dist/textures/assets/*",
     "./dist/index.d.ts": "./dist/index.d.ts",

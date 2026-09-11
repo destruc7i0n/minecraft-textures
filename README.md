@@ -88,6 +88,10 @@ const sword = textures.items['minecraft:diamond_sword'];
 
 ## Update Notes
 
+### Unreleased
+
+- Add versioned potion textures and metadata for Java and Bedrock.
+
 ### 26.2.0
 
 - Texture images now live as PNG files in `data/textures`.
