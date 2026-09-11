@@ -25,11 +25,7 @@ const potions: PotionTexturesType[] = await Promise.all(
     Bun.file(`data/potions/${version}.json`).json(),
   ),
 );
-const textureCatalog = await buildTextures(resolvedVersions, {
-  additionalTexturePaths: potions.flatMap((version) =>
-    version.items.map((potion) => join('data/textures', potion.texture)),
-  ),
-});
+const textureCatalog = await buildTextures();
 
 await writeManifestIndex(versions, latestVersion, packageVersion);
 
