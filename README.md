@@ -90,7 +90,7 @@ const sword = textures.items['minecraft:diamond_sword'];
 
 ### 26.3.0
 
-- Add 121 items and update map and hay bale textures.
+- Add 121 items and update map textures.
 
 ### 26.2.0
 
