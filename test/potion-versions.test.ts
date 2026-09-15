@@ -198,3 +198,74 @@ test('rejects duplicate identities for either edition', () => {
     rmSync(root, { recursive: true, force: true });
   }
 });
+
+test('potion overlays share add, update, remove, and order behavior without losing metadata', () => {
+  const root = mkdtempSync(join(tmpdir(), 'potion-overlays-'));
+  try {
+    for (const version of ['1.0', '1.1']) {
+      mkdirSync(join(root, version));
+      writeFileSync(join(root, version, 'potion.png'), version);
+    }
+    const healing = {
+      id: 'minecraft:potion',
+      potion: 'minecraft:healing',
+      bedrockPotion: 'minecraft:healing',
+      readable: 'Healing',
+      texture: '1.0/potion.png',
+      tooltip: ['Instant Health'],
+    };
+    const speed = {
+      ...healing,
+      potion: 'minecraft:swiftness',
+      bedrockPotion: 'minecraft:swiftness',
+    };
+    const wither = {
+      ...healing,
+      potion: undefined,
+      bedrockPotion: 'minecraft:wither',
+    };
+    const strength = {
+      ...healing,
+      potion: 'minecraft:strength',
+      bedrockPotion: 'minecraft:strength',
+    };
+    const write = (version: string, data: object) =>
+      writeFileSync(
+        join(root, `${version}.json`),
+        JSON.stringify({ version, ...data }),
+      );
+    write('1.0', { items: [healing, speed, wither] });
+    const key = (potion: string) => `minecraft:potion|minecraft:${potion}`;
+    const changes = {
+      readable: 'Updated Healing',
+      texture: '1.1/potion.png',
+      tooltip: ['Updated effect'],
+    };
+    write('1.1', {
+      extends: '1.0',
+      add: [strength],
+      update: { [key('healing')]: changes },
+      remove: [key('wither')],
+      order: [key('strength'), key('healing')],
+    });
+    const options = { versionDir: root, textureDir: root };
+    expect(loadPotionVersion('1.1', options).items).toEqual([
+      strength,
+      { ...healing, ...changes },
+      speed,
+    ]);
+    expect(loadPotionVersion('1.0', options).items[0]).toEqual(healing);
+    write('1.1', {
+      extends: '1.0',
+      update: { [key('healing')]: { potion: 'minecraft:swiftness' } },
+    });
+    expect(() => loadPotionVersion('1.1', options)).toThrow(/duplicate id/);
+    write('1.1', { extends: '1.0', add: [healing] });
+    expect(() => loadPotionVersion('1.1', options)).toThrow(/inherited id/);
+    write('1.1', { extends: '1.0' });
+    write('1.0', { items: [{ ...healing, texture: '1.1/potion.png' }] });
+    expect(() => loadPotionVersion('1.1', options)).toThrow(/future texture/);
+  } finally {
+    rmSync(root, { recursive: true, force: true });
+  }
+});

@@ -1,39 +1,32 @@
-import { readFileSync } from 'fs';
-
-import type { PotionTexturesType } from '../../../lib/types';
-import { resolveTextureAsset } from './resolver';
-import {
-  compareMinecraftVersions,
-  dataVersionPath,
-  POTION_DATA_DIR,
-  TEXTURE_DATA_DIR,
-} from './versions';
+import type { Potion, PotionTexturesType } from '../../../lib/types';
+import { resolveDataVersion } from './resolver';
+import { POTION_DATA_DIR, TEXTURE_DATA_DIR } from './versions';
 
 export function loadPotionVersion(
   version: string,
   { versionDir = POTION_DATA_DIR, textureDir = TEXTURE_DATA_DIR } = {},
-): PotionTexturesType {
+): Pick<PotionTexturesType, 'version' | 'items'> {
   if (!/^\d+(?:\.\d+)+$/.test(version)) {
     throw new Error(`Invalid potion version: ${version}`);
   }
-  const file: PotionTexturesType = JSON.parse(
-    readFileSync(dataVersionPath(version, versionDir), 'utf8'),
-  );
-  if (file.version !== version) {
-    throw new Error(`Version mismatch in ${version}.json: ${file.version}`);
-  }
+  const resolved = resolveDataVersion<Potion>(version, {
+    versionDir,
+    textureDir,
+    keyOf: (item) => `${item.id}|${item.potion ?? item.bedrockPotion}`,
+  });
+  const file = {
+    version,
+    items: resolved.items.map((item) => {
+      const source = { ...item };
+      Reflect.deleteProperty(source, 'dataTexturePath');
+      return source;
+    }),
+  };
   const identities = {
     potion: new Set<string>(),
     bedrockPotion: new Set<string>(),
   };
   for (const item of file.items) {
-    resolveTextureAsset(item, textureDir);
-    const textureVersion = item.texture.split('/')[0];
-    if (compareMinecraftVersions(textureVersion, version) > 0) {
-      throw new Error(
-        `${version} cannot reference future texture ${item.texture}`,
-      );
-    }
     if (!item.potion && !item.bedrockPotion) {
       throw new Error(`${item.id} must define a potion identity`);
     }
