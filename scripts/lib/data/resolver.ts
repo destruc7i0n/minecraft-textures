@@ -8,6 +8,7 @@ import type {
   ResolvedVersion,
 } from './types';
 import {
+  compareMinecraftVersions,
   dataVersionPath,
   TEXTURE_DATA_DIR,
   VERSION_DATA_DIR,
@@ -22,28 +23,30 @@ export function defaultTextureName(id: string): string {
   );
 }
 
-export function loadDataVersionFile(
+export function loadDataVersionFile<T extends DataItem = DataItem>(
   version: string,
   versionDir = VERSION_DATA_DIR,
-): DataVersionFile {
+): DataVersionFile<T> {
   return JSON.parse(
     readFileSync(dataVersionPath(version, versionDir), 'utf8'),
-  ) as DataVersionFile;
+  ) as DataVersionFile<T>;
 }
 
-export function resolveDataVersion(
+export function resolveDataVersion<T extends DataItem = DataItem>(
   version: string,
   options: {
     versionDir?: string;
     textureDir?: string;
+    keyOf?: (item: T) => string;
   } = {},
-): ResolvedVersion {
+): ResolvedVersion<T> {
   const versionDir = options.versionDir ?? VERSION_DATA_DIR;
   const textureDir = options.textureDir ?? TEXTURE_DATA_DIR;
+  const keyOf = options.keyOf ?? ((item: T) => item.id);
   const resolving = new Set<string>();
-  const cache = new Map<string, ResolvedVersion>();
+  const cache = new Map<string, ResolvedVersion<T>>();
 
-  const resolve = (targetVersion: string): ResolvedVersion => {
+  const resolve = (targetVersion: string): ResolvedVersion<T> => {
     const cached = cache.get(targetVersion);
     if (cached) return cached;
 
@@ -52,7 +55,7 @@ export function resolveDataVersion(
     }
     resolving.add(targetVersion);
 
-    const file = loadDataVersionFile(targetVersion, versionDir);
+    const file = loadDataVersionFile<T>(targetVersion, versionDir);
     if (file.version !== targetVersion) {
       throw new Error(
         `Version mismatch in ${targetVersion}.json: ${file.version}`,
@@ -67,9 +70,19 @@ export function resolveDataVersion(
       ? [...resolve(file.extends).ancestry, targetVersion]
       : [targetVersion];
     const rawItems = file.extends
-      ? applyOverlay(targetVersion, resolve(file.extends), file)
-      : validateBaseItems(targetVersion, file);
-    const items = rawItems.map((item) => resolveTextureAsset(item, textureDir));
+      ? applyOverlay(targetVersion, resolve(file.extends), file, keyOf)
+      : validateBaseItems(targetVersion, file, keyOf);
+    const items = rawItems.map((item) => {
+      const resolvedItem = resolveTextureAsset(item, textureDir);
+      if (
+        compareMinecraftVersions(item.texture.split('/')[0], targetVersion) > 0
+      ) {
+        throw new Error(
+          `${targetVersion} cannot reference future texture ${item.texture}`,
+        );
+      }
+      return resolvedItem;
+    });
     const resolved = {
       version: targetVersion,
       extends: file.extends,
@@ -85,7 +98,11 @@ export function resolveDataVersion(
   return resolve(version);
 }
 
-function validateBaseItems(version: string, file: DataVersionFile): DataItem[] {
+function validateBaseItems<T extends DataItem>(
+  version: string,
+  file: DataVersionFile<T>,
+  keyOf: (item: T) => string,
+): T[] {
   if (!('items' in file) || !file.items) {
     throw new Error(`${version} must define items or extends`);
   }
@@ -94,23 +111,20 @@ function validateBaseItems(version: string, file: DataVersionFile): DataItem[] {
       `${version} cannot define add, update, or remove without extends`,
     );
   }
-  return applyOrder(file.items, file.order);
+  return applyOrder(file.items, file.order, keyOf);
 }
 
-function applyOverlay(
+function applyOverlay<T extends DataItem>(
   version: string,
-  parent: ResolvedVersion,
-  file: Extract<DataVersionFile, { extends: string }>,
-): DataItem[] {
-  const items = parent.items.map<DataItem>((item) => ({
-    id: item.id,
-    readable: item.readable,
-    texture: item.texture,
-  }));
-  const inheritedIds = new Set(items.map((item) => item.id));
+  parent: ResolvedVersion<T>,
+  file: Extract<DataVersionFile<T>, { extends: string }>,
+  keyOf: (item: T) => string,
+): T[] {
+  const items: T[] = parent.items.map((item) => ({ ...item }));
+  const inheritedIds = new Set(items.map(keyOf));
 
   for (const id of file.remove ?? []) {
-    const index = items.findIndex((item) => item.id === id);
+    const index = items.findIndex((item) => keyOf(item) === id);
     if (index === -1) {
       throw new Error(`${version} cannot remove missing id ${id}`);
     }
@@ -118,48 +132,48 @@ function applyOverlay(
   }
 
   for (const [id, update] of Object.entries(file.update ?? {})) {
-    const index = items.findIndex((item) => item.id === id);
+    const index = items.findIndex((item) => keyOf(item) === id);
     if (index === -1) {
       throw new Error(`${version} cannot update missing id ${id}`);
     }
     const next = { ...items[index], ...update };
     if (
-      update.id &&
-      update.id !== id &&
+      keyOf(next) !== id &&
       items.some(
-        (item, itemIndex) => itemIndex !== index && item.id === update.id,
+        (item, itemIndex) => itemIndex !== index && keyOf(item) === keyOf(next),
       )
     ) {
       throw new Error(
-        `${version} cannot update ${id} to duplicate id ${update.id}`,
+        `${version} cannot update ${id} to duplicate id ${keyOf(next)}`,
       );
     }
     items[index] = next;
   }
 
-  const currentIds = new Set(items.map((item) => item.id));
+  const currentIds = new Set(items.map(keyOf));
   for (const item of file.add ?? []) {
-    if (inheritedIds.has(item.id)) {
-      throw new Error(`${version} cannot add inherited id ${item.id}`);
+    if (inheritedIds.has(keyOf(item))) {
+      throw new Error(`${version} cannot add inherited id ${keyOf(item)}`);
     }
-    if (currentIds.has(item.id)) {
-      throw new Error(`${version} cannot add duplicate id ${item.id}`);
+    if (currentIds.has(keyOf(item))) {
+      throw new Error(`${version} cannot add duplicate id ${keyOf(item)}`);
     }
-    currentIds.add(item.id);
+    currentIds.add(keyOf(item));
     items.push(item);
   }
 
-  return applyOrder(items, file.order);
+  return applyOrder(items, file.order, keyOf);
 }
 
-function applyOrder(
-  items: DataItem[],
+function applyOrder<T extends DataItem>(
+  items: T[],
   order: string[] | undefined,
-): DataItem[] {
+  keyOf: (item: T) => string,
+): T[] {
   if (!order) return items;
 
-  const byId = new Map(items.map((item) => [item.id, item]));
-  const ordered: DataItem[] = [];
+  const byId = new Map(items.map((item) => [keyOf(item), item]));
+  const ordered: T[] = [];
   const seen = new Set<string>();
 
   for (const id of order) {
@@ -175,20 +189,22 @@ function applyOrder(
   }
 
   for (const item of items) {
-    if (!seen.has(item.id)) ordered.push(item);
+    if (!seen.has(keyOf(item))) ordered.push(item);
   }
 
   return ordered;
 }
 
-function resolveTextureAsset(item: DataItem, textureDir: string): ResolvedItem {
+export function resolveTextureAsset<T extends DataItem>(
+  item: T,
+  textureDir: string,
+): ResolvedItem<T> {
   const texture = requireTexturePath(item);
   const dataTexturePath = join(textureDir, texture);
 
   if (existsSync(dataTexturePath)) {
     return {
-      id: item.id,
-      readable: item.readable,
+      ...item,
       texture,
       dataTexturePath,
     };
@@ -201,7 +217,7 @@ function requireTexturePath(item: DataItem): string {
   if (!item.texture) {
     throw new Error(`${item.id} must define texture`);
   }
-  if (!item.texture.includes('/')) {
+  if (!/^\d+(?:\.\d+)+\//.test(item.texture)) {
     throw new Error(
       `${item.id} texture must include a version folder: ${item.texture}`,
     );

@@ -4,10 +4,10 @@ export interface DataItem {
   texture: string;
 }
 
-export type DataVersionFile =
+export type DataVersionFile<T extends DataItem = DataItem> =
   | {
       version: string;
-      items: DataItem[];
+      items: T[];
       extends?: never;
       add?: never;
       update?: never;
@@ -17,24 +17,21 @@ export type DataVersionFile =
   | {
       version: string;
       extends: string;
-      add?: DataItem[];
-      update?: Record<string, Partial<DataItem>>;
+      add?: T[];
+      update?: Record<string, Partial<T>>;
       remove?: string[];
       order?: string[];
     };
 
-export interface ResolvedItem {
-  id: string;
-  readable: string;
-  texture: string;
+export type ResolvedItem<T extends DataItem = DataItem> = T & {
   dataTexturePath: string;
-}
+};
 
-export interface ResolvedVersion {
+export interface ResolvedVersion<T extends DataItem = DataItem> {
   version: string;
   extends?: string;
   ancestry: string[];
-  items: ResolvedItem[];
+  items: ResolvedItem<T>[];
 }
 
 export interface TextureManifest {

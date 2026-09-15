@@ -7,7 +7,8 @@ import {
   DIST_PNG_METADATA,
   pngBytesToDataUrl,
 } from '../data/png';
-import type { ResolvedItem, ResolvedVersion } from '../data/types';
+import type { ResolvedItem } from '../data/types';
+import { TEXTURE_DATA_DIR } from '../data/versions';
 
 export interface BuiltTexture {
   assetPath: string;
@@ -21,7 +22,6 @@ export interface BuiltTextureCatalog {
 }
 
 export async function buildTextures(
-  versions: ResolvedVersion[],
   options: { outputDir?: string } = {},
 ): Promise<BuiltTextureCatalog> {
   const outputDir = options.outputDir ?? './dist/textures/assets';
@@ -31,7 +31,9 @@ export async function buildTextures(
   await rm(outputDir, { recursive: true, force: true });
   await mkdir(outputDir, { recursive: true });
 
-  for (const sourcePath of uniqueTexturePaths(versions)) {
+  const pngs = new Bun.Glob('**/*.png');
+  for (const path of pngs.scanSync(TEXTURE_DATA_DIR)) {
+    const sourcePath = join(TEXTURE_DATA_DIR, path);
     const sourceBytes = await Bun.file(sourcePath).bytes();
     const bytes = addPngTextMetadata(sourceBytes, DIST_PNG_METADATA);
 
@@ -71,17 +73,6 @@ export function requireBuiltTexture(
   }
 
   return texture;
-}
-
-function uniqueTexturePaths(versions: ResolvedVersion[]): string[] {
-  const paths = new Set<string>();
-  for (const version of versions) {
-    for (const item of version.items) {
-      paths.add(item.dataTexturePath);
-    }
-  }
-
-  return Array.from(paths);
 }
 
 function hashPng(bytes: Uint8Array): string {

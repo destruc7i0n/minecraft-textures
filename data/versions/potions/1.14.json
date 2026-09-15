@@ -1,0 +1,534 @@
+{
+  "version": "1.14",
+  "extends": "1.13",
+  "update": {
+    "minecraft:lingering_potion|minecraft:awkward": {
+      "texture": "1.14/potions/lingering_potion_water.png"
+    },
+    "minecraft:lingering_potion|minecraft:fire_resistance": {
+      "texture": "1.14/potions/lingering_potion_fire_resistance.png"
+    },
+    "minecraft:lingering_potion|minecraft:harming": {
+      "texture": "1.14/potions/lingering_potion_harming.png"
+    },
+    "minecraft:lingering_potion|minecraft:healing": {
+      "texture": "1.14/potions/lingering_potion_healing.png"
+    },
+    "minecraft:lingering_potion|minecraft:invisibility": {
+      "texture": "1.14/potions/lingering_potion_invisibility.png"
+    },
+    "minecraft:lingering_potion|minecraft:leaping": {
+      "texture": "1.14/potions/lingering_potion_leaping.png"
+    },
+    "minecraft:lingering_potion|minecraft:long_fire_resistance": {
+      "texture": "1.14/potions/lingering_potion_fire_resistance.png"
+    },
+    "minecraft:lingering_potion|minecraft:long_invisibility": {
+      "texture": "1.14/potions/lingering_potion_invisibility.png"
+    },
+    "minecraft:lingering_potion|minecraft:long_leaping": {
+      "texture": "1.14/potions/lingering_potion_leaping.png"
+    },
+    "minecraft:lingering_potion|minecraft:long_mundane": {
+      "texture": "1.14/potions/lingering_potion_water.png"
+    },
+    "minecraft:lingering_potion|minecraft:long_night_vision": {
+      "texture": "1.14/potions/lingering_potion_night_vision.png"
+    },
+    "minecraft:lingering_potion|minecraft:long_poison": {
+      "texture": "1.14/potions/lingering_potion_poison.png"
+    },
+    "minecraft:lingering_potion|minecraft:long_regeneration": {
+      "texture": "1.14/potions/lingering_potion_regeneration.png"
+    },
+    "minecraft:lingering_potion|minecraft:long_slow_falling": {
+      "texture": "1.14/potions/lingering_potion_slow_falling.png"
+    },
+    "minecraft:lingering_potion|minecraft:long_slowness": {
+      "texture": "1.14/potions/lingering_potion_slowness.png"
+    },
+    "minecraft:lingering_potion|minecraft:long_strength": {
+      "texture": "1.14/potions/lingering_potion_strength.png"
+    },
+    "minecraft:lingering_potion|minecraft:long_swiftness": {
+      "texture": "1.14/potions/lingering_potion_swiftness.png"
+    },
+    "minecraft:lingering_potion|minecraft:long_turtle_master": {
+      "texture": "1.14/potions/lingering_potion_turtle_master.png"
+    },
+    "minecraft:lingering_potion|minecraft:long_water_breathing": {
+      "texture": "1.14/potions/lingering_potion_water_breathing.png"
+    },
+    "minecraft:lingering_potion|minecraft:long_weakness": {
+      "texture": "1.14/potions/lingering_potion_weakness.png"
+    },
+    "minecraft:lingering_potion|minecraft:luck": {
+      "texture": "1.14/potions/lingering_potion_luck.png"
+    },
+    "minecraft:lingering_potion|minecraft:mundane": {
+      "texture": "1.14/potions/lingering_potion_water.png"
+    },
+    "minecraft:lingering_potion|minecraft:night_vision": {
+      "texture": "1.14/potions/lingering_potion_night_vision.png"
+    },
+    "minecraft:lingering_potion|minecraft:poison": {
+      "texture": "1.14/potions/lingering_potion_poison.png"
+    },
+    "minecraft:lingering_potion|minecraft:regeneration": {
+      "texture": "1.14/potions/lingering_potion_regeneration.png"
+    },
+    "minecraft:lingering_potion|minecraft:slow_falling": {
+      "texture": "1.14/potions/lingering_potion_slow_falling.png"
+    },
+    "minecraft:lingering_potion|minecraft:slowness": {
+      "texture": "1.14/potions/lingering_potion_slowness.png"
+    },
+    "minecraft:lingering_potion|minecraft:strength": {
+      "texture": "1.14/potions/lingering_potion_strength.png"
+    },
+    "minecraft:lingering_potion|minecraft:strong_harming": {
+      "texture": "1.14/potions/lingering_potion_harming.png"
+    },
+    "minecraft:lingering_potion|minecraft:strong_healing": {
+      "texture": "1.14/potions/lingering_potion_healing.png"
+    },
+    "minecraft:lingering_potion|minecraft:strong_leaping": {
+      "texture": "1.14/potions/lingering_potion_leaping.png"
+    },
+    "minecraft:lingering_potion|minecraft:strong_poison": {
+      "texture": "1.14/potions/lingering_potion_poison.png"
+    },
+    "minecraft:lingering_potion|minecraft:strong_regeneration": {
+      "texture": "1.14/potions/lingering_potion_regeneration.png"
+    },
+    "minecraft:lingering_potion|minecraft:strong_slowness": {
+      "texture": "1.14/potions/lingering_potion_slowness.png"
+    },
+    "minecraft:lingering_potion|minecraft:strong_strength": {
+      "texture": "1.14/potions/lingering_potion_strength.png"
+    },
+    "minecraft:lingering_potion|minecraft:strong_swiftness": {
+      "texture": "1.14/potions/lingering_potion_swiftness.png"
+    },
+    "minecraft:lingering_potion|minecraft:strong_turtle_master": {
+      "texture": "1.14/potions/lingering_potion_strong_turtle_master.png"
+    },
+    "minecraft:lingering_potion|minecraft:swiftness": {
+      "texture": "1.14/potions/lingering_potion_swiftness.png"
+    },
+    "minecraft:lingering_potion|minecraft:thick": {
+      "texture": "1.14/potions/lingering_potion_water.png"
+    },
+    "minecraft:lingering_potion|minecraft:turtle_master": {
+      "texture": "1.14/potions/lingering_potion_turtle_master.png"
+    },
+    "minecraft:lingering_potion|minecraft:water": {
+      "texture": "1.14/potions/lingering_potion_water.png"
+    },
+    "minecraft:lingering_potion|minecraft:water_breathing": {
+      "texture": "1.14/potions/lingering_potion_water_breathing.png"
+    },
+    "minecraft:lingering_potion|minecraft:weakness": {
+      "texture": "1.14/potions/lingering_potion_weakness.png"
+    },
+    "minecraft:lingering_potion|minecraft:wither": {
+      "texture": "1.14/potions/lingering_potion_wither.png"
+    },
+    "minecraft:potion|minecraft:awkward": {
+      "texture": "1.14/potions/potion_water.png"
+    },
+    "minecraft:potion|minecraft:fire_resistance": {
+      "texture": "1.14/potions/potion_fire_resistance.png"
+    },
+    "minecraft:potion|minecraft:harming": {
+      "texture": "1.14/potions/potion_harming.png"
+    },
+    "minecraft:potion|minecraft:healing": {
+      "texture": "1.14/potions/potion_healing.png"
+    },
+    "minecraft:potion|minecraft:invisibility": {
+      "texture": "1.14/potions/potion_invisibility.png"
+    },
+    "minecraft:potion|minecraft:leaping": {
+      "texture": "1.14/potions/potion_leaping.png"
+    },
+    "minecraft:potion|minecraft:long_fire_resistance": {
+      "texture": "1.14/potions/potion_fire_resistance.png"
+    },
+    "minecraft:potion|minecraft:long_invisibility": {
+      "texture": "1.14/potions/potion_invisibility.png"
+    },
+    "minecraft:potion|minecraft:long_leaping": {
+      "texture": "1.14/potions/potion_leaping.png"
+    },
+    "minecraft:potion|minecraft:long_mundane": {
+      "texture": "1.14/potions/potion_water.png"
+    },
+    "minecraft:potion|minecraft:long_night_vision": {
+      "texture": "1.14/potions/potion_night_vision.png"
+    },
+    "minecraft:potion|minecraft:long_poison": {
+      "texture": "1.14/potions/potion_poison.png"
+    },
+    "minecraft:potion|minecraft:long_regeneration": {
+      "texture": "1.14/potions/potion_regeneration.png"
+    },
+    "minecraft:potion|minecraft:long_slow_falling": {
+      "texture": "1.14/potions/potion_slow_falling.png"
+    },
+    "minecraft:potion|minecraft:long_slowness": {
+      "texture": "1.14/potions/potion_slowness.png"
+    },
+    "minecraft:potion|minecraft:long_strength": {
+      "texture": "1.14/potions/potion_strength.png"
+    },
+    "minecraft:potion|minecraft:long_swiftness": {
+      "texture": "1.14/potions/potion_swiftness.png"
+    },
+    "minecraft:potion|minecraft:long_turtle_master": {
+      "texture": "1.14/potions/potion_turtle_master.png"
+    },
+    "minecraft:potion|minecraft:long_water_breathing": {
+      "texture": "1.14/potions/potion_water_breathing.png"
+    },
+    "minecraft:potion|minecraft:long_weakness": {
+      "texture": "1.14/potions/potion_weakness.png"
+    },
+    "minecraft:potion|minecraft:luck": {
+      "texture": "1.14/potions/potion_luck.png"
+    },
+    "minecraft:potion|minecraft:mundane": {
+      "texture": "1.14/potions/potion_water.png"
+    },
+    "minecraft:potion|minecraft:night_vision": {
+      "texture": "1.14/potions/potion_night_vision.png"
+    },
+    "minecraft:potion|minecraft:poison": {
+      "texture": "1.14/potions/potion_poison.png"
+    },
+    "minecraft:potion|minecraft:regeneration": {
+      "texture": "1.14/potions/potion_regeneration.png"
+    },
+    "minecraft:potion|minecraft:slow_falling": {
+      "texture": "1.14/potions/potion_slow_falling.png"
+    },
+    "minecraft:potion|minecraft:slowness": {
+      "texture": "1.14/potions/potion_slowness.png"
+    },
+    "minecraft:potion|minecraft:strength": {
+      "texture": "1.14/potions/potion_strength.png"
+    },
+    "minecraft:potion|minecraft:strong_harming": {
+      "texture": "1.14/potions/potion_harming.png"
+    },
+    "minecraft:potion|minecraft:strong_healing": {
+      "texture": "1.14/potions/potion_healing.png"
+    },
+    "minecraft:potion|minecraft:strong_leaping": {
+      "texture": "1.14/potions/potion_leaping.png"
+    },
+    "minecraft:potion|minecraft:strong_poison": {
+      "texture": "1.14/potions/potion_poison.png"
+    },
+    "minecraft:potion|minecraft:strong_regeneration": {
+      "texture": "1.14/potions/potion_regeneration.png"
+    },
+    "minecraft:potion|minecraft:strong_slowness": {
+      "texture": "1.14/potions/potion_slowness.png"
+    },
+    "minecraft:potion|minecraft:strong_strength": {
+      "texture": "1.14/potions/potion_strength.png"
+    },
+    "minecraft:potion|minecraft:strong_swiftness": {
+      "texture": "1.14/potions/potion_swiftness.png"
+    },
+    "minecraft:potion|minecraft:strong_turtle_master": {
+      "texture": "1.14/potions/potion_strong_turtle_master.png"
+    },
+    "minecraft:potion|minecraft:swiftness": {
+      "texture": "1.14/potions/potion_swiftness.png"
+    },
+    "minecraft:potion|minecraft:thick": {
+      "texture": "1.14/potions/potion_water.png"
+    },
+    "minecraft:potion|minecraft:turtle_master": {
+      "texture": "1.14/potions/potion_turtle_master.png"
+    },
+    "minecraft:potion|minecraft:water": {
+      "texture": "1.14/potions/potion_water.png"
+    },
+    "minecraft:potion|minecraft:water_breathing": {
+      "texture": "1.14/potions/potion_water_breathing.png"
+    },
+    "minecraft:potion|minecraft:weakness": {
+      "texture": "1.14/potions/potion_weakness.png"
+    },
+    "minecraft:potion|minecraft:wither": {
+      "texture": "1.14/potions/potion_wither.png"
+    },
+    "minecraft:splash_potion|minecraft:awkward": {
+      "texture": "1.14/potions/splash_potion_water.png"
+    },
+    "minecraft:splash_potion|minecraft:fire_resistance": {
+      "texture": "1.14/potions/splash_potion_fire_resistance.png"
+    },
+    "minecraft:splash_potion|minecraft:harming": {
+      "texture": "1.14/potions/splash_potion_harming.png"
+    },
+    "minecraft:splash_potion|minecraft:healing": {
+      "texture": "1.14/potions/splash_potion_healing.png"
+    },
+    "minecraft:splash_potion|minecraft:invisibility": {
+      "texture": "1.14/potions/splash_potion_invisibility.png"
+    },
+    "minecraft:splash_potion|minecraft:leaping": {
+      "texture": "1.14/potions/splash_potion_leaping.png"
+    },
+    "minecraft:splash_potion|minecraft:long_fire_resistance": {
+      "texture": "1.14/potions/splash_potion_fire_resistance.png"
+    },
+    "minecraft:splash_potion|minecraft:long_invisibility": {
+      "texture": "1.14/potions/splash_potion_invisibility.png"
+    },
+    "minecraft:splash_potion|minecraft:long_leaping": {
+      "texture": "1.14/potions/splash_potion_leaping.png"
+    },
+    "minecraft:splash_potion|minecraft:long_mundane": {
+      "texture": "1.14/potions/splash_potion_water.png"
+    },
+    "minecraft:splash_potion|minecraft:long_night_vision": {
+      "texture": "1.14/potions/splash_potion_night_vision.png"
+    },
+    "minecraft:splash_potion|minecraft:long_poison": {
+      "texture": "1.14/potions/splash_potion_poison.png"
+    },
+    "minecraft:splash_potion|minecraft:long_regeneration": {
+      "texture": "1.14/potions/splash_potion_regeneration.png"
+    },
+    "minecraft:splash_potion|minecraft:long_slow_falling": {
+      "texture": "1.14/potions/splash_potion_slow_falling.png"
+    },
+    "minecraft:splash_potion|minecraft:long_slowness": {
+      "texture": "1.14/potions/splash_potion_slowness.png"
+    },
+    "minecraft:splash_potion|minecraft:long_strength": {
+      "texture": "1.14/potions/splash_potion_strength.png"
+    },
+    "minecraft:splash_potion|minecraft:long_swiftness": {
+      "texture": "1.14/potions/splash_potion_swiftness.png"
+    },
+    "minecraft:splash_potion|minecraft:long_turtle_master": {
+      "texture": "1.14/potions/splash_potion_turtle_master.png"
+    },
+    "minecraft:splash_potion|minecraft:long_water_breathing": {
+      "texture": "1.14/potions/splash_potion_water_breathing.png"
+    },
+    "minecraft:splash_potion|minecraft:long_weakness": {
+      "texture": "1.14/potions/splash_potion_weakness.png"
+    },
+    "minecraft:splash_potion|minecraft:luck": {
+      "texture": "1.14/potions/splash_potion_luck.png"
+    },
+    "minecraft:splash_potion|minecraft:mundane": {
+      "texture": "1.14/potions/splash_potion_water.png"
+    },
+    "minecraft:splash_potion|minecraft:night_vision": {
+      "texture": "1.14/potions/splash_potion_night_vision.png"
+    },
+    "minecraft:splash_potion|minecraft:poison": {
+      "texture": "1.14/potions/splash_potion_poison.png"
+    },
+    "minecraft:splash_potion|minecraft:regeneration": {
+      "texture": "1.14/potions/splash_potion_regeneration.png"
+    },
+    "minecraft:splash_potion|minecraft:slow_falling": {
+      "texture": "1.14/potions/splash_potion_slow_falling.png"
+    },
+    "minecraft:splash_potion|minecraft:slowness": {
+      "texture": "1.14/potions/splash_potion_slowness.png"
+    },
+    "minecraft:splash_potion|minecraft:strength": {
+      "texture": "1.14/potions/splash_potion_strength.png"
+    },
+    "minecraft:splash_potion|minecraft:strong_harming": {
+      "texture": "1.14/potions/splash_potion_harming.png"
+    },
+    "minecraft:splash_potion|minecraft:strong_healing": {
+      "texture": "1.14/potions/splash_potion_healing.png"
+    },
+    "minecraft:splash_potion|minecraft:strong_leaping": {
+      "texture": "1.14/potions/splash_potion_leaping.png"
+    },
+    "minecraft:splash_potion|minecraft:strong_poison": {
+      "texture": "1.14/potions/splash_potion_poison.png"
+    },
+    "minecraft:splash_potion|minecraft:strong_regeneration": {
+      "texture": "1.14/potions/splash_potion_regeneration.png"
+    },
+    "minecraft:splash_potion|minecraft:strong_slowness": {
+      "texture": "1.14/potions/splash_potion_slowness.png"
+    },
+    "minecraft:splash_potion|minecraft:strong_strength": {
+      "texture": "1.14/potions/splash_potion_strength.png"
+    },
+    "minecraft:splash_potion|minecraft:strong_swiftness": {
+      "texture": "1.14/potions/splash_potion_swiftness.png"
+    },
+    "minecraft:splash_potion|minecraft:strong_turtle_master": {
+      "texture": "1.14/potions/splash_potion_strong_turtle_master.png"
+    },
+    "minecraft:splash_potion|minecraft:swiftness": {
+      "texture": "1.14/potions/splash_potion_swiftness.png"
+    },
+    "minecraft:splash_potion|minecraft:thick": {
+      "texture": "1.14/potions/splash_potion_water.png"
+    },
+    "minecraft:splash_potion|minecraft:turtle_master": {
+      "texture": "1.14/potions/splash_potion_turtle_master.png"
+    },
+    "minecraft:splash_potion|minecraft:water": {
+      "texture": "1.14/potions/splash_potion_water.png"
+    },
+    "minecraft:splash_potion|minecraft:water_breathing": {
+      "texture": "1.14/potions/splash_potion_water_breathing.png"
+    },
+    "minecraft:splash_potion|minecraft:weakness": {
+      "texture": "1.14/potions/splash_potion_weakness.png"
+    },
+    "minecraft:splash_potion|minecraft:wither": {
+      "texture": "1.14/potions/splash_potion_wither.png"
+    },
+    "minecraft:tipped_arrow|minecraft:awkward": {
+      "texture": "1.14/potions/tipped_arrow_water.png"
+    },
+    "minecraft:tipped_arrow|minecraft:fire_resistance": {
+      "texture": "1.14/potions/tipped_arrow_fire_resistance.png"
+    },
+    "minecraft:tipped_arrow|minecraft:harming": {
+      "texture": "1.14/potions/tipped_arrow_harming.png"
+    },
+    "minecraft:tipped_arrow|minecraft:healing": {
+      "texture": "1.14/potions/tipped_arrow_healing.png"
+    },
+    "minecraft:tipped_arrow|minecraft:invisibility": {
+      "texture": "1.14/potions/tipped_arrow_invisibility.png"
+    },
+    "minecraft:tipped_arrow|minecraft:leaping": {
+      "texture": "1.14/potions/tipped_arrow_leaping.png"
+    },
+    "minecraft:tipped_arrow|minecraft:long_fire_resistance": {
+      "texture": "1.14/potions/tipped_arrow_fire_resistance.png"
+    },
+    "minecraft:tipped_arrow|minecraft:long_invisibility": {
+      "texture": "1.14/potions/tipped_arrow_invisibility.png"
+    },
+    "minecraft:tipped_arrow|minecraft:long_leaping": {
+      "texture": "1.14/potions/tipped_arrow_leaping.png"
+    },
+    "minecraft:tipped_arrow|minecraft:long_mundane": {
+      "texture": "1.14/potions/tipped_arrow_water.png"
+    },
+    "minecraft:tipped_arrow|minecraft:long_night_vision": {
+      "texture": "1.14/potions/tipped_arrow_night_vision.png"
+    },
+    "minecraft:tipped_arrow|minecraft:long_poison": {
+      "texture": "1.14/potions/tipped_arrow_poison.png"
+    },
+    "minecraft:tipped_arrow|minecraft:long_regeneration": {
+      "texture": "1.14/potions/tipped_arrow_regeneration.png"
+    },
+    "minecraft:tipped_arrow|minecraft:long_slow_falling": {
+      "texture": "1.14/potions/tipped_arrow_slow_falling.png"
+    },
+    "minecraft:tipped_arrow|minecraft:long_slowness": {
+      "texture": "1.14/potions/tipped_arrow_slowness.png"
+    },
+    "minecraft:tipped_arrow|minecraft:long_strength": {
+      "texture": "1.14/potions/tipped_arrow_strength.png"
+    },
+    "minecraft:tipped_arrow|minecraft:long_swiftness": {
+      "texture": "1.14/potions/tipped_arrow_swiftness.png"
+    },
+    "minecraft:tipped_arrow|minecraft:long_turtle_master": {
+      "texture": "1.14/potions/tipped_arrow_turtle_master.png"
+    },
+    "minecraft:tipped_arrow|minecraft:long_water_breathing": {
+      "texture": "1.14/potions/tipped_arrow_water_breathing.png"
+    },
+    "minecraft:tipped_arrow|minecraft:long_weakness": {
+      "texture": "1.14/potions/tipped_arrow_weakness.png"
+    },
+    "minecraft:tipped_arrow|minecraft:luck": {
+      "texture": "1.14/potions/tipped_arrow_luck.png"
+    },
+    "minecraft:tipped_arrow|minecraft:mundane": {
+      "texture": "1.14/potions/tipped_arrow_water.png"
+    },
+    "minecraft:tipped_arrow|minecraft:night_vision": {
+      "texture": "1.14/potions/tipped_arrow_night_vision.png"
+    },
+    "minecraft:tipped_arrow|minecraft:poison": {
+      "texture": "1.14/potions/tipped_arrow_poison.png"
+    },
+    "minecraft:tipped_arrow|minecraft:regeneration": {
+      "texture": "1.14/potions/tipped_arrow_regeneration.png"
+    },
+    "minecraft:tipped_arrow|minecraft:slow_falling": {
+      "texture": "1.14/potions/tipped_arrow_slow_falling.png"
+    },
+    "minecraft:tipped_arrow|minecraft:slowness": {
+      "texture": "1.14/potions/tipped_arrow_slowness.png"
+    },
+    "minecraft:tipped_arrow|minecraft:strength": {
+      "texture": "1.14/potions/tipped_arrow_strength.png"
+    },
+    "minecraft:tipped_arrow|minecraft:strong_harming": {
+      "texture": "1.14/potions/tipped_arrow_harming.png"
+    },
+    "minecraft:tipped_arrow|minecraft:strong_healing": {
+      "texture": "1.14/potions/tipped_arrow_healing.png"
+    },
+    "minecraft:tipped_arrow|minecraft:strong_leaping": {
+      "texture": "1.14/potions/tipped_arrow_leaping.png"
+    },
+    "minecraft:tipped_arrow|minecraft:strong_poison": {
+      "texture": "1.14/potions/tipped_arrow_poison.png"
+    },
+    "minecraft:tipped_arrow|minecraft:strong_regeneration": {
+      "texture": "1.14/potions/tipped_arrow_regeneration.png"
+    },
+    "minecraft:tipped_arrow|minecraft:strong_slowness": {
+      "texture": "1.14/potions/tipped_arrow_slowness.png"
+    },
+    "minecraft:tipped_arrow|minecraft:strong_strength": {
+      "texture": "1.14/potions/tipped_arrow_strength.png"
+    },
+    "minecraft:tipped_arrow|minecraft:strong_swiftness": {
+      "texture": "1.14/potions/tipped_arrow_swiftness.png"
+    },
+    "minecraft:tipped_arrow|minecraft:strong_turtle_master": {
+      "texture": "1.14/potions/tipped_arrow_strong_turtle_master.png"
+    },
+    "minecraft:tipped_arrow|minecraft:swiftness": {
+      "texture": "1.14/potions/tipped_arrow_swiftness.png"
+    },
+    "minecraft:tipped_arrow|minecraft:thick": {
+      "texture": "1.14/potions/tipped_arrow_water.png"
+    },
+    "minecraft:tipped_arrow|minecraft:turtle_master": {
+      "texture": "1.14/potions/tipped_arrow_turtle_master.png"
+    },
+    "minecraft:tipped_arrow|minecraft:water": {
+      "texture": "1.14/potions/tipped_arrow_water.png"
+    },
+    "minecraft:tipped_arrow|minecraft:water_breathing": {
+      "texture": "1.14/potions/tipped_arrow_water_breathing.png"
+    },
+    "minecraft:tipped_arrow|minecraft:weakness": {
+      "texture": "1.14/potions/tipped_arrow_weakness.png"
+    },
+    "minecraft:tipped_arrow|minecraft:wither": {
+      "texture": "1.14/potions/tipped_arrow_wither.png"
+    }
+  }
+}

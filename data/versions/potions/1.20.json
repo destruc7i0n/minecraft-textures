@@ -1,0 +1,42 @@
+{
+  "version": "1.20",
+  "extends": "1.19.4",
+  "update": {
+    "minecraft:lingering_potion|minecraft:long_slow_falling": {
+      "texture": "1.20/potions/lingering_potion_slow_falling.png"
+    },
+    "minecraft:lingering_potion|minecraft:slow_falling": {
+      "texture": "1.20/potions/lingering_potion_slow_falling.png"
+    },
+    "minecraft:lingering_potion|minecraft:wither": {
+      "texture": "1.20/potions/lingering_potion_wither.png"
+    },
+    "minecraft:potion|minecraft:long_slow_falling": {
+      "texture": "1.20/potions/potion_slow_falling.png"
+    },
+    "minecraft:potion|minecraft:slow_falling": {
+      "texture": "1.20/potions/potion_slow_falling.png"
+    },
+    "minecraft:potion|minecraft:wither": {
+      "texture": "1.20/potions/potion_wither.png"
+    },
+    "minecraft:splash_potion|minecraft:long_slow_falling": {
+      "texture": "1.20/potions/splash_potion_slow_falling.png"
+    },
+    "minecraft:splash_potion|minecraft:slow_falling": {
+      "texture": "1.20/potions/splash_potion_slow_falling.png"
+    },
+    "minecraft:splash_potion|minecraft:wither": {
+      "texture": "1.20/potions/splash_potion_wither.png"
+    },
+    "minecraft:tipped_arrow|minecraft:long_slow_falling": {
+      "texture": "1.20/potions/tipped_arrow_slow_falling.png"
+    },
+    "minecraft:tipped_arrow|minecraft:slow_falling": {
+      "texture": "1.20/potions/tipped_arrow_slow_falling.png"
+    },
+    "minecraft:tipped_arrow|minecraft:wither": {
+      "texture": "1.20/potions/tipped_arrow_wither.png"
+    }
+  }
+}

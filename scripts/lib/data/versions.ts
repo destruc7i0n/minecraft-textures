@@ -3,6 +3,7 @@ import { join } from 'path';
 
 export const DATA_DIR = './data';
 export const VERSION_DATA_DIR = './data/versions';
+export const POTION_DATA_DIR = './data/versions/potions';
 export const TEXTURE_DATA_DIR = './data/textures';
 
 export function compareMinecraftVersions(version1: string, version2: string) {

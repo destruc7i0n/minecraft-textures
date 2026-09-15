@@ -29,6 +29,12 @@ export const latestVersion = textures.at(-1) as Last<typeof textures>;
 const hasVersion = (version: string) =>
   textures.includes(version as (typeof textures)[number]);
 
-export type { TexturesType, TexturesTypeById, Item } from './lib/types';
+export type {
+  TexturesType,
+  TexturesTypeById,
+  Item,
+  Potion,
+  PotionTexturesType,
+} from './lib/types';
 
 export default hasVersion;

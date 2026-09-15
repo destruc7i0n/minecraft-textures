@@ -6,7 +6,12 @@ import { loadImage } from 'canvas';
 
 import { versions } from '../index';
 import { resolveDataVersion } from './lib/data/resolver';
-import { TEXTURE_DATA_DIR } from './lib/data/versions';
+import {
+  TEXTURE_DATA_DIR,
+  POTION_DATA_DIR,
+  discoverDataVersions,
+} from './lib/data/versions';
+import { loadPotionVersion } from './lib/data/potions';
 
 const expectedDimension = 32;
 
@@ -21,6 +26,13 @@ const main = async () => {
     const resolved = resolveDataVersion(version);
     for (const item of resolved.items) {
       referencedPngs.add(item.dataTexturePath);
+    }
+  }
+
+  for (const version of discoverDataVersions(POTION_DATA_DIR)) {
+    const potions = loadPotionVersion(version);
+    for (const potion of potions.items) {
+      referencedPngs.add(join(TEXTURE_DATA_DIR, potion.texture));
     }
   }
 
