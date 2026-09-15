@@ -6,8 +6,12 @@ import { loadImage } from 'canvas';
 
 import { versions } from '../index';
 import { resolveDataVersion } from './lib/data/resolver';
-import { TEXTURE_DATA_DIR, discoverDataVersions } from './lib/data/versions';
-import type { PotionTexturesType } from '../lib/types';
+import {
+  TEXTURE_DATA_DIR,
+  POTION_DATA_DIR,
+  discoverDataVersions,
+} from './lib/data/versions';
+import { loadPotionVersion } from './lib/data/potions';
 
 const expectedDimension = 32;
 
@@ -25,10 +29,8 @@ const main = async () => {
     }
   }
 
-  for (const version of discoverDataVersions('./data/potions')) {
-    const potions: PotionTexturesType = await Bun.file(
-      `data/potions/${version}.json`,
-    ).json();
+  for (const version of discoverDataVersions(POTION_DATA_DIR)) {
+    const potions = loadPotionVersion(version);
     for (const potion of potions.items) {
       referencedPngs.add(join(TEXTURE_DATA_DIR, potion.texture));
     }

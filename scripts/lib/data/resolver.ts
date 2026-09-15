@@ -181,7 +181,10 @@ function applyOrder(
   return ordered;
 }
 
-function resolveTextureAsset(item: DataItem, textureDir: string): ResolvedItem {
+export function resolveTextureAsset(
+  item: DataItem,
+  textureDir: string,
+): ResolvedItem {
   const texture = requireTexturePath(item);
   const dataTexturePath = join(textureDir, texture);
 
@@ -201,7 +204,7 @@ function requireTexturePath(item: DataItem): string {
   if (!item.texture) {
     throw new Error(`${item.id} must define texture`);
   }
-  if (!item.texture.includes('/')) {
+  if (!/^\d+(?:\.\d+)+\//.test(item.texture)) {
     throw new Error(
       `${item.id} texture must include a version folder: ${item.texture}`,
     );

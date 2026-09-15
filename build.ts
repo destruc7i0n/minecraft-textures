@@ -6,10 +6,13 @@ import {
   writeVersionOutputs,
 } from './scripts/lib/build/textures';
 import { resolveDataVersion } from './scripts/lib/data/resolver';
-import { discoverDataVersions } from './scripts/lib/data/versions';
+import { loadPotionVersion } from './scripts/lib/data/potions';
+import {
+  discoverDataVersions,
+  POTION_DATA_DIR,
+} from './scripts/lib/data/versions';
 import { writeJson } from './scripts/lib/build/files';
 import { headers } from './lib/constants';
-import type { PotionTexturesType } from './lib/types';
 import { join } from 'path';
 
 console.time('build');
@@ -19,12 +22,8 @@ const packageVersion = packageJson.version as string;
 const versions = [...packageVersions];
 
 const resolvedVersions = versions.map((version) => resolveDataVersion(version));
-const potionVersions = discoverDataVersions('./data/potions');
-const potions: PotionTexturesType[] = await Promise.all(
-  potionVersions.map((version) =>
-    Bun.file(`data/potions/${version}.json`).json(),
-  ),
-);
+const potionVersions = discoverDataVersions(POTION_DATA_DIR);
+const potions = potionVersions.map((version) => loadPotionVersion(version));
 const textureCatalog = await buildTextures();
 
 await writeManifestIndex(versions, latestVersion, packageVersion);
