@@ -101,17 +101,58 @@ describe('potion version isolation', () => {
 
 // Pin each released catalog and its image contents. Add a baseline for new
 // catalog versions; changing a later version must not change an older digest.
-test('26.2 potion metadata and image contents remain unchanged', () => {
-  const catalog = loadPotionVersion('26.2');
-  const hash = createHash('sha256').update(JSON.stringify(catalog));
-  for (const item of catalog.items) {
-    hash.update(
-      new Uint8Array(readFileSync(join('data/textures', item.texture))),
+test.each([
+  ['1.12', '9bc0cfce9a61d8db8e9fc7da7afa04cb4e141c3705242a39d56b4d676d484e75'],
+  ['1.13', 'fbf6212b5ee236839a03a31ead7222e9ce1ca4a2a835577b69caf26c5eb95f8d'],
+  ['1.14', 'c76b71aa7515c8855591755a9207387da2ed80ca6b93443b2b96edb78a0ddeda'],
+  [
+    '1.19.4',
+    '8371457d571b992128043f139e6716dbe2abeb2b8381684fc8c0af4b8262b58a',
+  ],
+  ['1.20', 'fa754b5e4d06323b3dea859d6a3a9071ca8593c8df0ecf3eb8df277aa3b52433'],
+  ['1.21', 'ab1fd2f06d12fd61be5a0b17fbe08d50272729db4dfb365b5d81918186ccbc8c'],
+  ['26.2', '6fea41ebf6811aba103cba9bd877b4d46a8cb5b96cb0b01245db053c744c61ab'],
+])(
+  '%s potion metadata and image contents remain unchanged',
+  (version, digest) => {
+    const catalog = loadPotionVersion(version);
+    const hash = createHash('sha256').update(JSON.stringify(catalog));
+    for (const item of catalog.items) {
+      hash.update(
+        new Uint8Array(readFileSync(join('data/textures', item.texture))),
+      );
+    }
+    expect(hash.digest('hex')).toBe(digest);
+  },
+);
+
+test('historical catalogs track artwork, colors, and potion availability', () => {
+  const potion = (version: string, id: string) =>
+    loadPotionVersion(version).items.find(
+      (item) =>
+        item.id === 'minecraft:potion' && item.potion === `minecraft:${id}`,
     );
-  }
-  expect(hash.digest('hex')).toBe(
-    'a9a1693be21040200242ddd130efec2b5aab581194e713573a424b5cd5123811',
+  expect(potion('1.12', 'slow_falling')).toBeUndefined();
+  expect(potion('1.13', 'slow_falling')).toBeDefined();
+  expect(potion('1.20', 'wind_charged')).toBeUndefined();
+  expect(potion('1.21', 'wind_charged')).toBeDefined();
+  expect(potion('1.12', 'healing')?.texture).toBe(
+    '1.12/potions/potion_healing.png',
   );
+  expect(potion('1.14', 'healing')?.texture).toBe(
+    '1.14/potions/potion_healing.png',
+  );
+  expect(potion('1.19.4', 'night_vision')?.texture).toBe(
+    '1.19.4/potions/potion_night_vision.png',
+  );
+  expect(potion('1.20', 'slow_falling')?.texture).toBe(
+    '1.20/potions/potion_slow_falling.png',
+  );
+  expect(potion('26.2', 'healing')?.texture).toBe(
+    potion('1.14', 'healing')?.texture,
+  );
+  expect(potion('1.14', 'strength')?.tooltip).toEqual(['Strength (3:00)']);
+  expect(potion('1.19.4', 'strength')?.tooltip).toEqual(['Strength (03:00)']);
 });
 
 test('rejects duplicate identities for either edition', () => {

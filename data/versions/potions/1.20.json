@@ -1,5 +1,5 @@
 {
-  "version": "26.2",
+  "version": "1.20",
   "items": [
     {
       "id": "minecraft:lingering_potion",
@@ -32,14 +32,6 @@
       "readable": "Lingering Potion of Healing",
       "texture": "1.14/potions/lingering_potion_healing.png",
       "tooltip": ["Instant Health"]
-    },
-    {
-      "id": "minecraft:lingering_potion",
-      "potion": "minecraft:infested",
-      "bedrockPotion": "minecraft:infested",
-      "readable": "Lingering Potion of Infestation",
-      "texture": "1.21/potions/lingering_potion_infested.png",
-      "tooltip": ["Infested (00:45)"]
     },
     {
       "id": "minecraft:lingering_potion",
@@ -189,14 +181,6 @@
       "readable": "Lingering Potion of Night Vision",
       "texture": "1.19.4/potions/lingering_potion_night_vision.png",
       "tooltip": ["Night Vision (00:45)"]
-    },
-    {
-      "id": "minecraft:lingering_potion",
-      "potion": "minecraft:oozing",
-      "bedrockPotion": "minecraft:oozing",
-      "readable": "Lingering Potion of Oozing",
-      "texture": "1.21/potions/lingering_potion_oozing.png",
-      "tooltip": ["Oozing (00:45)"]
     },
     {
       "id": "minecraft:lingering_potion",
@@ -360,22 +344,6 @@
     },
     {
       "id": "minecraft:lingering_potion",
-      "potion": "minecraft:weaving",
-      "bedrockPotion": "minecraft:weaving",
-      "readable": "Lingering Potion of Weaving",
-      "texture": "1.21/potions/lingering_potion_weaving.png",
-      "tooltip": ["Weaving (00:45)"]
-    },
-    {
-      "id": "minecraft:lingering_potion",
-      "potion": "minecraft:wind_charged",
-      "bedrockPotion": "minecraft:wind_charged",
-      "readable": "Lingering Potion of Wind Charging",
-      "texture": "1.21/potions/lingering_potion_wind_charged.png",
-      "tooltip": ["Wind Charged (00:45)"]
-    },
-    {
-      "id": "minecraft:lingering_potion",
       "bedrockPotion": "minecraft:wither",
       "readable": "Lingering Potion of Decay",
       "texture": "1.20/potions/lingering_potion_wither.png"
@@ -411,14 +379,6 @@
       "readable": "Potion of Healing",
       "texture": "1.14/potions/potion_healing.png",
       "tooltip": ["Instant Health"]
-    },
-    {
-      "id": "minecraft:potion",
-      "potion": "minecraft:infested",
-      "bedrockPotion": "minecraft:infested",
-      "readable": "Potion of Infestation",
-      "texture": "1.21/potions/potion_infested.png",
-      "tooltip": ["Infested (03:00)"]
     },
     {
       "id": "minecraft:potion",
@@ -568,14 +528,6 @@
       "readable": "Potion of Night Vision",
       "texture": "1.19.4/potions/potion_night_vision.png",
       "tooltip": ["Night Vision (03:00)"]
-    },
-    {
-      "id": "minecraft:potion",
-      "potion": "minecraft:oozing",
-      "bedrockPotion": "minecraft:oozing",
-      "readable": "Potion of Oozing",
-      "texture": "1.21/potions/potion_oozing.png",
-      "tooltip": ["Oozing (03:00)"]
     },
     {
       "id": "minecraft:potion",
@@ -739,22 +691,6 @@
     },
     {
       "id": "minecraft:potion",
-      "potion": "minecraft:weaving",
-      "bedrockPotion": "minecraft:weaving",
-      "readable": "Potion of Weaving",
-      "texture": "1.21/potions/potion_weaving.png",
-      "tooltip": ["Weaving (03:00)"]
-    },
-    {
-      "id": "minecraft:potion",
-      "potion": "minecraft:wind_charged",
-      "bedrockPotion": "minecraft:wind_charged",
-      "readable": "Potion of Wind Charging",
-      "texture": "1.21/potions/potion_wind_charged.png",
-      "tooltip": ["Wind Charged (03:00)"]
-    },
-    {
-      "id": "minecraft:potion",
       "bedrockPotion": "minecraft:wither",
       "readable": "Potion of Decay",
       "texture": "1.20/potions/potion_wither.png"
@@ -790,14 +726,6 @@
       "readable": "Splash Potion of Healing",
       "texture": "1.14/potions/splash_potion_healing.png",
       "tooltip": ["Instant Health"]
-    },
-    {
-      "id": "minecraft:splash_potion",
-      "potion": "minecraft:infested",
-      "bedrockPotion": "minecraft:infested",
-      "readable": "Splash Potion of Infestation",
-      "texture": "1.21/potions/splash_potion_infested.png",
-      "tooltip": ["Infested (03:00)"]
     },
     {
       "id": "minecraft:splash_potion",
@@ -947,14 +875,6 @@
       "readable": "Splash Potion of Night Vision",
       "texture": "1.19.4/potions/splash_potion_night_vision.png",
       "tooltip": ["Night Vision (03:00)"]
-    },
-    {
-      "id": "minecraft:splash_potion",
-      "potion": "minecraft:oozing",
-      "bedrockPotion": "minecraft:oozing",
-      "readable": "Splash Potion of Oozing",
-      "texture": "1.21/potions/splash_potion_oozing.png",
-      "tooltip": ["Oozing (03:00)"]
     },
     {
       "id": "minecraft:splash_potion",
@@ -1118,22 +1038,6 @@
     },
     {
       "id": "minecraft:splash_potion",
-      "potion": "minecraft:weaving",
-      "bedrockPotion": "minecraft:weaving",
-      "readable": "Splash Potion of Weaving",
-      "texture": "1.21/potions/splash_potion_weaving.png",
-      "tooltip": ["Weaving (03:00)"]
-    },
-    {
-      "id": "minecraft:splash_potion",
-      "potion": "minecraft:wind_charged",
-      "bedrockPotion": "minecraft:wind_charged",
-      "readable": "Splash Potion of Wind Charging",
-      "texture": "1.21/potions/splash_potion_wind_charged.png",
-      "tooltip": ["Wind Charged (03:00)"]
-    },
-    {
-      "id": "minecraft:splash_potion",
       "bedrockPotion": "minecraft:wither",
       "readable": "Splash Potion of Decay",
       "texture": "1.20/potions/splash_potion_wither.png"
@@ -1169,14 +1073,6 @@
       "readable": "Arrow of Healing",
       "texture": "1.14/potions/tipped_arrow_healing.png",
       "tooltip": ["Instant Health"]
-    },
-    {
-      "id": "minecraft:tipped_arrow",
-      "potion": "minecraft:infested",
-      "bedrockPotion": "minecraft:infested",
-      "readable": "Arrow of Infestation",
-      "texture": "1.21/potions/tipped_arrow_infested.png",
-      "tooltip": ["Infested (00:22)"]
     },
     {
       "id": "minecraft:tipped_arrow",
@@ -1326,14 +1222,6 @@
       "readable": "Arrow of Night Vision",
       "texture": "1.19.4/potions/tipped_arrow_night_vision.png",
       "tooltip": ["Night Vision (00:22)"]
-    },
-    {
-      "id": "minecraft:tipped_arrow",
-      "potion": "minecraft:oozing",
-      "bedrockPotion": "minecraft:oozing",
-      "readable": "Arrow of Oozing",
-      "texture": "1.21/potions/tipped_arrow_oozing.png",
-      "tooltip": ["Oozing (00:22)"]
     },
     {
       "id": "minecraft:tipped_arrow",
@@ -1494,22 +1382,6 @@
       "readable": "Arrow of Weakness",
       "texture": "1.14/potions/tipped_arrow_weakness.png",
       "tooltip": ["Weakness (00:11)"]
-    },
-    {
-      "id": "minecraft:tipped_arrow",
-      "potion": "minecraft:weaving",
-      "bedrockPotion": "minecraft:weaving",
-      "readable": "Arrow of Weaving",
-      "texture": "1.21/potions/tipped_arrow_weaving.png",
-      "tooltip": ["Weaving (00:22)"]
-    },
-    {
-      "id": "minecraft:tipped_arrow",
-      "potion": "minecraft:wind_charged",
-      "bedrockPotion": "minecraft:wind_charged",
-      "readable": "Arrow of Wind Charging",
-      "texture": "1.21/potions/tipped_arrow_wind_charged.png",
-      "tooltip": ["Wind Charged (00:22)"]
     },
     {
       "id": "minecraft:tipped_arrow",

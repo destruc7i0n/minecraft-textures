@@ -1,5 +1,5 @@
 {
-  "version": "26.2",
+  "version": "1.19.4",
   "items": [
     {
       "id": "minecraft:lingering_potion",
@@ -32,14 +32,6 @@
       "readable": "Lingering Potion of Healing",
       "texture": "1.14/potions/lingering_potion_healing.png",
       "tooltip": ["Instant Health"]
-    },
-    {
-      "id": "minecraft:lingering_potion",
-      "potion": "minecraft:infested",
-      "bedrockPotion": "minecraft:infested",
-      "readable": "Lingering Potion of Infestation",
-      "texture": "1.21/potions/lingering_potion_infested.png",
-      "tooltip": ["Infested (00:45)"]
     },
     {
       "id": "minecraft:lingering_potion",
@@ -116,7 +108,7 @@
       "potion": "minecraft:long_slow_falling",
       "bedrockPotion": "minecraft:long_slow_falling",
       "readable": "Lingering Potion of Slow Falling",
-      "texture": "1.20/potions/lingering_potion_slow_falling.png",
+      "texture": "1.14/potions/lingering_potion_slow_falling.png",
       "tooltip": ["Slow Falling (01:00)"]
     },
     {
@@ -192,14 +184,6 @@
     },
     {
       "id": "minecraft:lingering_potion",
-      "potion": "minecraft:oozing",
-      "bedrockPotion": "minecraft:oozing",
-      "readable": "Lingering Potion of Oozing",
-      "texture": "1.21/potions/lingering_potion_oozing.png",
-      "tooltip": ["Oozing (00:45)"]
-    },
-    {
-      "id": "minecraft:lingering_potion",
       "potion": "minecraft:poison",
       "bedrockPotion": "minecraft:poison",
       "readable": "Lingering Potion of Poison",
@@ -219,7 +203,7 @@
       "potion": "minecraft:slow_falling",
       "bedrockPotion": "minecraft:slow_falling",
       "readable": "Lingering Potion of Slow Falling",
-      "texture": "1.20/potions/lingering_potion_slow_falling.png",
+      "texture": "1.14/potions/lingering_potion_slow_falling.png",
       "tooltip": ["Slow Falling (00:22)"]
     },
     {
@@ -360,25 +344,9 @@
     },
     {
       "id": "minecraft:lingering_potion",
-      "potion": "minecraft:weaving",
-      "bedrockPotion": "minecraft:weaving",
-      "readable": "Lingering Potion of Weaving",
-      "texture": "1.21/potions/lingering_potion_weaving.png",
-      "tooltip": ["Weaving (00:45)"]
-    },
-    {
-      "id": "minecraft:lingering_potion",
-      "potion": "minecraft:wind_charged",
-      "bedrockPotion": "minecraft:wind_charged",
-      "readable": "Lingering Potion of Wind Charging",
-      "texture": "1.21/potions/lingering_potion_wind_charged.png",
-      "tooltip": ["Wind Charged (00:45)"]
-    },
-    {
-      "id": "minecraft:lingering_potion",
       "bedrockPotion": "minecraft:wither",
       "readable": "Lingering Potion of Decay",
-      "texture": "1.20/potions/lingering_potion_wither.png"
+      "texture": "1.14/potions/lingering_potion_wither.png"
     },
     {
       "id": "minecraft:potion",
@@ -411,14 +379,6 @@
       "readable": "Potion of Healing",
       "texture": "1.14/potions/potion_healing.png",
       "tooltip": ["Instant Health"]
-    },
-    {
-      "id": "minecraft:potion",
-      "potion": "minecraft:infested",
-      "bedrockPotion": "minecraft:infested",
-      "readable": "Potion of Infestation",
-      "texture": "1.21/potions/potion_infested.png",
-      "tooltip": ["Infested (03:00)"]
     },
     {
       "id": "minecraft:potion",
@@ -495,7 +455,7 @@
       "potion": "minecraft:long_slow_falling",
       "bedrockPotion": "minecraft:long_slow_falling",
       "readable": "Potion of Slow Falling",
-      "texture": "1.20/potions/potion_slow_falling.png",
+      "texture": "1.14/potions/potion_slow_falling.png",
       "tooltip": ["Slow Falling (04:00)"]
     },
     {
@@ -571,14 +531,6 @@
     },
     {
       "id": "minecraft:potion",
-      "potion": "minecraft:oozing",
-      "bedrockPotion": "minecraft:oozing",
-      "readable": "Potion of Oozing",
-      "texture": "1.21/potions/potion_oozing.png",
-      "tooltip": ["Oozing (03:00)"]
-    },
-    {
-      "id": "minecraft:potion",
       "potion": "minecraft:poison",
       "bedrockPotion": "minecraft:poison",
       "readable": "Potion of Poison",
@@ -598,7 +550,7 @@
       "potion": "minecraft:slow_falling",
       "bedrockPotion": "minecraft:slow_falling",
       "readable": "Potion of Slow Falling",
-      "texture": "1.20/potions/potion_slow_falling.png",
+      "texture": "1.14/potions/potion_slow_falling.png",
       "tooltip": ["Slow Falling (01:30)"]
     },
     {
@@ -739,25 +691,9 @@
     },
     {
       "id": "minecraft:potion",
-      "potion": "minecraft:weaving",
-      "bedrockPotion": "minecraft:weaving",
-      "readable": "Potion of Weaving",
-      "texture": "1.21/potions/potion_weaving.png",
-      "tooltip": ["Weaving (03:00)"]
-    },
-    {
-      "id": "minecraft:potion",
-      "potion": "minecraft:wind_charged",
-      "bedrockPotion": "minecraft:wind_charged",
-      "readable": "Potion of Wind Charging",
-      "texture": "1.21/potions/potion_wind_charged.png",
-      "tooltip": ["Wind Charged (03:00)"]
-    },
-    {
-      "id": "minecraft:potion",
       "bedrockPotion": "minecraft:wither",
       "readable": "Potion of Decay",
-      "texture": "1.20/potions/potion_wither.png"
+      "texture": "1.14/potions/potion_wither.png"
     },
     {
       "id": "minecraft:splash_potion",
@@ -790,14 +726,6 @@
       "readable": "Splash Potion of Healing",
       "texture": "1.14/potions/splash_potion_healing.png",
       "tooltip": ["Instant Health"]
-    },
-    {
-      "id": "minecraft:splash_potion",
-      "potion": "minecraft:infested",
-      "bedrockPotion": "minecraft:infested",
-      "readable": "Splash Potion of Infestation",
-      "texture": "1.21/potions/splash_potion_infested.png",
-      "tooltip": ["Infested (03:00)"]
     },
     {
       "id": "minecraft:splash_potion",
@@ -874,7 +802,7 @@
       "potion": "minecraft:long_slow_falling",
       "bedrockPotion": "minecraft:long_slow_falling",
       "readable": "Splash Potion of Slow Falling",
-      "texture": "1.20/potions/splash_potion_slow_falling.png",
+      "texture": "1.14/potions/splash_potion_slow_falling.png",
       "tooltip": ["Slow Falling (04:00)"]
     },
     {
@@ -950,14 +878,6 @@
     },
     {
       "id": "minecraft:splash_potion",
-      "potion": "minecraft:oozing",
-      "bedrockPotion": "minecraft:oozing",
-      "readable": "Splash Potion of Oozing",
-      "texture": "1.21/potions/splash_potion_oozing.png",
-      "tooltip": ["Oozing (03:00)"]
-    },
-    {
-      "id": "minecraft:splash_potion",
       "potion": "minecraft:poison",
       "bedrockPotion": "minecraft:poison",
       "readable": "Splash Potion of Poison",
@@ -977,7 +897,7 @@
       "potion": "minecraft:slow_falling",
       "bedrockPotion": "minecraft:slow_falling",
       "readable": "Splash Potion of Slow Falling",
-      "texture": "1.20/potions/splash_potion_slow_falling.png",
+      "texture": "1.14/potions/splash_potion_slow_falling.png",
       "tooltip": ["Slow Falling (01:30)"]
     },
     {
@@ -1118,25 +1038,9 @@
     },
     {
       "id": "minecraft:splash_potion",
-      "potion": "minecraft:weaving",
-      "bedrockPotion": "minecraft:weaving",
-      "readable": "Splash Potion of Weaving",
-      "texture": "1.21/potions/splash_potion_weaving.png",
-      "tooltip": ["Weaving (03:00)"]
-    },
-    {
-      "id": "minecraft:splash_potion",
-      "potion": "minecraft:wind_charged",
-      "bedrockPotion": "minecraft:wind_charged",
-      "readable": "Splash Potion of Wind Charging",
-      "texture": "1.21/potions/splash_potion_wind_charged.png",
-      "tooltip": ["Wind Charged (03:00)"]
-    },
-    {
-      "id": "minecraft:splash_potion",
       "bedrockPotion": "minecraft:wither",
       "readable": "Splash Potion of Decay",
-      "texture": "1.20/potions/splash_potion_wither.png"
+      "texture": "1.14/potions/splash_potion_wither.png"
     },
     {
       "id": "minecraft:tipped_arrow",
@@ -1169,14 +1073,6 @@
       "readable": "Arrow of Healing",
       "texture": "1.14/potions/tipped_arrow_healing.png",
       "tooltip": ["Instant Health"]
-    },
-    {
-      "id": "minecraft:tipped_arrow",
-      "potion": "minecraft:infested",
-      "bedrockPotion": "minecraft:infested",
-      "readable": "Arrow of Infestation",
-      "texture": "1.21/potions/tipped_arrow_infested.png",
-      "tooltip": ["Infested (00:22)"]
     },
     {
       "id": "minecraft:tipped_arrow",
@@ -1253,7 +1149,7 @@
       "potion": "minecraft:long_slow_falling",
       "bedrockPotion": "minecraft:long_slow_falling",
       "readable": "Arrow of Slow Falling",
-      "texture": "1.20/potions/tipped_arrow_slow_falling.png",
+      "texture": "1.14/potions/tipped_arrow_slow_falling.png",
       "tooltip": ["Slow Falling (00:30)"]
     },
     {
@@ -1329,14 +1225,6 @@
     },
     {
       "id": "minecraft:tipped_arrow",
-      "potion": "minecraft:oozing",
-      "bedrockPotion": "minecraft:oozing",
-      "readable": "Arrow of Oozing",
-      "texture": "1.21/potions/tipped_arrow_oozing.png",
-      "tooltip": ["Oozing (00:22)"]
-    },
-    {
-      "id": "minecraft:tipped_arrow",
       "potion": "minecraft:poison",
       "bedrockPotion": "minecraft:poison",
       "readable": "Arrow of Poison",
@@ -1356,7 +1244,7 @@
       "potion": "minecraft:slow_falling",
       "bedrockPotion": "minecraft:slow_falling",
       "readable": "Arrow of Slow Falling",
-      "texture": "1.20/potions/tipped_arrow_slow_falling.png",
+      "texture": "1.14/potions/tipped_arrow_slow_falling.png",
       "tooltip": ["Slow Falling (00:11)"]
     },
     {
@@ -1497,25 +1385,9 @@
     },
     {
       "id": "minecraft:tipped_arrow",
-      "potion": "minecraft:weaving",
-      "bedrockPotion": "minecraft:weaving",
-      "readable": "Arrow of Weaving",
-      "texture": "1.21/potions/tipped_arrow_weaving.png",
-      "tooltip": ["Weaving (00:22)"]
-    },
-    {
-      "id": "minecraft:tipped_arrow",
-      "potion": "minecraft:wind_charged",
-      "bedrockPotion": "minecraft:wind_charged",
-      "readable": "Arrow of Wind Charging",
-      "texture": "1.21/potions/tipped_arrow_wind_charged.png",
-      "tooltip": ["Wind Charged (00:22)"]
-    },
-    {
-      "id": "minecraft:tipped_arrow",
       "bedrockPotion": "minecraft:wither",
       "readable": "Arrow of Decay",
-      "texture": "1.20/potions/tipped_arrow_wither.png"
+      "texture": "1.14/potions/tipped_arrow_wither.png"
     }
   ]
 }
